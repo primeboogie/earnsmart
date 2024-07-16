@@ -1,0 +1,94 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
+@import url('screen.css');
+
+.header {
+    background: var(--bgtheme1);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        "earnlogo earntitle iconsnav";
+    place-items: center;
+    padding: .4em;
+    grid-gap: .3em;
+}
+
+.header .earnlogo {
+    grid-area: earnlogo;
+    width: 100px;
+    overflow: hidden;
+    justify-self: start;
+    margin-left: 2rem;
+}
+
+.header .earnlogo img{
+    width: 100%;
+    height: 100%;
+}
+.header .earntitle {
+    grid-area: earntitle;
+    font-family: "Anton SC", sans-serif;
+    font-size: 1.9rem;
+
+}
+
+
+.header .iconsnav {
+    grid-area: iconsnav;
+    place-self: center end;
+    display: flex;
+    gap: .9em;
+    padding-right: 1.4rem;
+}
+
+.header .iconsnav i {
+    font-size: 1.4rem;
+    transition: all .5s ease;
+}
+
+.header .iconsnav i:hover{
+    cursor:  pointer;
+    transform: scale(.9);
+    z-index: auto;
+}
+.header .iconsnav i:hover,
+.header .earntitle:hover{
+    background: linear-gradient(110deg, #ff0095, #fff700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+@media only screen and (max-width: 570px) {
+
+  
+}
+
+@media only screen and (max-width: 500px) {
+    .header {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .header .earnlogo {
+        margin: 0;
+        justify-self:  start;
+        width: 80px;
+    }
+    .header .earntitle {
+        font-size: 1.2rem;
+        text-wrap: wrap;
+        text-align: center;
+    }
+    .header .iconsnav {
+        padding-right: .9rem;
+    }
+
+    .header .iconsnav i {
+        font-size: 1.1rem;
+    }
+
+@media only screen and (max-width: 330px) {
+
+  
+}

@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    font-family: system-ui;
+    color: #ffff;
+}
+
+html,
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+:root{
+    --bgtheme1: #0bb3e2;
+    --bgtheme2: #ffff;
+    --bgtheme3: #ff00cc;
+    --bgtheme4: #080312;
+    --bgtheme5: #080312;
+    --bgtheme6: #080312;
+    --bgtheme7: #080312;
+    --bgtheme8: #080312;
+    --bgtheme9: #080312;
+    --bgtheme11: #080312;
+
+
+    
+}
+
