@@ -145,18 +145,19 @@
             if(isset($_COOKIE['token'])){
 
                     $token = $_COOKIE['token'];
-                    $apiendpoint = "https://earnempire.boogiecoin.com";
+                    $apiendpoint = "http://localhost/officialsystem/?action=auth";
                     $headers = [
                         "Content-Type: application/json",
-                        "Api-session: $token"
                     ];
-                    // $response = usefetch($apiendpoint,'GET', $headers); 
+                    $body = [
+                        "token" => $token,
+                    ];
+                    $response = usefetch($apiendpoint."/api/checktoken", 'POST', $headers, $body);
 
-                    $response = [
-                        "status" => True,
-                    ];
+            
+                
                     
-                    if(isset($response['status']) && $response['status'] === True){
+                    if(isset($response['status']) && $response['status'] === true){
                     
                         if($value['secured']){
                             $dfile = $value['file'];
