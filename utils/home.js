@@ -62,6 +62,17 @@ async function LisTCountrys() {
         const response = await requestData('https://api.greatmullah.com', 'GET');
 
         if (Array.isArray(response.data) && response.data.length > 0) {
+            response.data.sort((a, b) => {
+                if (a.country < b.country) {
+                    return -1;
+                }
+                if (a.country > b.country) {
+                    return 1;
+                }
+                return 0;
+            });
+
+            
             console.log(response.data[0])
             response.data.forEach(value => {
                 let alist = document.createElement("div");
@@ -84,6 +95,7 @@ async function LisTCountrys() {
         console.error('Failed to process payment:', error);
     }
 }
+
 
 
 LisTCountrys();
