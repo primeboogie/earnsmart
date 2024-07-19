@@ -1,0 +1,4 @@
+auth/config.php
+.htaccess
+*.log
+*.env
