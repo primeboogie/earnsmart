@@ -1,5 +1,5 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 let allist = document.getElementById("allist");
 let phone = document.getElementById("phone");
 let countryid = document.getElementById("countryid");
@@ -130,13 +130,16 @@ register.addEventListener('submit', (e) => {
         
                     if(response.status === 201 && response.resutcode){
                         alert(response.info[0]['msg'])
-                    }else{
-                        if(response.info.length > 0){
-                            for (let value of response.info){
-                                alert(value['msg'])
-                            }
-                        }
                     }
+                    if (Array.isArray(response.info) && response.info.length > 0) {
+                        response.info.forEach(value => {
+                            alert(value.msg);
+                        });
+                    }
+                    else{
+                        console.log(response)
+                    }
+                    
             } catch (error) {
                 console.log(error);
             }
