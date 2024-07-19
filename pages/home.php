@@ -35,9 +35,15 @@
         </form>
     </div>
 
+    <div class="countrylist" id="countrylist">
+        <span class="chead">Select your Country</span>
+        <div class="allc" id="allist">
+        </div>
+    </div>
+
     <div class="container handletrans" id="containerup">
         
-        <form class="form" action="./compiler.php">
+        <form class="form" id="register">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="killlogin" id="killlSignup" >
                 <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 73.4-73.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-128 128z"/></svg>
             
@@ -48,18 +54,14 @@
 
                 <div class="allinputs">
                     <span>Sign Up</span>
-            <input placeholder="Username" name="username" class="username input" type="text">
-            <input placeholder="Email" name="email" class="username input" type="email">
-            <select class="cselect " name="countryid" id="">
-                <option value="">Select Country</option>
-                <option value="USA">USA</option>
-                <option value="UK">UK</option>
-                <option value="Germany">Germany</option>
-                <option value="France">France</option>
-            </select>
-            <input placeholder="Phone" name="phone" class="username input" type="text">
-            <input placeholder="Password" name="password" class="password input" type="password">
-            <input placeholder="Password" name="password2" class="password input" type="text">
+            <input placeholder="Username" name="username"  required class="username input" type="text">
+            <input placeholder="Email" name="email" required class="username input" type="email">
+      
+            <input placeholder="Country" name="countryid" required id="countryid" class="username input" type="text">
+            <input placeholder="Country" name="country" hidden id="country" class="username input" type="text">
+            <input placeholder="Phone" required name="phone" id="phone" class="username input" type="text">
+            <input placeholder="Password" required name="password" class="password input" type="password">
+            <input placeholder="Password" required  name="password2" class="password input" type="text">
             <button class="authbtn" type="submit">SignUp</button>
         </div>
         </form>
@@ -79,6 +81,6 @@
 
     <img class="colorset" src="<?php echo $admin['domain']; ?>/images/glow_evn.svg" alt="">
     
-    <script type="module" src="<?php echo $domain; ?>/utils/home.js"></script>
+    <script type="module" src="<?php echo $domain; ?>/utils/home.js?9"></script>
 </body>
 </html>
