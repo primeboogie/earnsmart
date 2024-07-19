@@ -1,4 +1,5 @@
 <?php
+require "config.php";
 
 function usefetch($apiendpoint, $method = 'GET', $headers = [], $body = null)
 {

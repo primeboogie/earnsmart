@@ -1,7 +1,5 @@
 <?php
 
-
-    require './auth/config.php';
     require './auth/func.php';
 
     $dfile = "pages/home.php";
@@ -145,16 +143,11 @@
             if(isset($_COOKIE['token'])){
 
                     $token = $_COOKIE['token'];
-                    $apiendpoint = "http://localhost/officialsystem/?action=auth";
+                    $apiendpoint = $admin['backend']."?action=auth";
                     $headers = [
                         "Content-Type: application/json",
                     ];
-                    $body = [
-                        "token" => $token,
-                    ];
-                    $response = usefetch($apiendpoint."/api/checktoken", 'POST', $headers, $body);
-
-            
+                    $response = usefetch($apiendpoint, 'POST', $headers);
                 
                     
                     if(isset($response['status']) && $response['status'] === true){
