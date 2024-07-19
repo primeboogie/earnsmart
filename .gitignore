@@ -1,5 +1,5 @@
 auth/config.php
-*.htaccess
+.htaccess
 *.log
 *.env
 error_log
