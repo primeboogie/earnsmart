@@ -1,5 +1,5 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 let allist = document.getElementById("allist");
 let phone = document.getElementById("phone");
 let countryid = document.getElementById("countryid");
@@ -34,29 +34,26 @@ killlSignup.addEventListener('click', () => {
 
 
 async function requestData(url, method = "GET", myBody = null) {
-let request = {
-    method: method,
-    headers: {
-        "Content-Type": "Application/json",
-        "Accept": "Application/json"
-    }
-};
+    let request = {
+        method: method,
+        headers: {
+            "Content-Type": "Application/json",
+            "Accept": "Application/json"
+        }
+    };
 
-if (myBody !== null) {
-    request.body = JSON.stringify(myBody);
-}
-
-try {
-    const response = await fetch(url, request);
-    if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+    if (myBody !== null) {
+        request.body = JSON.stringify(myBody);
     }
-    const data = await response.json();
-    return data; // Return the data for use in calling context
-} catch (error) {
-    console.error('Error fetching data:', error);
-    throw error; // Re-throw the error if you need to handle it further up
-}
+
+    try {
+        const response = await fetch(url, request);
+        const data = await response.json();
+
+        return data
+    } catch (error) {
+        return error
+    }
 }
 
 
@@ -130,11 +127,18 @@ register.addEventListener('submit', (e) => {
         async function registerPost() {
             try {
                 const response = await requestData(`${baseUrl}register`, 'POST', formObject);          
-                if(response.resultcode){
-                    alert(response.msg)
-                }
+        
+                    if(response.status === 201 && response.resutcode){
+                        alert(response.info[0]['msg'])
+                    }else{
+                        if(response.info.length > 0){
+                            for (let value of response.info){
+                                alert(value['msg'])
+                            }
+                        }
+                    }
             } catch (error) {
-                alert("An error Ocuured please try again later");
+                console.log(error);
             }
         }
 
