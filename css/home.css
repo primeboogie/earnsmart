@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playwrite+DE+Grund:wght@100..400&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+@import url(screen.css);
 
   body{
   background:  linear-gradient(120deg, rgb(186, 143, 12) 30%, rgb(103, 73, 224) 80%);
@@ -254,7 +255,7 @@
 .form {
     width: 400px;
     height: 100%;
-    background: rgba(52, 152, 219, 0.97);
+    background: var(--theme1);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
@@ -310,6 +311,7 @@
     font-size: 1.6rem;
     font-weight: 800;
   }
+  .cselect,
   .input {
     padding: 1.2em 0.8em;
     width: 20rem;
@@ -319,13 +321,20 @@
     outline: none;
   }
   
+  .cselect option{
+    color: #000;
+  }
+  .cselect::placeholder,
   .input::placeholder{
     color: #d8d6d6;
   }
+
+.cselect:hover::placeholder,
   .input:hover::placeholder{
     color: #5e5a5a;
   }
 
+  .allinputs select,
   .username {
     border-bottom: 1px solid wheat;
     transition: all 400ms;

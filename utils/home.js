@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    // import { requestData } from './main.js';
+import { requestData } from './api.js';
 
     const showLogin = document.getElementById('showLogin');
     const killlogin = document.getElementById('killlogin');
@@ -25,22 +24,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
         containerup.classList.toggle('handletrans');
     });
 
-    function myCountrys(){
-        const fetchData = async () => {
-            try {
-              const response = await fetch("https://api.greatmullah.com/countrys/");
-              const data = await response.json();
-              if (data.length > 0) {
-                console.log(data);
-              }
-            } catch (error) {
-              console.error('Error fetching data:', error);
-            }
-          };
-      
-          fetchData();
+async function processPayment() {
+    try {
+        const paymentData = { amount: 100, currency: 'USD' };
+        const response = await requestData('https://api.example.com/payments', 'POST', paymentData);
+        console.log('Payment successful:', response);
+    } catch (error) {
+        console.error('Failed to process payment:', error);
     }
-    
-    myCountrys()
-});
+}
 
+// processPayment();

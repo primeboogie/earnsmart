@@ -4,7 +4,6 @@
     box-sizing: border-box;
     position: relative;
     font-family: system-ui;
-    color: #ffff;
 }
 
 html,
@@ -13,20 +12,22 @@ body{
     height: 100vh;
     overflow: hidden;
 }
-
 :root{
-    --bgtheme1: #0bb3e2;
-    --bgtheme2: #ffff;
-    --bgtheme3: #ff00cc;
-    --bgtheme4: #080312;
-    --bgtheme5: #080312;
-    --bgtheme6: #080312;
-    --bgtheme7: #080312;
-    --bgtheme8: #080312;
-    --bgtheme9: #080312;
-    --bgtheme11: #080312;
+    --theme1: #3498db;
+    --theme2: #ffff;
+    --theme3: #8e2de2;
+    --theme4: #ee6aff;
+    --theme5: #ff8c00;
+    --theme6: #50ff00;
+    --theme7: #0e00ca;
 
-
-    
+    --bgdiv1: linear-gradient(135deg, #ff4500, #ff8c00);
+    --bgdiv2: linear-gradient(135deg, #0000ff, #1e90ff);
+    --bgdiv3: linear-gradient(135deg, #8e2de2, #4a00e0);
+    --bgdiv4: linear-gradient(135deg, #ee40ff, #ee6aff);
+    --bgdiv5: linear-gradient(135deg, #0000ff, #1e90ff);
+    --bgdiv6: linear-gradient(135deg, #ff8c00, #ffa500);
+    --bgdiv7: linear-gradient(135deg, #6655ff, #ff8c00);
+    --bgdiv7: linear-gradient(135deg, #179b00, #50ff00);
 }
 

@@ -150,7 +150,7 @@
                     $response = usefetch($apiendpoint, 'POST', $headers);
                 
                     
-                    if(isset($response['status']) && $response['status'] === true){
+                    if(isset($response['status']) && $response['resultcode'] === true){
                     
                         if($value['secured']){
                             $dfile = $value['file'];
