@@ -1,7 +1,10 @@
+let baseUrl = "https://earnempire.seosblog.com/?action=";
+// let baseUrl = "http://localhost/officialsystem/?action=";
 let allist = document.getElementById("allist");
 let phone = document.getElementById("phone");
 let countryid = document.getElementById("countryid");
 let country = document.getElementById("country");
+let register = document.getElementById("register");
 
 
 const showLogin = document.getElementById('showLogin');
@@ -98,18 +101,46 @@ async function LisTCountrys() {
 
 
 
-LisTCountrys();
 
 function viewCountry(res){
     if(res){
         document.getElementById("countrylist").style.display = "grid";
     }else{
         document.getElementById("countrylist").style.display = "none";
-
+        
     }
 }
-
 
 countryid.addEventListener('click', ()=>{
     viewCountry(true)
 })
+
+register.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+        const formData = new FormData(register);
+
+        const formObject = {};
+        formData.forEach((value, key) => {
+            formObject[key] = value;
+        });
+    
+        console.log(formObject);
+
+        async function registerPost() {
+            try {
+                const response = await requestData(`${baseUrl}register`, 'POST', formObject);          
+                if(response.resultcode){
+                    alert(response.msg)
+                }
+            } catch (error) {
+                alert("An error Ocuured please try again later");
+            }
+        }
+
+        registerPost();
+    })
+
+
+
+    LisTCountrys();

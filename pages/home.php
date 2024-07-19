@@ -54,14 +54,14 @@
 
                 <div class="allinputs">
                     <span>Sign Up</span>
-            <input placeholder="Username" name="username"  required class="username input" type="text">
-            <input placeholder="Email" name="email" required class="username input" type="email">
+            <input placeholder="Username" name="username" value="Bosco" required class="username input" type="text">
+            <input placeholder="Email" name="email" value="amososwom@gmail.com" required class="username input" type="email">
       
-            <input placeholder="Country" name="countryid" required id="countryid" class="username input" type="text">
+            <input placeholder="Country" name="countryid" value="ede" required id="countryid" class="username input" type="text">
             <input placeholder="Country" name="country" hidden id="country" class="username input" type="text">
-            <input placeholder="Phone" required name="phone" id="phone" class="username input" type="text">
-            <input placeholder="Password" required name="password" class="password input" type="password">
-            <input placeholder="Password" required  name="password2" class="password input" type="text">
+            <input placeholder="Phone" value="4" required name="phone" id="phone" class="username input" type="text">
+            <input placeholder="Password" value="fv" required name="password" class="password input" type="password">
+            <input placeholder="Password" required value="vfv" name="password2" class="password input" type="text">
             <button class="authbtn" type="submit">SignUp</button>
         </div>
         </form>
