@@ -81,6 +81,6 @@
 
     <img class="colorset" src="<?php echo $admin['domain']; ?>/images/glow_evn.svg" alt="">
     
-    <script type="module" src="<?php echo $domain; ?>/utils/home.js?9"></script>
+    <script type="module" src="<?php echo $domain; ?>/utils/home.js?8"></script>
 </body>
 </html>
