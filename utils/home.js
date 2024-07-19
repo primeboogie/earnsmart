@@ -32,13 +32,13 @@ killlSignup.addEventListener('click', () => {
 });
 
 
+// "Accept": "Application/json"
 
 async function requestData(url, method = "GET", myBody = null) {
     let request = {
         method: method,
         headers: {
             "Content-Type": "Application/json",
-            "Accept": "Application/json"
         }
     };
 
