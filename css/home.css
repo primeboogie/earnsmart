@@ -308,6 +308,7 @@
     background: none;
     padding: 0.7rem 1.5rem;
     font-size: 0.9rem;
+    color: #000;
   }
   .singleinput:hover{
     border-radius: .4rem;
