@@ -41,11 +41,19 @@ function usefetch($apiendpoint, $method = 'GET', $headers = [], $body = null)
 // echo "wd";
 
 
-// $apiendpoint = $admin['backend']."/?action=auth";
+$apiendpoint = $admin['backend']."/?action=auth";
 
-// $fetchresp = usefetch($apiendpoint);
+$fetchresp = usefetch($apiendpoint);
 
 // // print_r($apiendpoint);
 // print_r($fetchresp['data']['1']['access_token']);
 
-// print
+
+// echo "<pre>";
+// print_r($fetchresp);
+// echo "</pre>";
+
+// if(isset($fetchresp['resultcode']) && $fetchresp['resultcode'] == true){
+
+// echo "am in";
+// }

@@ -1,5 +1,5 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 let allist = document.getElementById("allist");
 let phone = document.getElementById("phone");
 let countryid = document.getElementById("countryid");
@@ -98,7 +98,7 @@ async function LisTCountrys() {
             
         }
     } catch (error) {
-        console.error('Failed to process payment:', error);
+        console.error(error);
     }
 }
 
@@ -212,13 +212,14 @@ register.addEventListener('submit', (e) => {
     
             async function loginPost() {
                 try {
-                    const response = await requestData(`${baseUrl}login`, 'POST', formObject);          
+                    const response = await requestData(`${baseUrl}login`, 'POST', formObject);  
+                    console.log(response)        
             
                     if(response.resultcode){
                         setCookie("access_token", response.data['access_token'],2)
                         login.reset();
                         
-                        window.location.href = '/earnempire'
+                        window.location.href = '/earnempire/'
                     }
                     console.log(response)
                     if (Array.isArray(response.info) && response.info.length > 0) {

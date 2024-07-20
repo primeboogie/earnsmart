@@ -141,12 +141,10 @@
     foreach ($routes as $key => $value) {
         if ($key === $routesearch) {
             if(isset($_COOKIE['access_token'])){
-                
-                        $token = $_COOKIE['access_token'];
                         $apiendpoint = $admin['backend']."/?action=auth";
                         $fetchresp = usefetch($apiendpoint);
 
-                    if(isset($fetchresp['resultcode']) && $fetchresp['resultcode'] === true){
+                    if(isset($fetchresp['resultcode']) && $fetchresp['resultcode'] == true){
                     
                         if($value['secured']){
                             $dfile = $value['file'];
@@ -194,6 +192,11 @@
         'keywords' => implode(", ", $keywords),
         'summary' => $summary,
         'environment' => $environment,
-        'upline' => $upline ?? 'None',
+        'upline' => $upline ?? null,
     ];
 
+
+
+// echo "<pre>";
+// print_r($response);
+// echo "</pre>";
