@@ -1,6 +1,15 @@
 
 </head>
-<body>
+<body id="body">
+<section class="dots-container" id="loaderrr">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</section>
+
+    <div class="overs" id="overs"> </div>
     <div class="jump">
         <span class="eec"><i>EEC</i> - Earnempire.com</span>
         <span class="jumphead">Lets Jump back in!</span>
@@ -15,57 +24,94 @@
     </div>
 
     <div class="container " id="containerin">
-        
-        <form class="form" action="compiler.php">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="killlogin" id="killlogin" >
-                <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 73.4-73.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-128 128z"/></svg>
-            
-                <div class="imghead">
-                    <img src="<?php echo $admin['domain']; ?>/images/earn-empire.png" alt="">
-                    <span class="title">Earn Empire Connections</span> 
-                </div>
+    <div class="ftitle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="killlogin" id="killlogin" >
+                    <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 73.4-73.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-128 128z"/></svg>
+                
+                        <span class="title">Earn Empire Connections</span> 
+        </div>
 
-            
+        <form class="form" id="login">
+        <span class="fromtitle">Sign In</span>
             <div class="allinputs">
-                <span>Sign In</span>
-                <input placeholder="Username" class="username input" type="text">
-                <input placeholder="Password" class="password input" type="password">
-                <button class="authbtn" type="submit">Login</button>
-            </div>
+                    <div class="singleinput"  id="logusername">
+                        <label for="username">Username</label>
+                        <input placeholder="Username" name="username" value="Boogie" id="loginusername" autocomplete="off" required  type="text">
+                    </div>
+                    <div class="singleinput">
+                        <label for="password" >Password</label>
+                        <input placeholder="Password"  value="Boogie" autocomplete="off" required name="password" class="password input" type="password">
+                    </div>
+            <button class="authbtn" type="submit"  id="logins">Login</button>
+        </div>
         </form>
     </div>
 
+
+
+    <div class="container" id="containerup">
+        <div class="ftitle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="killlogin" id="killlSignup" >
+                    <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 73.4-73.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-128 128z"/></svg>
+                
+                        <span class="title">Earn Empire Connections</span> 
+        </div>
+
+        <form class="form" id="register">
+
+            
+            <span class="fromtitle">Sign Up</span>
+            <span class="upline">
+                Invited By: <?php echo $upline; ?>
+            </span>
+            <div class="allinputs">
+                    <div class="singleinput"  id="username">
+                        <label for="username">Username</label>
+                        <input placeholder="Username" name="username"  id="sinusername" autocomplete="off" required  type="text">
+                    </div>
+
+                    <div class="singleinput">
+                        <label for="email">Email</label>
+                        <input placeholder="Email" name="email"  required class="" type="email">
+                    </div>
+
+                    <div class="singleinput">
+                        <label for="country">Country</label>
+                        <input placeholder="--Choose Country--" name="countryid" required id="countryid" class="" type="text">
+                    </div>
+
+                    <div class=" singleinput">
+                        <label for="phone">Phone</label>
+                        <div class="forphone">
+                        <span  id="phone">(+000)</span>
+                        <input placeholder="Phone"  required name="phone" class="" type="number">
+                        </div>
+                    </div>
+
+                    <div class="singleinput">
+                        <label for="password" >Password</label>
+                        <input placeholder="Password" autocomplete="off" autocomplete="new-password" required name="password" class="password input" type="password">
+                    </div>
+
+                    <div class="singleinput">
+                        <label for="repassword">Confrim Password</label>
+                        <input placeholder="Confirm Password" autocomplete="new-password" name="repassword" id="repassword" required class="" type="password">
+                    </div>
+
+            <input  name="country" id="country" hidden type="text">
+            <input  name="upline" hidden  type="text" value=""<?php echo $upline; ?>>
+            <button class="authbtn" type="submit">SignUp</button>
+        </div>
+        </form>
+
+    </div>
     <div class="countrylist" id="countrylist">
         <span class="chead">Select your Country</span>
         <div class="allc" id="allist">
         </div>
     </div>
 
-    <div class="container handletrans" id="containerup">
-        
-        <form class="form" id="register">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="killlogin" id="killlSignup" >
-                <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 73.4-73.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-128 128z"/></svg>
-            
-                <div class="imghead">
-                    <img src="<?php echo $admin['domain']; ?>/images/earn-empire.png" alt="">
-                    <span class="title">Earn Empire Connections</span> 
-                </div>
-
-                <div class="allinputs">
-                    <span>Sign Up</span>
-            <input placeholder="Username" name="username" value="Bosco" required class="username input" type="text">
-            <input placeholder="Email" name="email" value="amososwom@gmail.com" required class="username input" type="email">
-      
-            <input placeholder="Country" name="countryid" value="ede" required id="countryid" class="username input" type="text">
-            <input placeholder="Country" name="country" hidden id="country" class="username input" type="text">
-            <input placeholder="Phone" value="4" required name="phone" id="phone" class="username input" type="text">
-            <input placeholder="Password" value="fv" required name="password" class="password input" type="password">
-            <input placeholder="Password" required value="vfv" name="password2" class="password input" type="text">
-            <button class="authbtn" type="submit">SignUp</button>
-        </div>
-        </form>
-    </div>
+    <button class="tests" id="tests">Yoo</button>
 
     <div class="ball white"></div>
     <div class="ball white" style="animation-delay: 1s;"></div>

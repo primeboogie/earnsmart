@@ -3,12 +3,7 @@ require "config.php";
 
 function usefetch($apiendpoint, $method = 'GET', $headers = [], $body = null)
 {
-    $resp = [
-        "status" => true,
-        "http_code" => null,
-        "data" => null,
-        "msg" => null
-    ];
+
     $ch = curl_init($apiendpoint);
 
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
@@ -21,29 +16,36 @@ function usefetch($apiendpoint, $method = 'GET', $headers = [], $body = null)
         curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
     }
 
-    if (!empty($headers)) {
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    }
+    $cookie_value = isset($_COOKIE['access_token']) ? $_COOKIE['access_token'] : null;
+    $headers[] = 'Cookie: access_token=' . $cookie_value;
+
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    
 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); 
 
     $response = curl_exec($ch);
 
-    if ($response === false) {
-        $error_msg = curl_error($ch);
-        curl_close($ch);
-        $resp['msg'] = $error_msg;
-        $resp['status'] = false;
-    }
-
-    $resp['http_code'] = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
 
-    $resp['data'] = json_decode($response, true);
+    $resp = json_decode($response, true);
+
 
     return $resp;
 }
 
-
 // print_r(usefetch("https://api.seosblog.com","POST",['Api-secret: justboogie'],["phone" => '0743981331', "amount" => 2]));
+// $url = usefetch("http://localhost/officialsystem/test1.php");
+// print_r($url);
+// echo "wd";
+
+
+// $apiendpoint = $admin['backend']."/?action=auth";
+
+// $fetchresp = usefetch($apiendpoint);
+
+// // print_r($apiendpoint);
+// print_r($fetchresp['data']['1']['access_token']);
+
+// print

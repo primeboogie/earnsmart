@@ -133,24 +133,20 @@
     $routepath= $passing['path'] ?? '/login';
     $local = str_replace($dev['root'], '', $routepath);
     $extracted = explode('/', trim($local, '/'));
-    $routesearch = '/'.$extracted[0];
+    $routesearch = '/'.$extracted[0] ?? '';
 
     $found = False;
     $environment = False;
 
     foreach ($routes as $key => $value) {
         if ($key === $routesearch) {
-            if(isset($_COOKIE['token'])){
-
-                    $token = $_COOKIE['token'];
-                    $apiendpoint = $admin['backend']."?action=auth";
-                    $headers = [
-                        "Content-Type: application/json",
-                    ];
-                    $response = usefetch($apiendpoint, 'POST', $headers);
+            if(isset($_COOKIE['access_token'])){
                 
-                    
-                    if(isset($response['status']) && $response['resultcode'] === true){
+                        $token = $_COOKIE['access_token'];
+                        $apiendpoint = $admin['backend']."/?action=auth";
+                        $fetchresp = usefetch($apiendpoint);
+
+                    if(isset($fetchresp['resultcode']) && $fetchresp['resultcode'] === true){
                     
                         if($value['secured']){
                             $dfile = $value['file'];
@@ -161,7 +157,7 @@
                             header("location: ".$dev['root']."/");
                         }
                     } else {
-                        setcookie("token", "", time() - 3600, "/");
+                        setcookie("access_token", "", time() - 3600, "/");
                         
                         if (isset($extracted[0]) && $extracted[0] == '404'){
                             $dfile = $value['file'];
@@ -198,5 +194,6 @@
         'keywords' => implode(", ", $keywords),
         'summary' => $summary,
         'environment' => $environment,
-        'upline' => $upline ?? False,
+        'upline' => $upline ?? 'None',
     ];
+

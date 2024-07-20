@@ -1,10 +1,19 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 let allist = document.getElementById("allist");
 let phone = document.getElementById("phone");
 let countryid = document.getElementById("countryid");
 let country = document.getElementById("country");
 let register = document.getElementById("register");
+let sinusername = document.getElementById("sinusername");
+let forusername = document.getElementById("username");
+let login = document.getElementById("login");
+
+
+
+
+let loginusername = document.getElementById("loginusername");
+let logusername = document.getElementById("logusername");
 
 
 const showLogin = document.getElementById('showLogin');
@@ -32,13 +41,13 @@ killlSignup.addEventListener('click', () => {
 });
 
 
-// "Accept": "Application/json"
 
 async function requestData(url, method = "GET", myBody = null) {
     let request = {
         method: method,
         headers: {
             "Content-Type": "Application/json",
+            "Accept": "Application/json" 
         }
     };
 
@@ -71,9 +80,6 @@ async function LisTCountrys() {
                 }
                 return 0;
             });
-
-            
-            console.log(response.data[0])
             response.data.forEach(value => {
                 let alist = document.createElement("div");
                 alist.className = "inc"
@@ -83,7 +89,7 @@ async function LisTCountrys() {
                 alist.appendChild(spanlist)
                 allist.appendChild(alist);
                 alist.addEventListener("click", function(){
-                    phone.value = `(${value.dial})`
+                    phone.innerHTML = `(${value.dial})`
                     countryid.value = value.country
                     country.value = value.id
                     viewCountry(false)
@@ -102,11 +108,44 @@ async function LisTCountrys() {
 function viewCountry(res){
     if(res){
         document.getElementById("countrylist").style.display = "grid";
+        document.getElementById("overs").style.display = "grid";
     }else{
         document.getElementById("countrylist").style.display = "none";
+        document.getElementById("overs").style.display = "none";
         
     }
 }
+
+function openLoader(res){
+    if(res){
+        document.getElementById("loaderrr").style.display = "flex";
+    }else{
+        document.getElementById("loaderrr").style.display = "none";
+    }
+}
+
+async function fortest() {
+    try {
+        const response = await requestData(`${baseUrl}register`, 'POST', formObject);          
+
+        if(response.resultcode){
+            console.log(true)
+        }
+        if (Array.isArray(response.info) && response.info.length > 0) {
+                response.info.forEach(value => {
+                    console.log(value.msg);
+                });
+            }
+            else{
+                console.log(response)
+            }
+
+    } catch (error) {
+        alert(error);
+    }
+openLoader(false)
+}
+
 
 countryid.addEventListener('click', ()=>{
     viewCountry(true)
@@ -114,6 +153,7 @@ countryid.addEventListener('click', ()=>{
 
 register.addEventListener('submit', (e) => {
     e.preventDefault()
+    openLoader(true)
 
         const formData = new FormData(register);
 
@@ -121,17 +161,16 @@ register.addEventListener('submit', (e) => {
         formData.forEach((value, key) => {
             formObject[key] = value;
         });
-    
-        console.log(formObject);
 
         async function registerPost() {
             try {
                 const response = await requestData(`${baseUrl}register`, 'POST', formObject);          
         
-                    if(response.status === 201 && response.resutcode){
-                        alert(response.info[0]['msg'])
-                    }
-                    if (Array.isArray(response.info) && response.info.length > 0) {
+                if(response.resultcode){
+                    register.reset();
+                }
+                console.log(response)
+                if (Array.isArray(response.info) && response.info.length > 0) {
                         response.info.forEach(value => {
                             alert(value.msg);
                         });
@@ -143,11 +182,126 @@ register.addEventListener('submit', (e) => {
             } catch (error) {
                 console.log(error);
             }
+        openLoader(false)
         }
 
         registerPost();
     })
 
+    function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    
+    login.addEventListener('submit', (e) => {
+        e.preventDefault()
+        openLoader(true)
+    
+            const formData = new FormData(login);
+    
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+    
+            async function loginPost() {
+                try {
+                    const response = await requestData(`${baseUrl}login`, 'POST', formObject);          
+            
+                    if(response.resultcode){
+                        setCookie("access_token", response.data['access_token'],2)
+                        login.reset();
+                        
+                        window.location.href = '/earnempire'
+                    }
+                    console.log(response)
+                    if (Array.isArray(response.info) && response.info.length > 0) {
+                            response.info.forEach(value => {
+                                alert(value.msg);
+                            });
+                        }
+                        else{
+                            console.log(response)
+                        }
+    
+                } catch (error) {
+                    console.log(error);
+                }
+            openLoader(false)
+            }
+    
+            loginPost();
+        })
+
 
 
     LisTCountrys();
+
+    let shaky = (resp) =>{
+        if(resp){
+            forusername.classList.add("shacky")
+        }else{
+            forusername.classList.remove("shacky")
+        }
+    } 
+
+    let shakylog = (resp) =>{
+        if(resp){
+            logusername.classList.add("shacky")
+        }else{
+            logusername.classList.remove("shacky")
+        }
+    } 
+
+    window.addEventListener('click', (event) => {
+        if (event.target == document.getElementById("overs")) {
+            viewCountry(false)
+        }
+    });
+
+    sinusername.addEventListener('input', () => {
+        async function confirmUser() {
+            try {
+                const response = await requestData(`${baseUrl}freeuser`, 'POST', {"username": sinusername.value});          
+                
+                if(response.resultcode){
+                    shaky(true)
+                }else{
+                    shaky(false)
+                }
+                    } catch (error) {
+                        alert(error);
+                    }
+                }
+                
+                confirmUser()
+            })
+
+loginusername.addEventListener('change', () => {
+    async function confirmUser() {
+        try {
+            const response = await requestData(`${baseUrl}freeuser`, 'POST', {"username": loginusername.value});          
+            
+            if(response.resultcode){
+                shakylog(false)
+            }else{
+                shakylog(true)
+                setTimeout(function() {
+                    shakylog(false)
+                }, 5000); 
+            }
+            
+                    
+                } catch (error) {
+                    alert(error);
+                }
+            }
+            
+            confirmUser()
+        })
