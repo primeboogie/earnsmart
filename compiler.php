@@ -25,7 +25,10 @@
             <?php require $routedfile; ?>
         </div>
         <div class="footer">
-            @<?php echo date('Y') . ' ' . $admin['company']; ?>
+            <a href="<?php echo $dev['root']; ?>/trivia">
+
+                @<?php echo date('Y') . ' ' . $admin['company']; ?>
+            </a>
         </div>
     </div>
 </body>
