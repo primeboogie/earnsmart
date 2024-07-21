@@ -47,4 +47,5 @@ openLoader(false)
 
 menuid.addEventListener('click', () => {
     menuid.classList.toggle("fa-xmark")
+    alert("Chonjo")
 })
