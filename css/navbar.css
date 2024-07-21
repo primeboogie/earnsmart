@@ -62,7 +62,7 @@
         display: grid;
         width: 60% !important;
         z-index: 20;
-        height: 100vh;
+        /* height: 100vh; */
 
     }
 
