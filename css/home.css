@@ -440,6 +440,7 @@
   border-radius: 7px;
   box-shadow: 0px 0px 20px 1px #fff;
   overflow: hidden;
+  color: #000;
 }
 
   .chead{
@@ -563,7 +564,7 @@
     }
 
     .countrylist{
-      width: 80%;
+      width: 84%;
     }
     
   }
