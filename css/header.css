@@ -20,7 +20,7 @@
     overflow: hidden;
     justify-self: start;
     margin-left: 2rem;
-    padding-top: 0.3em;
+    padding-top: 0.3em 0;
 }
 
 .header .earnlogo img{
