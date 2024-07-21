@@ -1,5 +1,5 @@
-// let baseUrl = "https://earnempire.seosblog.com/?action=";
-let baseUrl = "http://localhost/officialsystem/?action=";
+let baseUrl = "https://earnempire.seosblog.com/?action=";
+// let baseUrl = "http://localhost/officialsystem/?action=";
 let allist = document.getElementById("allist");
 let phone = document.getElementById("phone");
 let countryid = document.getElementById("countryid");
@@ -196,8 +196,8 @@ register.addEventListener('submit', (e) => {
                         setCookie("access_token", response.data['access_token'],2)
                         login.reset();
                         
-                        window.location.href = '/earnempire/'
-                        // window.location.href = '/'
+                        // window.location.href = '/earnempire/'
+                        window.location.href = '/'
                     }
                     console.log(response)
                     if (Array.isArray(response.info) && response.info.length > 0) {
