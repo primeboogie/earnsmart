@@ -46,7 +46,7 @@ body{
     .root{
         height: 100vh;
         grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr auto !important;
+        grid-template-rows: auto 1fr auto ;
 
     }
     .header{
