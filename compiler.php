@@ -8,8 +8,13 @@
             <div class="earnlogo">
                 <img src="<?php echo $domain;?>/images/earn1.png" alt="">
             </div>
-            <span class="earntitle">
-                <?php echo $admin['company']; ?>
+            <span class="earntitle larged">
+                <?php echo  $admin['company']; ?>
+            </span>
+            <span class="earntitle smalld">
+                <?php 
+                echo  str_replace('Connections', '', $admin['company']); ;
+                ?>
             </span>
             
             <div class="iconsnav">
@@ -18,18 +23,22 @@
             <i class="fa-solid fa-user"></i>
             </div>
         </div>
+
         <div class="navbar">
             nav
         </div>
+
         <div class="main">
             <?php require $routedfile; ?>
         </div>
+
         <div class="footer">
             <a href="<?php echo $dev['root']; ?>/trivia">
 
                 @<?php echo date('Y') . ' ' . $admin['company']; ?>
             </a>
         </div>
+        
     </div>
 </body>
 </html>
