@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div class="navbar">
+        <div class="navbar" id="navbar">
             <div class="navdiv">
                 <span class="navh">Main</span>
                 <div class="navlinks">
