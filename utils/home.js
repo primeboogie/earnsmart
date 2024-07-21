@@ -219,7 +219,7 @@ register.addEventListener('submit', (e) => {
                         setCookie("access_token", response.data['access_token'],2)
                         login.reset();
                         
-                        // window.location.href = '/earnempire/'
+                        // window.location.href = '/earnempire/trivia'
                         window.location.href = '/trivia'
                     }
                     console.log(response)
@@ -307,3 +307,9 @@ loginusername.addEventListener('change', () => {
             
             confirmUser()
         })
+
+
+
+        
+        
+        
