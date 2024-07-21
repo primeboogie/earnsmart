@@ -220,7 +220,7 @@ register.addEventListener('submit', (e) => {
                         login.reset();
                         
                         // window.location.href = '/earnempire/'
-                        window.location.href = '/'
+                        window.location.href = '/trivia'
                     }
                     console.log(response)
                     if (Array.isArray(response.info) && response.info.length > 0) {
