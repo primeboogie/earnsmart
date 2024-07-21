@@ -6,7 +6,7 @@
     grid-auto-rows: 4rem;
     grid-auto-flow: row;
     grid-gap: 0.9em;
-    overflow: auto;
+    overflow: visible;
 }
 
 .testb{

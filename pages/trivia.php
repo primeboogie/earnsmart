@@ -1,6 +1,6 @@
 <div class="trivia">
     <div class="testb">
-        <h2>Hallo Word</h2>
+        <h2>Hallo You</h2>
     </div>
 
     <div class="testb">
