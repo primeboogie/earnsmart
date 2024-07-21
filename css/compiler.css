@@ -45,7 +45,7 @@ body{
         height: 100vh;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 9% 1fr auto;
+        grid-template-rows: 8% 1fr auto;
         overflow: auto;
     }
 
