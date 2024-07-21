@@ -19,12 +19,10 @@ body{
 }
 .navbar{
     grid-area: 2/1/3/2;
-    background: rgb(92, 231, 241);
-    width: 230px;
 }
 .main{
     grid-area: 2/2/3/3;
-    background: #686565;
+    /* background: var(--theme1); */
     overflow: hidden;
 }
 

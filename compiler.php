@@ -25,7 +25,41 @@
         </div>
 
         <div class="navbar">
-            nav
+            <div class="navdiv">
+                <span class="navh">Main</span>
+                <div class="navlinks">
+                    <a href="<?php echo $dev['root'];?>/"><i class="fa fa-window-restore"></i> Dashboard</a>
+                    <a href="<?php echo $dev['root'];?>/"><i class="fa fa-share-alt"></i> Share</a>
+                </div>
+            </div>
+            <div class="navdiv">
+                <span class="navh">Accounts</span>
+                <div class="navlinks">
+                    <a href="<?php echo $dev['root'];?>/deposit"><i class="fa fa-money-bill"></i> Deposit</a>
+                    <a href="<?php echo $dev['root'];?>/clientpay"><i class="fab fa-paypal"></i> Pay For Client</a>
+                    <a href="<?php echo $dev['root'];?>/agentbonus"><i class="fa fa-gift"></i> Agent Bonus</a>
+                    <a href="<?php echo $dev['root'];?>/withdrawal"><i class="fa fa-money-bill-alt"></i>Withdrawal</a>
+                </div>
+            </div>
+            <div class="navdiv">
+                <span class="navh">Products</span>
+                <div class="navlinks">
+                    <a href="<?php echo $dev['root'];?>/trivia"><i class="fa fa-question"></i> Trivia</a>
+                    <a href="<?php echo $dev['root'];?>/tiktok"><i class="fa-brands fa-tiktok"></i> Tiktok</a>
+                    <a href="<?php echo $dev['root'];?>/spin"><i class="fa fa-spinner"></i> Spins</a>
+                    <a href="<?php echo $dev['root'];?>/team"><i class="fa fa-users"></i> My Team</a>
+                </div>
+            </div>
+            <div class="navdiv">
+                <span class="navh">Settings</span>
+                <div class="navlinks">
+                    <a href="<?php echo $dev['root'];?>/profile"><i class="fa fa-user"></i> User Profile</a>
+                    <a href="<?php echo $admin['whatsapp_group'];?>"><i class="fab fa-whatsapp"></i> Whatsapp</a>
+                    <a href="<?php echo $admin['customer_care'];?>/"><i class="fa fa-headset"></i> Support</a>
+                    <a href="<?php echo $dev['root'];?>/"><i class="fa fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+
         </div>
 
         <div class="main">

@@ -93,15 +93,21 @@
             'secured' => True,
                 ],
                 
+        '/transactions' => [
+            'file' => 'pages/transactions.php',
+            'style' => '/css/transactions.css',
+            'secured' => True,
+                ],
+                
         '/withdrawal' => [
             'file' => 'pages/withdrawal.php',
             'style' => '/css/withdrawal.css',
             'secured' => True,
                 ],
                 
-        '/transactions' => [
-            'file' => 'pages/transactions.php',
-            'style' => '/css/transactions.css',
+        '/agentbonus' => [
+            'file' => 'pages/agentbonus.php',
+            'style' => '/css/agentbonus.css',
             'secured' => True,
                 ],
 

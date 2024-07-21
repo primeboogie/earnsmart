@@ -13,7 +13,7 @@ body{
     overflow: hidden;
 }
 :root{
-    --theme1: #3498db;
+    --theme1: #4fa5df;
     --theme2: #ffff;
     --theme3: #8e2de2;
     --theme4: #ee6aff;
@@ -22,15 +22,18 @@ body{
     --theme7: #0e00ca;
 
     --bgdiv1: linear-gradient(135deg, #ff4500, #ff8c00);
-    --bgdiv2: linear-gradient(135deg, #0000ff, #1e90ff);
+    --bgdiv2: linear-gradient(135deg, #0000ff, #3498db);
     --bgdiv3: linear-gradient(135deg, #8e2de2, #4a00e0);
-    --bgdiv4: linear-gradient(135deg, #ee40ff, #ee6aff);
-    --bgdiv5: linear-gradient(135deg, #0000ff, #1e90ff);
+    --bgdiv4: linear-gradient(135deg, #666166, #ee6aff);
+    --bgdiv5: linear-gradient(135deg, #0000ff, #3498db);
     --bgdiv6: linear-gradient(135deg, #ff8c00, #ffa500);
     --bgdiv7: linear-gradient(135deg, #6655ff, #ff8c00);
     --bgdiv7: linear-gradient(135deg, #179b00, #50ff00);
 
-    --border1: 2px solid #fff;
+    --border1: thin solid #fff;
+
+    --brall: 10px;
+    /* --brall: 10px; */
 }
 
 
@@ -99,5 +102,5 @@ body{
   }
 
   .smalld{
-    display: flex;
+    display: none;
   }
