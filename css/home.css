@@ -464,11 +464,13 @@
   }
 
   .inc {
-    background: #;
     box-shadow: 0px 0px 4px 1px #c9c9c9;
     border-radius: 6px;
     padding: 0.5rem 0.4rem;
-  }
+}
+.inc  span{
+  color: #000;
+}
   
   .inc:hover{
     background:  #f5f5f5;
