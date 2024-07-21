@@ -57,6 +57,7 @@
                     <a href="<?php echo $dev['root'];?>/trivia"><i class="fa fa-question"></i> Trivia</a>
                     <a href="<?php echo $dev['root'];?>/tiktok"><i class="fa-brands fa-tiktok"></i> Tiktok</a>
                     <a href="<?php echo $dev['root'];?>/spin"><i class="fa fa-spinner"></i> Spins</a>
+                    <a href="<?php echo $dev['root'];?>/spin"><i class="fa-solid fa-chart-gantt"></i> Forex</a>
                     <a href="<?php echo $dev['root'];?>/team"><i class="fa fa-users"></i> My Team</a>
                 </div>
             </div>
