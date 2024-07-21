@@ -46,7 +46,6 @@ body{
     .root{
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
-        overflow: auto;
     }
     .header{
         grid-area: 1/1/2/2;
