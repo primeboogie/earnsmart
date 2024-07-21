@@ -44,8 +44,10 @@ body{
 
 @media only screen and (max-width: 887px) {
     .root{
+        height: 100vh;
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
+        
     }
     .header{
         grid-area: 1/1/2/2;
