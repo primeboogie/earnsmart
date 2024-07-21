@@ -22,7 +22,7 @@
             </span>
             <span class="earntitle smalld">
                 <?php 
-                echo  str_replace('Connections', '', $admin['company']); ;
+                echo  strtoupper(str_replace('Connections', '', $admin['company'])); ;
                 ?>
             </span>
             
