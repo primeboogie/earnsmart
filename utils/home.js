@@ -219,8 +219,8 @@ register.addEventListener('submit', (e) => {
                         setCookie("access_token", response.data['access_token'],2)
                         login.reset();
                         
-                        // window.location.href = '/earnempire/trivia'
-                        window.location.href = '/trivia'
+                        // window.location.href = '/earnempire/'
+                        window.location.href = '/'
                     }
                     console.log(response)
                     if (Array.isArray(response.info) && response.info.length > 0) {
