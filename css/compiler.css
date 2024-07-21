@@ -22,7 +22,7 @@ body{
 }
 .main{
     grid-area: 2/2/3/3;
-    /* background: var(--theme1); */
+    background: #868686;
     overflow: hidden;
 }
 
