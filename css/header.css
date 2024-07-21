@@ -33,7 +33,7 @@
     font-size: 1.9rem;
     color: #fff;
     font-weight: 800;
-    
+
 }
 
 
@@ -72,20 +72,31 @@
 
 @media only screen and (max-width: 500px) {
     .header {
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: auto auto 1fr auto;
+        grid-gap: 0.6em;
     }
 
     .header .earnlogo {
         margin: 0;
         justify-self:  start;
         width: 80px;
+        grid-area: 1/1/2/2;
+    }
+    .menui{
+        grid-area: 1/2/2/3;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 800;
+        transition: all .5s ease-in-out;
     }
     .header .earntitle {
-        font-size: 1.3rem;
+        grid-area: 1/3/2/4;
+        font-size: 1.2rem;
         text-wrap: wrap;
         text-align: center;
     }
     .header .iconsnav {
+        grid-area: 1/4/2/5;
         padding-right: .9rem;
     }
 

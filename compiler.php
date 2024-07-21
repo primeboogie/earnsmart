@@ -17,6 +17,10 @@
             <div class="earnlogo">
                 <img src="<?php echo $domain;?>/images/earn1.png" alt="">
             </div>
+            <span class="smalld menui">
+            <i class="fa-solid fa-list" id="menuid"></i>
+            </span>
+
             <span class="earntitle larged">
                 <?php echo  $admin['company']; ?>
             </span>
@@ -27,8 +31,8 @@
             </span>
             
             <div class="iconsnav">
-            <i class="fa-solid fa-expand"></i>
-            <i class="fa-solid fa-compress"></i>
+            <!-- <i class="fa-solid fa-expand"></i>
+            <i class="fa-solid fa-compress"></i> -->
             <i class="fa-solid fa-user"></i>
             </div>
         </div>

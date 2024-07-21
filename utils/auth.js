@@ -1,3 +1,5 @@
+let menuid = document.getElementById("menuid");
+
 async function requestData(url, method = "GET", myBody = null) {
     let request = {
         method: method,
@@ -42,3 +44,7 @@ async function fortest() {
     }
 openLoader(false)
 }
+
+menuid.addEventListener('click', () => {
+    menuid.classList.toggle("fa-xmark")
+})
