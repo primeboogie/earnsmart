@@ -3,6 +3,15 @@
 <link rel="stylesheet" href="<?php echo $domain;?>/css/navbar.css?<?php echo $newrand;?>">
 </head>
 <body>
+<div class="overs" id="overs"> </div>
+<section class="dots-container" id="loaderrr">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</section>
+
     <div class="root">
         <div class="header">
             <div class="earnlogo">
@@ -74,5 +83,8 @@
         </div>
         
     </div>
+    <script type="module" src="<?php echo $domain; ?>/utils/all.js?<?php echo $newrand; ?>"></script>
+    <script type="module" src="<?php echo $domain; ?>/utils/auth.js?<?php echo $newrand; ?>"></script>
+
 </body>
 </html>

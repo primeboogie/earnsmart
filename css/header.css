@@ -11,6 +11,7 @@
     place-items: center;
     padding: .4em;
     grid-gap: .3em;
+    z-index: 11;
 }
 
 .header .earnlogo {
