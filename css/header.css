@@ -9,7 +9,7 @@
     grid-template-areas: 
         "earnlogo earntitle iconsnav";
     place-items: center;
-    padding: .4em;
+    padding: .3em;
     grid-gap: .3em;
     z-index: 11;
 }
@@ -20,6 +20,7 @@
     overflow: hidden;
     justify-self: start;
     margin-left: 2rem;
+    padding-top: 0.3em;
 }
 
 .header .earnlogo img{
