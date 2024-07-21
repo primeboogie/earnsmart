@@ -1,5 +1,5 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 let allist = document.getElementById("allist");
 let phone = document.getElementById("phone");
 let countryid = document.getElementById("countryid");
@@ -8,8 +8,6 @@ let register = document.getElementById("register");
 let sinusername = document.getElementById("sinusername");
 let forusername = document.getElementById("username");
 let login = document.getElementById("login");
-
-
 
 
 let loginusername = document.getElementById("loginusername");
@@ -124,27 +122,6 @@ function openLoader(res){
     }
 }
 
-async function fortest() {
-    try {
-        const response = await requestData(`${baseUrl}register`, 'POST', formObject);          
-
-        if(response.resultcode){
-            console.log(true)
-        }
-        if (Array.isArray(response.info) && response.info.length > 0) {
-                response.info.forEach(value => {
-                    console.log(value.msg);
-                });
-            }
-            else{
-                console.log(response)
-            }
-
-    } catch (error) {
-        alert(error);
-    }
-openLoader(false)
-}
 
 
 countryid.addEventListener('click', ()=>{
@@ -219,8 +196,8 @@ register.addEventListener('submit', (e) => {
                         setCookie("access_token", response.data['access_token'],2)
                         login.reset();
                         
-                        // window.location.href = '/earnempire/'
-                        window.location.href = '/'
+                        window.location.href = '/earnempire/'
+                        // window.location.href = '/'
                     }
                     console.log(response)
                     if (Array.isArray(response.info) && response.info.length > 0) {

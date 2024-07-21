@@ -48,4 +48,6 @@
     summary profile
    </div>
 
+   <!-- <script type="module" src="<?php //echo $domain; ?>/utils/std.js?<?php //echo $newrand; ?>"></script> -->
+
 </div>

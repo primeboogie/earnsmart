@@ -23,9 +23,9 @@
         </div>
         <div class="main">
             <?php require $routedfile; ?>
-            <div class="footer">
-                @<?php echo date('Y') . ' ' . $admin['company']; ?>
-            </div>
+        </div>
+        <div class="footer">
+            @<?php echo date('Y') . ' ' . $admin['company']; ?>
         </div>
     </div>
 </body>

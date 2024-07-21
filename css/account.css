@@ -4,7 +4,6 @@
     display: grid;
     grid-template: repeat(3, auto) / 1fr 35%;
     place-content: start;
-    overflow: hidden;
 }
 
 .account1{
