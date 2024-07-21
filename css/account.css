@@ -1,7 +1,7 @@
 .account{
     width: 100%;
     height: 100%;
-    display: grid;
+    display: none;
     grid-template: repeat(3, auto) / 1fr 35%;
     place-content: start;
 }
