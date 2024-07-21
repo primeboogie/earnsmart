@@ -74,6 +74,7 @@
     .header {
         grid-template-columns: auto auto 1fr auto;
         grid-gap: 0.6em;
+        
     }
 
     .header .earnlogo {
