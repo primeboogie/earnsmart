@@ -46,7 +46,7 @@ body{
     .root{
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto ;
-        overflow: hidden;
+        overflow: visible;
 
     }
     .header{
@@ -69,6 +69,9 @@ body{
         height: 3rem;
         background: #8e08cb;
         color: #fff;
+        font-size: .8em;
+        font-weight: 800;
+        font-style: italic;
     }
     
 }
