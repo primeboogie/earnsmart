@@ -25,16 +25,16 @@
 @media only screen and (max-width: 570px) {
 
   
+  .larged{
+      display: none !important;
+    }
+  
+    .smalld{
+      display: flex !important;
+    }
 }
 
 @media only screen and (max-width: 480px) {
-    .larged{
-        display: none !important;
-      }
-    
-      .smalld{
-        display: flex !important;
-      }
   
 }
 
