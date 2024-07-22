@@ -61,13 +61,13 @@
 
         z-index: 20;
         display: grid;
-        width: 0% ;
+        width: 0 !important;
         z-index: 20;
         position: fixed;
         bottom: 0;
         left: 0;
         height: 92%;
-        transition: all .7s ease-in-out, display .3s ease;
+        transition: all .5s ease-in-out;
         opacity: 0;
         overflow: auto;
 }
