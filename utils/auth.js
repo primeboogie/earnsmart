@@ -50,6 +50,5 @@ openLoader(false)
 menuid.addEventListener('click', () => {
     menuid.classList.toggle("fa-xmark")
     navbar.classList.toggle("navhelper")
-    overs.classList.toggle("showall")
 })
 

@@ -46,6 +46,9 @@ body{
   width: 100%;
   height: 100%;
   background: rgba(252, 252, 252, 0.67) !important;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+
 }
 
 
@@ -118,5 +121,7 @@ body{
   }
 
   .showall{
-    display: grid !important;
+    /* display: grid !important; */
+    z-index: 10 !important;
+    opacity: 1 !important;
   }
