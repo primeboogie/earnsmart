@@ -15,7 +15,7 @@
     <div class="root">
         <div class="header">
             <div class="earnlogo">
-                <img src="<?php echo $domain;?>/images/earn1.png" alt="">
+                <img src="<?php echo $domain;?>/images/earn11.png" alt="">
             </div>
             <span class="smalld menui">
             <i class="fa-solid fa-list" id="menuid"></i>
