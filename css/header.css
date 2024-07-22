@@ -78,8 +78,13 @@
     .header .earnlogo {
         margin: 0;
         justify-self:  start;
-        width: 50px;
+        width: 55px;
         grid-area: 1/1/2/2;
+
+    }
+    .header .earnlogo img{
+        width: 100%;
+        height: 100%;
     }
     .menui{
         grid-area: 1/2/2/3;
