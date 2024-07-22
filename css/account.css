@@ -218,7 +218,6 @@
 }
 .exe1icon i{
     font-size: 1.2em;
-    color: #43ce18;
     font-weight: 800;
     transform: scale(1.1);
 }
@@ -228,7 +227,7 @@
 .exebal i {
     font-style: normal;
     font-weight: 500;
-    font-size: 0.8em;
+    font-size: 0.9em;
 }
 
   
