@@ -1,6 +1,6 @@
 <div class="account">
    <div class="account1">
-        <span class="route">Dashboard > Home</span>
+        <span class="route">Dashboard > <i>Home</i></span>
 
         <div class="welcome">
             Hello World
