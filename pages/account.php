@@ -3,7 +3,7 @@
         <span class="route">Dashboard > <i>Home</i></span>
 
         <div class="welcome">
-            <span>Hello, <i id="username">Hilltech</i>,</span>
+            <span>Hello, <i id="username">Boogtech</i>,</span>
             <p>
             Welcome back to Coinwave. Your success in network marketing is a reflection of your mindset. 
             Believe in yourself, stay disciplined, and never underestimate the power of consistency.
