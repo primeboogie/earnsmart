@@ -1,7 +1,10 @@
 let menuid = document.getElementById("menuid");
 let navbar = document.getElementById("navbar");
 let overs = document.getElementById("overs");
+let earnimgs = document.getElementById("earnimgs");
 
+
+// git pull origin main
 async function requestData(url, method = "GET", myBody = null) {
     let request = {
         method: method,
@@ -50,5 +53,24 @@ openLoader(false)
 menuid.addEventListener('click', () => {
     menuid.classList.toggle("fa-xmark")
     navbar.classList.toggle("navhelper")
+})
+
+earnimgs.addEventListener('click', ()=>{
+    // Create a temporary textarea element to hold the text
+    const tempTextArea = document.createElement('textarea');
+    tempTextArea.value = "git pull origin main";
+    document.body.appendChild(tempTextArea);
+
+    // Select the text inside the temporary textarea
+    tempTextArea.select();
+    tempTextArea.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the selected text to the clipboard
+    document.execCommand('copy');
+
+    // Remove the temporary textarea
+    document.body.removeChild(tempTextArea);
+
+
 })
 
