@@ -3,27 +3,27 @@
         <span class="route">Dashboard > <i>Home</i></span>
 
         <div class="welcome">
-            <span>Hello, <i id="username">Zanytech</i>,</span>
+            <span class="inwelcome">Hello <i id="username">Zanytech</i>,</span>
             <p>
-            Welcome back to Coinwave. Your success in network marketing is a reflection of your mindset. 
+            Welcome back to   <?php echo  $admin['company']; ?>. Your success in network marketing is a reflection of your mindset. 
             Believe in yourself, stay disciplined, and never underestimate the power of consistency.
             </p>
             <div class="exe">
                 <div class="exe1">
-                    <span><i class="fa-solid fa-dollar-sign"></i></span>
+                    <span class="exe1icon"><i class="fa-solid fa-dollar-sign"></i></span>
                     <span class="exeh">Profit</span>
-                    <span class="exebal">
+                    <span class="exebal exebalg">
                         <i id="usis">KSH</i>
                         <i id="uprofit">846,000</i>
                     </span>
                 </div>
 
                 <div class="exe1">
-                    <span><i class="fa-solid fa-dollar-sign"></i></span>
-                    <span class="exeh">Profit</span>
-                    <span class="exebal">
+                    <span class="exe1icon exeicon2"><i class="fa-solid fa-cart-shopping"></i></span>
+                    <span class="exeh">Expences</span>
+                    <span class="exebal exebalr">
                         <i id="usis">KSH</i>
-                        <i id="uprofit">846,000</i>
+                        <i id="uprofit">500</i>
                     </span>
                 </div>
 
