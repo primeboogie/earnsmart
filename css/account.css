@@ -116,6 +116,9 @@
     font-weight: 600;
     font-size: 0.9em;
 }
+.exedot {
+    border-left: 1px dashed rgb(0, 0, 255) ;
+}
 .account1 .moneydiv{
     background: #000;
     height: 9rem;

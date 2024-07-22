@@ -18,7 +18,7 @@
                     </span>
                 </div>
 
-                <div class="exe1">
+                <div class="exe1 exedot">
                     <span class="exe1icon exeicon2"><i class="fa-solid fa-cart-shopping"></i></span>
                     <span class="exeh">Expences</span>
                     <span class="exebal exebalr">
