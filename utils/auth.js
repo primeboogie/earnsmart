@@ -1,5 +1,6 @@
 let menuid = document.getElementById("menuid");
 let navbar = document.getElementById("navbar");
+let overs = document.getElementById("overs");
 
 async function requestData(url, method = "GET", myBody = null) {
     let request = {
@@ -49,5 +50,6 @@ openLoader(false)
 menuid.addEventListener('click', () => {
     menuid.classList.toggle("fa-xmark")
     navbar.classList.toggle("navhelper")
+    overs.classList.toggle("showall")
 })
 

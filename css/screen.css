@@ -116,3 +116,7 @@ body{
   .smalld{
     display: none;
   }
+
+  .showall{
+    display: grid !important;
+  }
