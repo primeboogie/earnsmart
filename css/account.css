@@ -60,7 +60,7 @@
 .exe {
     margin: 0 auto;
     background: #fff;
-    width: 80%;
+    width: 83%;
     border-radius: var(--brall);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
