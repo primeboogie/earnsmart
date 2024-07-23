@@ -124,6 +124,23 @@
     height: 9rem;
     border-radius: var(--brall);
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+}
+#inmoneyh{
+    grid-area: 1/1/2/2;
+    font-size: 1.3em;
+    padding: 0.8em 0.9em;
+    color: #fff;
+    font-weight: 600;
+}
+#inmoneyb{
+    grid-area: 2/1/3/2;
+}
+#inmoneyi{
+    grid-area: 1/2/3/2;
 }
 .account10{
     grid-area: 1/2/2/3;
@@ -218,8 +235,8 @@
     width: 95%;
 }
 .exe1icon{
-    width: 40px;
-    height: 40px;
+    width: 41px;
+    height: 41px;
 }
 .exe1icon i{
     font-size: 1.2em;
