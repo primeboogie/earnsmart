@@ -44,7 +44,8 @@ $newrand = rand(rand("90","9000"),"90000");
     <meta name="twitter:card" content="<?php echo $summary; ?>">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-           <script
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>      
+    <script
            src="https://kit.fontawesome.com/0b7d271d94.js"
            crossorigin="anonymous"
          ></script>

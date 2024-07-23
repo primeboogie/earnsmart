@@ -10,7 +10,7 @@
             </p>
             <div class="exe">
                 <div class="exe1">
-                    <span class="exe1icon"><i class="fa-solid fa-dollar-sign"></i></span>
+                    <span class="exe1icon"><i class='bx bx-dollar'></i></span>
                     <span class="exeh">Profit</span>
                     <span class="exebal exebalg">
                         <i id="usis">KSH</i>
@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="exe1 exedot">
-                    <span class="exe1icon exeicon2"><i class="fa-solid fa-cart-shopping"></i></span>
+                    <span class="exe1icon exeicon2"><i class='bx bx-cart-add'></i></span>
                     <span class="exeh">Expences</span>
                     <span class="exebal exebalr">
                         <i id="usis">KSH</i>
