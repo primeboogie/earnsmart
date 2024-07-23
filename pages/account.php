@@ -31,31 +31,159 @@
         </div>
 
         <div class="moneydiv">
-            money 1
+            <span id="inmoney">
+            Current Balance
+            </span>
+
+            <span id="inmoney">
+            <i id="usys">
+                KES
+            </i>
+            <i id="deposit">
+                86,555
+            </i>
+            </span>
+
+            <span id="inmoney">
+                <i class="fa-solid fa-wallet"></i>
+            </span>
+            
         </div>
         <div class="moneydiv">
-            money 2
+            <span id="inmoney">
+            Current Balance
+            </span>
+
+            <span id="inmoney">
+            <i id="usys">
+                KES
+            </i>
+            <i id="deposit">
+                86,555
+            </i>
+            </span>
+
+            <span id="inmoney">
+                <i class="fa-solid fa-wallet"></i>
+            </span>
+            
         </div>
 
         <div class="moneydiv">
-            money 3
+            <span id="inmoney">
+            Current Balance
+            </span>
+
+            <span id="inmoney">
+            <i id="usys">
+                KES
+            </i>
+            <i id="deposit">
+                86,555
+            </i>
+            </span>
+
+            <span id="inmoney">
+                <i class="fa-solid fa-wallet"></i>
+            </span>
+            
         </div>
         <div class="moneydiv">
-            money 4
+            <span id="inmoney">
+            Current Balance
+            </span>
+
+            <span id="inmoney">
+            <i id="usys">
+                KES
+            </i>
+            <i id="deposit">
+                86,555
+            </i>
+            </span>
+
+            <span id="inmoney">
+                <i class="fa-solid fa-wallet"></i>
+            </span>
+            
         </div>
 
         <div class="moneydiv">
-            money 5
+            <span id="inmoney">
+            Current Balance
+            </span>
+
+            <span id="inmoney">
+            <i id="usys">
+                KES
+            </i>
+            <i id="deposit">
+                86,555
+            </i>
+            </span>
+
+            <span id="inmoney">
+                <i class="fa-solid fa-wallet"></i>
+            </span>
+            
         </div>
         <div class="moneydiv">
-            money 6
+            <span id="inmoney">
+            Current Balance
+            </span>
+
+            <span id="inmoney">
+            <i id="usys">
+                KES
+            </i>
+            <i id="deposit">
+                86,555
+            </i>
+            </span>
+
+            <span id="inmoney">
+                <i class="fa-solid fa-wallet"></i>
+            </span>
+            
         </div>
 
         <div class="moneydiv">
-            money 7
+            <span id="inmoney">
+            Current Balance
+            </span>
+
+            <span id="inmoney">
+            <i id="usys">
+                KES
+            </i>
+            <i id="deposit">
+                86,555
+            </i>
+            </span>
+
+            <span id="inmoney">
+                <i class="fa-solid fa-wallet"></i>
+            </span>
+            
         </div>
         <div class="moneydiv">
-            money 8
+            <span id="inmoney">
+            Current Balance
+            </span>
+
+            <span id="inmoney">
+            <i id="usys">
+                KES
+            </i>
+            <i id="deposit">
+                86,555
+            </i>
+            </span>
+
+            <span id="inmoney">
+                <i class="fa-solid fa-wallet"></i>
+            </span>
+            
         </div>
 
    </div>
