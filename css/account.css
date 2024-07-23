@@ -143,7 +143,7 @@
     color: var(--theme8);
     font-style: normal;
     font-weight: 800;
-    
+
 }
 #inmoneyb i:nth-child(2){
     color: #fff;
@@ -203,12 +203,7 @@
 
 }
 
-@media only screen and (max-width: 1000px) {
-
-
-}
-
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1180px) {
 
 
     .account{
@@ -279,11 +274,6 @@
 .exe1icon i{
     font-size: 1.2em;
     transform: scale(1.4);
-}
-.exebal{
-    grid-area: 2/2/3/3;
-}
-.exebal i {
 }
 
   
