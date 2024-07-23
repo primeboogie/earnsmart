@@ -115,7 +115,7 @@
     font-size: 0.9em;
 }
 .exedot {
-    border-left: 1px dashed rgb(0, 0, 255) ;
+    border-left: 2px dashed rgb(0, 0, 255) ;
 }
 .moneydiv{
     background: #474545;
@@ -220,9 +220,7 @@
     height: 50px;
 }
 .exe1icon i{
-    font-size: 1.2em;
-    font-weight: 800;
-    transform: scale(1.1);
+    font-size: 1.1em;
 }
 .exebal{
     grid-area: 2/2/3/3;
