@@ -88,7 +88,7 @@
     font-size: 1.4em;
     color: #43ce18;
     font-weight: 800;
-    transform: scale(1.2);
+    /* transform: scale(1.2); */
 }
 .exeicon2{
     border: 1px solid red;
@@ -119,9 +119,11 @@
 .exedot {
     border-left: 2px dashed rgb(0, 0, 255) ;
 }
-.account1 .moneydiv{
-    background: #000;
+.moneydiv{
+    background: #474545;
     height: 9rem;
+    border-radius: var(--brall);
+    overflow: hidden;
 }
 .account10{
     grid-area: 1/2/2/3;
