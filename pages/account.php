@@ -32,7 +32,7 @@
 
         <div class="moneydiv bg1">
             <span id="inmoneyh">
-            Current Balance
+            Total Profits
             </span>
 
             <span id="inmoneyb">
@@ -71,7 +71,7 @@
 
         <div class="moneydiv bg3">
             <span id="inmoneyh">
-            Current Balance
+            Welcome Bonus 
             </span>
 
             <span id="inmoneyb">
@@ -90,7 +90,7 @@
         </div>
         <div class="moneydiv bg4">
             <span id="inmoneyh">
-            Current Balance
+            Trivia Balance
             </span>
 
             <span id="inmoneyb">
@@ -110,7 +110,7 @@
 
         <div class="moneydiv bg5">
             <span id="inmoneyh">
-            Current Balance
+            Youtube Balance
             </span>
 
             <span id="inmoneyb">
@@ -129,7 +129,7 @@
         </div>
         <div class="moneydiv bg6">
             <span id="inmoneyh">
-            Current Balance
+            Tiktok Balance
             </span>
 
             <span id="inmoneyb">
@@ -149,7 +149,7 @@
 
         <div class="moneydiv bg7">
             <span id="inmoneyh">
-            Current Balance
+            Spin Balance
             </span>
 
             <span id="inmoneyb">
@@ -168,7 +168,7 @@
         </div>
         <div class="moneydiv bg8">
             <span id="inmoneyh">
-            Current Balance
+            Total Withdarawals
             </span>
 
             <span id="inmoneyb">
