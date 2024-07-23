@@ -108,11 +108,13 @@
 }
 .exebal{
     grid-area: 2/2/3/3;
+    text-wrap: nowrap;
 }
 .exebal i {
     font-style: normal;
     font-weight: 800;
     font-size: 1em;
+    text-wrap: nowrap;
 }
 .exedot {
     border-left: 1px dashed rgb(0, 0, 255) ;
