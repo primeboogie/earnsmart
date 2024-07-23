@@ -90,9 +90,9 @@
         </div>
         <div class="moneydiv bg4">
             <span id="inmoneyh">
-            Trivia Balance
+                Total Withdarawals
             </span>
-
+            
             <span id="inmoneyb">
             <i id="usys">
                 KES
@@ -110,15 +110,15 @@
 
         <div class="moneydiv bg5">
             <span id="inmoneyh">
-            Youtube Balance
-            </span>
-
-            <span id="inmoneyb">
-            <i id="usys">
-                KES
-            </i>
-            <i id="deposit">
-                86,555
+            Trivia Balance
+                </span>
+                
+                <span id="inmoneyb">
+                    <i id="usys">
+                        KES
+                    </i>
+                    <i id="deposit">
+                        86,555
             </i>
             </span>
 
@@ -129,37 +129,37 @@
         </div>
         <div class="moneydiv bg6">
             <span id="inmoneyh">
-            Tiktok Balance
+                Youtube Balance
             </span>
-
+            
             <span id="inmoneyb">
-            <i id="usys">
-                KES
-            </i>
-            <i id="deposit">
+                <i id="usys">
+                    KES
+                </i>
+                <i id="deposit">
                 86,555
             </i>
-            </span>
-
-            <span id="inmoneyi">
-                <i class="fa-solid fa-wallet"></i>
-            </span>
+        </span>
+        
+        <span id="inmoneyi">
+            <i class="fa-solid fa-wallet"></i>
+        </span>
             
         </div>
 
         <div class="moneydiv bg7">
             <span id="inmoneyh">
-            Spin Balance
-            </span>
-
+                Tiktok Balance
+                </span>
+            
             <span id="inmoneyb">
-            <i id="usys">
-                KES
+                <i id="usys">
+                    KES
             </i>
             <i id="deposit">
                 86,555
             </i>
-            </span>
+        </span>
 
             <span id="inmoneyi">
                 <i class="fa-solid fa-wallet"></i>
@@ -168,7 +168,7 @@
         </div>
         <div class="moneydiv bg8">
             <span id="inmoneyh">
-            Total Withdarawals
+                Spin Balance
             </span>
 
             <span id="inmoneyb">
