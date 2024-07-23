@@ -17,7 +17,7 @@
             <div class="earnlogo">
                 <img src="<?php echo $domain;?>/images/earn11.png" alt="" id="earnimgs">
             </div>
-            <span class="smalld menui">
+            <span class=" menui">
             <i class="fa-solid fa-list" id="menuid"></i>
             </span>
 
