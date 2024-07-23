@@ -22,6 +22,7 @@ body{
 }
 .main{
     grid-area: 2/2/3/3;
+    display: grid;
     overflow: hidden;
 }
 
