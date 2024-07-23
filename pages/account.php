@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div class="moneydiv">
+        <div class="moneydiv bg1">
             <span id="inmoneyh">
             Current Balance
             </span>
@@ -49,46 +49,7 @@
             </span>
             
         </div>
-        <div class="moneydiv">
-            <span id="inmoneyh">
-            Current Balance
-            </span>
-
-            <span id="inmoneyb">
-            <i id="usys">
-                KES
-            </i>
-            <i id="deposit">
-                86,555
-            </i>
-            </span>
-
-            <span id="inmoneyi">
-                <i class="fa-solid fa-wallet"></i>
-            </span>
-            
-        </div>
-
-        <div class="moneydiv">
-            <span id="inmoneyh">
-            Current Balance
-            </span>
-
-            <span id="inmoneyb">
-            <i id="usys">
-                KES
-            </i>
-            <i id="deposit">
-                86,555
-            </i>
-            </span>
-
-            <span id="inmoneyi">
-                <i class="fa-solid fa-wallet"></i>
-            </span>
-            
-        </div>
-        <div class="moneydiv">
+        <div class="moneydiv bg2">
             <span id="inmoneyh">
             Current Balance
             </span>
@@ -108,7 +69,7 @@
             
         </div>
 
-        <div class="moneydiv">
+        <div class="moneydiv bg3">
             <span id="inmoneyh">
             Current Balance
             </span>
@@ -127,7 +88,7 @@
             </span>
             
         </div>
-        <div class="moneydiv">
+        <div class="moneydiv bg4">
             <span id="inmoneyh">
             Current Balance
             </span>
@@ -147,7 +108,7 @@
             
         </div>
 
-        <div class="moneydiv">
+        <div class="moneydiv bg5">
             <span id="inmoneyh">
             Current Balance
             </span>
@@ -166,7 +127,46 @@
             </span>
             
         </div>
-        <div class="moneydiv">
+        <div class="moneydiv bg6">
+            <span id="inmoneyh">
+            Current Balance
+            </span>
+
+            <span id="inmoneyb">
+            <i id="usys">
+                KES
+            </i>
+            <i id="deposit">
+                86,555
+            </i>
+            </span>
+
+            <span id="inmoneyi">
+                <i class="fa-solid fa-wallet"></i>
+            </span>
+            
+        </div>
+
+        <div class="moneydiv bg7">
+            <span id="inmoneyh">
+            Current Balance
+            </span>
+
+            <span id="inmoneyb">
+            <i id="usys">
+                KES
+            </i>
+            <i id="deposit">
+                86,555
+            </i>
+            </span>
+
+            <span id="inmoneyi">
+                <i class="fa-solid fa-wallet"></i>
+            </span>
+            
+        </div>
+        <div class="moneydiv bg8">
             <span id="inmoneyh">
             Current Balance
             </span>

@@ -120,7 +120,6 @@
     border-left: 1px dashed rgb(0, 0, 255) ;
 }
 .moneydiv{
-    background: #474545;
     height: 9rem;
     border-radius: var(--brall);
     overflow: hidden;
@@ -152,6 +151,30 @@
     grid-area: 1/2/3/2;
     font-size: 2.2em;
     color: #fff;
+}
+.bg1{
+    background: var(--bgdiv1);
+}
+.bg2{
+    background: var(--bgdiv2);
+}
+.bg3{
+    background: var(--bgdiv3);
+}
+.bg4{
+    background: var(--bgdiv4);
+}
+.bg5{
+    background: var(--bgdiv5);
+}
+.bg6{
+    background: var(--bgdiv6);
+}
+.bg7{
+    background: var(--bgdiv7);
+}
+.bg8{
+    background: var(--bgdiv8);
 }
 .account10{
     grid-area: 1/2/2/3;
