@@ -28,7 +28,7 @@ body{
     --bgdiv4: linear-gradient(135deg, #ee40ff, #ee6aff);
     --bgdiv5: linear-gradient(135deg, #0cb600, #087a00);
     --bgdiv6: linear-gradient(135deg, #ff8c00, #ffa500);
-    --bgdiv7: inear-gradient(135deg, #ba55ff, #8f00ff);
+    --bgdiv7: linear-gradient(135deg, #ba55ff, #8f00ff);
     --bgdiv8: linear-gradient(135deg, #179b00, #50ff00);
 
     --border1: thin solid #fff;
