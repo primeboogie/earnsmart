@@ -45,7 +45,7 @@
             </span>
 
             <span id="inmoneyi">
-                <i class="fa-solid fa-wallet"></i>
+            <i class="fa-solid fa-money-bill-trend-up"></i>
             </span>
             
         </div>
@@ -84,7 +84,7 @@
             </span>
 
             <span id="inmoneyi">
-                <i class="fa-solid fa-wallet"></i>
+            <i class="fa-solid fa-hand-holding-heart"></i>
             </span>
             
         </div>
@@ -103,7 +103,7 @@
             </span>
 
             <span id="inmoneyi">
-                <i class="fa-solid fa-wallet"></i>
+            <i class="fa fa-money-bill-alt"></i>
             </span>
             
         </div>
@@ -123,7 +123,7 @@
             </span>
 
             <span id="inmoneyi">
-                <i class="fa-solid fa-wallet"></i>
+            <i class="fa fa-question"></i>
             </span>
             
         </div>
@@ -142,7 +142,7 @@
         </span>
         
         <span id="inmoneyi">
-            <i class="fa-solid fa-wallet"></i>
+        <i class="fa-brands fa-youtube"></i>
         </span>
             
         </div>
@@ -162,7 +162,7 @@
         </span>
 
             <span id="inmoneyi">
-                <i class="fa-solid fa-wallet"></i>
+            <i class="fa-brands fa-tiktok"></i>
             </span>
             
         </div>
@@ -181,7 +181,7 @@
             </span>
 
             <span id="inmoneyi">
-                <i class="fa-solid fa-wallet"></i>
+            <i class="fa fa-spinner"></i>
             </span>
             
         </div>
