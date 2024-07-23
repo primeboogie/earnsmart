@@ -13,7 +13,7 @@
                     <span class="exe1icon"><i class='bx bx-dollar'></i></span>
                     <span class="exeh">Profit</span>
                     <span class="exebal exebalg">
-                        <i id="usis">KSH</i>
+                        <i id="usys">KSH</i>
                         <i id="uprofit">846,000</i>
                     </span>
                 </div>
@@ -22,7 +22,7 @@
                     <span class="exe1icon exeicon2"><i class='bx bx-cart-add'></i></span>
                     <span class="exeh">Expences</span>
                     <span class="exebal exebalr">
-                        <i id="usis">KSH</i>
+                        <i id="usys">KSH</i>
                         <i id="uprofit">500</i>
                     </span>
                 </div>

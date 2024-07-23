@@ -78,7 +78,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: #ffea00;
+    background: var(--theme8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,6 +128,7 @@
     grid-template-columns: 1fr auto;
     grid-template-rows: repeat(2, 1fr);
     align-items: center;
+    padding: 0 0.9em;
 }
 #inmoneyh{
     grid-area: 1/1/2/2;
@@ -137,9 +138,20 @@
 }
 #inmoneyb{
     grid-area: 2/1/3/2;
+    padding-left: 0.8em;
 }
+#inmoneyb #usys{
+    color: var(--theme8);
+}
+#inmoneyb i:nth-child(2){
+    color: #fff;
+    font-weight: 700;
+}
+
 #inmoneyi{
     grid-area: 1/2/3/2;
+    font-size: 2.2em;
+    color: #fff;
 }
 .account10{
     grid-area: 1/2/2/3;
