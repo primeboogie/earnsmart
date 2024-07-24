@@ -81,14 +81,11 @@ if(linkbtn){
         tempTextArea.value = linkinput.value;
         document.body.appendChild(tempTextArea);
     
-        // Select the text inside the temporary textarea
         tempTextArea.select();
-        tempTextArea.setSelectionRange(0, 99999); // For mobile devices
+        tempTextArea.setSelectionRange(0, 99999);
     
-        // Copy the selected text to the clipboard
         document.execCommand('copy');
     
-        // Remove the temporary textarea
         document.body.removeChild(tempTextArea);
         alert(`Your Link is pasted In Your Clipboard Successfully`)
     })
