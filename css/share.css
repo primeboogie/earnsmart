@@ -44,9 +44,36 @@
     border: none;
     color: #fff;
     background: var(--bgdiv6);
-    transition: all .5s ease-in-out;
+    transition: all .7s ease-out;
 }
 
 .share button:hover{
     background: var(--bgdiv5);
+    transform: translateY(-4px);
+}
+
+@media only screen and (max-width: 720px) {
+    .share{
+        width: 80%;
+
+    }
+
+}
+
+@media only screen and (max-width: 440px) {
+    .share{
+        margin: .5rem;
+        width: 95%;
+
+    }
+    .afflink{
+        font-size: 1rem;
+    }
+    .share input{
+        width: 100%;
+    }
+    .share button{
+        font-size: 1rem;
+    }
+
 }

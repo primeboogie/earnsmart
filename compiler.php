@@ -42,7 +42,7 @@
                 <span class="navh">Main</span>
                 <div class="navlinks">
                     <a href="<?php echo $dev['root'];?>/"><i class="fa fa-window-restore"></i> Dashboard</a>
-                    <a href="<?php echo $dev['root'];?>/share"><i class="fa fa-share-alt"></i> Share</a>
+                    <a class="news" href="<?php echo $dev['root'];?>/share"><i class="fa fa-share-alt"></i> Share</a>
                 </div>
             </div>
             <div class="navdiv">

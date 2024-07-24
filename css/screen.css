@@ -52,7 +52,9 @@ body{
 
 }
 
-
+.news{
+  color: var(--theme5) !important;
+}
 
 .dots-container {
     position: fixed;
