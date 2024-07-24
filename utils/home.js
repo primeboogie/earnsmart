@@ -199,7 +199,6 @@ register.addEventListener('submit', (e) => {
                         // window.location.href = '/earnempire/'
                         window.location.href = '/'
                     }
-                    console.log(response)
                     if (Array.isArray(response.info) && response.info.length > 0) {
                             response.info.forEach(value => {
                                 alert(value.msg);

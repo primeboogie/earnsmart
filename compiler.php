@@ -42,7 +42,7 @@
                 <span class="navh">Main</span>
                 <div class="navlinks">
                     <a href="<?php echo $dev['root'];?>/"><i class="fa fa-window-restore"></i> Dashboard</a>
-                    <a href="<?php echo $dev['root'];?>/"><i class="fa fa-share-alt"></i> Share</a>
+                    <a href="<?php echo $dev['root'];?>/share"><i class="fa fa-share-alt"></i> Share</a>
                 </div>
             </div>
             <div class="navdiv">
@@ -51,6 +51,7 @@
                     <a href="<?php echo $dev['root'];?>/deposit"><i class="fa fa-money-bill"></i> Deposit</a>
                     <a href="<?php echo $dev['root'];?>/clientpay"><i class="fab fa-paypal"></i> Pay For Client</a>
                     <a href="<?php echo $dev['root'];?>/withdrawal"><i class="fa fa-money-bill-alt"></i>Withdrawal</a>
+                    <a href="<?php echo $dev['root'];?>/withdrawal"><i class="fa-solid fa-file-circle-check"></i>Withdrawl History</a>
                 </div>
             </div>
             <div class="navdiv">

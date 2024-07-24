@@ -51,6 +51,11 @@
                 'any3' => 'Home',
             ],
         ],
+        '/share' => [
+            'file' => 'pages/share.php',
+            'style' => '/css/share.css',
+            'secured' => True,
+                ],
         '/clientpay' => [
             'file' => 'pages/clientpay.php',
             'style' => '/css/clientpay.css',

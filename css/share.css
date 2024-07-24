@@ -1,0 +1,52 @@
+@import url('screen.css');
+
+.share{
+    place-self: start;
+    margin: 1rem;
+    width: 35%;
+    background: var(--theme1);
+    height: auto;
+    border-radius: var(--brall);
+    overflow: hidden;
+    display: grid;
+    grid-template: repeat(3, auto) / 1fr;
+    place-items: start;
+    padding: .7rem .9rem;
+    grid-gap: 1.5rem;
+}
+
+.afflink{
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.share input {
+    border-radius: var(--brall);
+    padding: .6rem .5rem;
+    font-size: .9em;
+    font-weight: 400;
+    outline: none;
+    border: none;
+    color: #848181;
+    width: 80%;
+}
+.share button{
+    place-self: end;
+    padding: .7rem .9rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: var(--brall);
+    display: flex;
+    gap: .6rem;
+    outline: none;
+    border: none;
+    color: #fff;
+    background: var(--bgdiv6);
+    transition: all .5s ease-in-out;
+}
+
+.share button:hover{
+    background: var(--bgdiv5);
+}
