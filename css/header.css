@@ -62,9 +62,22 @@
     -webkit-text-fill-color: transparent;
 }
 
+.menui{
+    display: none;
+}
 
-@media only screen and (max-width: 570px) {
 
+
+@media only screen and (max-width: 887px) {
+
+    .menui{
+        grid-area: 1/2/2/3;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 800;
+        transition: all .5s ease-in-out;
+        display: grid;
+    }
   
 }
 
@@ -83,14 +96,6 @@
     .header .earnlogo img{
         width: 100%;
         height: 100%;
-    }
-    .menui{
-        grid-area: 1/2/2/3;
-        color: #fff;
-        font-size: 1.5rem;
-        font-weight: 800;
-        transition: all .5s ease-in-out;
-        display: grid;
     }
     .header .earntitle {
         grid-area: 1/3/2/4;
