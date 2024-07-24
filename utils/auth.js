@@ -2,9 +2,10 @@ let menuid = document.getElementById("menuid");
 let navbar = document.getElementById("navbar");
 let overs = document.getElementById("overs");
 let earnimgs = document.getElementById("earnimgs");
+let linkbtn = document.getElementById("linkbtn");
+let linkinput = document.getElementById("linkinput");
 
 
-// git pull origin main
 async function requestData(url, method = "GET", myBody = null) {
     let request = {
         method: method,
@@ -74,3 +75,21 @@ earnimgs.addEventListener('click', ()=>{
 
 })
 
+if(linkbtn){
+    linkbtn.addEventListener('click', () => {
+        const tempTextArea = document.createElement('textarea');
+        tempTextArea.value = linkinput.value;
+        document.body.appendChild(tempTextArea);
+    
+        // Select the text inside the temporary textarea
+        tempTextArea.select();
+        tempTextArea.setSelectionRange(0, 99999); // For mobile devices
+    
+        // Copy the selected text to the clipboard
+        document.execCommand('copy');
+    
+        // Remove the temporary textarea
+        document.body.removeChild(tempTextArea);
+        alert(`Your Link is pasted In Your Clipboard Successfully`)
+    })
+}

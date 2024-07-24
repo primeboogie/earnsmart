@@ -2,6 +2,6 @@
     <span class="afflink">
         Your Affilate Link
     </span>
-    <input type="text" value="<?php echo $admin['domain'].'/reg/basweti'?>" disbaled>
-    <button><i class="fa-solid fa-link"></i> Copy Link</button>
+    <input type="text" id="linkinput" value="<?php echo $admin['domain'].'/reg/basweti'?>" disbaled>
+    <button id="linkbtn"><i class="fa-solid fa-link"></i> Copy Link</button>
 </div>
