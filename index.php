@@ -13,7 +13,7 @@ $upline = $response['upline'];
 $domain = $admin['domain'];
 $backend = $admin['backend'];
 
-$newrand = rand(rand("90","9000"),"90000");
+$newrand = rand(rand("0","80000"),"99000");
 
 ?>
 <!DOCTYPE html>

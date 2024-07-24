@@ -49,6 +49,7 @@
             </span>
             
         </div>
+
         <div class="moneydiv bg2">
             <span id="inmoneyh">
             Current Balance
@@ -88,6 +89,7 @@
             </span>
             
         </div>
+
         <div class="moneydiv bg4">
             <span id="inmoneyh">
                 Total Withdarawals
@@ -166,6 +168,7 @@
             </span>
             
         </div>
+        
         <div class="moneydiv bg8">
             <span id="inmoneyh">
                 Spin Balance
