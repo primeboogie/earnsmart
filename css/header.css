@@ -55,12 +55,6 @@
     transform: scale(.9);
     z-index: auto;
 }
-.header .iconsnav i:hover,
-.header .earntitle:hover{
-    background: linear-gradient(110deg, #ff0095, #fff700);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
 .menui{
     display: none;

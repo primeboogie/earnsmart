@@ -359,20 +359,7 @@
 
 
   
-  .authbtn {
-    height: 3rem;
-    width: 100%;
-    margin-top: 0.5rem;
-    background: var(--bgdiv7);
-    border-radius: 0.6rem;
-    border: 2px solid #fff;
-    font-size: 1.2rem;
-    transition: all 400ms;
-    color: #fff;
-    font-weight: 800;
-    
-  }
-  
+
   .todisplay{
     display: grid;
   }

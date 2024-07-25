@@ -1,7 +1,8 @@
 .deposit{
     display: grid;
     margin: .5rem;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
     place-items: start center;
     padding: .9em 0;
 }
@@ -56,7 +57,7 @@
 
 .tablediv{
     overflow: auto;
-    width: 90%;
+    max-width: 500px;
     border-radius: var(--brall);
 }
 .table{
@@ -90,7 +91,10 @@
     text-wrap: nowrap;
 }
 .table  tbody tr:nth-of-type(even) {
-    background-color: #d7d2d2;
+    background-color: #ede9e9;
+}
+.table tbody tr:hover{
+    background-color: #0ddccb;
 }
 
 
