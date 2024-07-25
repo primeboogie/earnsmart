@@ -31,8 +31,6 @@
             </span>
             
             <div class="iconsnav">
-            <!-- <i class="fa-solid fa-expand"></i>
-            <i class="fa-solid fa-compress"></i> -->
             <i class="fa-solid fa-user"></i>
             </div>
         </div>

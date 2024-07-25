@@ -13,10 +13,7 @@ body{
     overflow: hidden;
 }
 :root{
-  --tt: ;
-    --tt: #02187b;
-    --btnbg: ;
-    --btnhov: greenyellow;
+    --tt:  yellow;
     --theme1: #4fa5df;
     --theme2: #ff8c00;
     --theme3: #8e2de2;
@@ -38,7 +35,6 @@ body{
     --border1: thin solid #fff;
 
     --brall: 10px;
-    /* --brall: 10px; */
 }
 
 .overs{

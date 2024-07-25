@@ -84,7 +84,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: #ecd22d;
+    background: var(--tt);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,7 +148,7 @@
     padding-left: 0.8em;
 }
 #inmoneyb #usys{
-    color: #ddff00;
+    color:  var(--tt) !important;
     font-style: normal;
     font-weight: 800;
 

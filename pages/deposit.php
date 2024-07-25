@@ -1,5 +1,5 @@
 <div class="deposit">
-    <form  class="depositf" id="depositf">
+    <form  class="depositf" action="#" id="depositf">
         <span class="formh"><i class="fa-solid fa-hand-holding-dollar"></i> Topup Account</span>
         
         <div class="formdiv">
@@ -22,9 +22,9 @@
         </div>
 
 
-        <button id="">Request</button>
+        <button class="authbtn" id="">Request</button>
     </form>
-    <span class=" " >Recent Deposit</span>
+    <span class="diph" >Recent Deposit</span>
 
     <div class="tablediv">
         <table class="table">

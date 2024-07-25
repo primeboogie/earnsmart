@@ -5,9 +5,11 @@
     grid-template-rows: auto 1fr;
     place-items: start center;
     padding: .9em 0;
+    grid-gap: 1em;
 }
 
 .depositf{
+    grid-area: 1/1/3/2;
     padding: .7em 1.3em;
     background: var(--theme1);
     border-radius: var(--brall);
@@ -16,9 +18,20 @@
     grid-gap: .9em;
     width: 400px;
 }
+.diph{
+    grid-area: 1/2/2/3;
+    font-weight: 800;
+    font-size: 1.2em;
+    padding: 1em;
+    color: var(--tt);
+    width: 80%;
+    border-radius: var(--brall);
+    background: var(--theme1);
+    
+}
 
 .formh{
-    color: #fff;
+    color: var(--tt);
     display: flex;
     grid-gap: .5em;
     font-weight: 800;
@@ -46,18 +59,12 @@
     border-radius: var(--brall);
 }
 
-.depositf button{
-    background: var(--theme3);
-    border: none;
-    color: #fff;
-    padding: .7em 1.3em;
-    border-radius: var(--brall);
-    font-weight: 800;
-}
+
 
 .tablediv{
+    grid-area: 2/2/3/3;
     overflow: auto;
-    max-width: 500px;
+    width: 100%;
     border-radius: var(--brall);
 }
 .table{
@@ -65,8 +72,8 @@
     border-collapse: collapse;
     color: #fff;
     padding: 1rem;
-    border: 1px solid #211d1d;
     overflow: auto;
+    background: var(--theme1);
 }
 .table thead{
     position: sticky;
@@ -76,48 +83,54 @@
 }
 .table thead tr{
     background: var(--theme1);
+    border-bottom: 2px solid #fff;
 }
 
 .table th{
     padding: .7em .4em;
+    color: var(--tt);
 }
 .table tbody tr{
-    border-bottom: 1px solid #adabab;
+    border-bottom: 1px solid #fff;
+}
+
+.table tbody tr td:nth-child(1){
+    color: var(--tt);
 }
 
 .table tbody tr td{
     padding: .5em .4em;
-    color: #000;
+    color: #fff;
     text-wrap: nowrap;
 }
-.table  tbody tr:nth-of-type(even) {
-    background-color: #ede9e9;
+.table  tbody tr:nth-of-type(odd) {
+    background-color: rgba(237, 233, 233, 0.34);
 }
 .table tbody tr:hover{
-    background-color: #0ddccb;
+    background-color: rgba(13, 220, 203, 0.61);
 }
 
-
-@media only screen and (max-width: 840px) {
+@media only screen and (max-width: 1000px) {
     .deposit{
         grid-template-columns: 1fr;
+        grid-auto-rows: auto !important;
         grid-auto-flow: row;
         grid-gap: .5em;
+        place-content: start;
+    }
+    .depositf{
+        grid-area: 1/1/2/2;
+        width: 100%;
+    }
+    .diph{
+        grid-area: 2/1/3/2;
+
     }
     .tablediv{
         width: 100%;
         max-height: 300px;
-    }
-    .depositf{
+        grid-area: 3/1/4/2;
     }
 }
 
 
-@media only screen and (max-width: 440px) {
-    .deposit{
-        place-content: start;
-    }
-    .depositf{
-        width: 100%;
-    }
-}
