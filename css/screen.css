@@ -13,8 +13,10 @@ body{
     overflow: hidden;
 }
 :root{
+  --tt: ;
     --tt: #02187b;
-    --th: #0cb600;
+    --btnbg: ;
+    --btnhov: greenyellow;
     --theme1: #4fa5df;
     --theme2: #ff8c00;
     --theme3: #8e2de2;
@@ -134,7 +136,7 @@ body{
     height: 3rem;
     padding: .7rem .9rem;
     margin-top: 0.5rem;
-    background: var(--tt);
+    background: var(--theme6);
     border-radius: var(--brall);
     border: 5px double #fff;
     font-size: 1.2rem;
@@ -147,7 +149,7 @@ body{
     align-items: center;
   }
   .authbtn:hover{
-    background: var(--th);
+    background: var(--theme5);
     transform: translateY(-4px);
   }
   
