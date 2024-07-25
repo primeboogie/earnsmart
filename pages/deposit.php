@@ -24,8 +24,8 @@
 
         <button class="authbtn" id="">Request</button>
     </form>
+    <div class="alldip">
     <span class="diph" >Recent Deposit</span>
-
     <div class="tablediv">
         <table class="table">
         <thead>
@@ -76,5 +76,6 @@
 </tbody>
 
         </table>
+    </div>
     </div>
 </div>
