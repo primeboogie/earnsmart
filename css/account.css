@@ -194,7 +194,7 @@
     grid-template: auto 1fr auto/ auto 1fr;
     background: var(--theme1);
     border-radius: var(--brall);
-    padding: .5rem 0;
+    padding: 0 .5rem;
 }
 
 .dbonus{
