@@ -2,7 +2,6 @@ body{
     background: #fff;
     color: #000;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
 }
 
 .root{
@@ -11,6 +10,7 @@ body{
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
+    place-content: start;
 }
 
 .header{
@@ -29,7 +29,7 @@ body{
 
 .footer{
     display: none;
-    grid-area: none;
+    grid-area: unset;
 }
 
 @media only screen and (max-height: 700px) {
@@ -38,9 +38,7 @@ body{
 
 @media only screen and (max-width: 1180px) {
 
-    /* .main{
-        overflow: hidden;
-    } */
+
 }
 
 @media only screen and (max-width: 887px) {
@@ -53,7 +51,7 @@ body{
         grid-area: 1/1/2/2;
     }
     .navbar{
-        grid-area: none;
+        grid-area: unset;
         display: none;
     }
     .main{
