@@ -7,7 +7,7 @@
     $title =  $admin['company'];
     $desc = "🚀". $admin['company'] . " . 💰 Your success in network marketing is a reflection of your mindset. Believe in yourself, 
                 stay disciplined, and never underestimate the power of consistencys! 🌐🌍 Home of Family";
-    $logo = 'images/earn1.png';
+    $logo = 'images/earn2.png';
     $keywords = ['Earn-Empire Connections','Empire','Earn Connection', 'Empire Connections', 'Affilate Marketting', 'Marketting'];
     $summary = $desc;
 

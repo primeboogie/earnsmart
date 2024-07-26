@@ -330,7 +330,8 @@
 
 .account12{
     grid-area: 3/2/4/3;
-    background: #f73a19;
+    background: var(--theme1);
+    border-radius: var(--brall);
 
 }
 
