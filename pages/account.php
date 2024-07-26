@@ -193,12 +193,12 @@
 
    <div class="account10">
     <span class="dbonus">DAILY BONUSES</span>
-
-   <div class="balanceCard">
-            <div class="headerss">ZanyTech</div>
-
-            <div class="circle" >
-                <div class="percentage" >66%</div>
+    
+    <div class="balanceCard">
+        <div class="headerss">ZanyTech</div>
+        
+        <div class="circle" >
+            <div class="percentage" >66%</div>
             </div>
     </div>
 
@@ -223,7 +223,8 @@
 </div>
 
    <div class="account12">
-    summary profile
+    <span class="dbonus">Profile-Summary</span>
+
    </div>
 
    <!-- <script type="module" src="<?php //echo $domain; ?>/utils/std.js?<?php //echo $newrand; ?>"></script> -->
