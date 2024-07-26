@@ -45,6 +45,7 @@ body{
     .root{
         grid-template-columns: 1fr;
         grid-template-rows: 8% 1fr auto;
+        grid-auto-flow: row;
         overflow: auto;
     }
     .header{
@@ -63,9 +64,8 @@ body{
     }
     .footer{
         grid-area: 3/1/4/2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: grid;
+        place-content: center;
         height: auto;
         background: #8e08cb;
         color: #fff;
