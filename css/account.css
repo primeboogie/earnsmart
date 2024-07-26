@@ -5,7 +5,7 @@
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template: auto 20% auto / 1fr 35%;
+    grid-template: 360px 190px auto / 1fr 35%;
     place-content: start;
     overflow: auto;
     grid-gap: .5em;
@@ -21,7 +21,6 @@
     grid-auto-rows: auto;
     grid-auto-flow: row;
     grid-gap: 0.5em;
-    padding:  .5em;
     overflow: visible;
 }
 
@@ -191,8 +190,106 @@
 }
 .account10{
     grid-area: 1/2/2/3;
-    background: rgba(149, 24, 180, 0.37);
+    display: grid;
+    grid-template: auto 1fr auto/ auto 1fr;
+    background: var(--theme1);
+    border-radius: var(--brall);
 }
+
+.dbonus{
+    grid-area: 1/1/2/3;
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--tt);
+    padding: .7em;
+    text-align: center;
+
+}
+.balanceCard {
+    grid-area: 2/1/3/2;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    display: flex;
+    gap: 0.5em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 7px 10px rgba(28, 4, 4, 0.1);
+    background: var(--bgdiv1);
+}
+
+.headerss {
+    font-size: 1em;
+    font-weight: 600;
+    text-wrap: nowrap;
+}
+
+.circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 1px 1px 20px #fff;
+    overflow: hidden;
+    background: conic-gradient( #0cb600 66%, rgba(255, 255, 255, 0.12) 66%);
+}
+
+.percentage {
+    position: absolute;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bgdiv6);
+}
+
+.amount {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+.bonusinf{
+    grid-area: 2/2/3/3;
+    display: grid;
+    grid-gap: .8rem;
+    place-content: start center;
+    padding: .5rem;
+}
+
+.bonusinf span{
+    color: #dedede;
+    font-weight: 800;
+    text-wrap: nowrap;
+}
+
+.bonusinf span i{
+    font-weight: 600;
+    font-style: normal;
+    text-wrap: nowrap;
+    color: #fff;
+    
+}
+
+.bonusbtn{
+    grid-area: 3/1/4/3;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
 .share{
     grid-area: 2/2/3/3;
     /* place-self: start; */
@@ -236,59 +333,6 @@
 
 }
 
-.balanceCard {
-    width: 200px;
-    height: 200px;
-    border-radius: 20px;
-    display: flex;
-    gap: 0.5em;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    color: white;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 7px 10px rgba(28, 4, 4, 0.1);
-    background: #2a1e1e;
-}
-
-.headerss {
-    font-size: 1em;
-    font-weight: 600;
-    text-wrap: wrap;
-}
-
-.circle {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: inset 1px 1px 20px #fff;
-    overflow: hidden;
-    background: conic-gradient( red 20 * 3.6deg, blue 20 * 3.6deg);
-}
-
-.percentage {
-    position: absolute;
-    font-size: 1.5em;
-    font-weight: bold;
-    width: 70%;
-    height: 70%;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(190deg, red , blue);
-}
-
-.amount {
-    font-size: 1.2em;
-    font-weight: bold;
-}
 
 
 @media only screen and (max-width: 450px) {
@@ -308,7 +352,7 @@
         font-weight: 600;
     }
 
-    .header {
+    .headerss {
         font-size: 0.9em;
         font-weight: 700;
         text-wrap: wrap;
@@ -330,7 +374,6 @@
     }
     .account10{
         grid-area: 2/1/3/2;
-        height: 200px;
     }
     .share{
         grid-area: 3/1/4/2;

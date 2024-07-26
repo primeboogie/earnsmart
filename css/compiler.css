@@ -25,6 +25,7 @@ body{
     height: 100%;
     grid-area: 2/2/3/3;
     display: grid;
+    padding: .5em;
 }
 /* 
 .footer{
@@ -59,7 +60,6 @@ body{
         display: grid;
         grid-area: 2/1/3/2;
         grid-template-columns: 1fr;
-        padding: 0.5em 0;
         overflow: visible;
     }
     /* .footer{

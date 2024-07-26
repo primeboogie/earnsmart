@@ -34,7 +34,7 @@
         <button class="authbtn" id=""><i class="fa-solid fa-coins"></i> Request</button>
     </form>
     <div class="alldip">
-    <span class="diph" > <i class="fa-solid fa-file-circle-check"></i> Recent WIthdrawals</span>
+    <span class="diph" > <i class="fa-solid fa-file-circle-check"></i> Recent Withdrawals</span>
     <div class="tablediv">
         <table class="table">
         <thead>
