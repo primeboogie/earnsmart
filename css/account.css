@@ -332,6 +332,21 @@
     grid-area: 3/2/4/3;
     background: var(--theme1);
     border-radius: var(--brall);
+    display: grid;
+    grid-template: auto 1fr / 1fr;
+    padding: .5rem;
+}
+.account12h{
+    grid-area: 1/1/2/2;
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--tt);
+    padding: .7em;
+    text-align: center;
+}
+.account12more{
+    border: 2px solid #fff;
+    border-radius: var(--brall);
 
 }
 
