@@ -196,7 +196,7 @@
 
    <div class="balanceCard">
             <div class="headerss">ZanyTech</div>
-            
+
             <div class="circle" >
                 <div class="percentage" >66%</div>
             </div>
@@ -218,7 +218,7 @@
     <span class="afflink">
         Your Affilate Link:
     </span>
-    <input type="text" id="linkinput" value="<?php echo $admin['domain'].'/reg/basweti'?>" disbaled>
+    <input type="text" id="linkinput" readonly value="<?php echo $admin['domain'].'/reg/basweti'?>" disbaled>
     <button class="authbtn" id="linkbtn"><i class="fa-solid fa-link"></i> Copy Link</button>
 </div>
 
