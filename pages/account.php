@@ -192,12 +192,22 @@
    </div>
 
    <div class="account10">
-    daily target
+   <div class="balanceCard">
+            <div class="headerss">{groupname}</div>
+            <div class="circle" >
+                <div class="percentage" >20%</div>
+            </div>
+            <div class="amount">KES {amount}</div>
+        </div>
    </div>
 
-   <div class="account11">
-    affilate link
-   </div>
+   <div class="share">
+    <span class="afflink">
+        Your Affilate Link:
+    </span>
+    <input type="text" id="linkinput" value="<?php echo $admin['domain'].'/reg/basweti'?>" disbaled>
+    <button class="authbtn" id="linkbtn"><i class="fa-solid fa-link"></i> Copy Link</button>
+</div>
 
    <div class="account12">
     summary profile

@@ -21,11 +21,10 @@
             <input type="text" name="phone">
         </div>
 
-
-        <button class="authbtn" id="">Request</button>
+        <button class="authbtn" id=""><i class="fa-solid fa-hand-holding-dollar"></i> Request</button>
     </form>
     <div class="alldip">
-    <span class="diph" >Recent Deposit</span>
+    <span class="diph" ><i class="fa-solid fa-money-bill-1-wave"></i> Recent Deposit</span>
     <div class="tablediv">
         <table class="table">
         <thead>
@@ -38,7 +37,7 @@
     </tr>
 </thead>
 <tbody>
-    <tr>
+<tr>
         <td>001</td>
         <td>5000</td>
         <td>+254712345678</td>

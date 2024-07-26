@@ -104,6 +104,12 @@
             'secured' => True,
                 ],
                 
+        '/withhistory' => [
+            'file' => 'pages/withhistory.php',
+            'style' => '/css/withhistory.css',
+            'secured' => True,
+                ],
+                
         '/withdrawal' => [
             'file' => 'pages/withdrawal.php',
             'style' => '/css/withdrawal.css',

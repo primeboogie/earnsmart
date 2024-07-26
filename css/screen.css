@@ -143,6 +143,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 0.5em;
   }
   .authbtn:hover{
     background: var(--theme5);

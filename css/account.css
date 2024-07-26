@@ -5,9 +5,10 @@
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template: repeat(3, auto) / 1fr 35%;
+    grid-template: auto 20% auto / 1fr 35%;
     place-content: start;
     overflow: auto;
+    grid-gap: .5em;
 }
 
 .account1{
@@ -190,21 +191,131 @@
 }
 .account10{
     grid-area: 1/2/2/3;
-    background: #b726db;
-
+    background: rgba(149, 24, 180, 0.37);
 }
-
-.account11{
+.share{
     grid-area: 2/2/3/3;
-    background: #d98d1b;
+    /* place-self: start; */
+    width: 100%;
+    background: var(--theme1);
+    border-radius: var(--brall);
+    overflow: hidden;
+    display: grid;
+    grid-template: repeat(3, auto) / 1fr;
+    place-items: start;
+    padding: .7rem .9rem;
+    grid-gap: 1.5rem;
 
 }
+
+.afflink{
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.share input {
+    border-radius: var(--brall);
+    padding: .6rem .5rem;
+    font-size: .9em;
+    font-weight: 400;
+    outline: none;
+    border: none;
+    color: #848181;
+    width: 80%;
+}
+.share button{
+    place-self: end;
+    margin: 0;
+}
+
 
 .account12{
     grid-area: 3/2/4/3;
     background: #f73a19;
 
 }
+
+.balanceCard {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    display: flex;
+    gap: 0.5em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 7px 10px rgba(28, 4, 4, 0.1);
+    background: #2a1e1e;
+}
+
+.headerss {
+    font-size: 1em;
+    font-weight: 600;
+    text-wrap: wrap;
+}
+
+.circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 1px 1px 20px #fff;
+    overflow: hidden;
+    background: conic-gradient( red 20 * 3.6deg, blue 20 * 3.6deg);
+}
+
+.percentage {
+    position: absolute;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(190deg, red , blue);
+}
+
+.amount {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+@media only screen and (max-width: 450px) {
+
+    .circle {
+        position: relative;
+        width: 80px;
+        height: 80px;
+    }
+
+    .percentage {
+        font-size: 1em;
+        
+    }
+    .amount {
+        font-size: 0.9em;
+        font-weight: 600;
+    }
+
+    .header {
+        font-size: 0.9em;
+        font-weight: 700;
+        text-wrap: wrap;
+    }
+}
+
+
 
 
 @media only screen and (max-width: 1180px) {
@@ -221,9 +332,8 @@
         grid-area: 2/1/3/2;
         height: 200px;
     }
-    .account11{
+    .share{
         grid-area: 3/1/4/2;
-        height: 200px;
 
     }
     .account12{
@@ -283,6 +393,16 @@
     }
     .exe1icon i{
         font-size: 1.2em;
+    }
+
+    .afflink{
+        font-size: 1rem;
+    }
+    .share input{
+        width: 100%;
+    }
+    .share button{
+        font-size: 1rem;
     }
 
   
