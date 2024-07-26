@@ -196,10 +196,10 @@
 
    <div class="balanceCard">
             <div class="headerss">ZanyTech</div>
+            
             <div class="circle" >
                 <div class="percentage" >66%</div>
             </div>
-            <div class="amount">KES {amount}</div>
     </div>
 
     <div class="bonusinf">
