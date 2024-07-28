@@ -14,15 +14,15 @@ async function requestData(url, method = "GET", myBody = null) {
             "Accept": "Application/json" 
         }
     };
-
+    
     if (myBody !== null) {
         request.body = JSON.stringify(myBody);
     }
-
+    
     try {
         const response = await fetch(url, request);
         const data = await response.json();
-
+        
         return data
     } catch (error) {
         return error
@@ -32,12 +32,12 @@ async function requestData(url, method = "GET", myBody = null) {
 async function fortest() {
     try {
         const response = await requestData(`${baseUrl}register`, 'POST', formObject);          
-
+        
         if(response.resultcode){
             console.log(true)
         }
         if (Array.isArray(response.info) && response.info.length > 0) {
-                response.info.forEach(value => {
+            response.info.forEach(value => {
                     console.log(value.msg);
                 });
             }
@@ -45,10 +45,10 @@ async function fortest() {
                 console.log(response)
             }
 
-    } catch (error) {
+        } catch (error) {
         alert(error);
     }
-openLoader(false)
+    openLoader(false)
 }
 
 menuid.addEventListener('click', () => {
@@ -57,22 +57,27 @@ menuid.addEventListener('click', () => {
     overs.classList.toggle("showall")
 })
 
+document.addEventListener('click', (event) => {
+    if (!toggleButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.classList.remove('show');
+    }
+});
 earnimgs.addEventListener('click', ()=>{
     // Create a temporary textarea element to hold the text
     const tempTextArea = document.createElement('textarea');
     tempTextArea.value = "git pull origin main";
     document.body.appendChild(tempTextArea);
-
+    
     // Select the text inside the temporary textarea
     tempTextArea.select();
     tempTextArea.setSelectionRange(0, 99999); // For mobile devices
-
+    
     // Copy the selected text to the clipboard
     document.execCommand('copy');
-
+    
     // Remove the temporary textarea
     document.body.removeChild(tempTextArea);
-
+    
 
 })
 
@@ -81,12 +86,12 @@ if(linkbtn){
         const tempTextArea = document.createElement('textarea');
         tempTextArea.value = linkinput.value;
         document.body.appendChild(tempTextArea);
-    
+        
         tempTextArea.select();
         tempTextArea.setSelectionRange(0, 99999);
-    
+        
         document.execCommand('copy');
-    
+        
         document.body.removeChild(tempTextArea);
         alert(`Your Link is pasted In Your Clipboard Successfully`)
     })

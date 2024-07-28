@@ -3,7 +3,7 @@
 .share{
     place-self: start;
     margin: 1rem;
-    width: 35%;
+    width: 100%;
     background: var(--theme1);
     height: auto;
     border-radius: var(--brall);
@@ -42,7 +42,6 @@
         width: 80%;
 
     }
-
 }
 
 @media only screen and (max-width: 440px) {
