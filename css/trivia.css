@@ -93,5 +93,8 @@ width: 100%;
         ul li label{
         cursor: pointer;
         }
+        button{
+            padding: 1.1rem;
+            }
     }
     
