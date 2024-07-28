@@ -231,7 +231,6 @@
             <li><span>Phone:</span> <i>0798765421</i></li>
             <li><span>Joined:</span> <i class="act">24-08-2024</i></li>
             <li><span>Account Status:</span> <i class="act">Active</i></li>
-            <li><span>Upline:</span> <i>Nyamongo</i></li>
         </ul>
     </div>
 
