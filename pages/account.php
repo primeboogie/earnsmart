@@ -225,7 +225,14 @@
    <div class="account12">
     <span class="account12h">Profile-Summary</span>
     <div class="account12more">
-        Hi
+        <ul>
+            <li><span>Username:</span> <i>Zanytech</i></li>
+            <li><span>Email:</span> <i>zanytech@zanytech.site</i></li>
+            <li><span>Phone:</span> <i>0798765421</i></li>
+            <li><span>Joined:</span> <i class="act">24-08-2024</i></li>
+            <li><span>Account Status:</span> <i class="act">Active</i></li>
+            <li><span>Upline:</span> <i>Nyamongo</i></li>
+        </ul>
     </div>
 
    </div>

@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="<?php echo $domain;?>/css/navbar.css?<?php echo $newrand;?>">
 </head>
 <body>
-<div class="overs " id="overs"> </div>
+<div class="overs" id="overs"> </div>
 <section class="dots-container" id="loaderrr">
   <div class="dot"></div>
   <div class="dot"></div>
@@ -60,9 +60,23 @@
                     <a href="<?php echo $dev['root'];?>/trivia"><i class="fa fa-question"></i> Trivia</a>
                     <a href="<?php echo $dev['root'];?>/tiktok"><i class="fa-brands fa-tiktok"></i> Tiktok</a>
                     <a href="<?php echo $dev['root'];?>/tiktok"><i class="fa-brands fa-youtube"></i> Youtube</a>
-                    <a href="<?php echo $dev['root'];?>/spin"><i class="fa fa-spinner"></i> Spins</a>
+                    <div class="adiv">
+                        <span id="spanspins"><i class="fa-solid fa-spinner"></i> Spins <i class="fa-solid fa-angle-down"></i></span>
+                        <div class="alladiv" id="spins">
+                            <a href="<?php echo $dev['root'];?>/freespin"><i class="fa-solid fa-circle-notch"></i> Free Spin</a>
+                            <a href="<?php echo $dev['root'];?>/casionspin"><i class="fa fa-life-ring"></i> Casion Spin</a>
+
+                        </div>
+                    </div>
                     <a href="<?php echo $dev['root'];?>/spin"><i class="fa-solid fa-chart-gantt"></i> Forex</a>
-                    <a href="<?php echo $dev['root'];?>/team"><i class="fa fa-users"></i> My Team</a>
+                    <div class="adiv">
+                        <span id="spanteams"><i class="fa fa-users"></i> My Team <i class="fa-solid fa-angle-down"></i></span>
+                        <div class="alladiv" id="teams">
+                            <a href="<?php echo $dev['root'];?>/team"><i class="fa-solid fa-square-check"></i> Level  1</a>
+                            <a href="<?php echo $dev['root'];?>/team"><i class="fa-solid fa-dice"></i> Level  2</a>
+                            <a href="<?php echo $dev['root'];?>/team"><i class="fa-solid fa-cubes"></i> Level  3</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="navdiv">
