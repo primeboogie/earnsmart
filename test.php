@@ -3,188 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Trivia</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
-*{
-  box-sizing: border-box;
-}
-body{
-  background-color: #b8c6db;
-  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7f7 100%);
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
-}
-.quiz-container{
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
-  width: 600px;
-  overflow: hidden;
-}
-.quiz-header{
-  padding: 4rem;
-}
-h2{
-  padding: 1rem;
-  text-align: center;
-  margin: 0;
-}
-ul{
-  list-style-type: none;
-  padding: 0;
-}
-ul li{
-  font-size: 1.2rem;
-  margin: 1rem 0;
-}
-ul li label{
-  cursor: pointer;
-}
-button{
-  background-color: #03cae4;
-  color: #fff;
-  border: none;
-  display: block;
-  width: 100%;
-  cursor: pointer;
-  font-size: 1.1rem;
-  font-family: inherit;
-  padding: 1.3rem;
-}
-button:hover{
-  background-color: #04adc4;
-}
-button:focus{
-  outline: none;
-  background-color: #44b927;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
 
+        .container {
+            background-color: #1562ffda;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .header {
+            text-align: center;
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .title {
+            margin: 20px 0;
+            color: yellow;
+        }
+
+        .content {
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        h2 {
+            color: yellow;
+            text-align: left;
+        }
+
+        .instructions {
+            color: white;
+            text-align: left;
+            margin-left: 20px; /* Adjust margin to create space for bullets */
+            position: relative; /* Ensure relative positioning for absolute bullets */
+        }
+
+        .instructions p {
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .instructions p span {
+            color: yellow;
+        }
+
+        .instructions p::before {
+            content: '\2022'; /* Unicode character for bullet point */
+            color: yellow;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 10px;
+            position: absolute;
+            left: -20px;
+            top: 0;
+        }
+
+        .questions {
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px; 
+        }
+
+        .questions h2 {
+            color: yellow;
+            text-align: left;
+        }
+
+        .quiz {
+            margin-top: 20px;
+        }
+
+        .quiz h3 {
+            color: yellow;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .quiz ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .quiz li {
+            margin-bottom: 10px;
+        }
+
+        .quiz label {
+            color: white;
+            cursor: pointer;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .quiz label:hover {
+            background-color: #2852ed;
+        }
+
+        .quiz input[type="radio"] {
+            display: none;
+        }
+
+        button {
+            background-color: #1562ff;
+            color: white;
+            border: 3px double white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 20px auto 0;
+            display: block;
+        }
+
+        button:hover {
+            background-color: #2852ed;
+            color: yellow;
+        }
     </style>
 </head>
 <body>
-<div class="quiz-container" id="quiz">
-    <div class="quiz-header">
-      <h2 id="question">Question Text</h2>
-      <ul>
-        <li>
-          <input type="radio" name="answer" id="a" class="answer">
-          <label for="a" id="a_text">Answer</label>
-        </li>
-        <li>
-          <input type="radio" name="answer" id="b" class="answer">
-          <label for="b" id="b_text">Answer</label>
-        </li>
-        <li>
-          <input type="radio" name="answer" id="c" class="answer">
-          <label for="c" id="c_text">Answer</label>
-        </li>
-        <li>
-          <input type="radio" name="answer" id="d" class="answer">
-          <label for="d" id="d_text">Answer</label>
-        </li>
-      </ul>
+    <div class="container">
+        <div class="header">
+            <h2 style="font-size: 18px;">Logo + Earn Empire Connections</h2>
+        </div>
+        <h2 class="title">Trivia Quiz</h2>
+        <div class="content">
+            <h2>Instructions</h2>
+            <div class="instructions">
+                <p>You're going to answer 15 questions, within <span>60 seconds</span>.</p>
+                <p>Select the correct answer by clicking at what you think is the correct answer.</p>
+                <p>Click the <span>Submit</span> button when done. If time elapses before clicking <span>Submit</span>, the test will be submitted automatically.</p>
+            </div>
+            <button id="readyButton">Ready</button>
+        </div>
+        <div class="questions" style="display: none;">
+            <h2>Today's Questions:</h2>
+            <div class="quiz">
+                <h3>Who is your developer:</h3>
+                <ul>
+                    <li>
+                        <input type="radio" id="q1a1" name="q1">
+                        <label for="q1a1">Option 1</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="q1a2" name="q1">
+                        <label for="q1a2">Option 2</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="q1a3" name="q1">
+                        <label for="q1a3">Option 3</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="q1a4" name="q1">
+                        <label for="q1a4">Option 4</label>
+                    </li>
+                </ul>
+            </div>
+            
+            <button id="submitQuiz">Submit</button>
+        </div>
     </div>
-    <button id="submit">Submit</button>
-  </div>
-  <script>
-    const quizData = [
-    {
-        question: "Which Currency Are you Using?",
-        a: "KES",
-        b: "TSH",
-        c: "CED",
-        d: "None",
-        correct: "d",
-    },
-    {
-        question: "Do You Belive In Marketting?",
-        a: "Yes",
-        b: "No",
-        c: "Ofcourse",
-        d: "Never Hard About It",
-        correct: "a",
-    },
-    {
-        question: "What Device are You Using?",
-        a: "Laptop",
-        b: "Calculater",
-        c: "Remote",
-        d: "Mobile Device",
-        correct: "c",
-    },
-
-    {
-        question: "Yes Am Gay ?",
-        a: "Yes",
-        b: "No",
-        c: "Ofcourse",
-        d: "A Bit",
-        correct: "a",
-    },
-    {
-        question: "Did You Earn Today ?",
-        a: "Yes",
-        b: "No",
-        c: "Zii",
-        d: "A Bit",
-        correct: "a",
-    },
-];
-const quiz= document.getElementById('quiz')
-const answerEls = document.querySelectorAll('.answer')
-const questionEl = document.getElementById('question')
-const a_text = document.getElementById('a_text')
-const b_text = document.getElementById('b_text')
-const c_text = document.getElementById('c_text')
-const d_text = document.getElementById('d_text')
-const submitBtn = document.getElementById('submit')
-let currentQuiz = 0
-let score = 0
-loadQuiz()
-function loadQuiz() {
-    deselectAnswers()
-    const currentQuizData = quizData[currentQuiz]
-    questionEl.innerText = currentQuizData.question
-    a_text.innerText = currentQuizData.a
-    b_text.innerText = currentQuizData.b
-    c_text.innerText = currentQuizData.c
-    d_text.innerText = currentQuizData.d
-}
-function deselectAnswers() {
-    answerEls.forEach(answerEl => answerEl.checked = false)
-}
-function getSelected() {
-    let answer
-    answerEls.forEach(answerEl => {
-        if(answerEl.checked) {
-            answer = answerEl.id
-        }
-    })
-    return answer
-}
-submitBtn.addEventListener('click', () => {
-    const answer = getSelected()
-    if(answer) {
-       if(answer === quizData[currentQuiz].correct) {
-           score++
-       }
-       currentQuiz++
-       if(currentQuiz < quizData.length) {
-           loadQuiz()
-       } else {
-           quiz.innerHTML = `
-           <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-           <button onclick="location.reload()">Reload</button>
-           `
-       }
-    }
-})
-  </script>
+    <script>
+        // JavaScript to handle button click event
+        document.getElementById('readyButton').addEventListener('click', function() {
+            // Hide the content div
+            document.querySelector('.content').style.display = 'none';
+            // Show the questions div
+            document.querySelector('.questions').style.display = 'block';
+        });
+    </script>
 </body>
 </html>

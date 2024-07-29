@@ -79,6 +79,13 @@
             'style' => '/css/spin.css',
             'secured' => True,
                 ],
+
+                
+        '/forex' => [
+            'file' => 'pages/forex.php',
+            'style' => '/css/forex.css',
+            'secured' => True,
+                ],
                 
         '/team' => [
             'file' => 'pages/team.php',
@@ -86,6 +93,11 @@
             'secured' => True,
                 ],
                 
+        '/welcome' => [
+            'file' => 'pages/welcome.php',
+            'style' => '/css/welcome.css',
+            'secured' => True,
+                ],
         '/tiktok' => [
             'file' => 'pages/tiktok.php',
             'style' => '/css/tiktok.css',

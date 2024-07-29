@@ -1,6 +1,5 @@
 .deposit{
     display: grid;
-    margin: .5rem;
     grid-template-columns: auto 1fr;
     place-items: start center;
     padding: .5em 0;

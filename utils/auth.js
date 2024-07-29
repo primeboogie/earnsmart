@@ -57,11 +57,11 @@ menuid.addEventListener('click', () => {
     overs.classList.toggle("showall")
 })
 
-document.addEventListener('click', (event) => {
-    if (!toggleButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-        dropdownMenu.classList.remove('show');
-    }
-});
+// document.addEventListener('click', (event) => {
+//     if (!toggleButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+//         dropdownMenu.classList.remove('show');
+//     }
+// });
 earnimgs.addEventListener('click', ()=>{
     // Create a temporary textarea element to hold the text
     const tempTextArea = document.createElement('textarea');

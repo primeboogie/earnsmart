@@ -2,7 +2,7 @@
 
 .account10{
     place-self: start;
-    width: 50%;
+    width: 70%;
     height: auto;
     overflow: hidden;
     display: grid;
@@ -109,7 +109,7 @@
 
 @media only screen and (max-width: 720px) {
     .account10{
-        width: 80%;
+        width: 100%;
 
     }
 
@@ -117,8 +117,6 @@
 
 @media only screen and (max-width: 480px) {
     .account10{
-        width: 100%;
-
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4,auto);
         grid-gap: .5em;

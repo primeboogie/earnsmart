@@ -55,7 +55,7 @@
             <div class="navdiv">
                 <span class="navh">Products</span>
                 <div class="navlinks">
-                    <a href="<?php echo $dev['root'];?>/agentbonus"><i class="fa-solid fa-hand-holding-heart"></i> Welcome Bonus</a>
+                    <a href="<?php echo $dev['root'];?>/welcome"><i class="fa-solid fa-hand-holding-heart"></i> Welcome Bonus</a>
                     <a href="<?php echo $dev['root'];?>/agentbonus"><i class="fa fa-gift"></i> Daily Bonus</a>
                     <a href="<?php echo $dev['root'];?>/trivia"><i class="fa fa-question"></i> Trivia</a>
                     <a href="<?php echo $dev['root'];?>/tiktok"><i class="fa-brands fa-tiktok"></i> Tiktok</a>
@@ -68,7 +68,7 @@
 
                         </div>
                     </div>
-                    <a href="<?php echo $dev['root'];?>/spin"><i class="fa-solid fa-chart-gantt"></i> Forex</a>
+                    <a href="<?php echo $dev['root'];?>/forex"><i class="fa-solid fa-chart-gantt"></i> Forex</a>
                     <div class="adiv">
                         <span id="spanteams"><i class="fa fa-users"></i> My Team <i class="fa-solid fa-angle-down"></i></span>
                         <div class="alladiv" id="teams">
@@ -83,8 +83,8 @@
                 <span class="navh">Settings</span>
                 <div class="navlinks">
                     <a href="<?php echo $dev['root'];?>/profile"><i class="fa fa-user"></i> User Profile</a>
-                    <a href="<?php echo $admin['whatsapp_group'];?>"><i class="fab fa-whatsapp"></i> Whatsapp</a>
-                    <a href="<?php echo $admin['customer_care'];?>/"><i class="fa fa-headset"></i> Support</a>
+                    <!-- <a href="<?php echo $admin['whatsapp_group'];?>"><i class="fab fa-whatsapp"></i> Whatsapp</a>
+                    <a href="<?php echo $admin['customer_care'];?>/"><i class="fa fa-headset"></i> Support</a> -->
                     <a href="<?php echo $dev['root'];?>/"><i class="fa fa-sign-out-alt"></i> Logout</a>
                 </div>
             </div>

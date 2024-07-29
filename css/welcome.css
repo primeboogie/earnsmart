@@ -1,0 +1,37 @@
+.welbonus{
+    width: 100%;
+    background: var(--theme1);
+    border-radius: var(--brall);
+    display: grid;
+    place-self: start;
+    padding: 1em .7em;
+    grid-gap: .7em;
+}
+
+.welh{
+    padding: .7em .5em;
+    font-weight: 800;
+    font-size: 1.1em;
+    color: var(--tt);
+    display: flex;
+    gap: .5em;
+}
+.welbonus p{
+    color: #fff;
+    font-weight: 400;
+}
+
+.welbonus p i{
+    color: var(--tt);
+}
+.welbtn{
+    display: flex;
+    justify-content: space-around;
+}
+
+.welb{
+    color: var(--tt);
+    font-weight: 800;
+    font-size: 1.6em;
+    text-align: center;
+}
