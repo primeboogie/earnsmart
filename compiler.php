@@ -26,7 +26,7 @@
             </span>
             <span class="earntitle smalld">
                 <?php 
-                echo  strtoupper(str_replace('Connections', '', $admin['company'])); ;
+                echo  strtoupper(str_replace('Connections', '', $admin['company']));
                 ?>
             </span>
             
@@ -49,7 +49,7 @@
                     <a href="<?php echo $dev['root'];?>/deposit"><i class="fa fa-money-bill"></i> Deposit</a>
                     <a href="<?php echo $dev['root'];?>/clientpay"><i class="fab fa-paypal"></i> Pay For Client</a>
                     <a href="<?php echo $dev['root'];?>/withdrawal"><i class="fa fa-money-bill-alt"></i>Withdrawal</a>
-                    <a href="<?php echo $dev['root'];?>/withhistory"><i class="fa-solid fa-file-circle-check"></i>Withdrawl History</a>
+                    <a href="<?php echo $dev['root'];?>/withhistory"><i class="fa-solid fa-file-circle-check"></i>Withdrawal History</a>
                 </div>
             </div>
             <div class="navdiv">

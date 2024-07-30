@@ -5,10 +5,19 @@
         <div class="welcome">
             <span class="inwelcome">Hello <i id="username">Zanytech</i>,</span>
             <p>
-            Welcome back to   <?php echo  $admin['company']; ?>. Your success in network marketing is a reflection of your mindset. 
+            Welcome back to   <?php echo  str_replace('Connections', '', $admin['company']); ?>. Your success in network marketing is a reflection of your mindset. 
             Believe in yourself, stay disciplined, and never underestimate the power of consistency.
             </p>
             <div class="exe">
+                <div class="exe1 exedot">
+                    <span class="exe1icon exeicon2"><i class='bx bx-cart-add'></i></span>
+                    <span class="exeh">Expenses</span>
+                    <span class="exebal exebalr">
+                        <i id="usys">KSH</i>
+                        <i id="expense">500</i>
+                    </span>
+                </div>
+
                 <div class="exe1">
                     <span class="exe1icon"><i class='bx bx-dollar'></i></span>
                     <span class="exeh">Profit</span>
@@ -18,36 +27,8 @@
                     </span>
                 </div>
 
-                <div class="exe1 exedot">
-                    <span class="exe1icon exeicon2"><i class='bx bx-cart-add'></i></span>
-                    <span class="exeh">Expences</span>
-                    <span class="exebal exebalr">
-                        <i id="usys">KSH</i>
-                        <i id="expense">500</i>
-                    </span>
-                </div>
 
             </div>
-        </div>
-
-        <div class="moneydiv bg1">
-            <span id="inmoneyh">
-            Total Profits
-            </span>
-
-            <span id="inmoneyb">
-            <i id="usys">
-                KES
-            </i>
-            <i id="profit">
-                86,555
-            </i>
-            </span>
-
-            <span id="inmoneyi">
-            <i class="fa-solid fa-money-bill-trend-up"></i>
-            </span>
-            
         </div>
 
         <div class="moneydiv bg2">
@@ -90,6 +71,9 @@
             
         </div>
 
+        
+        
+        
         <div class="moneydiv bg4">
             <span id="inmoneyh">
                 Total Withdarawals
@@ -103,9 +87,29 @@
                 86,555
             </i>
             </span>
+            
+            <span id="inmoneyi">
+                <i class="fa fa-money-bill-alt"></i>
+            </span>
+            
+        </div>
+
+        <div class="moneydiv bg1">
+            <span id="inmoneyh">
+            Pending  Withdarawals
+            </span>
+
+            <span id="inmoneyb">
+            <i id="usys">
+                KES
+            </i>
+            <i id="profit">
+                86,555
+            </i>
+            </span>
 
             <span id="inmoneyi">
-            <i class="fa fa-money-bill-alt"></i>
+            <i class="fa-solid fa-money-bill-trend-up"></i>
             </span>
             
         </div>

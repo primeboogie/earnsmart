@@ -124,7 +124,7 @@
     text-wrap: nowrap;
 }
 .exedot {
-    border-left: 1px dashed rgb(0, 0, 255) ;
+    border-right: 1px dashed rgb(0, 0, 255) ;
 }
 .moneydiv{
     height: 9rem;
