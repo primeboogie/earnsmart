@@ -1,3 +1,6 @@
+let baseUrl = "https://earnempire.seosblog.com/?action=";
+// let baseUrl = "http://localhost/officialsystem/?action=";
+
 let menuid = document.getElementById("menuid");
 let navbar = document.getElementById("navbar");
 let overs = document.getElementById("overs");
@@ -28,6 +31,15 @@ async function requestData(url, method = "GET", myBody = null) {
         return error
     }
 }
+
+function openLoader(res){
+    if(res){
+        document.getElementById("loaderrr").style.display = "flex";
+    }else{
+        document.getElementById("loaderrr").style.display = "none";
+    }
+}
+
 
 async function fortest() {
     try {
@@ -96,3 +108,76 @@ if(linkbtn){
         alert(`Your Link is pasted In Your Clipboard Successfully`)
     })
 }
+
+
+async function data() {
+
+    openLoader(true)
+
+    try {
+        const response = await requestData(`${baseUrl}data`, 'GET');          
+        
+        if(response.resultcode){
+            console.log(true)
+        }
+        if (Array.isArray(response.info) && response.info.length > 0) {
+            response.info.forEach(value => {
+                    console.log(value.msg);
+                });
+            }
+            else{
+                console.log(response)
+            let allusername = document.querySelectorAll("#username")
+            let allemail = document.querySelectorAll("#email")
+            let allphone = document.querySelectorAll("#phone")
+            let allprofit = document.querySelectorAll("#profit")
+            // let allusername = document.querySelectorAll("#username")
+            // let allusername = document.querySelectorAll("#username")
+            // let allusername = document.querySelectorAll("#username")
+            // let allusername = document.querySelectorAll("#username")
+            // let allusername = document.querySelectorAll("#username")
+            // let allusername = document.querySelectorAll("#username")
+            // let allusername = document.querySelectorAll("#username")
+   
+            allusername.forEach( (value) => {
+                value.innerHTML = response.data[0]['uname'];
+                });
+            allemail.forEach( (value) => {
+                value.innerHTML = response.data[0]['uemail'];
+                });   
+            allphone.forEach( (value) => {
+                value.innerHTML = response.data[0]['uphone'];
+                });
+                
+                allprofit.forEach( (value) => {
+                value.innerHTML = response.data[0]['profit'];
+                });   
+            // allusername.forEach( (value) => {
+            //     value.innerHTML = response.data[0]['uname'];
+            //     });
+            // allemail.forEach( (value) => {
+            //     value.innerHTML = response.data[0]['uemail'];
+            //     });   
+            // allusername.forEach( (value) => {
+            //     value.innerHTML = response.data[0]['uname'];
+            //     });
+            // allemail.forEach( (value) => {
+            //     value.innerHTML = response.data[0]['uemail'];
+            //     });   
+            // allusername.forEach( (value) => {
+            //     value.innerHTML = response.data[0]['uname'];
+            //     });
+            // allemail.forEach( (value) => {
+            //     value.innerHTML = response.data[0]['uemail'];
+            //     });
+
+
+            }
+
+        } catch (error) {
+        alert(error);
+    }
+    openLoader(false)
+}
+
+data()

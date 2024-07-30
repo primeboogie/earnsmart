@@ -14,7 +14,7 @@
                     <span class="exeh">Profit</span>
                     <span class="exebal exebalg">
                         <i id="usys">KSH</i>
-                        <i id="uprofit">846,000</i>
+                        <i id="profit">000</i>
                     </span>
                 </div>
 
@@ -23,7 +23,7 @@
                     <span class="exeh">Expences</span>
                     <span class="exebal exebalr">
                         <i id="usys">KSH</i>
-                        <i id="uprofit">500</i>
+                        <i id="expense">500</i>
                     </span>
                 </div>
 
@@ -39,7 +39,7 @@
             <i id="usys">
                 KES
             </i>
-            <i id="deposit">
+            <i id="profit">
                 86,555
             </i>
             </span>
@@ -195,7 +195,7 @@
     <span class="dbonus">DAILY BONUSES</span>
     
     <div class="balanceCard">
-        <div class="headerss">ZanyTech</div>
+        <div class="headerss" id="username">ZanyTech</div>
         
         <div class="circle" >
             <div class="percentage" >66%</div>
@@ -226,9 +226,9 @@
     <span class="account12h">Profile-Summary</span>
     <div class="account12more">
         <ul>
-            <li><span>Username:</span> <i>Zanytech</i></li>
-            <li><span>Email:</span> <i>zanytech@zanytech.site</i></li>
-            <li><span>Phone:</span> <i>0798765421</i></li>
+            <li><span>Username:</span> <i id="username">Zanytech</i></li>
+            <li><span>Email:</span> <i id="email">zanytech@zanytech.site</i></li>
+            <li><span>Phone:</span> <i id="phone">000000000</i></li>
             <li><span>Joined:</span> <i class="act">24-08-2024</i></li>
             <li><span>Account Status:</span> <i class="act">Active</i></li>
         </ul>
