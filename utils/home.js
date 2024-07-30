@@ -55,6 +55,7 @@ async function requestData(url, method = "GET", myBody = null) {
 
     try {
         const response = await fetch(url, request);
+        console.log(response)
         const data = await response.json();
 
         return data

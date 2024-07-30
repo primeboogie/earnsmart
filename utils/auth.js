@@ -24,7 +24,8 @@ async function requestData(url, method = "GET", myBody = null) {
     
     try {
         const response = await fetch(url, request);
-        const data = await response.json();
+        const data = await response.text();
+        console.log(data)
         
         return data
     } catch (error) {
@@ -139,19 +140,19 @@ async function data() {
             // let allusername = document.querySelectorAll("#username")
             // let allusername = document.querySelectorAll("#username")
    
-            // allusername.forEach( (value) => {
-            //     value.innerHTML = response.data[0]['uname'];
-            //     });
-            // allemail.forEach( (value) => {
-            //     value.innerHTML = response.data[0]['uemail'];
-            //     });   
-            // allphone.forEach( (value) => {
-            //     value.innerHTML = response.data[0]['uphone'];
-            //     });
+            allusername.forEach( (value) => {
+                value.innerHTML = response.data[0]['uname'];
+                });
+            allemail.forEach( (value) => {
+                value.innerHTML = response.data[0]['uemail'];
+                });   
+            allphone.forEach( (value) => {
+                value.innerHTML = response.data[0]['uphone'];
+                });
                 
-            //     allprofit.forEach( (value) => {
-            //     value.innerHTML = response.data[0]['profit'];
-            //     });   
+                allprofit.forEach( (value) => {
+                value.innerHTML = response.data[0]['profit'];
+                });   
             // allusername.forEach( (value) => {
             //     value.innerHTML = response.data[0]['uname'];
             //     });
