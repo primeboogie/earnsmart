@@ -15,8 +15,8 @@ async function requestData(url, method = "GET", myBody = null) {
         headers: {
             "Content-Type": "Application/json",
             "Accept": "Application/json" 
-        }
-        // credentials: 'include'
+        },
+        credentials: 'include'
     };
     
     if (myBody !== null) {
