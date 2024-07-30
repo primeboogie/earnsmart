@@ -5,7 +5,7 @@
         <div class="welcome">
             <span class="inwelcome">Hello <i id="username">Zanytech</i>,</span>
             <p>
-            Welcome back to   <?php echo  str_replace('Connections', '', $admin['company']); ?>. Your success in network marketing is a reflection of your mindset. 
+            Welcome back to   <?php echo  str_replace(' Connections', '', $admin['company']); ?>. Your success in network marketing is a reflection of your mindset. 
             Believe in yourself, stay disciplined, and never underestimate the power of consistency.
             </p>
             <div class="exe">
