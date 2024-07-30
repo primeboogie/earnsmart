@@ -72,8 +72,7 @@
         </div>
 
         
-        
-        
+    
         <div class="moneydiv bg3">
             <span id="inmoneyh">
                 Total Withdarawals
@@ -91,10 +90,9 @@
             <span id="inmoneyi">
                 <i class="fa fa-money-bill-alt"></i>
             </span>
-            
         </div>
 
-        <div class="moneydiv bg4>
+        <div class="moneydiv bg4">
             <span id="inmoneyh">
             Pending  Withdarawals
             </span>
@@ -133,6 +131,7 @@
             </span>
             
         </div>
+
         <div class="moneydiv bg6">
             <span id="inmoneyh">
                 Youtube Balance
