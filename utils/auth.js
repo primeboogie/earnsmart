@@ -10,6 +10,10 @@ let linkinput = document.getElementById("linkinput");
 
 
 async function requestData(url, method = "GET", myBody = null) {
+
+    const sessionCookie = getCookie('access_token');
+    console.log(sessionCookie)
+
     let request = {
         method: method,
         headers: {
@@ -18,6 +22,7 @@ async function requestData(url, method = "GET", myBody = null) {
         },
         credentials: 'include'
     };
+
     
     if (myBody !== null) {
         request.body = JSON.stringify(myBody);
@@ -33,6 +38,14 @@ async function requestData(url, method = "GET", myBody = null) {
         return error
     }
 }
+
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+}
+
 
 function openLoader(res){
     if(res){
