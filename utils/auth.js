@@ -1,5 +1,5 @@
-// let baseUrl = "https://earnempire.seosblog.com/?action=";
-let baseUrl = "http://localhost/officialsystem/?action=";
+let baseUrl = "https://earnempire.seosblog.com/?action=";
+// let baseUrl = "http://localhost/officialsystem/?action=";
 
 let menuid = document.getElementById("menuid");
 let navbar = document.getElementById("navbar");
@@ -16,6 +16,7 @@ async function requestData(url, method = "GET", myBody = null) {
             "Content-Type": "Application/json",
             "Accept": "Application/json" 
         }
+        // credentials: 'include'
     };
     
     if (myBody !== null) {
@@ -24,7 +25,7 @@ async function requestData(url, method = "GET", myBody = null) {
     
     try {
         const response = await fetch(url, request);
-        const data = await response.text();
+        const data = await response.json();
         console.log(data)
         
         return data
