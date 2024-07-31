@@ -40,7 +40,7 @@
             <i id="usys">
                 KES
             </i>
-            <i id="deposit">
+            <i id="curbal">
                 86,555
             </i>
             </span>
@@ -60,7 +60,7 @@
             <i id="usys">
                 KES
             </i>
-            <i id="deposit">
+            <i id="curwel">
                 86,555
             </i>
             </span>
@@ -82,7 +82,7 @@
             <i id="usys">
                 KES
             </i>
-            <i id="deposit">
+            <i id="curwithtotal">
                 86,555
             </i>
             </span>
@@ -101,7 +101,7 @@
             <i id="usys">
                 KES
             </i>
-            <i id="profit">
+            <i id="curwithpen">
                 86,555
             </i>
             </span>
@@ -121,7 +121,7 @@
                     <i id="usys">
                         KES
                     </i>
-                    <i id="deposit">
+                    <i id="curtivia">
                         86,555
             </i>
             </span>
@@ -141,7 +141,7 @@
                 <i id="usys">
                     KES
                 </i>
-                <i id="deposit">
+                <i id="curyou">
                 86,555
             </i>
         </span>
@@ -161,7 +161,7 @@
                 <i id="usys">
                     KES
             </i>
-            <i id="deposit">
+            <i id="curtiktok">
                 86,555
             </i>
         </span>
@@ -181,7 +181,7 @@
             <i id="usys">
                 KES
             </i>
-            <i id="deposit">
+            <i id="curspin">
                 86,555
             </i>
             </span>
@@ -232,7 +232,7 @@
             <li><span>Username:</span> <i id="username">Zanytech</i></li>
             <li><span>Email:</span> <i id="email">zanytech@zanytech.site</i></li>
             <li><span>Phone:</span> <i id="phone">000000000</i></li>
-            <li><span>Joined:</span> <i id="join" class="act">24-08-2024</i></li>
+            <li><span>Joined:</span> <i class="act" id="join" >24-08-2024</i></li>
             <li><span>Account Status:</span> <i id="ustatus"class="act">Active</i></li>
         </ul>
     </div>

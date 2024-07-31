@@ -138,12 +138,15 @@ async function data() {
             let allustatus = document.querySelectorAll("#ustatus")
             let linkinput = document.querySelectorAll("#linkinput")
             let allusys = document.querySelectorAll("#usys")
-            // let allusername = document.querySelectorAll("#username")
-            // let allusername = document.querySelectorAll("#username")
-            // let allusername = document.querySelectorAll("#username")
-            // let allusername = document.querySelectorAll("#username")
-            // let allusername = document.querySelectorAll("#username")
-            // let allprofit = document.querySelectorAll("#profit")
+            let curbal = document.querySelectorAll("#curbal")
+            let curwel = document.querySelectorAll("#curwel")
+            let curwithtotal = document.querySelectorAll("#curwithtotal")
+            let curwithpen = document.querySelectorAll("#curwithpen")
+            let curtivia = document.querySelectorAll("#curtivia")
+            let curyou = document.querySelectorAll("#curyou")
+            let curtiktok = document.querySelectorAll("#curtiktok")
+            let curspin = document.querySelectorAll("#curspin")
+            let allprofit = document.querySelectorAll("#profit")
             
 
             allusername.forEach( (value) => {
@@ -179,15 +182,34 @@ async function data() {
             allusys.forEach( (value) => {
                 value.innerHTML = response.data[0]['ucountryid'];
                 });
-            // allemail.forEach( (value) => {
-            //     value.innerHTML = response.data[0]['uemail'];
-            //     });   
-            // allusername.forEach( (value) => {
-            //     value.innerHTML = response.data[0]['uname'];
-            //     });
-            // allemail.forEach( (value) => {
-            //     value.innerHTML = response.data[0]['uemail'];
-            //     });
+            curbal.forEach( (value) => {
+                value.innerHTML = response.data[0]['balance'];
+                });   
+                curwel.forEach( (value) => {
+                    value.innerHTML = response.data[0]['way1'];
+                    });   
+            curwithtotal.forEach( (value) => {
+                value.innerHTML = response.data[0]['whatsappwithdrawn'];
+                });
+            curwithpen.forEach( (value) => {
+                value.innerHTML = response.data[0]['way2'];
+                });
+                allprofit.forEach( (value) => {
+                    value.innerHTML = response.data[0]['profit'];
+                    });
+
+                curtivia.forEach( (value) => {
+                    value.innerHTML = response.data[0]['trivia'];
+                    });  
+                curspin.forEach( (value) => {
+                    value.innerHTML = response.data[0]['way3'];
+                    });
+                    curyou.forEach( (value) => {
+                        value.innerHTML = response.data[0]['youtube'];
+                        });
+                curtiktok.forEach( (value) => {
+                    value.innerHTML = response.data[0]['meme'];
+                    });
         }else{
             alert("Seems We have An Issue Fetching Your Data Please Try Again Later")
         }
