@@ -7,6 +7,8 @@ let countryid = document.getElementById("countryid");
 let country = document.getElementById("country");
 let register = document.getElementById("register");
 let sinusername = document.getElementById("sinusername");
+let sinphone = document.getElementById("sinphoone");
+let sinemail = document.getElementById("sinemail");
 let forusername = document.getElementById("username");
 let login = document.getElementById("login");
 
@@ -261,6 +263,42 @@ register.addEventListener('submit', (e) => {
                 
                 confirmUser()
             })
+
+            sinemail.addEventListener('input', () => {
+                async function confirmUser() {
+                    try {
+                        const response = await requestData(`${baseUrl}freeemail`, 'POST', {"email": sinemail.value});          
+                        
+                        if(response.resultcode){
+                            shaky(true)
+                        }else{
+                            shaky(false)
+                        }
+                            } catch (error) {
+                                alert(error);
+                            }
+                        }
+                        
+                        confirmUser()
+                    })
+
+                    sinphone.addEventListener('input', () => {
+                        async function confirmUser() {
+                            try {
+                                const response = await requestData(`${baseUrl}freephone`, 'POST', {"phone": sinphone.value});          
+                                
+                                if(response.resultcode){
+                                    shaky(true)
+                                }else{
+                                    shaky(false)
+                                }
+                                    } catch (error) {
+                                        alert(error);
+                                    }
+                                }
+                                
+                                confirmUser()
+                            })
 
 loginusername.addEventListener('change', () => {
     async function confirmUser() {
