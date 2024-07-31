@@ -207,7 +207,7 @@
 
     <div class="bonusinf">
         <span>Today's Target:  <i>5 Points</i></span>
-        <span>Target Reward:  <i>100 KSH</i></span>
+        <span>Target Reward:  <i>3000 UGX</i></span>
         <span>Today's Progress:  <i>2 Points</i></span>
         <span>How Much To Go:  <i>3 Points</i></span>
     </div>
