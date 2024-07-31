@@ -221,7 +221,7 @@
     <span class="afflink">
         Your Affilate Link:
     </span>
-    <input type="text" id="linkinput" readonly value="<?php echo $admin['domain'].'/reg/basweti'?>" disbaled>
+    <input type="text" id="linkinput" readonly value="<?php echo $admin['domain'].'/reg/'?>" disbaled>
     <button class="authbtn" id="linkbtn"><i class="fa-solid fa-link"></i> Copy Link</button>
 </div>
 
@@ -232,8 +232,8 @@
             <li><span>Username:</span> <i id="username">Zanytech</i></li>
             <li><span>Email:</span> <i id="email">zanytech@zanytech.site</i></li>
             <li><span>Phone:</span> <i id="phone">000000000</i></li>
-            <li><span>Joined:</span> <i class="act">24-08-2024</i></li>
-            <li><span>Account Status:</span> <i class="act">Active</i></li>
+            <li><span>Joined:</span> <i id="join" class="act">24-08-2024</i></li>
+            <li><span>Account Status:</span> <i id="ustatus"class="act">Active</i></li>
         </ul>
     </div>
 

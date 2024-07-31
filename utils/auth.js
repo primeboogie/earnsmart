@@ -1,5 +1,5 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 
 let menuid = document.getElementById("menuid");
 let navbar = document.getElementById("navbar");
@@ -29,12 +29,9 @@ async function requestData(url, method = "GET", myBody = null) {
         
         if (!response.ok) {
             console.error("HTTP error, status = " + response.status);
-            throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
-        console.log("Response Data:", data);
-        
         return data;
     } catch (error) {
         console.error("Fetch error:", error);
@@ -133,27 +130,22 @@ async function data() {
         const response = await requestData(`${baseUrl}data`, 'GET');          
         
         if(response.resultcode){
-            console.log(true)
-        }
-        if (Array.isArray(response.info) && response.info.length > 0) {
-            response.info.forEach(value => {
-                    console.log(value.msg);
-                });
-            }
-            else{
-                console.log(response)
+                console.log(response.data[0])
             let allusername = document.querySelectorAll("#username")
             let allemail = document.querySelectorAll("#email")
             let allphone = document.querySelectorAll("#phone")
-            let allprofit = document.querySelectorAll("#profit")
+            let alljoin = document.querySelectorAll("#join")
+            let allustatus = document.querySelectorAll("#ustatus")
+            let linkinput = document.querySelectorAll("#linkinput")
+            let allusys = document.querySelectorAll("#usys")
             // let allusername = document.querySelectorAll("#username")
             // let allusername = document.querySelectorAll("#username")
             // let allusername = document.querySelectorAll("#username")
             // let allusername = document.querySelectorAll("#username")
             // let allusername = document.querySelectorAll("#username")
-            // let allusername = document.querySelectorAll("#username")
-            // let allusername = document.querySelectorAll("#username")
-   
+            // let allprofit = document.querySelectorAll("#profit")
+            
+
             allusername.forEach( (value) => {
                 value.innerHTML = response.data[0]['uname'];
                 });
@@ -164,12 +156,29 @@ async function data() {
                 value.innerHTML = response.data[0]['uphone'];
                 });
                 
-                allprofit.forEach( (value) => {
-                value.innerHTML = response.data[0]['profit'];
+                alljoin.forEach( (value) => {
+                    value.style.color  = 'red';
+                    if(response.data[0]['ustatus'] == 2){
+                        value.style.color  = '#55ec44';
+                    }
+                    value.innerHTML = response.data[0]['join'];
+
+            });   
+            allustatus.forEach( (value) => {
+                let mystate = 'Inactive'
+                value.style.color  = 'red';
+                if(response.data[0]['ustatus'] == 2){
+                    mystate = 'Active'
+                    value.style.color  = '#55ec44';
+                }
+                value.innerHTML = mystate;
+                });
+                linkinput.forEach( (value) => {
+                value.value = value.value + response.data[0]['uname'];
                 });   
-            // allusername.forEach( (value) => {
-            //     value.innerHTML = response.data[0]['uname'];
-            //     });
+            allusys.forEach( (value) => {
+                value.innerHTML = response.data[0]['ucountryid'];
+                });
             // allemail.forEach( (value) => {
             //     value.innerHTML = response.data[0]['uemail'];
             //     });   
@@ -178,16 +187,10 @@ async function data() {
             //     });
             // allemail.forEach( (value) => {
             //     value.innerHTML = response.data[0]['uemail'];
-            //     });   
-            // allusername.forEach( (value) => {
-            //     value.innerHTML = response.data[0]['uname'];
             //     });
-            // allemail.forEach( (value) => {
-            //     value.innerHTML = response.data[0]['uemail'];
-            //     });
-
-
-            }
+        }else{
+            alert("Seems We have An Issue Fetching Your Data Please Try Again Later")
+        }
 
         } catch (error) {
         alert(error);
