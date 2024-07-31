@@ -11,15 +11,12 @@ let linkinput = document.getElementById("linkinput");
 
 async function requestData(url, method = "GET", myBody = null) {
     const sessionCookie = getCookie('access_token');
-    console.log("Session Cookie:", sessionCookie);
-
     let request = {
         method: method,
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "authorization": `Bearer ${sessionCookie}`, 
-            "auth": `Bearer ${sessionCookie}` // Ensure correct key-value syntax
+            "Authorization": `Bearer ${sessionCookie}`, 
         }
     };
 
