@@ -151,8 +151,8 @@ async function data() {
 
             let registrations = [
                 { uname: 'Zawi254', expe: '500', sys: 'KSH', profit: '61,500', curbal: '24,000', welcome: '100', totalwith: '59,000', trivia: '2,630', youtube: '3,540', tiktok: '2,620', spin: '4,832'},
+                { uname: 'Juniorpro', expe: '17,000', sys: 'UGX', profit: '687,546', curbal: '121,454', welcome: '3,000', totalwith: '566032', trivia: '17,630', youtube: '21,470', tiktok: '45,000', spin: '31,432'},
                 { uname: 'Mulaman', expe: '12,000', sys: 'TZS', profit: '258,000', curbal: '71,000', welcome: '2,000'},
-                { uname: 'Juniorpro', expe: '17,000', sys: 'UGX', profit: '687,546', curbal: '121,454', welcome: '3,000'},
                 { uname: 'Claude250', expe: '5,000', sys: 'RWF', profit: '86,000', curbal: '23,054', welcome: '1,000'},
                 { uname: 'Shema', expe: '60', sys: 'PULA', profit: '747', curbal: '369', welcome: '10'},
                 { uname: 'Hanifa', expe: '10,000', sys: 'SSP', profit: '477,000', curbal: '130,070', welcome: '400'},
@@ -165,7 +165,7 @@ async function data() {
                 { uname: 'Jones', expe: '10', sys: 'USD', profit: '6,360', curbal: '247', welcome: '1'},
             ];
 
-            registrations = registrations[0];
+            registrations = registrations[1];
             
 
             
