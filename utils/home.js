@@ -55,7 +55,6 @@ async function requestData(url, method = "GET", myBody = null) {
 
     try {
         const response = await fetch(url, request);
-        console.log(response)
         const data = await response.json();
 
         return data
@@ -197,8 +196,8 @@ register.addEventListener('submit', (e) => {
                         setCookie("access_token", response.data['access_token'],2)
                         login.reset();
                         
-                        // window.location.href = '/earnempire/'
-                        window.location.href = '/'
+                        window.location.href = '/earnempire/'
+                        // window.location.href = '/'
                     }
                     if (Array.isArray(response.info) && response.info.length > 0) {
                             response.info.forEach(value => {
