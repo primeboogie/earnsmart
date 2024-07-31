@@ -165,7 +165,7 @@ async function data() {
                 { uname: 'Jones', expe: '10', sys: 'USD', profit: '6,300', curbal: '300', welcome: '1'},
             ];
 
-            registrations = registrations[8];
+            registrations = registrations[9];
             
 
             
