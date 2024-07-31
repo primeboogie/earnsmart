@@ -44,6 +44,26 @@ async function requestData(url, method = "GET", myBody = null) {
     }
 }
 
+async function fortest() {
+    try {
+        const response = await requestData('https://earnempire.seosblog.com/?action=register', 'POST', { some: 'data' });          
+        
+        if(response.resultcode){
+            console.log(true);
+        }
+        if (Array.isArray(response.info) && response.info.length > 0) {
+            response.info.forEach(value => {
+                console.log(value.msg);
+            });
+        } else {
+            console.log(response);
+        }
+    } catch (error) {
+        alert(error);
+    }
+    openLoader(false);
+}
+
 
 function getCookie(name) {
     const value = `; ${document.cookie}`;
@@ -60,30 +80,6 @@ function openLoader(res){
         document.getElementById("loaderrr").style.display = "none";
     }
 }
-
-
-async function fortest() {
-    try {
-        const response = await requestData(`${baseUrl}register`, 'POST', formObject);          
-        
-        if(response.resultcode){
-            console.log(true)
-        }
-        if (Array.isArray(response.info) && response.info.length > 0) {
-            response.info.forEach(value => {
-                    console.log(value.msg);
-                });
-            }
-            else{
-                console.log(response)
-            }
-
-        } catch (error) {
-        alert(error);
-    }
-    openLoader(false)
-}
-
 menuid.addEventListener('click', () => {
     menuid.classList.toggle("fa-xmark")
     navbar.classList.toggle("navhelper")
