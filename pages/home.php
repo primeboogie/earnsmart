@@ -80,7 +80,7 @@
                         <input placeholder="--Choose Country--" name="countryid" required id="countryid" class="" type="text">
                     </div>
 
-                    <div class=" singleinput" id="phone">
+                    <div class=" singleinput" id="phones">
                         <label for="phone">Phone</label>
                         <div class="forphone">
                         <span  id="phone">(+000)</span>
