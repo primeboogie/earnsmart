@@ -150,19 +150,19 @@ async function data() {
             let expense = document.querySelectorAll("#expense")
 
             let registrations = [
-                { uname: 'Joe254', expe: 500, sys: 'KSH', profit: 61500, curbal: 24000, welcome: 100},
-                { uname: 'Mulaman', expe: 12000, sys: 'TZS', profit: 258000, curbal: 71000, welcome: 2000},
-                { uname: 'Juniorpro', expe: 17000, sys: 'UGX', profit: 687546, curbal: 121454, welcome: 3000},
-                { uname: 'Claude250', expe: 5000, sys: 'RWF', profit: 86000, curbal: 23054, welcome: 1000},
-                { uname: 'Shema', expe: 60, sys: 'PULA', profit: 747, curbal: 369, welcome: 10},
-                { uname: 'Hanifa', expe: 10000, sys: 'SSP', profit: 477000, curbal: 130070, welcome: 400},
-                { uname: 'Rosaline', expe: 2800, sys: 'XAF', profit: 77500, curbal: 69300, welcome: 450},
-                { uname: 'Abina', expe: 60, sys: 'GHC', profit: 6150, curbal: 1460, welcome: 12},
-                { uname: 'Yakay', expe: 700, sys: 'GMD', profit: 124000, curbal: 4900, welcome: 50},
-                { uname: 'Orera', expe: 8600, sys: 'MK', profit: 213600, curbal: 16690, welcome: 1300},
-                { uname: 'Cheelo', expe: 100, sys: 'ZK', profit: 31400, curbal: 4600, welcome: 20},
-                { uname: 'Abiola', expe: 5000, sys: 'NGN', profit: 60875, curbal: 7800, welcome: 1250},
-                { uname: 'Jones', expe: 10, sys: 'USD', profit: 6300, curbal: 300, welcome: 1},
+                { uname: 'Joe254', expe: '500', sys: 'KSH', profit: '61,500', curbal: '24,000', welcome: '100'},
+                { uname: 'Mulaman', expe: '12,000', sys: 'TZS', profit: '258,000', curbal: '71,000', welcome: '2,000'},
+                { uname: 'Juniorpro', expe: '17,000', sys: 'UGX', profit: '687,546', curbal: '121,454', welcome: '3,000'},
+                { uname: 'Claude250', expe: '5,000', sys: 'RWF', profit: '86,000', curbal: '23,054', welcome: '1,000'},
+                { uname: 'Shema', expe: '60', sys: 'PULA', profit: '747', curbal: '369', welcome: '10'},
+                { uname: 'Hanifa', expe: '10,000', sys: 'SSP', profit: '477,000', curbal: '13,0070', welcome: '400'},
+                { uname: 'Rosaline', expe: '2,800', sys: 'XAF', profit: '77,500', curbal: '69,300', welcome: '450'},
+                { uname: 'Abina', expe: '60', sys: 'GHC', profit: '6,150', curbal: '1,460', welcome: '12'},
+                { uname: 'Yakay', expe: '700', sys: 'GMD', profit: '124,000', curbal: '4,900', welcome: '50'},
+                { uname: 'Orera', expe: '8,600', sys: 'MK', profit: '213,600', curbal: '16,690', welcome: '1,300'},
+                { uname: 'Cheelo', expe: '100', sys: 'ZK', profit: '31,400', curbal: '4,600', welcome: '20'},
+                { uname: 'Abiola', expe: '5,000', sys: 'NGN', profit: '6,0875', curbal: '7,800', welcome: '1,250'},
+                { uname: 'Jones', expe: '10', sys: 'USD', profit: '6,300', curbal: '300', welcome: '1'},
             ];
 
             registrations = registrations[1];
