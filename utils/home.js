@@ -1,5 +1,5 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 
 let allist = document.getElementById("allist");
 let phone = document.getElementById("phone");
@@ -203,8 +203,8 @@ register.addEventListener('submit', (e) => {
                         setCookie("access_token", response.data['access_token'],2)
                         login.reset();
                         
-                        // window.location.href = '/earnempire/'
-                        window.location.href = '/'
+                        window.location.href = '/earnempire/'
+                        // window.location.href = '/'
                     }
                     if (Array.isArray(response.info) && response.info.length > 0) {
                             response.info.forEach(value => {
@@ -305,23 +305,23 @@ register.addEventListener('submit', (e) => {
                         confirmUser()
                     })
 
-                    sinphone.addEventListener('input', () => {
-                        async function confirmUser() {
-                            try {
-                                const response = await requestData(`${baseUrl}freephone`, 'POST', {"phone": sinphone.value});          
-                                
-                                if(response.resultcode){
-                                    shakyph(true)
-                                }else{
-                                    shakyph(false)
-                                }
-                                    } catch (error) {
-                                        alert(error);
-                                    }
-                                }
-                                
-                                confirmUser()
-                            })
+        sinphone.addEventListener('input', () => {
+            async function confirmUser() {
+                try {
+                    const response = await requestData(`${baseUrl}freephone`, 'POST', {"phone": sinphone.value});          
+                    
+                    if(response.resultcode){
+                        shakyph(true)
+                    }else{
+                        shakyph(false)
+                    }
+                        } catch (error) {
+                            alert(error);
+                        }
+                    }
+                    
+                    confirmUser()
+                })
 
 loginusername.addEventListener('change', () => {
     async function confirmUser() {
