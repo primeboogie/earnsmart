@@ -70,9 +70,9 @@
                         <input placeholder="Username" name="username"  id="sinusername" autocomplete="off" required  type="text">
                     </div>
 
-                    <div class="singleinput">
+                    <div class="singleinput" id="email" >
                         <label for="email">Email</label>
-                        <input placeholder="Email" name="email"  required class="" type="email">
+                        <input placeholder="Email" name="email"  id="sinemail" required class="" type="email">
                     </div>
 
                     <div class="singleinput">
@@ -80,17 +80,17 @@
                         <input placeholder="--Choose Country--" name="countryid" required id="countryid" class="" type="text">
                     </div>
 
-                    <div class=" singleinput">
+                    <div class=" singleinput" id="phone">
                         <label for="phone">Phone</label>
                         <div class="forphone">
                         <span  id="phone">(+000)</span>
-                        <input placeholder="Phone"  required name="phone" class="" type="number">
+                        <input placeholder="Phone"  required name="phone" id="sinphone" class="" type="number">
                         </div>
                     </div>
 
                     <div class="singleinput">
                         <label for="password" >Password</label>
-                        <input placeholder="Password" autocomplete="off" autocomplete="new-password" required name="password" class="password input" type="password">
+                        <input placeholder="Password" autocomplete="off"  autocomplete="new-password" required name="password" class="password input" type="password">
                     </div>
 
                     <div class="singleinput">

@@ -1,17 +1,21 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 
 let allist = document.getElementById("allist");
 let phone = document.getElementById("phone");
 let countryid = document.getElementById("countryid");
 let country = document.getElementById("country");
 let register = document.getElementById("register");
-let sinusername = document.getElementById("sinusername");
-let sinphone = document.getElementById("sinphoone");
-let sinemail = document.getElementById("sinemail");
-let forusername = document.getElementById("username");
 let login = document.getElementById("login");
 
+let sinusername = document.getElementById("sinusername");
+let forusername = document.getElementById("username");
+
+let sinphone = document.getElementById("sinphone");
+let forphone = document.getElementById("phone");
+
+let sinemail = document.getElementById("sinemail");
+let foremail = document.getElementById("email");
 
 let loginusername = document.getElementById("loginusername");
 let logusername = document.getElementById("logusername");
@@ -199,8 +203,8 @@ register.addEventListener('submit', (e) => {
                         setCookie("access_token", response.data['access_token'],2)
                         login.reset();
                         
-                        // window.location.href = '/earnempire/'
-                        window.location.href = '/'
+                        window.location.href = '/earnempire/'
+                        // window.location.href = '/'
                     }
                     if (Array.isArray(response.info) && response.info.length > 0) {
                             response.info.forEach(value => {
@@ -229,6 +233,25 @@ register.addEventListener('submit', (e) => {
             forusername.classList.add("shacky")
         }else{
             forusername.classList.remove("shacky")
+        }
+    } 
+
+
+    let shakyem = (resp) =>{
+        if(resp){
+            foremail.classList.add("shacky")
+        }else{
+            foremail.classList.remove("shacky")
+        }
+    } 
+
+
+
+    let shakyph = (resp) =>{
+        if(resp){
+            forphone.classList.add("shacky")
+        }else{
+            forphone.classList.remove("shacky")
         }
     } 
 
@@ -270,9 +293,9 @@ register.addEventListener('submit', (e) => {
                         const response = await requestData(`${baseUrl}freeemail`, 'POST', {"email": sinemail.value});          
                         
                         if(response.resultcode){
-                            shaky(true)
+                            shakyem(true)
                         }else{
-                            shaky(false)
+                            shakyem(false)
                         }
                             } catch (error) {
                                 alert(error);
@@ -288,9 +311,9 @@ register.addEventListener('submit', (e) => {
                                 const response = await requestData(`${baseUrl}freephone`, 'POST', {"phone": sinphone.value});          
                                 
                                 if(response.resultcode){
-                                    shaky(true)
+                                    shakyph(true)
                                 }else{
-                                    shaky(false)
+                                    shakyph(false)
                                 }
                                     } catch (error) {
                                         alert(error);
