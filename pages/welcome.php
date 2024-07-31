@@ -3,7 +3,7 @@
     <p>
         Welcome to Earn-Empire Connections! We're thrilled to have you onboard! 
         to approve Your Welcome 
-        Bonus Your Target is to have <i>10 Level 1</i>  active memebers
+        Bonus Your Target is to have <i>15 Level 1</i>  active memebers
         so far you have <i>6</i> on Board, Soon you might reach all <i>10 Level 1</i> 
         You may Now withdrwal your Bonus
         <br> 

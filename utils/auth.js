@@ -21,7 +21,6 @@ async function requestData(url, method = "GET", myBody = null) {
             "Accept": "Application/json",
             "Auth": `Bearer ${sessionCookie}` 
         }
-        // credentials: 'include'
     };
 
     
