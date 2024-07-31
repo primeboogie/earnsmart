@@ -19,7 +19,7 @@ async function requestData(url, method = "GET", myBody = null) {
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "Auth": `Bearer ${sessionCookie}` // Ensure correct key-value syntax
+            "auth": `Bearer ${sessionCookie}` // Ensure correct key-value syntax
         }
     };
 
