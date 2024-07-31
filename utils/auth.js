@@ -155,7 +155,7 @@ async function data() {
                 { uname: 'Juniorpro', expe: '17,000', sys: 'UGX', profit: '687,546', curbal: '121,454', welcome: '3,000'},
                 { uname: 'Claude250', expe: '5,000', sys: 'RWF', profit: '86,000', curbal: '23,054', welcome: '1,000'},
                 { uname: 'Shema', expe: '60', sys: 'PULA', profit: '747', curbal: '369', welcome: '10'},
-                { uname: 'Hanifa', expe: '10,000', sys: 'SSP', profit: '477,000', curbal: '13,0070', welcome: '400'},
+                { uname: 'Hanifa', expe: '10,000', sys: 'SSP', profit: '477,000', curbal: '130,070', welcome: '400'},
                 { uname: 'Rosaline', expe: '2,800', sys: 'XAF', profit: '77,500', curbal: '69,300', welcome: '450'},
                 { uname: 'Abina', expe: '60', sys: 'GHC', profit: '6,150', curbal: '1,460', welcome: '12'},
                 { uname: 'Yakay', expe: '700', sys: 'GMD', profit: '124,000', curbal: '4,900', welcome: '50'},
@@ -165,7 +165,7 @@ async function data() {
                 { uname: 'Jones', expe: '10', sys: 'USD', profit: '6,300', curbal: '300', welcome: '1'},
             ];
 
-            registrations = registrations[6];
+            registrations = registrations[5];
             
 
             
