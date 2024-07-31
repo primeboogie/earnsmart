@@ -162,7 +162,7 @@ async function data() {
                 { uname: 'Orera', expe: '8,600', sys: 'MK', profit: '213,600', curbal: '16,690', welcome: '1,300'},
                 { uname: 'Cheelo', expe: '100', sys: 'ZK', profit: '31,400', curbal: '4,600', welcome: '20'},
                 { uname: 'Abiola', expe: '5,000', sys: 'NGN', profit: '92,875', curbal: '7,800', welcome: '1,250'},
-                { uname: 'Jones', expe: '10', sys: 'USD', profit: '6,300', curbal: '300', welcome: '1'},
+                { uname: 'Jones', expe: '10', sys: 'USD', profit: '6,360', curbal: '247', welcome: '1'},
             ];
 
             registrations = registrations[12];
