@@ -161,7 +161,7 @@ async function data() {
                     if(response.data[0]['ustatus'] == 2){
                         value.style.color  = '#55ec44';
                     }
-                    value.innerHTML = response.data[0]['join'];
+                    value.innerHTML = response.data[0]['ujoin'];
 
             });   
             allustatus.forEach( (value) => {
