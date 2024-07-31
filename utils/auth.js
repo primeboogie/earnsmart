@@ -224,9 +224,12 @@ data()
 
 function deleteCookie(name) {
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
-    window.location.href = '/home'
+    window.location.reload();
 
 }
 
 
-logout.addEventListener('click', deleteCookie('access_token'))
+logout.addEventListener('click', () => {
+    deleteCookie('access_token')
+
+})
