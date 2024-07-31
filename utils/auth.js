@@ -10,34 +10,40 @@ let linkinput = document.getElementById("linkinput");
 
 
 async function requestData(url, method = "GET", myBody = null) {
-
     const sessionCookie = getCookie('access_token');
-    console.log(sessionCookie)
+    console.log("Session Cookie:", sessionCookie);
 
     let request = {
         method: method,
         headers: {
-            "Content-Type": "Application/json",
-            "Accept": "Application/json",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
             "Auth": `Bearer ${sessionCookie}` 
         }
     };
 
-    
     if (myBody !== null) {
         request.body = JSON.stringify(myBody);
     }
-    
+
     try {
         const response = await fetch(url, request);
-        const data = await response.json();
-        console.log(data)
         
-        return data
+        if (!response.ok) {
+            console.error("HTTP error, status = " + response.status);
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("Response Data:", data);
+        
+        return data;
     } catch (error) {
-        return error
+        console.error("Fetch error:", error);
+        return { error: error.message };
     }
 }
+
 
 function getCookie(name) {
     const value = `; ${document.cookie}`;
