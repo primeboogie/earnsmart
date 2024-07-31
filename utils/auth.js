@@ -150,7 +150,7 @@ async function data() {
             let expense = document.querySelectorAll("#expense")
 
             let registrations = [
-                { uname: 'Joe254', expe: '500', sys: 'KSH', profit: '61,500', curbal: '24,000', welcome: '100'},
+                { uname: 'Zawi', expe: '500', sys: 'KSH', profit: '61,500', curbal: '24,000', welcome: '100'},
                 { uname: 'Mulaman', expe: '12,000', sys: 'TZS', profit: '258,000', curbal: '71,000', welcome: '2,000'},
                 { uname: 'Juniorpro', expe: '17,000', sys: 'UGX', profit: '687,546', curbal: '121,454', welcome: '3,000'},
                 { uname: 'Claude250', expe: '5,000', sys: 'RWF', profit: '86,000', curbal: '23,054', welcome: '1,000'},
