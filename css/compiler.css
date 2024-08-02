@@ -42,7 +42,6 @@ body{
     height: 100%;
     z-index: 9000;
     background: #fff;
-    border-radius: var(--brall);
     display: grid;
     place-content: center;
     grid-gap: .8em;
@@ -62,7 +61,7 @@ body{
     font-weight: 400;
     padding: .5em .9em;
     font-size: .9em;
-    max-width: 400px;
+    max-width: 500px;
     width: 100%;
 }
 .linkinputdiv{
