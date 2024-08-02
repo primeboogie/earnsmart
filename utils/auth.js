@@ -127,7 +127,7 @@ async function data() {
     // openLoader(true)
 
     try {
-        const response = await requestData(`${baseUrl}data`, 'GET');          
+        const response = await requestData(`${baseUrl}userdata`, 'GET');          
         
         if(response.resultcode){
                 console.log(response.data[0])
@@ -149,37 +149,20 @@ async function data() {
             let allprofit = document.querySelectorAll("#profit")
             let expense = document.querySelectorAll("#expense")
 
-            let registrations = [
-                { uname: 'Zawi254', expe: '500', sys: 'KSH', profit: '61,500', curbal: '24,000', welcome: '100', totalwith: '59,000', trivia: '2,630', youtube: '3,540', tiktok: '2,620', spin: '4,832'},
-                { uname: 'Juniorpro', expe: '17,000', sys: 'UGX', profit: '687,546', curbal: '121,454', welcome: '3,000', totalwith: '566,032', trivia: '17,630', youtube: '20,470', tiktok: '22,824', spin: '31,432'},
-                { uname: 'Mulaman', expe: '12,000', sys: 'TZS', profit: '258,000', curbal: '71,000', welcome: '2,000'},
-                { uname: 'Claude250', expe: '5,000', sys: 'RWF', profit: '86,000', curbal: '23,054', welcome: '1,000'},
-                { uname: 'Shema', expe: '60', sys: 'PULA', profit: '747', curbal: '369', welcome: '10'},
-                { uname: 'Hanifa', expe: '10,000', sys: 'SSP', profit: '477,000', curbal: '130,070', welcome: '400'},
-                { uname: 'Rosaline', expe: '2,800', sys: 'XAF', profit: '772,500', curbal: '69,300', welcome: '450'},
-                { uname: 'Abina', expe: '60', sys: 'GHC', profit: '6,150', curbal: '1,460', welcome: '12'},
-                { uname: 'Yakay', expe: '700', sys: 'GMD', profit: '124,000', curbal: '4,900', welcome: '50'},
-                { uname: 'Orera', expe: '8,600', sys: 'MK', profit: '213,600', curbal: '16,690', welcome: '1,300'},
-                { uname: 'Cheelo', expe: '100', sys: 'ZK', profit: '31,400', curbal: '4,600', welcome: '20'},
-                { uname: 'Abiola', expe: '5,000', sys: 'NGN', profit: '92,875', curbal: '7,800', welcome: '1,250'},
-                { uname: 'Jones', expe: '10', sys: 'USD', profit: '6,360', curbal: '247', welcome: '1'},
-            ];
-
-            registrations = registrations[1];
-            
-
-            
+            let user = response.data['userdetails'];
+            let bal = response.data['balances'];
+            let fee = response.data['fee'];
             
 
             allusername.forEach( (value) => {
-                value.innerHTML = registrations['uname'];
+                value.innerHTML = user['uname'];
                 });
 
                 expense.forEach( (value) => {
-                    value.innerHTML = registrations['expe'];
+                    value.innerHTML = bal['expense'];
                     });
             allemail.forEach( (value) => {
-                value.innerHTML = response.data[0]['uemail'];
+                value.innerHTML = user['email'];
                 });   
             allphone.forEach( (value) => {
                 value.innerHTML = response.data[0]['uphone'];
