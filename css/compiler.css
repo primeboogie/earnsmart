@@ -65,7 +65,7 @@ body{
     width: 100%;
 }
 .linkinputdiv{
-    width: 90%;
+    width: auto;
     display: flex;
     border-radius: 25px;
     border: thin solid #716f6f;
@@ -79,7 +79,6 @@ body{
     outline: none;
 }
 .linkinputdiv input{
-    width: 100%;
     padding: .7em .5em;
 }
 .linkinputdiv button{
