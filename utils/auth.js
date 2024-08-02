@@ -7,6 +7,8 @@ let overs = document.getElementById("overs");
 let earnimgs = document.getElementById("earnimgs");
 let linkbtn = document.getElementById("linkbtn");
 let linkinput = document.getElementById("linkinput");
+let myactivate = document.getElementById("activateme");
+
 
 
 async function requestData(url, method = "GET", myBody = null) {
@@ -266,3 +268,23 @@ logout.addEventListener('click', () => {
 })
 
 
+myactivate.addEventListener('click', () =>{
+    async function activateme() {
+        try {
+            const response = await requestData(`${baseUrl}activateaccount`, 'GET');           
+            if (Array.isArray(response.info) && response.info.length > 0) {
+                response.info.forEach(value => {
+                    alert(value.msg);
+                });
+            } else {
+                // console.log(response);
+            }
+        } catch (error) {
+            alert(error);
+        }
+        // openLoader(false);
+    }
+
+    activateme()
+    
+})
