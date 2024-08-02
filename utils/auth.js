@@ -137,6 +137,7 @@ async function data() {
             let allustatus = document.querySelectorAll("#ustatus")
             let linkinput = document.querySelectorAll("#linkinput")
             let allusys = document.querySelectorAll("#usys")
+            let allupline = document.querySelectorAll("#upline")
             let curbal = document.querySelectorAll("#curbal")
             let curwel = document.querySelectorAll("#curwel")
             let curwithtotal = document.querySelectorAll("#curwithtotal")
@@ -147,6 +148,8 @@ async function data() {
             let curspin = document.querySelectorAll("#curspin")
             let allprofit = document.querySelectorAll("#profit")
             let expense = document.querySelectorAll("#expense")
+            let point = document.querySelectorAll("#point")
+            let reward = document.querySelectorAll("#reward")
 
             let user = response.data['userdetails'];
             let bal = response.data['balances'];
@@ -155,10 +158,19 @@ async function data() {
             allusername.forEach( (value) => {
                 value.innerHTML = user['uname'];
                 });
+                allupline.forEach( (value) => {
+                    value.innerHTML = user['upline'];
+                    });
 
                 expense.forEach( (value) => {
                     value.innerHTML = bal['expense'];
                     });
+                    point.forEach( (value) => {
+                        value.innerHTML = bal['target'];
+                        });
+                        reward.forEach( (value) => {
+                            value.innerHTML = bal['reward'];
+                            });
             allemail.forEach( (value) => {
                 value.innerHTML = user['email'];
                 });   

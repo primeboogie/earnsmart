@@ -206,10 +206,10 @@
     </div>
 
     <div class="bonusinf">
-        <span>Today's Target:  <i id="points">5 Points</i></span>
-        <span>Target Reward:  <i>3000 UGX</i></span>
-        <span>Today's Progress:  <i>2 Points</i></span>
-        <span>How Much To Go:  <i>3 Points</i></span>
+        <span>Today's Target:  <i > <i id="points"></i> Points</i></span>
+        <span>Target Reward:  <i> <i id="reward"></i> <i id="usys"></i></i></span>
+        <span>Today's Progress:  <i> <i id="yourpoints"></i>2 Points</i></span>
+        <span>How Much To Go:  <i> <i id="rempoint">3</i> Points</i></span>
     </div>
     <div class="bonusbtn">
         <button class="authbtn" >Info</button>
@@ -234,6 +234,7 @@
             <li><span>Phone:</span> <i id="phone">000000000</i></li>
             <li><span>Joined:</span> <i class="act" id="join" >24-08-2024</i></li>
             <li><span>Account Status:</span> <i id="ustatus"class="act">Active</i></li>
+            <li><span>Upline:</span> <i id="upline"></i></li>
         </ul>
     </div>
 
@@ -242,7 +243,11 @@
    <!-- <script type="module" src="<?php //echo $domain; ?>/utils/std.js?<?php //echo $newrand; ?>"></script> -->
 
 </div>
+<!-- 
+
 
 git add .
 git commit -m "Updated Dashboard"
 git push
+
+-->
