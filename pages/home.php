@@ -99,7 +99,7 @@
                     </div>
 
             <input  name="country" id="country" hidden type="text">
-            <input  name="upline" hidden  type="text" value=""<?php echo $upline ?? 'EarnEmpire';  ?>>
+            <input  name="upline" hidden  type="text" value="<?php echo $upline ?? 'EarnEmpire';  ?>">
             <button class="authbtn" type="submit">SignUp</button>
         </div>
         </form>
