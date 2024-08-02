@@ -5,67 +5,16 @@
 @import url(screen.css);
 
   body{
-  background:  linear-gradient(120deg, rgb(186, 143, 12) 30%, rgb(103, 73, 224) 80%);
+    background: fff;
   display: grid;
   place-content: center;
-}
-
-.ball {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.7;
-  animation: move 5s infinite alternate;
-  z-index: 1;
-}
-
-.ball.white {
-  background: linear-gradient(to right, white, transparent);
-  width: 50px;
-  height: 50px;
-  animation-duration: 6s;
-}
-
-.ball.green {
-  background: linear-gradient(to right, green, transparent);
-  width: 60px;
-  height: 60px;
-  animation-duration: 7s;
-}
-
-.ball.blue {
-  background: linear-gradient(to right, blue, transparent);
-  width: 40px;
-  height: 40px;
-  animation-duration: 8s;
-}
-
-@keyframes move {
-  0% {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-  }
-  25% {
-      top: 10%;
-      left: 10%;
-  }
-  50% {
-      top: 90%;
-      left: 10%;
-  }
-  75% {
-      top: 90%;
-      left: 90%;
-  }
-  100% {
-      top: 10%;
-      left: 90%;
-  }
 }
 
 
 .jump{
     /* background: rgba(87, 85, 85, 0.34); */
+    background: var(--theme1);
+    border-radius: 10px;
     padding: 0.5em 0.4em;
     display: grid;
     place-items: center;
@@ -74,7 +23,9 @@
 .jump .eec{
     font-size: 1.3em;
     font-family: "Roboto Serif", serif;
-    color: rgba(161, 148, 148, 0.79);
+    color: yellow;
+    font-weight: 800;
+    padding: 1.4em;
 }
 
 .jump .eec i
@@ -85,32 +36,16 @@
 }
 
 
-.jumphead{
-    font-size: 3rem;
-    font-weight: 800;
-    background: linear-gradient(90deg, #ea3675, #c510bc 70%, #7c07cf 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-wrap: nowrap;
-}
-
 
 .jump p {
     width: 100%;
     text-align: center;
     font-size: 1.1rem;
-    font-family: "Playwrite DE Grund", cursive;
+    font-family: "Roboto", sans-serif;
     font-weight: 600;
+    color: #fff;
 }
 
-.colorset{
-    position: fixed;
-    bottom: 0%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    width: 500px;
-    z-index: 9;
-}
 .actions {
     display: grid;
     grid-auto-flow: column;

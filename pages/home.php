@@ -11,15 +11,14 @@
 
     <div class="overs" id="overs"> </div>
     <div class="jump">
-        <span class="eec"><i>EEC</i> - Earnempire.com</span>
-        <span class="jumphead">Lets Jump back in!</span>
+        <span class="eec">Earn Empire Connections</span>
         <p>Welcome back to Earn-Empire Connections
             <br>
             The family awaits inside! ✨ 
         </p>
         <div class="actions">
-            <button class="btn" id="showLogin">Login</button>
-            <button class="btn"  id="showSignup" >Create-Account</button>
+            <button class="authbtn" id="showLogin">Login <i class="fa-solid fa-right-to-bracket"></i></button>
+            <button class="authbtn"  id="showSignup" >SignUp <i class="fa-solid fa-user-plus"></i> </button>
         </div>
     </div>
 <!-- handletrans -->
@@ -111,19 +110,8 @@
         </div>
     </div>
 
-    <div class="ball white"></div>
-    <div class="ball white" style="animation-delay: 1s;"></div>
-    <div class="ball white" style="animation-delay: 2s;"></div>
-    
-    <div class="ball green"></div>
-    <div class="ball green" style="animation-delay: 1.5s;"></div>
-    <div class="ball green" style="animation-delay: 3s;"></div>
-    
-    <div class="ball blue"></div>
-    <div class="ball blue" style="animation-delay: 2s;"></div>
-    <div class="ball blue" style="animation-delay: 4s;"></div>
 
-    <img class="colorset" src="<?php echo $admin['domain']; ?>/images/glow_evn.svg" alt="">
+    <!-- <img class="colorset" src="<?php echo $admin['domain']; ?>/images/glow_evn.svg" alt=""> -->
     
     <script type="module" src="<?php echo $domain; ?>/utils/home.js?<?php echo $newrand; ?>"></script>
 </body>
