@@ -130,7 +130,6 @@ async function data() {
         const response = await requestData(`${baseUrl}userdata`, 'GET');          
         
         if(response.resultcode){
-                console.log(response.data[0])
             let allusername = document.querySelectorAll("#username")
             let allemail = document.querySelectorAll("#email")
             let allphone = document.querySelectorAll("#phone")
@@ -153,7 +152,6 @@ async function data() {
             let bal = response.data['balances'];
             let fee = response.data['fee'];
             
-
             allusername.forEach( (value) => {
                 value.innerHTML = user['uname'];
                 });
@@ -165,58 +163,58 @@ async function data() {
                 value.innerHTML = user['email'];
                 });   
             allphone.forEach( (value) => {
-                value.innerHTML = response.data[0]['uphone'];
+                value.innerHTML = user['phone'];
                 });
                 
                 alljoin.forEach( (value) => {
                     value.style.color  = 'red';
-                    if(response.data[0]['ustatus'] == 2){
+                    if(user['status'] == 2){
                         value.style.color  = '#55ec44';
                     }
-                    value.innerHTML = response.data[0]['ujoin'];
+                    value.innerHTML = user['join'];
             });   
             allustatus.forEach( (value) => {
                 let mystate = 'Inactive'
                 value.style.color  = 'red';
-                if(response.data[0]['ustatus'] == 2){
+                if(user['status'] == 2){
                     mystate = 'Active'
                     value.style.color  = '#55ec44';
                 }
                 value.innerHTML = mystate;
                 });
                 linkinput.forEach( (value) => {
-                value.value = value.value + response.data[0]['uname'];
+                value.value = value.value + user['uname'];
                 });   
             allusys.forEach( (value) => {
-                value.innerHTML = registrations['sys'];
+                value.innerHTML = user['ccurrency'];
                 });
             curbal.forEach( (value) => {
-                value.innerHTML = registrations['curbal'];
+                value.innerHTML = bal['balance'];
                 });   
                 curwel.forEach( (value) => {
-                    value.innerHTML = registrations['welcome'];
+                    value.innerHTML = bal['bonus'];
                     });   
             curwithtotal.forEach( (value) => {
-                value.innerHTML = registrations['totalwith'];
+                value.innerHTML = bal['totalwithdrawal'];
                 });
             curwithpen.forEach( (value) => {
-                value.innerHTML = response.data[0]['way2'];
+                value.innerHTML = bal['pendingwithdrawal'];
                 });
                 allprofit.forEach( (value) => {
-                    value.innerHTML = registrations['profit'];
+                    value.innerHTML = bal['profit'];
                     });
 
                 curtivia.forEach( (value) => {
-                    value.innerHTML = registrations['trivia'];
+                    value.innerHTML = bal['trivia'];
                     });  
                 curspin.forEach( (value) => {
-                    value.innerHTML = registrations['spin'];
+                    value.innerHTML = bal['spin'];
                     });
                     curyou.forEach( (value) => {
-                        value.innerHTML = registrations['youtube'];
+                        value.innerHTML = bal['youtube'];
                         });
                 curtiktok.forEach( (value) => {
-                    value.innerHTML = registrations['tiktok'];
+                    value.innerHTML = bal['tiktok'];
                     });
         }else{
             alert("Seems We have An Issue Fetching Your Data Please Try Again Later")
