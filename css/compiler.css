@@ -33,6 +33,67 @@ body{
     grid-area: unset;
 } */
 
+.mylink{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 9000;
+    background: #fff;
+    border-radius: var(--brall);
+    display: grid;
+    place-content: center;
+    grid-gap: .8em;
+}
+.mylink .usernames{
+    font-style: italic;
+    font-weight: 800;
+    font-size: 1em;
+    padding-left: .5em;
+}
+.linkdiv{
+    display: grid;
+    grid-gap: .8em;
+
+}
+.linkdiv p{
+    font-weight: 400;
+    padding: .5em .9em;
+    font-size: .9em;
+    max-width: 400px;
+    width: 100%;
+}
+.linkinputdiv{
+    width: 90%;
+    display: flex;
+    border-radius: 25px;
+    border: thin solid #716f6f;
+    overflow: hidden;
+    margin: 0 auto;
+
+}
+.linkinputdiv input,
+.linkinputdiv button{
+    border: none;
+    outline: none;
+}
+.linkinputdiv input{
+    width: 100%;
+    padding: .7em .5em;
+}
+.linkinputdiv button{
+    width: auto;
+    background: none;
+    color: #fff;
+    background: var(--theme1);
+    text-wrap: nowrap;
+    padding: 0 .3em;
+
+}
+
+
 @media only screen and (max-height: 700px) {
 
 }

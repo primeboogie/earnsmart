@@ -3,3 +3,4 @@ auth/config.php
 *.log
 *.env
 error_log
+README.md
