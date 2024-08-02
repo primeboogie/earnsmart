@@ -200,8 +200,8 @@
     <div class="balanceCard">
         <div class="headerss" >ZanyTech</div>
         
-        <div class="circle" >
-            <div class="percentage" >66%</div>
+        <div class="circle" id="circles">
+            <div class="percentage"id="percent" >66%</div>
             </div>
     </div>
 

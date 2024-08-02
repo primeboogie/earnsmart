@@ -148,12 +148,25 @@ async function data() {
             let curspin = document.querySelectorAll("#curspin")
             let allprofit = document.querySelectorAll("#profit")
             let expense = document.querySelectorAll("#expense")
-            let point = document.querySelectorAll("#point")
+            let point = document.querySelectorAll("#points")
             let reward = document.querySelectorAll("#reward")
+            let circles = document.getElementById("circles")
+            let percent = document.querySelectorAll("#percent")
+
+    // background: conic-gradient( #0cb600 66%, rgba(255, 255, 255, 0.12) 66%);
 
             let user = response.data['userdetails'];
             let bal = response.data['balances'];
             let fee = response.data['fee'];
+
+            let mypercent = user['percent'] + "%"
+
+            circles.style.background = `conic-gradient( #0cb600 ${mypercent}, rgba(255, 255, 255, 0.12) ${mypercent})`
+
+            percent.forEach( (value) => {
+                value.innerHTML = mypercent;
+                });
+
             
             allusername.forEach( (value) => {
                 value.innerHTML = user['uname'];
