@@ -198,7 +198,7 @@
     <span class="dbonus">DAILY BONUSES</span>
     
     <div class="balanceCard">
-        <div class="headerss" id="username">ZanyTech</div>
+        <div class="headerss" >ZanyTech</div>
         
         <div class="circle" >
             <div class="percentage" >66%</div>
