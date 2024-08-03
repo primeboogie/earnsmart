@@ -11,7 +11,7 @@
             <div class="exe">
                 <div class="exe1 exedot">
                     <span class="exe1icon exeicon2"><i class='bx bx-cart-add'></i></span>
-                    <span class="exeh">Expenses</span>
+                    <span class="exeh">Expenses.</span>
                     <span class="exebal exebalr">
                         <i id="usys">KSH</i>
                         <i id="expense">500</i>
@@ -30,6 +30,8 @@
 
             </div>
         </div>
+        git remote set-url --add git@github.com:primeboogie/earnempire
+        git remote set-url --delete origin git@github.com:primeboogie/earnempire
 
         <div class="moneydiv bg1">
             <span id="inmoneyh">
