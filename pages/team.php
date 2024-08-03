@@ -39,7 +39,7 @@ Keep it up and let’s build an unstoppable team! 💥🔥
                 <th>Phone</th>
                 <th>Earned</th>
                 <th>Status</th>
-                <th>Balance</th>
+                <th>Deposited</th>
                 <th>Country</th>
                 <th>Joined</th>
                 <th>Activated</th>
@@ -48,7 +48,7 @@ Keep it up and let’s build an unstoppable team! 💥🔥
         <tbody>
             <tr>
                 <td></td>
-                <td colspan="10">No Downlines Yet</td></tr>
+                <td colspan="10">No <i id="team"></i> Downlines Yet</td></tr>
         </tbody>
 
         </table>

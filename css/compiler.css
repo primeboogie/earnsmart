@@ -33,7 +33,7 @@ body{
     grid-area: unset;
 } */
 
-/* .mylink{
+.mylink{
     position: fixed;
     top: 50%;
     left: 50%;
@@ -51,6 +51,18 @@ body{
     font-weight: 800;
     font-size: 1em;
     padding-left: .5em;
+}
+.mylinkh{
+    color: green;
+    font-weight: 800;
+    font-size: 1.4em;
+    width: 100%;
+    text-align: center;
+}
+
+#actbals{
+    font-style: italic;
+    font-weight: 800;
 }
 .linkdiv{
     display: grid;
@@ -72,27 +84,35 @@ body{
     overflow: hidden;
     margin: 0 auto;
     justify-content: space-between;
-
 }
-.linkinputdiv input,
-.linkinputdiv button{
+.depoform{
+    background: var(--theme1);
+    border-radius: var(--brall);
+    display: grid;
+    padding: .6em .5em;
+    grid-gap: .6em;
+}
+.depoform span{
+    color: var(--tt);
+    font-weight: 700;
+    font-size: 1.1em;
+}
+.depoform input{
+    padding: .8em .5em;
+    outline: none;
     border: none;
+    border-radius: 8px;
+}
+
+.depoform button{
+    margin: 0 auto;
     outline: none;
 }
-.linkinputdiv input{
-    width: 100%;
-    padding: .7em .5em;
+.depoinputs{
+    display: grid;
+    padding: 0em .9em;
+    grid-gap: .6em;
 }
-.linkinputdiv button{
-    width: auto;
-    background: none;
-    color: #fff;
-    background: var(--theme1);
-    text-wrap: nowrap !important;
-    padding: 0 .3em;
-
-} */
-
 
 @media only screen and (max-height: 700px) {
 

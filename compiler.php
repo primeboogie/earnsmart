@@ -12,19 +12,30 @@
   <div class="dot"></div>
   <div class="dot"></div>
 </section>
-<!-- <div class="mylink">
+<div class="mylink">
+    <span class="mylinkh">Earn Empire Connetions</span>
     <span  class="usernames">Hi <i id="username"></i></span>
     <div class="linkdiv">
         <p>
-             Welcome to Earn-Empire Connections Your Affilate Link is Active,
-            Please Copy And Share to Your Downlines
+        🌟 Welcome to Earn-Empire Connections! 🌟
+
+        Activate your account to unlock all earning activities. 🚀💼
+
+        Your activation balance is: <i id="actbals">0.00</i> 💰
+
+        Let’s get started and achieve great things together! 🌟🚀
         </p>
-        <div class="linkinputdiv">
-        <input type="text" id="linkinput" readonly value="<?php //echo $admin['domain'].'/reg/'?>" disbaled>
-        <button id="linkbtn"><i class="fa-solid fa-link"></i> Copy Link</button>
-        </div>
+
+        <form class="depoform" id="depoform">
+            <span>Request Deposit</span>
+            <div class="depoinputs">
+            <input type="text" name="amount" placeholder="Amount">
+            <input type="text" name="phone" placeholder="Phone">
+            </div>
+        <button id="linkbtn" class="authbtn" >Request Deposit</button>
+        </f>
     </div>
-</div> -->
+</div>
 
     <div class="root">
         <div class="header">
