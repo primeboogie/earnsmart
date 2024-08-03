@@ -11,6 +11,7 @@ let myactivate = document.getElementById("activateme");
 let logout = document.getElementById("logout");
 let loaderrr = document.getElementById("loaderrr");
 let depoform = document.getElementById("depoform");
+let acvtivateme = document.getElementById("acvtivateme");
 
 
 
@@ -345,6 +346,49 @@ if(depoform){
                     else{
                         console.log(response)
                     }
+      
+            } catch (error) {
+                console.log(error);
+            }
+        // openLoader(false)
+        }
+      
+        registerPost();
+      })
+    }
+
+
+if(acvtivateme){
+
+    acvtivateme.addEventListener('submit', (e) => {
+        e.preventDefault()
+      
+        // const formData = new FormData(acvtivateme);
+      
+        // const formObject = {};
+        // formData.forEach((value, key) => {
+        //     formObject[key] = value;
+        // });
+      
+        async function registerPost() {
+            try {
+                const response = await requestData(`${baseUrl}activateaccount`);          
+      
+                if(response.resultcode){
+                    acvtivateme.reset();
+                }
+                console.log(response)
+                if (Array.isArray(response.info) && response.info.length > 0) {
+                        response.info.forEach(value => {
+                            alert(value.msg);
+                        });
+                        
+                    }
+                    else{
+                        console.log(response)
+                    }
+                    window.location.href = '/'
+
       
             } catch (error) {
                 console.log(error);

@@ -28,14 +28,22 @@
         Let’s get started and achieve great things together! 🌟🚀
         </p>
         
-        <form class="depoform" id="depoform">
-        <span>Request Deposit</span>
-        <div class="depoinputs">
-        <input type="text" name="amount" placeholder="Amount">
-        <input type="text" name="phone" placeholder="Phone">
-        </div>
-        <button  class="authbtn" >Request Deposit</button>
-        </form>
+        <?php if($actualbal >= 0 ){ echo $actualbal;?> 
+        
+            <form class="depoform" id="depoform">
+            <span>Request Deposit</span>
+            <div class="depoinputs">
+            <input type="text" name="amount" placeholder="Amount">
+            <input type="text" name="phone" placeholder="Phone">
+            </div>
+            <button  class="authbtn" >Request Deposit</button>
+            </form>
+        
+        <?php }else{ ?>
+            <form action="#" id="acvtivateme" >
+                <button class="authbtn">Activate Me</button>
+            </form>
+        <?php } ?>
             </div>
             </div>
             

@@ -167,6 +167,8 @@
     $found = False;
     $environment = False;
     $accountenv = False;
+    $actualbal = 1;
+    
 
     foreach ($routes as $key => $value) {
         if ($key === $routesearch) {
@@ -176,6 +178,7 @@
 
                     if(isset($fetchresp['resultcode']) && $fetchresp['resultcode'] == true){
                     
+                        $actualbal = $fetchresp['data']['actual'] ;
                         if($fetchresp['data']['env'] == true){
                         $accountenv = True;
                     }
