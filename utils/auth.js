@@ -170,7 +170,7 @@ async function data() {
             updateElements("#upline", upline);
             updateElements("#email", email);
             updateElements("#phone", phone);
-            updateElements("#ccurrency", ccurrency);
+            updateElements("#usys", ccurrency);
             updateElements("#curbal", balance);
             updateElements("#curwel", bonus);
             updateElements("#curwithtotal", totalwithdrawal);
