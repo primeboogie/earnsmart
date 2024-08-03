@@ -64,7 +64,9 @@
     margin: 0 auto;
     border-radius: var(--brall);
     border: 1px solid #fff;
-
+}
+.act{
+    color: yellow;
 }
 .passform input{
     border: none;
