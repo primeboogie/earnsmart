@@ -13,10 +13,21 @@ Keep it up and let’s build an unstoppable team! 💥🔥
     </p>
 
     <div class="actionbtns">
-        <button class="authbtn" id="allrec">ALL</button>
-        <button class="authbtn" id="allrec">Active</button>
-        <button class="authbtn" id="allrec">Inactive</button>
-        <button class="authbtn" id="allrec">Suspended</button>
+        <button class="authbtn" id="allrec">ALL
+            <small>(0)</small>
+        </button>
+        <button class="authbtn" id="allrec">
+            Active
+        <small>(0)</small>
+    </button>
+        <button class="authbtn" id="allrec">
+            Inactive
+            <small>(0)</small>
+        </button>
+        <button class="authbtn" id="allrec">
+            Suspended
+            <small>(0)</small>
+    </button>
     </div>
 
     <div class="tablediv">
