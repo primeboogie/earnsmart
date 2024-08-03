@@ -1,5 +1,5 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 
 let menuid = document.getElementById("menuid");
 let navbar = document.getElementById("navbar");
@@ -176,10 +176,10 @@ async function data() {
             updateElements("#curwithtotal", totalwithdrawal);
             updateElements("#curwithpen", pendingwithdrawal);
             updateElements("#profit", profit);
-            updateElements("#trivia", trivia);
-            updateElements("#spin", spin);
-            updateElements("#youtube", youtube);
-            updateElements("#tiktok", tiktok);
+            updateElements("#curtivia", trivia);
+            updateElements("#curspin", spin);
+            updateElements("#curyou", youtube);
+            updateElements("#curtiktok", tiktok);
             updateElements("#actbals", actbal);
 
             updateElementsWithColor("#join", join, status == 2, '#55ec44', 'red');
