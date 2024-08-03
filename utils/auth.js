@@ -172,6 +172,7 @@ async function data() {
             updateElements("#phone", phone);
             updateElements("#usys", ccurrency);
             updateElements("#curbal", balance);
+            updateElements("#expense", expense);
             updateElements("#curwel", bonus);
             updateElements("#curwithtotal", totalwithdrawal);
             updateElements("#curwithpen", pendingwithdrawal);
