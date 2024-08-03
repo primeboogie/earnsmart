@@ -182,8 +182,8 @@ async function data() {
             updateElements("#tiktok", tiktok);
             updateElements("#actbals", actbal);
 
-            updateElementsWithColor("#join", join, status === 2, '#55ec44', 'red');
-            updateElementsWithColor("#ustatus", status === 2 ? 'Active' : 'Inactive', status === 2, '#55ec44', 'red');
+            updateElementsWithColor("#join", join, status == 2, '#55ec44', 'red');
+            updateElementsWithColor("#ustatus", status == 2 ? 'Active' : 'Inactive', status === 2, '#55ec44', 'red');
 
             document.querySelectorAll("#linkinput").forEach(input => {
                 input.value += uname;
