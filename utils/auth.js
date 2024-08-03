@@ -310,6 +310,6 @@ function justcon(){
     console.log(lastDigit); // Output: 2
 
 
-    
+
 }
 
