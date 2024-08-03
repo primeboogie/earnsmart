@@ -166,6 +166,7 @@
 
     $found = False;
     $environment = False;
+    $accountenv = False;
 
     foreach ($routes as $key => $value) {
         if ($key === $routesearch) {
@@ -175,6 +176,9 @@
 
                     if(isset($fetchresp['resultcode']) && $fetchresp['resultcode'] == true){
                     
+                        if($fetchresp['data']['status'] == 2){
+                        $accountenv = True;
+                    }
                         if($value['secured']){
                             $dfile = $value['file'];
                             $dcss = $value['style'];

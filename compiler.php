@@ -12,7 +12,9 @@
   <div class="dot"></div>
   <div class="dot"></div>
 </section>
-<div class="mylink">
+<?php if($accountenv){ ?>
+
+    <div class="mylink">
     <span class="mylinkh">Earn Empire Connetions</span>
     <span  class="usernames">Hi <i id="username"></i></span>
     <div class="linkdiv">
@@ -22,21 +24,22 @@
         Activate your account to unlock all earning activities. 🚀💼
 
         Your activation balance is: <i id="actbals">0.00</i> 💰
-
+        
         Let’s get started and achieve great things together! 🌟🚀
         </p>
-
+        
         <form class="depoform" id="depoform">
-            <span>Request Deposit</span>
+        <span>Request Deposit</span>
             <div class="depoinputs">
             <input type="text" name="amount" placeholder="Amount">
             <input type="text" name="phone" placeholder="Phone">
             </div>
-        <button id="linkbtn" class="authbtn" >Request Deposit</button>
-        </f>
-    </div>
-</div>
-
+            <button id="linkbtn" class="authbtn" >Request Deposit</button>
+            </f>
+            </div>
+            </div>
+            
+       <?php  } ?>
     <div class="root">
         <div class="header">
             <div class="earnlogo">
