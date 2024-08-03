@@ -1,5 +1,5 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 
 let menuid = document.getElementById("menuid");
 let navbar = document.getElementById("navbar");
@@ -139,7 +139,7 @@ async function data() {
             const {
                 userdetails: { uname, upline, email, phone, join, status, percent, ccurrency },
                 balances: {
-                    expense, target, reward, balance, bonus, totalwithdrawal, pendingwithdrawal, profit, trivia, spin, youtube, tiktok
+                    actbal, expense, target, reward, balance, bonus, totalwithdrawal, pendingwithdrawal, profit, trivia, spin, youtube, tiktok
                 }
             } = response.data;
 
@@ -179,6 +179,7 @@ async function data() {
             updateElements("#spin", spin);
             updateElements("#youtube", youtube);
             updateElements("#tiktok", tiktok);
+            updateElements("#actbals", actbal);
 
             updateElementsWithColor("#join", join, status === 2, '#55ec44', 'red');
             updateElementsWithColor("#ustatus", status === 2 ? 'Active' : 'Inactive', status === 2, '#55ec44', 'red');
