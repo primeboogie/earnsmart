@@ -164,9 +164,9 @@
     $extracted = explode('/', trim($local, '/'));
     $routesearch = '/'.$extracted[0] ?? '';
 
-    $found = False;
-    $environment = False;
-    $accountenv = False;
+    $found = false;
+    $environment = false;
+    $accountenv = false;
     $actualbal = 1;
     
 
@@ -178,14 +178,15 @@
 
                     if(isset($fetchresp['resultcode']) && $fetchresp['resultcode'] == true){
                     
-                        $actualbal = $fetchresp['data']['actual'] ;
-                        if($fetchresp['data']['env'] == true){
-                        $accountenv = True;
+                        $actualbal = $fetchresp['data']['actual'];
+
+                        if($fetchresp['data']['env']){
+                        $accountenv = true;
                     }
                         if($value['secured']){
                             $dfile = $value['file'];
                             $dcss = $value['style'];
-                            $environment = True;
+                            $environment = true;
 
                         } else {
                             header("location: ".$dev['root']."/");

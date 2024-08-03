@@ -12,7 +12,7 @@
   <div class="dot"></div>
   <div class="dot"></div>
 </section>
-<!-- <?php //if(!$accountenv){ ?>
+ <?php if(!$accountenv){ ?>
 
     <div class="mylink">
     <span class="mylinkh">Earn Empire Connetions</span>
@@ -28,7 +28,7 @@
         Let’s get started and achieve great things together! 🌟🚀
         </p>
         
-        <?php //if($actualbal >= 0 ){ ?> 
+        <?php if($actualbal > 0 ){ ?> 
         
             <form class="depoform" id="depoform">
             <span>Request Deposit</span>
@@ -39,15 +39,15 @@
             <button  class="authbtn" >Request Deposit</button>
             </form>
         
-        <?php // }else{ ?> -->
+        <?php  }else{ ?> 
             <form action="#" id="acvtivateme" >
                 <button class="authbtn">Activate Me</button>
             </form>
-        <?php // } ?>
+        <?php  } ?>
             </div>
             </div>
             
-       <?php  //} ?>
+       <?php  } ?>
     <div class="root">
         <div class="header">
             <div class="earnlogo">
