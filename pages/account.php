@@ -30,8 +30,6 @@
 
             </div>
         </div>
-        git remote set-url --add git@github.com:primeboogie/earnempire
-        git remote set-url --delete origin git@github.com:primeboogie/earnempire
 
         <div class="moneydiv bg1">
             <span id="inmoneyh">
@@ -244,11 +242,3 @@
    <!-- <script type="module" src="<?php //echo $domain; ?>/utils/std.js?<?php //echo $newrand; ?>"></script> -->
 
 </div>
-<!-- 
-
-
-git add .
-git commit -m "Updated Dashboard"
-git push
-
--->
