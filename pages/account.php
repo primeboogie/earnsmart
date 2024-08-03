@@ -234,7 +234,6 @@
             <li><span>Phone:</span> <i id="phone">000000000</i></li>
             <li><span>Joined:</span> <i class="act" id="join" >24-08-2024</i></li>
             <li><span>Account Status:</span> <i id="ustatus"class="act">Active</i></li>
-            <li><span>Upline:</span> <i id="upline"></i></li>
         </ul>
     </div>
 

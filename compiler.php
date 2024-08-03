@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="<?php echo $domain;?>/css/navbar.css?<?php echo $newrand;?>">
 </head>
 <body>
+    
 <div class="overs" id="overs"> </div>
 <section class="dots-container" id="loaderrr">
   <div class="dot"></div>

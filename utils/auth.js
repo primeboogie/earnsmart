@@ -1,5 +1,5 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 
 let menuid = document.getElementById("menuid");
 let navbar = document.getElementById("navbar");
@@ -8,6 +8,10 @@ let earnimgs = document.getElementById("earnimgs");
 let linkbtn = document.getElementById("linkbtn");
 let linkinput = document.getElementById("linkinput");
 let myactivate = document.getElementById("activateme");
+let logout = document.getElementById("logout");
+let loaderrr = document.getElementById("loaderrr");
+
+
 
 
 
@@ -123,137 +127,77 @@ if(linkbtn){
     })
 }
 
-
 async function data() {
-
-    // openLoader(true)
+    // openLoader(true);
 
     try {
-        const response = await requestData(`${baseUrl}userdata`, 'GET');          
-        
-        if(response.resultcode){
-            let allusername = document.querySelectorAll("#username")
-            let allemail = document.querySelectorAll("#email")
-            let allphone = document.querySelectorAll("#phone")
-            let alljoin = document.querySelectorAll("#join")
-            let allustatus = document.querySelectorAll("#ustatus")
-            let linkinput = document.querySelectorAll("#linkinput")
-            let allusys = document.querySelectorAll("#usys")
-            let allupline = document.querySelectorAll("#upline")
-            let curbal = document.querySelectorAll("#curbal")
-            let curwel = document.querySelectorAll("#curwel")
-            let curwithtotal = document.querySelectorAll("#curwithtotal")
-            let curwithpen = document.querySelectorAll("#curwithpen")
-            let curtivia = document.querySelectorAll("#curtivia")
-            let curyou = document.querySelectorAll("#curyou")
-            let curtiktok = document.querySelectorAll("#curtiktok")
-            let curspin = document.querySelectorAll("#curspin")
-            let allprofit = document.querySelectorAll("#profit")
-            let expense = document.querySelectorAll("#expense")
-            let point = document.querySelectorAll("#points")
-            let reward = document.querySelectorAll("#reward")
-            let circles = document.getElementById("circles")
-            let percent = document.querySelectorAll("#percent")
+        const response = await requestData(`${baseUrl}userdata`, 'GET');
 
-    // background: conic-gradient( #0cb600 66%, rgba(255, 255, 255, 0.12) 66%);
-
-            let user = response.data['userdetails'];
-            let bal = response.data['balances'];
-            let fee = response.data['fee'];
-
-            let mypercent = user['percent'] + "%"
-
-            circles.style.background = `conic-gradient( #0cb600 ${mypercent}, rgba(255, 255, 255, 0.12) ${mypercent})`
-
-            percent.forEach( (value) => {
-                value.innerHTML = mypercent;
-                });
-
-            
-            allusername.forEach( (value) => {
-                value.innerHTML = user['uname'];
-                });
-                allupline.forEach( (value) => {
-                    value.innerHTML = user['upline'];
-                    });
-
-                expense.forEach( (value) => {
-                    value.innerHTML = bal['expense'];
-                    });
-                    point.forEach( (value) => {
-                        value.innerHTML = bal['target'];
-                        });
-                        reward.forEach( (value) => {
-                            value.innerHTML = bal['reward'];
-                            });
-            allemail.forEach( (value) => {
-                value.innerHTML = user['email'];
-                });   
-            allphone.forEach( (value) => {
-                value.innerHTML = user['phone'];
-                });
-                
-                alljoin.forEach( (value) => {
-                    value.style.color  = 'red';
-                    if(user['status'] == 2){
-                        value.style.color  = '#55ec44';
-                    }
-                    value.innerHTML = user['join'];
-            });   
-            allustatus.forEach( (value) => {
-                let mystate = 'Inactive'
-                value.style.color  = 'red';
-                if(user['status'] == 2){
-                    mystate = 'Active'
-                    value.style.color  = '#55ec44';
+        if (response.resultcode) {
+            const {
+                userdetails: { uname, upline, email, phone, join, status, percent, ccurrency },
+                balances: {
+                    expense, target, reward, balance, bonus, totalwithdrawal, pendingwithdrawal, profit, trivia, spin, youtube, tiktok
                 }
-                value.innerHTML = mystate;
-                });
-                linkinput.forEach( (value) => {
-                value.value = value.value + user['uname'];
-                });   
-            allusys.forEach( (value) => {
-                value.innerHTML = user['ccurrency'];
-                });
-            curbal.forEach( (value) => {
-                value.innerHTML = bal['balance'];
-                });   
-                curwel.forEach( (value) => {
-                    value.innerHTML = bal['bonus'];
-                    });   
-            curwithtotal.forEach( (value) => {
-                value.innerHTML = bal['totalwithdrawal'];
-                });
-            curwithpen.forEach( (value) => {
-                value.innerHTML = bal['pendingwithdrawal'];
-                });
-                allprofit.forEach( (value) => {
-                    value.innerHTML = bal['profit'];
-                    });
+            } = response.data;
 
-                curtivia.forEach( (value) => {
-                    value.innerHTML = bal['trivia'];
-                    });  
-                curspin.forEach( (value) => {
-                    value.innerHTML = bal['spin'];
-                    });
-                    curyou.forEach( (value) => {
-                        value.innerHTML = bal['youtube'];
-                        });
-                curtiktok.forEach( (value) => {
-                    value.innerHTML = bal['tiktok'];
-                    });
-        }else{
-            alert("Seems We have An Issue Fetching Your Data Please Try Again Later")
+            // Helper function to update element contents
+            const updateElements = (selectors, value) => {
+                document.querySelectorAll(selectors).forEach(el => el.innerHTML = value);
+            };
+
+            // Helper function to update elements with color
+            const updateElementsWithColor = (selectors, value, condition, trueColor, falseColor) => {
+                document.querySelectorAll(selectors).forEach(el => {
+                    el.innerHTML = value;
+                    el.style.color = condition ? trueColor : falseColor;
+                });
+            };
+
+            const percentString = `${percent}%`;
+
+            // Update the circles gradient
+            const circles = document.getElementById("circles");
+            if (circles) {
+                circles.style.background = `conic-gradient(#0cb600 ${percentString}, rgba(255, 255, 255, 0.12) ${percentString})`;
+            }
+
+            // Update UI elements
+            updateElements("#username", uname);
+            updateElements("#upline", upline);
+            updateElements("#email", email);
+            updateElements("#phone", phone);
+            updateElements("#ccurrency", ccurrency);
+            updateElements("#curbal", balance);
+            updateElements("#curwel", bonus);
+            updateElements("#curwithtotal", totalwithdrawal);
+            updateElements("#curwithpen", pendingwithdrawal);
+            updateElements("#profit", profit);
+            updateElements("#trivia", trivia);
+            updateElements("#spin", spin);
+            updateElements("#youtube", youtube);
+            updateElements("#tiktok", tiktok);
+
+            updateElementsWithColor("#join", join, status === 2, '#55ec44', 'red');
+            updateElementsWithColor("#ustatus", status === 2 ? 'Active' : 'Inactive', status === 2, '#55ec44', 'red');
+
+            document.querySelectorAll("#linkinput").forEach(input => {
+                input.value += uname;
+            });
+
+            document.querySelectorAll("#points").forEach(el => el.innerHTML = target);
+            document.querySelectorAll("#reward").forEach(el => el.innerHTML = reward);
+        } else {
+            alert("It seems there is an issue fetching your data. Please try again later.");
         }
-
-        } catch (error) {
-        alert(error);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        alert("An error occurred while fetching your data. Please try again later.");
     }
-    // openLoader(false)
+    // openLoader(false);
 }
 
-data()
+data();
 
 function deleteCookie(name) {
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
@@ -267,24 +211,80 @@ logout.addEventListener('click', () => {
 
 })
 
-
-myactivate.addEventListener('click', () =>{
-    async function activateme() {
-        try {
-            const response = await requestData(`${baseUrl}activateaccount`, 'GET');           
-            if (Array.isArray(response.info) && response.info.length > 0) {
-                response.info.forEach(value => {
-                    alert(value.msg);
-                });
-            } else {
-                // console.log(response);
+if(myactivate){
+    myactivate.addEventListener('click', () =>{
+        async function activateme() {
+            try {
+                const response = await requestData(`${baseUrl}activateaccount`, 'GET');           
+                if (Array.isArray(response.info) && response.info.length > 0) {
+                    response.info.forEach(value => {
+                        alert(value.msg);
+                    });
+                } else {
+                    // console.log(response);
+                }
+            } catch (error) {
+                alert(error);
             }
-        } catch (error) {
-            alert(error);
+            // openLoader(false);
         }
-        // openLoader(false);
-    }
 
-    activateme()
-    
+        activateme()
+        
+    })
+}
+
+const changpasswords = document.getElementById("changpasswords");
+const passform = document.getElementById("passform");
+
+changpasswords.addEventListener('click', () => {
+
+  if (passform.style.display === "none" || passform.style.display === "") {
+  // Show the form and change button text
+  passform.style.display = "grid";
+  changpasswords.innerHTML = "Cancel";
+} else {
+  // Hide the form and change button text back
+  passform.style.display = "none";
+  changpasswords.innerHTML = "Change Password";
+}
 })
+
+if(passform){
+
+passform.addEventListener('submit', (e) => {
+    e.preventDefault()
+  
+    const formData = new FormData(passform);
+  
+    const formObject = {};
+    formData.forEach((value, key) => {
+        formObject[key] = value;
+    });
+  
+    async function registerPost() {
+        try {
+            const response = await requestData(`${baseUrl}updatepassword`, 'POST', formObject);          
+  
+            if(response.resultcode){
+                register.reset();
+            }
+            console.log(response)
+            if (Array.isArray(response.info) && response.info.length > 0) {
+                    response.info.forEach(value => {
+                        alert(value.msg);
+                    });
+                }
+                else{
+                    console.log(response)
+                }
+  
+        } catch (error) {
+            console.log(error);
+        }
+    // openLoader(false)
+    }
+  
+    registerPost();
+  })
+}
