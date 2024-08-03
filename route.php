@@ -176,7 +176,7 @@
 
                     if(isset($fetchresp['resultcode']) && $fetchresp['resultcode'] == true){
                     
-                        if($fetchresp['data']['status'] == 2){
+                        if($fetchresp['data']['env'] == true){
                         $accountenv = True;
                     }
                         if($value['secured']){

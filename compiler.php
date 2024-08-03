@@ -12,7 +12,7 @@
   <div class="dot"></div>
   <div class="dot"></div>
 </section>
-<?php if($accountenv){ ?>
+<?php if(!$accountenv){ ?>
 
     <div class="mylink">
     <span class="mylinkh">Earn Empire Connetions</span>
