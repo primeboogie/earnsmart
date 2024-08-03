@@ -40,10 +40,9 @@ Keep it up and let’s build an unstoppable team! 💥🔥
                 <th>Earned</th>
                 <th>Status</th>
                 <th>Balance</th>
+                <th>Country</th>
                 <th>Joined</th>
-                <th>Joined</th>
-                <th>Joined</th>
-                <th>Joined</th>
+                <th>Activated</th>
             </tr>
         </thead>
         <tbody>
