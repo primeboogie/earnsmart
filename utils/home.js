@@ -182,7 +182,6 @@ register.addEventListener('submit', (e) => {
         document.cookie = name + "=" + (value || "") + expires + "; path=/";
     }
 
-    
     login.addEventListener('submit', (e) => {
         e.preventDefault()
         openLoader(true)

@@ -14,44 +14,38 @@ Keep it up and let’s build an unstoppable team! 💥🔥
 
     <div class="actionbtns">
         <button class="authbtn" id="allrec">ALL
-            <small>(0)</small>
+            <!-- <small>(0)</small> -->
         </button>
         <button class="authbtn" id="allrec">
             Active
-        <small>(0)</small>
+        <!-- <small>(0)</small> -->
     </button>
         <button class="authbtn" id="allrec">
             Inactive
-            <small>(0)</small>
+            <!-- <small>(0)</small> -->
         </button>
         <button class="authbtn" id="allrec">
             Suspended
-            <small>(0)</small>
+            <!-- <small>(0)</small> -->
     </button>
     </div>
 
     <div class="tablediv">
-        <table class="table">
+        <table class="table" id="dataTable">
             <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Earned</th>
-                <th>Status</th>
-                <th>Deposited</th>
-                <th>Country</th>
-                <th>Joined</th>
-                <th>Activated</th>
+            <tr id="tableHeader">
+                <!-- Headers will be added here by JavaScript -->
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <!-- <tr>
                 <td></td>
-                <td colspan="10">No <i id="team"></i> Downlines Yet</td></tr>
+                <td colspan="10">No <i id="team"></i> Downlines Yet</td></tr> -->
         </tbody>
 
         </table>
+
+        
     </div>
 
 </div>

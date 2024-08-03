@@ -314,6 +314,50 @@ function justcon(){
     console.log(lastDigit); // Output: 2
 
 
+      
+        async function teamGet() {
+            try {
+                const response = await requestData(`${baseUrl}myDownilnes&level=${lastDigit}`);          
+
+                if (Array.isArray(response.info) && response.info.length > 0) {
+                        response.info.forEach(value => {
+                            alert(value.msg);
+                        });
+                    }
+                    const data = response.data.data;
+                    const tbody = document.querySelector('#dataTable tbody');
+                    const thead = document.querySelector('#dataTable thead #tableHeader');
+            
+                    // Create table headers dynamically
+                    if (data.length > 0) {
+                        const headers = Object.keys(data[0]);
+            
+                        headers.forEach(header => {
+                            const th = document.createElement('th');
+                            th.textContent = header;
+                            thead.appendChild(th);
+                        });
+            
+                        // Create table rows dynamically
+                        data.forEach(item => {
+                            const row = document.createElement('tr');
+                            headers.forEach(header => {
+                                const td = document.createElement('td');
+                                td.textContent = item[header];
+                                row.appendChild(td);
+                            });
+                            tbody.appendChild(row);
+                        });
+                    }
+      
+            } catch (error) {
+                console.log(error);
+            }
+        // openLoader(false)
+        }
+      
+        teamGet();
+      
 
 }
 
@@ -362,13 +406,6 @@ if(acvtivateme){
 
     acvtivateme.addEventListener('submit', (e) => {
         e.preventDefault()
-      
-        // const formData = new FormData(acvtivateme);
-      
-        // const formObject = {};
-        // formData.forEach((value, key) => {
-        //     formObject[key] = value;
-        // });
       
         async function registerPost() {
             try {
