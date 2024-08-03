@@ -91,6 +91,7 @@ body{
     display: grid;
     padding: .6em .5em;
     grid-gap: .6em;
+    width: 95%;
 }
 .depoform span{
     color: var(--tt);

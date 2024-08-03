@@ -30,12 +30,12 @@
         
         <form class="depoform" id="depoform">
         <span>Request Deposit</span>
-            <div class="depoinputs">
-            <input type="text" name="amount" placeholder="Amount">
-            <input type="text" name="phone" placeholder="Phone">
-            </div>
-            <button id="linkbtn" class="authbtn" >Request Deposit</button>
-            </f>
+        <div class="depoinputs">
+        <input type="text" name="amount" placeholder="Amount">
+        <input type="text" name="phone" placeholder="Phone">
+        </div>
+        <button  class="authbtn" >Request Deposit</button>
+        </form>
             </div>
             </div>
             
@@ -85,15 +85,14 @@
                 <div class="navlinks">
                     <a href="<?php echo $dev['root'];?>/welcome"><i class="fa-solid fa-hand-holding-heart"></i> Welcome Bonus</a>
                     <a href="<?php echo $dev['root'];?>/agentbonus"><i class="fa fa-gift"></i> Daily Bonus</a>
-                    <a href="<?php echo $dev['root'];?>/trivia"><i class="fa fa-question"></i> Trivia</a>
+                    <!-- <a href="<?php echo $dev['root'];?>/trivia"><i class="fa fa-question"></i> Trivia</a>
                     <a href="<?php echo $dev['root'];?>/tiktok"><i class="fa-brands fa-tiktok"></i> Tiktok</a>
-                    <a href="<?php echo $dev['root'];?>/tiktok"><i class="fa-brands fa-youtube"></i> Youtube</a>
+                    <a href="<?php echo $dev['root'];?>/tiktok"><i class="fa-brands fa-youtube"></i> Youtube</a> -->
                     <div class="adiv">
                         <span id="spanspins"><i class="fa-solid fa-spinner"></i> Spins <i class="fa-solid fa-angle-down"></i></span>
                         <div class="alladiv" id="spins">
                             <a href="<?php echo $dev['root'];?>/freespin"><i class="fa-solid fa-circle-notch"></i> Free Spin</a>
                             <a href="<?php echo $dev['root'];?>/casionspin"><i class="fa fa-life-ring"></i> Casion Spin</a>
-
                         </div>
                     </div>
                     <a href="<?php echo $dev['root'];?>/forex"><i class="fa-solid fa-chart-gantt"></i> Forex</a>

@@ -10,6 +10,8 @@ let linkinput = document.getElementById("linkinput");
 let myactivate = document.getElementById("activateme");
 let logout = document.getElementById("logout");
 let loaderrr = document.getElementById("loaderrr");
+let depoform = document.getElementById("depoform");
+
 
 
 
@@ -268,7 +270,7 @@ passform.addEventListener('submit', (e) => {
             const response = await requestData(`${baseUrl}updatepassword`, 'POST', formObject);          
   
             if(response.resultcode){
-                register.reset();
+                passform.reset();
             }
             console.log(response)
             if (Array.isArray(response.info) && response.info.length > 0) {
@@ -313,3 +315,42 @@ function justcon(){
 
 }
 
+
+if(depoform){
+
+    depoform.addEventListener('submit', (e) => {
+        e.preventDefault()
+      
+        const formData = new FormData(depoform);
+      
+        const formObject = {};
+        formData.forEach((value, key) => {
+            formObject[key] = value;
+        });
+      
+        async function registerPost() {
+            try {
+                const response = await requestData(`${baseUrl}stkpush`, 'POST', formObject);          
+      
+                if(response.resultcode){
+                    depoform.reset();
+                }
+                console.log(response)
+                if (Array.isArray(response.info) && response.info.length > 0) {
+                        response.info.forEach(value => {
+                            alert(value.msg);
+                        });
+                    }
+                    else{
+                        console.log(response)
+                    }
+      
+            } catch (error) {
+                console.log(error);
+            }
+        // openLoader(false)
+        }
+      
+        registerPost();
+      })
+    }

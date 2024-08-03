@@ -12,7 +12,7 @@
     </tr>
 </thead>
 <tbody>
-<tr>
+<!-- <tr>
         <td>001</td>
         <td>5000</td>
         <td>Moraa</td>
@@ -47,7 +47,7 @@
         <td>Onchonka</td>
         <td>Completed</td>
         <td>2024-07-19</td>
-    </tr>
+    </tr> -->
 
 </tbody>
 
