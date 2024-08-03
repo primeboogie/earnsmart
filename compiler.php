@@ -86,9 +86,9 @@
                     <div class="adiv">
                         <span id="spanteams"><i class="fa fa-users"></i> My Team <i class="fa-solid fa-angle-down"></i></span>
                         <div class="alladiv" id="teams">
-                            <a href="<?php echo $dev['root'];?>/team"><i class="fa-solid fa-square-check"></i> Level  1</a>
-                            <a href="<?php echo $dev['root'];?>/team"><i class="fa-solid fa-dice"></i> Level  2</a>
-                            <a href="<?php echo $dev['root'];?>/team"><i class="fa-solid fa-cubes"></i> Level  3</a>
+                            <a href="<?php echo $dev['root'];?>/team/1"><i class="fa-solid fa-square-check"></i> Level  1</a>
+                            <a href="<?php echo $dev['root'];?>/team/2"><i class="fa-solid fa-dice"></i> Level  2</a>
+                            <a href="<?php echo $dev['root'];?>/team/3"><i class="fa-solid fa-cubes"></i> Level  3</a>
                         </div>
                     </div>
                 </div>

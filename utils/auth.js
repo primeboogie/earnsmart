@@ -1,5 +1,5 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 
 let menuid = document.getElementById("menuid");
 let navbar = document.getElementById("navbar");
@@ -237,6 +237,7 @@ if(myactivate){
 const changpasswords = document.getElementById("changpasswords");
 const passform = document.getElementById("passform");
 
+if(changpasswords){
 changpasswords.addEventListener('click', () => {
 
   if (passform.style.display === "none" || passform.style.display === "") {
@@ -249,7 +250,7 @@ changpasswords.addEventListener('click', () => {
   changpasswords.innerHTML = "Change Password";
 }
 })
-
+}
 if(passform){
 
 passform.addEventListener('submit', (e) => {
@@ -288,3 +289,27 @@ passform.addEventListener('submit', (e) => {
     registerPost();
   })
 }
+let team = document.getElementById("team")
+
+if(team){
+    justcon()
+}
+function justcon(){
+    const url = window.location.href;
+
+    const urlObj = new URL(url);
+
+    const pathname = urlObj.pathname;
+
+    const segments = pathname.split('/');
+
+    const lastSegment = segments.pop(); // This will be '2'
+
+    const lastDigit = parseInt(lastSegment, 10);
+
+    console.log(lastDigit); // Output: 2
+
+
+    
+}
+
