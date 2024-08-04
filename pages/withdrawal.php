@@ -14,11 +14,6 @@
             </select>
         </div>
 
-        <!-- <div class="formdiv">
-            <label for="username">Username</label>
-            <input type="text" name="username">
-        </div> -->
-
 
         <div class="formdiv">
             <label for="amount">Amount</label>
