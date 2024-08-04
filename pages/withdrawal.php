@@ -1,8 +1,8 @@
 <div class="deposit">
-    <form  class="depositf" action="#" id="depositf">
+    <form  class="depositf" action="#" id="withforrm">
         <span class="formh"><i class="fa-solid fa-sack-dollar"></i> Withdrawl Funds</span>
         
-        <div class="formdiv" id="withforrm">
+        <div class="formdiv" >
             <label for="ref">Choose Account </label>
             <select name="paymode" id="">
                 <option value="">-- Choose Account  --</option>
