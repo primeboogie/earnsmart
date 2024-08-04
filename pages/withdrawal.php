@@ -4,7 +4,7 @@
         
         <div class="formdiv" >
             <label for="ref">Choose Account </label>
-            <select name="paymode" id="" required>
+            <select name="acc" id="" required>
                 <option value="">-- Choose Account  --</option>
                 <option value="1">Account Balance (<i id="curbal"></i>)</option>
                 <option value="2">Trivia-Balance (<i id="curtivia"></i>)</option>
