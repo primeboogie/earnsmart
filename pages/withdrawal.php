@@ -6,11 +6,11 @@
             <label for="ref">Choose Payment </label>
             <select name="paymode" id="">
                 <option value="">-- Payment Mode --</option>
-                <option value="1">Account Balance (6500)</option>
-                <option value="2">Trivia-Balance</option>
-                <option value="2">Spin-Balance</option>
-                <option value="2">Youtube-Balance</option>
-                <option value="2">Tiktok-Balance</option>
+                <option value="1">Account Balance (<i id="curbal"></i>)</option>
+                <option value="2">Trivia-Balance (<i id="curtivia"></i>)</option>
+                <option value="2">Spin-Balance (<i id="curspin"></i>)</option>
+                <option value="2">Youtube-Balance (<i id="curyou"></i>)</option>
+                <option value="2">Tiktok-Balance (<i id="curtiktok"></i>)</option>
             </select>
         </div>
 
