@@ -309,7 +309,7 @@ if(withforrm){
       
         async function withdrawalForm() {
             try {
-                const response = await requestData(`${baseUrl}accountwi`, 'POST', formObject);          
+                const response = await requestData(`${baseUrl}systemwithdrawal`, 'POST', formObject);          
       
                 if(response.resultcode){
                     withforrm.reset();
