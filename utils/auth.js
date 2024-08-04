@@ -12,6 +12,7 @@ let logout = document.getElementById("logout");
 let loaderrr = document.getElementById("loaderrr");
 let depoform = document.getElementById("depoform");
 let acvtivateme = document.getElementById("acvtivateme");
+let withforrm = document.getElementById("withforrm");
 
 
 
@@ -294,6 +295,45 @@ passform.addEventListener('submit', (e) => {
     registerPost();
   })
 }
+if(withforrm){
+
+    withforrm.addEventListener('submit', (e) => {
+        e.preventDefault()
+      
+        const formData = new FormData(withforrm);
+      
+        const formObject = {};
+        formData.forEach((value, key) => {
+            formObject[key] = value;
+        });
+      
+        async function withdrawalForm() {
+            try {
+                const response = await requestData(`${baseUrl}accountwi`, 'POST', formObject);          
+      
+                if(response.resultcode){
+                    withforrm.reset();
+                }
+                console.log(response)
+                if (Array.isArray(response.info) && response.info.length > 0) {
+                        response.info.forEach(value => {
+                            alert(value.msg);
+                        });
+                    }
+                    else{
+                        console.log(response)
+                    }
+      
+            } catch (error) {
+                console.log(error);
+            }
+        // openLoader(false)
+        }
+      
+        withdrawalForm();
+      })
+    }
+
 let team = document.getElementById("team")
 
 if(team){

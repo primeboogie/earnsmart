@@ -2,22 +2,22 @@
     <form  class="depositf" action="#" id="depositf">
         <span class="formh"><i class="fa-solid fa-sack-dollar"></i> Withdrawl Funds</span>
         
-        <div class="formdiv">
-            <label for="ref">Choose Payment </label>
+        <div class="formdiv" id="withforrm">
+            <label for="ref">Choose Account </label>
             <select name="paymode" id="">
-                <option value="">-- Payment Mode --</option>
+                <option value="">-- Choose Account  --</option>
                 <option value="1">Account Balance (<i id="curbal"></i>)</option>
                 <option value="2">Trivia-Balance (<i id="curtivia"></i>)</option>
-                <option value="2">Spin-Balance (<i id="curspin"></i>)</option>
-                <option value="2">Youtube-Balance (<i id="curyou"></i>)</option>
-                <option value="2">Tiktok-Balance (<i id="curtiktok"></i>)</option>
+                <option value="3">Spin-Balance (<i id="curspin"></i>)</option>
+                <option value="4">Youtube-Balance (<i id="curyou"></i>)</option>
+                <option value="5">Tiktok-Balance (<i id="curtiktok"></i>)</option>
             </select>
         </div>
 
-        <div class="formdiv">
+        <!-- <div class="formdiv">
             <label for="username">Username</label>
             <input type="text" name="username">
-        </div>
+        </div> -->
 
 
         <div class="formdiv">
