@@ -213,7 +213,7 @@
     </div>
     <div class="bonusbtn">
         <button class="authbtn" >Info</button>
-        <button class="authbtn" id="activateme">Claim</button>
+        <button class="authbtn" >Claim</button>
     </div>
    </div>
 
