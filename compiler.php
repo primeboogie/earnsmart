@@ -45,6 +45,8 @@
             </form>
         <?php  } ?>
             </div>
+            <a href="#" class="authbtn" id="logout"><i class="fa fa-sign-out-alt"></i> Logout</a>
+
             </div>
             
        <?php  } ?>
