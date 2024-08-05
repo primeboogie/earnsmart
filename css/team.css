@@ -29,6 +29,7 @@
     color: var(--tt);
     font-size: 1em;
     font-weight: 600;
+    padding: .7em 0em;
 }
 .ttstyle i {
     font-style: normal;
