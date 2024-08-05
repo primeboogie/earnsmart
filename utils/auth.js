@@ -369,6 +369,10 @@ function justcon(){
                     const tbody = document.querySelector('#dataTable tbody');
                     const thead = document.querySelector('#dataTable thead #tableHeader');
                 const searchInput = document.querySelector('#searchInput');
+
+                const mylevel = document.getElementById("totalmoney")
+                mylevel.innerHTML = response.data['Level'] 
+                team.innerHTML = response.data['Currency'] + " " + response.data['Earned']
                     
                     // Create table headers dynamically
                     if (data.length > 0) {
