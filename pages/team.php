@@ -12,7 +12,8 @@ Keep it up and let’s build an unstoppable team! 💥🔥
 
     </p>
 
-    <div class="actionbtns">
+    
+    <!-- <div class="actionbtns">
         <button class="authbtn" id="tall">ALL
             <small id="sall">(0)</small>
         </button>
@@ -32,7 +33,8 @@ Keep it up and let’s build an unstoppable team! 💥🔥
             <small id="sactive">(0)</small>
     </button> 
 
-    </div> 
+    </div>  -->
+    
 
     <input type="text" id="searchInput" class="serachuser" placeholder="Search...">
 
