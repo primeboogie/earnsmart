@@ -1,6 +1,6 @@
 <div class="deposit">
     <form  class="depositf" action="#" id="withforrm">
-        <span class="formh"><i class="fa-solid fa-sack-dollar"></i> Withdrawl Funds</span>
+        <span class="formh"><i class="fa-solid fa-sack-dollar"></i> Withdraw Funds</span>
         
         <div class="formdiv" >
             <label for="ref">Choose Account </label>
