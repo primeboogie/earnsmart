@@ -3,7 +3,7 @@
     <i class="fa-solid fa-chart-gantt"></i> <i id="team"></i> Downlines
     </span>
 
-    <span>
+    <p>
     Hi <i id="username">Zanytech</i>,<br>
 Check out your <i id="team"></i> downlines Let’s keep growing strong
 
@@ -11,7 +11,7 @@ Your effort is amazing. Let’s continue to expand and achieve new heights
 
 Keep it up and let’s build an unstoppable team. <br>
 
-<span class="ttstyle" >Total <i id="team"></i> Earnings: <i id="totalmoney">0.00</i></span>
+<span class="ttstyle" >Total <i id="team"></i> Earnings: <i id="totalmoney">0.00</i> </span>
 
     </p>
 
