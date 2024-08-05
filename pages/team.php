@@ -4,11 +4,11 @@
     </span>
     <p>
     Hi <i id="username">Zanytech</i>,<br>
-🎉 Check out your <i id="team"></i> downlines! Let’s keep growing strong! 🚀💪
+Check out your <i id="team"></i> downlines Let’s keep growing strong
 
-Your effort is amazing. Let’s continue to expand and achieve new heights! 🌟
+Your effort is amazing. Let’s continue to expand and achieve new heights
 
-Keep it up and let’s build an unstoppable team! 💥🔥
+Keep it up and let’s build an unstoppable team
 
     </p>
 
