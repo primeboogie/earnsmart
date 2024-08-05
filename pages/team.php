@@ -13,35 +13,36 @@ Keep it up and let’s build an unstoppable team! 💥🔥
     </p>
 
     <div class="actionbtns">
-        <button class="authbtn" id="allrec">ALL
-            <!-- <small>(0)</small> -->
+        <button class="authbtn" id="tall">ALL
+            <small id="sall">(0)</small>
         </button>
-        <button class="authbtn" id="allrec">
+
+        <button class="authbtn" id="tactive">
             Active
-        <!-- <small>(0)</small> -->
+        <small id="sactive">(0)</small>
     </button>
-        <button class="authbtn" id="allrec">
+
+        <button class="authbtn" id="tinactive">
             Inactive
-            <!-- <small>(0)</small> -->
+            <small id="sactive">(0)</small>
         </button>
-        <button class="authbtn" id="allrec">
+
+        <button class="authbtn" id="tsuspend">
             Suspended
-            <!-- <small>(0)</small> -->
-    </button>
-    </div>
+            <small id="sactive">(0)</small>
+    </button> 
+
+    </div> 
+
+    <input type="text" id="searchInput" class="serachuser" placeholder="Search...">
 
     <div class="tablediv">
         <table class="table" id="dataTable">
             <thead>
-            <tr id="tableHeader">
-                <!-- Headers will be added here by JavaScript -->
-            </tr>
-        </thead>
-        <tbody>
-            <!-- <tr>
-                <td></td>
-                <td colspan="10">No <i id="team"></i> Downlines Yet</td></tr> -->
-        </tbody>
+                <tr id="tableHeader"></tr>
+            </thead>
+            <tbody>
+            </tbody>
 
         </table>
 

@@ -368,29 +368,48 @@ function justcon(){
                     const data = response.data.data;
                     const tbody = document.querySelector('#dataTable tbody');
                     const thead = document.querySelector('#dataTable thead #tableHeader');
-            
+                const searchInput = document.querySelector('#searchInput');
+                    
                     // Create table headers dynamically
                     if (data.length > 0) {
                         const headers = Object.keys(data[0]);
-            
+
                         headers.forEach(header => {
                             const th = document.createElement('th');
                             th.textContent = header;
                             thead.appendChild(th);
                         });
-            
+    
+                        data.sort((a, b) => b['status'] - a['status']);
                         // Create table rows dynamically
                         data.forEach(item => {
                             const row = document.createElement('tr');
+                            if(item['status'] == 2){
+                                row.className = "mygreen"
+                            }
                             headers.forEach(header => {
                                 const td = document.createElement('td');
                                 td.textContent = item[header];
                                 row.appendChild(td);
                             });
                             tbody.appendChild(row);
+    
+                            row.addEventListener('click',() => {
+                                console.log(item)
+                            })
+                        });
+    
+                        // Add search functionality
+                        searchInput.addEventListener('input', () => {
+                            const query = searchInput.value.toLowerCase();
+                            const rows = tbody.querySelectorAll('tr');
+                            rows.forEach(row => {
+                                const cells = row.querySelectorAll('td');
+                                const rowText = Array.from(cells).map(cell => cell.textContent.toLowerCase()).join(' ');
+                                row.style.display = rowText.includes(query) ? '' : 'none';
+                            });
                         });
                     }
-      
             } catch (error) {
                 console.log(error);
             }
