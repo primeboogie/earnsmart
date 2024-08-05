@@ -371,8 +371,8 @@ function justcon(){
                 const searchInput = document.querySelector('#searchInput');
 
                 const mylevel = document.getElementById("totalmoney")
-                mylevel.innerHTML = response.data['Level'] 
-                team.innerHTML = response.data['Currency'] + " " + response.data['Earned']
+                team.innerHTML = response.data['Level'] 
+                mylevel.innerHTML = response.data['Currency'] + " " + response.data['Earned']
                     
                     // Create table headers dynamically
                     if (data.length > 0) {

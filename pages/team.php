@@ -9,9 +9,9 @@ Check out your <i id="team"></i> downlines Let’s keep growing strong
 
 Your effort is amazing. Let’s continue to expand and achieve new heights
 
-Keep it up and let’s build an unstoppable team.
+Keep it up and let’s build an unstoppable team. <br>
 
-<span class="forexh" >Total <i id="team"></i> Earnings: <i id="totalmoney">0.00</i></span>
+<span class="ttstyle" >Total <i id="team"></i> Earnings: <i id="totalmoney">0.00</i></span>
 
     </p>
 
