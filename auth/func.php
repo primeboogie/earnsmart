@@ -6,15 +6,14 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-include '../vendor/autoload.php';
 
 function usefetch($apiendpoint, $method = 'GET', $headers = [], $body = null)
 {
-
+    
     $ch = curl_init($apiendpoint);
-
+    
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
-
+    
     if ($body !== null) {
         if (is_array($body) || is_object($body)) {
             $body = json_encode($body);
@@ -28,12 +27,12 @@ function usefetch($apiendpoint, $method = 'GET', $headers = [], $body = null)
 
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     
-
+    
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); 
 
     $response = curl_exec($ch);
-
+    
     curl_close($ch);
 
     $resp = json_decode($response, true);
@@ -43,15 +42,16 @@ function usefetch($apiendpoint, $method = 'GET', $headers = [], $body = null)
 }
 
 function jDecode() {
-
+    
     $json = file_get_contents("php://input");
     $inputs = json_decode($json, true);
-
+    
     return $inputs;
 }
 
 function sendmail($uname, $uemail, $msg, $subject, $attachmentPath = null, $attachmentName = null, $calendarEvent = null)
 {
+    include '../vendor/autoload.php';
 
     $admin = [
         "name" => "CEO Nyacorya",

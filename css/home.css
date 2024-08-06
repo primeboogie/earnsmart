@@ -216,6 +216,20 @@
     font-weight: 600;
     font-size: 0.9rem;
   }
+  .form .dont{
+    color: #fff;
+    font-size: .7em;
+    width: 100%;
+    text-align: right;
+    padding: .9em .9em;
+    font-weight: bold;
+
+  }
+
+  .form .dont i{
+    color: yellow;
+    font-style: normal;
+  }
 
 
   .allinputs {

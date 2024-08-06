@@ -1,5 +1,5 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 
 let allist = document.getElementById("allist");
 let phone = document.getElementById("phone");
@@ -26,6 +26,22 @@ const killlogin = document.getElementById('killlogin');
 const containerin = document.querySelector('#containerin');
 
 const forgot = document.getElementById('forgot');
+
+
+const changesigin = document.getElementById('changesigin');
+const changesignup = document.getElementById('changesignup');
+
+
+changesigin.addEventListener('click', () =>{
+    containerin.classList.toggle('handletrans');
+    containerup.classList.toggle('handletrans');
+})
+
+changesignup.addEventListener('click', () =>{
+    containerup.classList.toggle('handletrans');
+    containerin.classList.toggle('handletrans');
+})
+
 
 if(forgot){
     forgot.addEventListener('click', () => {
