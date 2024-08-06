@@ -1,4 +1,9 @@
 <div class="deposit">
+    <style>
+        td{
+            text-wrap: nowrap;
+        }
+    </style>
     <form  class="depositf" action="#" id="depositf">
         <span class="formh"><i class="fab fa-paypal"></i> Transfer Funds</span>
         

@@ -25,6 +25,31 @@ const showLogin = document.getElementById('showLogin');
 const killlogin = document.getElementById('killlogin');
 const containerin = document.querySelector('#containerin');
 
+const forgot = document.getElementById('forgot');
+
+if(forgot){
+    forgot.addEventListener('click', () => {
+        let myinput = prompt("Please Enter Your Account Email..")
+
+        async function sendemail() {
+            try {
+                const response = await requestData(`${baseUrl}newpasswords`, 'POST', {"email": myinput});          
+  
+                if (Array.isArray(response.info) && response.info.length > 0) {
+                        response.info.forEach(value => {
+                            alert(value.msg);
+                        });
+                    }
+        
+
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        sendemail();
+    })
+}
 showLogin.addEventListener('click', () => {
     containerin.classList.toggle('handletrans');
 });
@@ -153,14 +178,10 @@ register.addEventListener('submit', (e) => {
                 if(response.resultcode){
                     register.reset();
                 }
-                console.log(response)
                 if (Array.isArray(response.info) && response.info.length > 0) {
                         response.info.forEach(value => {
                             alert(value.msg);
                         });
-                    }
-                    else{
-                        console.log(response)
                     }
 
             } catch (error) {
@@ -196,7 +217,7 @@ register.addEventListener('submit', (e) => {
             async function loginPost() {
                 try {
                     const response = await requestData(`${baseUrl}login`, 'POST', formObject);  
-                    console.log(response)        
+          
             
                     if(response.resultcode){
                         setCookie("access_token", response.data['access_token'],2)
@@ -212,9 +233,6 @@ register.addEventListener('submit', (e) => {
                                     alert(value.msg);
                                 }
                             });
-                        }
-                        else{
-                            console.log(response)
                         }
     
                 } catch (error) {
