@@ -261,7 +261,6 @@ register.addEventListener('submit', (e) => {
         })
 
 
-
     LisTCountrys();
 
     let shaky = (resp) =>{
