@@ -23,7 +23,7 @@
                     <span class="exeh">Profit</span>
                     <span class="exebal exebalg">
                         <i id="usys">KSH</i>
-                        <i id="profit">000</i>
+                        <i id="profit">100</i>
                     </span>
                 </div>
 
@@ -41,7 +41,7 @@
                 KES
             </i>
             <i id="curbal">
-                86,555
+                0.00
             </i>
             </span>
 
@@ -61,7 +61,7 @@
                 KES
             </i>
             <i id="curwel">
-                86,555
+                100
             </i>
             </span>
 
@@ -83,7 +83,7 @@
                 KES
             </i>
             <i id="curwithtotal">
-                86,555
+               0.00
             </i>
             </span>
             
@@ -102,7 +102,7 @@
                 KES
             </i>
             <i id="curwithpen">
-                86,555
+               0.00
             </i>
             </span>
 
@@ -122,7 +122,7 @@
                         KES
                     </i>
                     <i id="curtivia">
-                        86,555
+                       0.00
             </i>
             </span>
 
@@ -142,7 +142,7 @@
                     KES
                 </i>
                 <i id="curyou">
-                86,555
+               0.00
             </i>
         </span>
         
@@ -162,7 +162,7 @@
                     KES
             </i>
             <i id="curtiktok">
-                86,555
+                0.00
             </i>
         </span>
 
@@ -182,7 +182,7 @@
                 KES
             </i>
             <i id="curspin">
-                86,555
+                0.00
             </i>
             </span>
 
