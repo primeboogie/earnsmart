@@ -9,9 +9,9 @@ let accessToken = getQueryParam('access_token');
 
 if (accessToken) {
     setCookie("access_token", accessToken,1)
-
+    window.location.href = '/'
 }
-window.location.href("/")
+
 
 function setCookie(name, value, days) {
         let expires = "";
