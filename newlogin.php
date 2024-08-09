@@ -8,8 +8,20 @@ function getQueryParam(param) {
 let accessToken = getQueryParam('access_token');
 
 if (accessToken) {
-    document.cookie = "access_token=" + accessToken + "; path=/";
+    setCookie("access_token", accessToken,1)
+
 }
 window.location.href("/")
+
+function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
 
 </script>
