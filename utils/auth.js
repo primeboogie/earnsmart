@@ -8,7 +8,7 @@ let earnimgs = document.getElementById("earnimgs");
 let linkbtn = document.getElementById("linkbtn");
 let linkinput = document.getElementById("linkinput");
 let myactivate = document.getElementById("activateme");
-let logout = document.getElementById("logout");
+let logout = document.querySelectorAll(".logout");
 let loaderrr = document.getElementById("loaderrr");
 let depoform = document.getElementById("depoform");
 let acvtivateme = document.getElementById("acvtivateme");
@@ -211,12 +211,11 @@ function deleteCookie(name) {
 
 }
 
-
-logout.addEventListener('click', () => {
-    deleteCookie('access_token')
-
-})
-
+logout.forEach((button) => {
+    button.addEventListener('click', () => {
+        deleteCookie('access_token');
+    });
+});
 if(myactivate){
     myactivate.addEventListener('click', () =>{
         async function activateme() {

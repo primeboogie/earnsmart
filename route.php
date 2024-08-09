@@ -167,6 +167,8 @@
     $found = false;
     $environment = false;
     $accountenv = false;
+    $usercid = false;
+
     $actualbal = 1;
     
 
@@ -180,6 +182,7 @@
                     
                         $actualbal = $fetchresp['data']['actual'];
 
+                        $usercid = $fetchresp['data']['cid'] == "KEST" ? true : false;
                         if($fetchresp['data']['env']){
                         $accountenv = true;
                     }

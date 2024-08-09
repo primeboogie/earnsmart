@@ -10,7 +10,6 @@ body{
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
-    /* place-content: start; */
 }
 
 .header{
@@ -43,8 +42,12 @@ body{
     z-index: 9000;
     background: #fff;
     display: grid;
-    place-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    place-items: center;
     grid-gap: .8em;
+    overflow: auto;
+    padding-bottom: .8em;
 }
 .mylink .usernames{
     font-style: italic;

@@ -36,7 +36,7 @@
         <button class="authbtn" id=""><i class="fa-solid fa-paper-plane"></i> Transfer</button>
     </form>
     <div class="alldip">
-    <span class="diph" > <i class="fa-solid fa-money-bill-transfer"></i> Recent WIthdrawals</span>
+    <span class="diph" > <i class="fa-solid fa-money-bill-transfer"></i> Recent Transfers</span>
     <div class="tablediv">
         <table class="table">
         <thead>

@@ -28,16 +28,23 @@
         Let’s get started and achieve great things together! 🌟🚀
         </p>
         
-        <?php if($actualbal > 0 ){ ?> 
+        <?php  if($actualbal > 0 ){ ?> 
+            
         
-            <form class="depoform" id="depoform">
-            <span>Request Deposit</span>
-            <div class="depoinputs">
-            <input type="text" name="amount" placeholder="Amount">
-            <input type="text" name="phone" placeholder="Phone">
-            </div>
-            <button  class="authbtn" >Request Deposit</button>
-            </form>
+            <?php if($usercid ){ ?>
+
+                <form class="depoform" id="depoform">
+                <span>Request Deposit</span>
+                <div class="depoinputs">
+                <input type="text" name="amount" placeholder="Amount" required>
+                <input type="text" name="phone" placeholder="Phone" required>
+                </div>
+                <button  class="authbtn" >Request Deposit</button>
+                </form>
+
+            <?php }else{ ?>
+                <?php require "pages/manual.php"; ?>
+                <?php  } ?>
         
         <?php  }else{ ?> 
             <form action="#" id="acvtivateme" >
@@ -45,7 +52,7 @@
             </form>
         <?php  } ?>
             </div>
-            <a href="#" class="authbtn" id="logout"><i class="fa fa-sign-out-alt"></i> Logout</a>
+            <a href="#" class="authbtn logout" id="logout"><i class="fa fa-sign-out-alt"></i> Logout</a>
 
             </div>
             
@@ -95,7 +102,7 @@
                 <div class="navlinks">
                     <a href="<?php echo $dev['root'];?>/welcome"><i class="fa-solid fa-hand-holding-heart"></i> Welcome Bonus</a>
                     <a href="<?php echo $dev['root'];?>/agentbonus"><i class="fa fa-gift"></i> Daily Bonus</a>
-                    <!-- <a href="<?php echo $dev['root'];?>/trivia"><i class="fa fa-question"></i> Trivia</a> -->
+                    <a href="<?php echo $dev['root'];?>/trivia"><i class="fa fa-question"></i> Trivia</a>
                     <!-- <a href="<?php echo $dev['root'];?>/tiktok"><i class="fa-brands fa-tiktok"></i> Tiktok</a> -->
                     <!-- <a href="<?php echo $dev['root'];?>/tiktok"><i class="fa-brands fa-youtube"></i> Youtube</a> -->
                     <div class="adiv">
