@@ -239,8 +239,8 @@ register.addEventListener('submit', (e) => {
                         setCookie("access_token", response.data['access_token'],2)
                         login.reset();
                         
-                        // window.location.href = '/earnempire/'
-                        window.location.href = '/'
+                        window.location.href = '/earnempire/'
+                        // window.location.href = '/'
                     }
                     if (Array.isArray(response.info) && response.info.length > 0) {
                             response.info.forEach(value => {
