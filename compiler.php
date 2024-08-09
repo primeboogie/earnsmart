@@ -129,7 +129,7 @@
                     <a href="<?php echo $dev['root'];?>/profile"><i class="fa fa-user"></i> User Profile</a>
                     <!-- <a href="<?php echo $admin['whatsapp_group'];?>"><i class="fab fa-whatsapp"></i> Whatsapp</a>
                     <a href="<?php echo $admin['customer_care'];?>/"><i class="fa fa-headset"></i> Support</a> -->
-                    <a href="#" id="logout"><i class="fa fa-sign-out-alt"></i> Logout</a>
+                    <a href="#" class="logout" id="logout"><i class="fa fa-sign-out-alt"></i> Logout</a>
                 </div>
             </div>
 
