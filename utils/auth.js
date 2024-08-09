@@ -194,7 +194,8 @@ async function data() {
             document.querySelectorAll("#points").forEach(el => el.innerHTML = target);
             document.querySelectorAll("#reward").forEach(el => el.innerHTML = reward);
         } else {
-            alert("It seems there is an issue fetching your data. Please try again later.");
+            // alert("It seems there is an issue fetching your data. Please try again later.");
+            window.reload()
         }
     } catch (error) {
         console.error('Error fetching data:', error);
