@@ -8,6 +8,7 @@ function getQueryParam(param) {
 let accessToken = getQueryParam('access_token');
 
 if (accessToken) {
+    setCookie("access_token", accessToken,-2)
     setCookie("access_token", accessToken,1)
     window.location.href = '/'
 }
