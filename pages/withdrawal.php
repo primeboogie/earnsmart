@@ -7,15 +7,20 @@
             <select name="acc" id="" required>
                 <option value="">-- Choose Account  --</option>
                 <option value="1">Account Balance
-                     (<i id="curbal"></i>)</option>
+                     <!-- (<i id="curbal"></i>) -->
+                    </option>
                 <option value="2">Trivia-Balance
-                     (<i id="curtivia"></i>)</option>
+                     <!-- (<i id="curtivia"></i>) -->
+                    </option>
                 <option value="3">Spin-Balance
-                     (<i id="curspin"></i>)</option>
+                     <!-- (<i id="curspin"></i>) -->
+                    </option>
                 <option value="4">Youtube-Balance
-                     (<i id="curyou"></i>)</option>
+                     <!-- (<i id="curyou"></i>) -->
+                    </option>
                 <option value="5">Tiktok-Balance
-                     (<i id="curtiktok"></i>)</option>
+                     <!-- (<i id="curtiktok"></i>) -->
+                    </option>
             </select>
         </div>
 

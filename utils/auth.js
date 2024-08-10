@@ -17,8 +17,6 @@ let withforrm = document.getElementById("withforrm");
 
 
 
-
-
 async function requestData(url, method = "GET", myBody = null) {
     const sessionCookie = getCookie('access_token');
     let request = {
@@ -139,7 +137,7 @@ async function data() {
 
         if (response.resultcode) {
             const {
-                userdetails: { uname, upline, email, phone, join, status, percent, ccurrency },
+                userdetails: { uname, upline, email, phone, join, status, percent, ccurrency, emailed },
                 balances: {
                     actbal, expense, target, reward, balance, bonus, totalwithdrawal, pendingwithdrawal, profit, trivia, spin, youtube, tiktok
                 }
@@ -166,6 +164,43 @@ async function data() {
                 circles.style.background = `conic-gradient(#0cb600 ${percentString}, rgba(255, 255, 255, 0.12) ${percentString})`;
             }
 
+            function proptupdate(){
+                alert(`Hi ${uname}, Please Update Your Registration Details to proceed.`)
+                let myemail = null;
+                let myphone = null;
+
+                while (myemail === "" || myemail == null) {
+                    myemail = prompt("Enter Email..");
+                }
+                while (myphone === "" || myphone == null) {
+                    myphone = prompt("Enter Phone..");
+                }
+                let datasent = {
+                    "uemail": myemail,
+                    "phone": myphone
+                }
+                
+                    async function senddetails() {
+                        try {
+                            const response = await requestData(`${baseUrl}soloupdate`, 'POST',datasent);           
+                            if (Array.isArray(response.info) && response.info.length > 0) {
+                                response.info.forEach(value => {
+                                    alert(value.msg);
+                                });
+                            } else {
+                                // console.log(response);
+                            }
+                        } catch (error) {
+                            alert(error);
+                        }
+                        // openLoader(false);
+                    }
+            
+                    senddetails()
+                }
+            if(emailed == '0'){
+                proptupdate();
+            }
             // Update UI elements
             updateElements("#username", uname);
             updateElements("#upline", upline);
@@ -198,8 +233,9 @@ async function data() {
             window.reload()
         }
     } catch (error) {
+        window.reload()
         console.error('Error fetching data:', error);
-        alert("An error occurred while fetching your data. Please try again later.");
+        console.log("An error occurred while fetching your data. Please try again later.");
     }
     // openLoader(false);
 }
