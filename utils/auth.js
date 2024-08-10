@@ -62,7 +62,9 @@ async function fortest() {
             console.log(response);
         }
     } catch (error) {
-        alert(error);
+        console.log(error);
+        window.reload()
+
     }
     openLoader(false);
 }
@@ -239,6 +241,7 @@ async function data() {
     }
     // openLoader(false);
 }
+
 
 data();
 
