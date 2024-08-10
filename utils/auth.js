@@ -97,22 +97,7 @@ menuid.addEventListener('click', () => {
 //     }
 // });
 earnimgs.addEventListener('click', ()=>{
-    // Create a temporary textarea element to hold the text
-    const tempTextArea = document.createElement('textarea');
-    tempTextArea.value = "git pull origin main";
-    document.body.appendChild(tempTextArea);
-    
-    // Select the text inside the temporary textarea
-    tempTextArea.select();
-    tempTextArea.setSelectionRange(0, 99999); // For mobile devices
-    
-    // Copy the selected text to the clipboard
-    document.execCommand('copy');
-    
-    // Remove the temporary textarea
-    document.body.removeChild(tempTextArea);
-    
-
+  window.reload()
 })
 
 if(linkbtn){
