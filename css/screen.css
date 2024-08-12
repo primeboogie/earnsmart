@@ -59,13 +59,13 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: none ! important;
-    align-items: center ! 
+    display: none ;
+    align-items: center; 
     justify-content: center;
     height: 100%;
     width: 100%;
-    z-index: 100;
-    background: rgba(39, 35, 35, 0.56);
+    z-index: 1000;
+    background: rgb(238, 230, 230);
   }
   
   .dot {

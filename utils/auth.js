@@ -9,7 +9,7 @@ let linkbtn = document.getElementById("linkbtn");
 let linkinput = document.getElementById("linkinput");
 let myactivate = document.getElementById("activateme");
 let logout = document.querySelectorAll(".logout");
-let loaderrr = document.getElementById("loaderrr");
+let loaderrrr = document.getElementById("loaderrrr");
 let depoform = document.getElementById("depoform");
 let acvtivateme = document.getElementById("acvtivateme");
 let withforrm = document.getElementById("withforrm");
@@ -21,6 +21,8 @@ let content =document.getElementById("content")
 let container =document.getElementById("container")
 
 async function requestData(url, method = "GET", myBody = null) {
+    openLoader(true);
+
     const sessionCookie = getCookie('access_token');
     let request = {
         method: method,
@@ -83,9 +85,9 @@ function getCookie(name) {
 
 function openLoader(res){
     if(res){
-        document.getElementById("loaderrr").style.display = "flex";
+        document.getElementById("loaderrrr").style.display = "flex";
     }else{
-        document.getElementById("loaderrr").style.display = "none";
+        document.getElementById("loaderrrr").style.display = "none";
     }
 }
 menuid.addEventListener('click', () => {
@@ -125,8 +127,6 @@ if(linkbtn){
 }
 
 async function data() {
-    // openLoader(true);
-
     try {
         const response = await requestData(`${baseUrl}userdata`, 'GET');
 
@@ -186,7 +186,7 @@ async function data() {
                         } catch (error) {
                             console.log(error);
                         }
-                        // openLoader(false);
+                        openLoader(false);
                     }
             
                     senddetails()
@@ -232,11 +232,12 @@ async function data() {
         console.error('Error fetching data:', error);
         console.log("An error occurred while fetching your data. Please try again later.");
     }
-    // openLoader(false);
+
+    openLoader(false);
 }
 
-
 data();
+// setTimeout(data,3000);
 
 function deleteCookie(name) {
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
@@ -264,7 +265,7 @@ if(myactivate){
             } catch (error) {
                 console.log(error);
             }
-            // openLoader(false);
+            openLoader(false);
         }
 
         activateme()
@@ -321,7 +322,7 @@ passform.addEventListener('submit', (e) => {
         } catch (error) {
             console.log(error);
         }
-    // openLoader(false)
+    openLoader(false)
     }
   
     registerPost();
@@ -359,7 +360,7 @@ if(withforrm){
             } catch (error) {
                 console.log(error);
             }
-        // openLoader(false)
+        openLoader(false)
         }
       
         withdrawalForm();
@@ -449,12 +450,9 @@ function justcon(){
             } catch (error) {
                 console.log(error);
             }
-        // openLoader(false)
+        openLoader(false)
         }
-      
         teamGet();
-      
-
 }
 
 
@@ -490,7 +488,7 @@ if(depoform){
             } catch (error) {
                 console.log(error);
             }
-        // openLoader(false)
+        openLoader(false)
         }
       
         registerPost();
@@ -524,7 +522,7 @@ if(acvtivateme){
             } catch (error) {
                 console.log(error);
             }
-        // openLoader(false)
+        openLoader(false)
         }
         registerPost();
       })
@@ -556,6 +554,7 @@ if(acvtivateme){
                         submitbtn.disabled = true
                 }
             }
+
             try{
                 const response =  await requestData(`${baseUrl}populatetrivia`, 'GET');
                 if (response.resultcode) {
@@ -598,7 +597,7 @@ if(acvtivateme){
             } catch (error) {
                 console.log(error)
             }
-
+            openLoader(false);
             
         });
         quizsubmit.addEventListener('submit', (e) => {
@@ -628,11 +627,13 @@ if(acvtivateme){
                     content.style.display = "grid"
             container.style.display = "none"
             mytimmer.style.display = 'none'
-
+            openLoader(false);
             }
     
             sendanswer()
 
         })
     }
+
+    openLoader(true);
     

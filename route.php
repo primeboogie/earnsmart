@@ -103,6 +103,11 @@
             'style' => '/css/tiktok.css',
             'secured' => True,
                 ],
+                '/youtube' => [
+                    'file' => 'pages/youtube.php',
+                    'style' => '/css/youtube.css',
+                    'secured' => True,
+                        ],
                 
         '/trivia' => [
             'file' => 'pages/trivia.php',
