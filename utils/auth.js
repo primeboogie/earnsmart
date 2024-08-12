@@ -13,9 +13,12 @@ let loaderrr = document.getElementById("loaderrr");
 let depoform = document.getElementById("depoform");
 let acvtivateme = document.getElementById("acvtivateme");
 let withforrm = document.getElementById("withforrm");
+let readyButton = document.getElementById("readyButton");
 
 
 
+let content =document.getElementById("content")
+let container =document.getElementById("container")
 
 async function requestData(url, method = "GET", myBody = null) {
     const sessionCookie = getCookie('access_token');
@@ -63,7 +66,8 @@ async function fortest() {
         }
     } catch (error) {
         console.log(error);
-        window.reload()
+        window.location.reload();
+
 
     }
     openLoader(false);
@@ -77,7 +81,6 @@ function getCookie(name) {
     return null;
 }
 
-
 function openLoader(res){
     if(res){
         document.getElementById("loaderrr").style.display = "flex";
@@ -86,18 +89,23 @@ function openLoader(res){
     }
 }
 menuid.addEventListener('click', () => {
-    menuid.classList.toggle("fa-xmark")
-    navbar.classList.toggle("navhelper")
-    overs.classList.toggle("showall")
-})
+    menuid.classList.toggle("fa-xmark");
+    navbar.classList.toggle("navhelper");
+    overs.classList.toggle("showall");
+});
 
-// document.addEventListener('click', (event) => {
-//     if (!toggleButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-//         dropdownMenu.classList.remove('show');
-//     }
-// });
+document.addEventListener('click', (event) => {
+    // Ensure the click is outside of the menu toggle area
+    if (navbar.classList.contains('navhelper') && !menuid.contains(event.target) && !navbar.contains(event.target)) {
+        menuid.click()
+
+    }
+});
+
+
 earnimgs.addEventListener('click', ()=>{
-  window.reload()
+  window.location.reload();
+
 })
 
 if(linkbtn){
@@ -174,11 +182,9 @@ async function data() {
                                 response.info.forEach(value => {
                                     alert(value.msg);
                                 });
-                            } else {
-                                // console.log(response);
                             }
                         } catch (error) {
-                            alert(error);
+                            console.log(error);
                         }
                         // openLoader(false);
                     }
@@ -217,10 +223,12 @@ async function data() {
             document.querySelectorAll("#reward").forEach(el => el.innerHTML = reward);
         } else {
             // alert("It seems there is an issue fetching your data. Please try again later.");
-            window.reload()
+            window.location.reload();
+
         }
     } catch (error) {
-        window.reload()
+        window.location.reload();
+
         console.error('Error fetching data:', error);
         console.log("An error occurred while fetching your data. Please try again later.");
     }
@@ -254,7 +262,7 @@ if(myactivate){
                     // console.log(response);
                 }
             } catch (error) {
-                alert(error);
+                console.log(error);
             }
             // openLoader(false);
         }
@@ -513,14 +521,118 @@ if(acvtivateme){
                         console.log(response)
                     }
                     window.location.href = '/'
-
-      
             } catch (error) {
                 console.log(error);
             }
         // openLoader(false)
         }
-      
         registerPost();
       })
     }
+    if(readyButton) {
+        let quizsubmit = document.getElementById("quizsubmit")
+        let submitbtn = document.createElement('button')
+        let mytimmer = document.getElementById("mytimmer")
+        
+        submitbtn.className = "authbtn"
+        submitbtn.textContent = "Submit"
+        readyButton.addEventListener('click', async () => {
+            let currentSeconds = 60;
+    
+            function updateTimer() {
+                if (currentSeconds >= 0) {
+                    if(currentSeconds <= 9){
+                        currentSeconds = `0${currentSeconds}`;
+                    }
+                    mytimmer.innerHTML = currentSeconds;
+                    currentSeconds--;
+
+                    if(submitbtn.disabled !== true){
+                        setTimeout(updateTimer, 1000); // Call updateTimer again after 1 second
+                       
+                    }
+                } else {
+                        quizsubmit.requestSubmit()
+                        submitbtn.disabled = true
+                }
+            }
+            try{
+                const response =  await requestData(`${baseUrl}populatetrivia`, 'GET');
+                if (response.resultcode) {
+            mytimmer.style.display = 'flex'
+            content.style.display = "none"
+            container.style.display = "grid"
+
+                    let allquiz = response.data
+                    updateTimer(); 
+
+                    allquiz.forEach( quiz => {
+                        const { No, Question, A1, A2, A3, A4, qid }  = quiz;
+
+                        let quizbox = document.createElement("div");
+                        quizbox.innerHTML = `
+                              <span class="cquiz">${No}. ${Question}</span>
+                            <label  class="lbb">
+                                <input class="lbb" type="radio" name="${qid}" value="${A1}">Ⓐ ${A1}
+                            </label>
+                            <label class="lbb">
+                                <input  type="radio" name="${qid}" value="${A2}">Ⓑ ${A2}
+                            </label>
+                            <label class="lbb">
+                                <input  type="radio" name="${qid}" value="${A3}">Ⓒ ${A3}
+                            </label>
+                            <label class="lbb">
+                                <input  type="radio" name="${qid}" value="${A4}">Ⓓ ${A4}
+                            </label>
+                        `
+                        quizbox.className = "dquiz"
+                        quizsubmit.appendChild(quizbox)
+                    })
+                    quizsubmit.appendChild(submitbtn)
+                } 
+                if (Array.isArray(response.info) && response.info.length > 0) {
+                    response.info.forEach(value => {
+                        alert(value.msg);
+                    });
+                }
+            } catch (error) {
+                console.log(error)
+            }
+
+            
+        });
+        quizsubmit.addEventListener('submit', (e) => {
+            e.preventDefault()
+            submitbtn.disabled = true
+  
+            const formData = new FormData(quizsubmit);
+          
+            const formObject = {
+                null: null
+            };
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+            async function sendanswer() {
+                try {
+                    const response = await requestData(`${baseUrl}answerdquiz`, 'POST',formObject);           
+                    if (Array.isArray(response.info) && response.info.length > 0) {
+                        response.info.forEach(value => {
+                            alert(value.msg);
+                        });
+                    } 
+                } catch (error) {
+                    console.log(error);
+                }
+                data()
+                    content.style.display = "grid"
+            container.style.display = "none"
+            mytimmer.style.display = 'none'
+
+            }
+    
+            sendanswer()
+
+        })
+    }
+    

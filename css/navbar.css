@@ -90,7 +90,7 @@
 @media only screen and (max-width: 887px) {
     .navbar{
         z-index: -1;
-        display: grid;
+        display: none;
         width: 0 ;
         z-index: 20;
         position: fixed;
@@ -103,7 +103,7 @@
     }
     
     .navhelper{
-    z-index: 20;
+    display: grid !important;
     opacity: 1;
     width: 70% !important;    
 }
