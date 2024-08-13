@@ -1,12 +1,12 @@
 <?php
 
 require "config.php";
+include 'vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-include 'vendor/autoload.php';
 
 
 function usefetch($apiendpoint, $method = 'GET', $headers = [], $body = null)
