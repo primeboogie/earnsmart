@@ -1,6 +1,6 @@
 <?php
 
-include "..func.php";
+include "../func.php";
 
 $inputs = jDecode();
 
