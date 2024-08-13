@@ -137,6 +137,7 @@ $array = reset($array);
 
 
 
+
 function sendmaileven($uname, $uemail, $msg, $subject, $attachmentPath = null, $attachmentName = null, $calendarEvent = null)
 {
     include '../vendor/autoload.php';
@@ -144,7 +145,7 @@ function sendmaileven($uname, $uemail, $msg, $subject, $attachmentPath = null, $
     $admin = [
         "name" => "CEO Nyacorya",
         "email" => "admin@earn-empire.com",
-        "company" => "EVENTIFY",
+        "company" => "EARN EMPIRE CONNECTIONS",
         "website" => "https://earn-empire.com"
      ];
 
