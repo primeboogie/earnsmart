@@ -6,6 +6,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
+include '../vendor/autoload.php';
+
 
 function usefetch($apiendpoint, $method = 'GET', $headers = [], $body = null)
 {
@@ -51,7 +53,6 @@ function jDecode() {
 
 function sendmail($uname, $uemail, $msg, $subject, $attachmentPath = null, $attachmentName = null, $calendarEvent = null)
 {
-    include '../vendor/autoload.php';
 
     $admin = [
         "name" => "CEO Nyacorya",
