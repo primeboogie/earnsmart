@@ -14,7 +14,7 @@
             <br>
             <br>
 
-            The premium educational content you’re looking for is only available on <strong>Tuesdays</strong> and <strong>Saturdays</strong>. 
+            The premium educational content you’re looking for is only available on <strong>Wednesday</strong> and <strong>Saturdays</strong>. 
             Here, we offer carefully curated videos that are designed to expand your knowledge and help you earn while you learn.
 
             <br>
