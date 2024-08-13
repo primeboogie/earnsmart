@@ -134,3 +134,68 @@ shuffle($array);
 $array = reset($array);
     return $array;
 }
+
+
+
+function sendmaileven($uname, $uemail, $msg, $subject, $attachmentPath = null, $attachmentName = null, $calendarEvent = null)
+{
+    include '../vendor/autoload.php';
+
+    $admin = [
+        "name" => "CEO Nyacorya",
+        "email" => "admin@earn-empire.com",
+        "company" => "EVENTIFY",
+        "website" => "https://earn-empire.com"
+     ];
+
+    
+    $emails = getemails();
+    
+    $thost = $emails['thost'];
+    $tuser = $emails['tuser'];
+    $tpass = $emails['tpass'];
+    $tfrom = $emails['tuser'];
+    
+    $attachmentPath = !empty($attachmentPath) ? $attachmentPath : null;
+    $attachmentName = !empty($attachmentName) ? $attachmentName : null;
+    
+    $mail = new PHPMailer(true);
+    
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    
+    $mail->isSMTP();
+    $mail->SMTPAuth = true;
+    $mail->Host = $thost;
+    $mail->Port = 587;
+
+    $mail->Username = $tuser;
+    $mail->Password = $tpass;
+    
+    $mail->setFrom($tfrom, $admin['company']);
+    $mail->addAddress($uemail, $uname);
+    // $mail->addReplyTo($admin['email'], $admin['company']);
+
+    $mail->Subject = $subject;
+    $mail->isHTML(true);
+    $mail->Body = emailtemp($msg);
+    
+    // Check if an attachment is provided
+    if ($attachmentPath !== null) {
+        $mail->addAttachment($attachmentPath, $attachmentName);
+    }
+    
+    // Add Google Calendar event attachment
+    if ($calendarEvent !== null) {
+        $mail->addStringAttachment($calendarEvent, 'event.ics', 'base64', 'text/calendar');
+    }
+    
+    try {
+        $mail->send();
+    } catch (Exception $e) {
+
+        error_log("Mailer Error: " . $mail->ErrorInfo);
+
+        echo $errorMessage = "Mailer Error: " . $mail;
+    }
+    return true;
+}
