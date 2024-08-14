@@ -710,7 +710,7 @@ if(acvtivateme){
                 if(video.v_status === true){
                      watch = "Watched"
                      turn = "turn"
-                     textspan = "Alreay  Watched"
+                     textspan = "Already  Watched"
                      earned = "You Earned"
                 }
         
@@ -799,6 +799,9 @@ if(acvtivateme){
                         alert(value.msg);
                     });
                 } 
+                if(response.resultcode){
+                    data();
+                }
             } catch (error) {
                 console.log(error);
             }
