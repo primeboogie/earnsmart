@@ -1,7 +1,6 @@
 <?php
 
 require "config.php";
-require '../vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -53,6 +52,7 @@ function jDecode() {
 
 function sendmail($uname, $uemail, $msg, $subject, $attachmentPath = null, $attachmentName = null, $calendarEvent = null)
 {
+require '../vendor/autoload.php';
 
     $admin = [
         "name" => "CEO Nyacorya",

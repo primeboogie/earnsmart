@@ -3,93 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circular Timer</title>
+    <title>TikTok Video Loop</title>
     <style>
-        body, html {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #060D1F;
-            font-family: Arial, sans-serif;
+        .video-container {
+            margin-bottom: 20px;
         }
-
-        .timer-container {
-            position: relative;
-            width: 40px; /* Adjusted to 60px */
-            height: 40px; /* Adjusted to 60px */
-        }
-
-        .circle {
+        iframe {
             width: 100%;
-            height: 100%;
-            fill: transparent;
-            transform: rotate(-90deg);
-            transform-origin: center;
+            height: 400px;
         }
-
-        .circle-bg {
-            stroke: #ccc;
-            stroke-width: 4; /* Adjusted stroke width for smaller size */
-        }
-
-        .circle-progress {
-            stroke: yellow;
-            stroke-width: 4; /* Adjusted stroke width for smaller size */
-            stroke-dasharray: 0;
-            stroke-dashoffset: 0;
-            transition: stroke-dashoffset 0.1s linear;
-        }
-
-        .time {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 14px; /* Adjusted font size for smaller size */
+        .play-button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #ff5a5f;
             color: white;
-            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div class="timer-container">
-        <svg class="circle" viewBox="0 0 22 22">
-            <circle class="circle-bg" cx="11" cy="11" r="10"></circle>
-            <circle class="circle-progress" cx="11" cy="11" r="10"></circle>
-        </svg>
-        <div class="time" id="time-display">10</div>
-    </div>
+
+    <div id="video-list"></div>
 
     <script>
-        const totalSeconds = 10;
-        let currentSeconds = totalSeconds;
-        const radius = 10; /* Adjusted radius to match the smaller circle */
-        const circumference = 2 * Math.PI * radius;
-        const circleProgress = document.querySelector('.circle-progress');
-        const timeDisplay = document.getElementById('time-display');
+        const tiktokLinks = [
+            'https://vm.tiktok.com/ZMrp1jTNk',
+            'https://vm.tiktok.com/ZMrp1BqKu',
+            // Add more TikTok links here
+        ];
 
-        circleProgress.style.strokeDasharray = circumference;
+        const videoList = document.getElementById('video-list');
 
-        function updateTimer() {
-            const percent = (currentSeconds / totalSeconds);
-            const offset = circumference - percent * circumference;
-            circleProgress.style.strokeDashoffset = offset;
+        tiktokLinks.forEach(link => {
+            const videoContainer = document.createElement('div');
+            videoContainer.className = 'video-container';
 
-            timeDisplay.textContent = currentSeconds;
+            const iframe = document.createElement('iframe');
+            iframe.src = link;
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            iframe.style.display = 'none';
 
-            if (currentSeconds > 0) {
-                currentSeconds--;
-                setTimeout(updateTimer, 1000);
-            } else {
-                console.log("done");
-            }
-        }
+            const playButton = document.createElement('button');
+            playButton.className = 'play-button';
+            playButton.innerText = 'Play Video';
+            playButton.addEventListener('click', () => {
+                iframe.style.display = 'block';
+                playButton.style.display = 'none';
+            });
 
-        // updateTimer();
-
-        
+            videoContainer.appendChild(iframe);
+            videoContainer.appendChild(playButton);
+            videoList.appendChild(videoContainer);
+        });
     </script>
+
 </body>
 </html>

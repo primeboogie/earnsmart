@@ -1,5 +1,5 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 
 let menuid = document.getElementById("menuid");
 let navbar = document.getElementById("navbar");
@@ -15,6 +15,7 @@ let acvtivateme = document.getElementById("acvtivateme");
 let withforrm = document.getElementById("withforrm");
 let readyButton = document.getElementById("readyButton");
 let youtubediv = document.getElementById("youtubediv");
+let tiktokdiv = document.getElementById("tiktokdiv");
 
 
 
@@ -676,25 +677,6 @@ if(acvtivateme){
             return (match && match[2].length === 11) ? match[2] : null;
         }
         
-        const videos = [
-            {
-                "No": 1,
-                "v_url": "https://youtu.be/sOhvUDiDOws",
-                "v_price": "12.59",
-                "v_category": "Youtube",
-                "v_date": "2024-08-14 01:06:22",
-                "v_status": false
-            },
-            {
-                "No": 4,
-                "v_url": "https://youtu.be/ywjgf3xiwFM",
-                "v_price": "12.49",
-                "v_category": "Youtube",
-                "v_date": "2024-08-14 01:06:22",
-                "v_status": false
-            }
-        ];
-        
         function populateVideos(videos) {
             const container = document.querySelector('.container');
             container.innerHTML = ''; // Clear existing content
@@ -806,6 +788,109 @@ if(acvtivateme){
         openLoader(false);
 
         }
+
+    }
+
+    if(tiktokdiv){
+
+        let tiktokcontent = document.getElementById("tiktokcontent");
+        let tiktokvideo = document.getElementById("tiktokvideo");
+    
+    
+            async function requestvideo() {
+                try {
+                    const response = await requestData(`${baseUrl}populatetiktok`);     
+                    
+                    
+                    if (Array.isArray(response.info) && response.info.length > 0) {
+                        response.info.forEach(value => {
+                            alert(value.msg);
+                        });
+                    } 
+                    if(response.resultcode){
+                        tiktokvideo.style.display = "grid"
+                        popultetiktok(response.data);
+                  
+    
+                    }else {
+                        tiktokcontent.style.display = "grid"
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+            openLoader(false);
+            }
+    
+            requestvideo()
+            function popultetiktok(videos) {
+                const container = document.querySelector('.container');
+                container.innerHTML = ''; // Clear existing content
+            
+                videos.forEach(video => {
+                    let watch = "Watch";
+                    let turn = "";
+                    let textspan = "Watch Now";
+                    let earned = "Worth";
+            
+                    if(video.v_status === true){
+                        watch = "Watched";
+                        turn = "turn";
+                        textspan = "Already Watched";
+                        earned = "You Earned";
+                    }
+            
+                    const videoDiv = document.createElement('div');
+                    videoDiv.className = 'inyoutube'; // Renamed class for TikTok videos
+                    videoDiv.innerHTML = `
+                    <div style="width: 100%; height: 350px;">
+                    <video id="tiktok-${video.No}" style="width: 100%; height: 100%; object-fit: cover;"controls>
+                    <source src="${video.v_url}" type="video/mp4">
+                    Your browser does not support the video tag.
+                    </video>
+                    <div id="overlay-${video.No}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="moreyoutube">
+                            <span>${textspan}</span>
+                            <span>${earned}: <i id="usys"></i> <i>${video.v_price}</i></span>
+                            <button class="authbtn ${turn}" id="startButton-${video.No}">${watch}</button>
+                        </div>
+                    `;
+                    console.log(video.v_id);
+
+            
+                    container.appendChild(videoDiv);
+            
+                    // Add event listener to the button
+                    document.getElementById(`startButton-${video.No}`).addEventListener('click', function() {
+                        const tiktokVideo = document.getElementById(`tiktok-${video.No}`);
+                        if (video.v_status === false) {
+                            document.getElementById(`overlay-${video.No}`).style.display = "none";
+                            tiktokVideo.play();
+                            setTimeout(() => {
+                                payoutvideo(video.v_id);
+                            }, 9000); // Payout after video ends
+                        }
+                    });
+                });
+            }
+            
+            async function payoutvideo(vid) {
+                try {
+                    const response = await requestData(`${baseUrl}paytiktok`, 'POST',{vid: vid});           
+                    if (Array.isArray(response.info) && response.info.length > 0) {
+                        response.info.forEach(value => {
+                            alert(value.msg);
+                        });
+                    } 
+                    if(response.resultcode){
+                        data(); // Refresh the data after payout
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+                openLoader(false);
+            }
+            
 
     }
 

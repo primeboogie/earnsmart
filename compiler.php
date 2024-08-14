@@ -103,7 +103,7 @@
                     <a href="<?php echo $dev['root'];?>/welcome"><i class="fa-solid fa-hand-holding-heart"></i> Welcome Bonus</a>
                     <a href="<?php echo $dev['root'];?>/agentbonus"><i class="fa fa-gift"></i> Daily Bonus</a>
                     <a href="<?php echo $dev['root'];?>/trivia"><i class="fa fa-question"></i> Trivia</a>
-                    <a href="<?php echo $dev['root'];?>/youtube"><i class="fa-brands fa-tiktok"></i> Tiktok</a>
+                    <a href="<?php echo $dev['root'];?>/tiktok"><i class="fa-brands fa-tiktok"></i> Tiktok</a>
                     <a href="<?php echo $dev['root'];?>/youtube"><i class="fa-brands fa-youtube"></i> Youtube</a>
                     <div class="adiv">
                         <span id="spanspins"><i class="fa-solid fa-spinner"></i> Spins <i class="fa-solid fa-angle-down"></i></span>

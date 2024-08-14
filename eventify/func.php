@@ -1,7 +1,6 @@
 <?php
 
 require "config.php";
-include '../vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -53,11 +52,12 @@ function jDecode() {
 
 function sendmail($uname, $uemail, $msg, $subject, $attachmentPath = null, $attachmentName = null, $calendarEvent = null)
 {
+require '../vendor/autoload.php';
 
     $admin = [
         "name" => "CEO Nyacorya",
         "email" => "admin@earn-empire.com",
-        "company" => "EVENTIFY",
+        "company" => "EARN EMPIRE CONNECTIONS",
         "website" => "https://earn-empire.com"
      ];
 
@@ -129,6 +129,7 @@ for ($i = 1; $i <= 30; $i++) {
         "tpass" => $pass,
     ];
 }
+
 
 shuffle($array);
 $array = reset($array);
