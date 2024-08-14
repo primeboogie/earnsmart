@@ -70,6 +70,8 @@ async function fortest() {
         }
     } catch (error) {
         console.log(error);
+        deleteCookie('access_token');
+
         window.location.reload();
 
 
@@ -225,10 +227,14 @@ async function data() {
             document.querySelectorAll("#reward").forEach(el => el.innerHTML = reward);
         } else {
             // alert("It seems there is an issue fetching your data. Please try again later.");
+        deleteCookie('access_token');
+
             window.location.reload();
 
         }
     } catch (error) {
+        deleteCookie('access_token');
+
         window.location.reload();
 
         console.error('Error fetching data:', error);
