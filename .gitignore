@@ -1,4 +1,8 @@
-auth/config.php
+# Ignore specific directories
+auth/
+eventify/
+
+# Ignore specific files
 .htaccess
 *.log
 *.env
