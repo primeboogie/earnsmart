@@ -14,6 +14,7 @@ let depoform = document.getElementById("depoform");
 let acvtivateme = document.getElementById("acvtivateme");
 let withforrm = document.getElementById("withforrm");
 let readyButton = document.getElementById("readyButton");
+let youtubediv = document.getElementById("youtubediv");
 
 
 
@@ -236,7 +237,7 @@ async function data() {
     openLoader(false);
 }
 
-data();
+
 // setTimeout(data,3000);
 
 function deleteCookie(name) {
@@ -636,4 +637,175 @@ if(acvtivateme){
     }
 
     openLoader(true);
-    
+
+    if(youtubediv){
+    let youtubecontent = document.getElementById("youtubecontent");
+    let youtubevideo = document.getElementById("youtubevideo");
+
+
+        async function requestvideo() {
+            try {
+                const response = await requestData(`${baseUrl}populateyoutube`);     
+                
+                
+                if (Array.isArray(response.info) && response.info.length > 0) {
+                    response.info.forEach(value => {
+                        alert(value.msg);
+                    });
+                } 
+                if(response.resultcode){
+                    youtubevideo.style.display = "grid"
+                    populateVideos(response.data);
+              
+
+                }else {
+                    youtubecontent.style.display = "grid"
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        openLoader(false);
+        }
+
+        requestvideo()
+
+        let player;
+        function extractVideoId(url) {
+            const regExp = /^.*(youtu.be\/|v\/|\/u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        }
+        
+        const videos = [
+            {
+                "No": 1,
+                "v_url": "https://youtu.be/sOhvUDiDOws",
+                "v_price": "12.59",
+                "v_category": "Youtube",
+                "v_date": "2024-08-14 01:06:22",
+                "v_status": false
+            },
+            {
+                "No": 4,
+                "v_url": "https://youtu.be/ywjgf3xiwFM",
+                "v_price": "12.49",
+                "v_category": "Youtube",
+                "v_date": "2024-08-14 01:06:22",
+                "v_status": false
+            }
+        ];
+        
+        function populateVideos(videos) {
+            const container = document.querySelector('.container');
+            container.innerHTML = ''; // Clear existing content
+        
+            videos.forEach(video => {
+                const videoId = extractVideoId(video.v_url);
+
+                let watch = "Watch"
+                let turn = ""
+                let textspan = "Watch Now"
+                let earned = "Worth"
+
+                if(video.v_status === true){
+                     watch = "Watched"
+                     turn = "turn"
+                     textspan = "Alreay  Watched"
+                     earned = "You Earned"
+                }
+        
+                if (videoId) {
+                    // Create the container for each video
+                    const videoDiv = document.createElement('div');
+                    videoDiv.className = 'inyoutube';
+                    videoDiv.innerHTML = `
+                        <div>
+                            <div id="player-${video.No}" style="width: 100%; height: 250px;"></div>
+                            <div id="overlay-${video.No}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="moreyoutube">
+                            <span>${textspan}</span>
+                            <span>${earned}: <i id="usys"></i> <i>${video.v_price}</i></span>
+                            <button class="authbtn ${turn}" id="startButton-${video.No}">${watch}</button>
+                        </div>
+                    `;
+                    
+                    container.appendChild(videoDiv);
+        
+                    // Initialize the YouTube player for each video
+                    const player = new YT.Player(`player-${video.No}`, {
+                        height: '360',
+                        width: '640',
+                        videoId: videoId,
+                        playerVars: {
+                            autoplay: 0,
+                            controls: 0,
+                            disablekb: 1,
+                            modestbranding: 1,
+                            playsinline: 1,
+                            showinfo: 0,
+                            rel: 0,
+                            fs: 0,
+                        },
+                        events: {
+                            onReady: onPlayerReady,
+                            onStateChange: (event) => onPlayerStateChange(event, video.No)
+                        }
+                    });
+
+
+        
+                    // Add event listener to the button
+                    document.getElementById(`startButton-${video.No}`).addEventListener('click', function() {
+                        if (player) {
+                            const playerState = player.getPlayerState();
+        
+                            if (playerState === YT.PlayerState.PLAYING) {
+                                player.pauseVideo();
+                            } else {
+                                player.playVideo();
+                                setTimeout(() => {
+                                    payoutvideo(video.v_id)
+                                }, 9000);
+                            }
+                        }
+                    });
+                } else {
+                    console.error('Invalid YouTube URL');
+                }
+            });
+        }
+        
+        function onPlayerReady(event) {
+            // console.log('The video is ready.');
+        }
+        
+        function onPlayerStateChange(event, videoNo) {
+            const button = document.getElementById(`startButton-${videoNo}`);
+            if (event.data == YT.PlayerState.ENDED) {
+                button.textContent = "Re-Watch";
+            } else if (event.data == YT.PlayerState.PLAYING) {
+                button.textContent = "Playing";
+            } else if (event.data == YT.PlayerState.PAUSED) {
+                button.textContent = "Paused";
+            }
+        }
+
+        async function payoutvideo(vid) {
+            try {
+                const response = await requestData(`${baseUrl}payyoutube`, 'POST',{vid: vid});           
+                if (Array.isArray(response.info) && response.info.length > 0) {
+                    response.info.forEach(value => {
+                        alert(value.msg);
+                    });
+                } 
+            } catch (error) {
+                console.log(error);
+            }
+        openLoader(false);
+
+        }
+
+    }
+
+    data();

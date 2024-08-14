@@ -1,11 +1,10 @@
 <div class="trivia">
-<span class="mytimmer" id="mytimmer">60</span>
 <span class="triviah"><i class="fa-brands fa-youtube"></i> Premium Youtube Videos</span>
 <i class="tearn">Youtube Earnings: <i id="usys"></i> <i id="curyou"></i></i>
 
 
-<div class="alltrivia">
-    <div class="content" id="content" style="display: grid;">
+<div class="alltrivia" id="youtubediv">
+    <div class="content" id="youtubecontent" >
         <span> 🎓 Exclusive Content Alert! 🎓
         </span>
         <div class="instructions">
@@ -33,16 +32,11 @@
         <!-- <button class="authbtn" id="readyButton">Ready</button> -->
     </div>
   
-<div class="container"  id="container"   style="display: none;">
-        <form action="" method="post" id="quizsubmit">
-
-      
-    </form>
+<div class="container"   id="youtubevideo"   >
+y
+ 
     </div>
 </div>
 </div>
-<script>
 
-</script>
-
- 
+<script src="https://www.youtube.com/iframe_api"></script>

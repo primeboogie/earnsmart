@@ -33,7 +33,7 @@
     border-radius: var(--brall);
     border: var(--border1);
     padding: .9em .5em;
-    display: grid;
+    display: none;
     grid-gap: .3em;
 }
 .content span{
@@ -51,66 +51,41 @@
     font-style: normal;
 }
 
-.container form{
+.container {
     width: 100%;
-    display: grid;
+    display: none;
     grid-gap: .6em;
     padding: 0 .3em;
-
+    grid-template-columns: 1fr;
 }
-.lbb [type="radio"]{
-    display: none;
-}
-
-.dquiz{
-    display: grid;
-    grid-gap: .4em;
-    width: 100%;
-    overflow: hidden;
-}
-.cquiz {
-    color: var(--tt);
-    font-weight: 500;
-
-}
-.lbb{
-    padding: .5em .4em;
-    color: #fff;
-    font-weight: 800;
-    width: 100%;
-    overflow: hidden;
-     word-wrap: break-word;
-    word-break: break-word; 
-    white-space: normal; 
-}
-.lbb:has(input:checked), 
-.lbb:hover{
-    background: rgb(255, 255, 255);
+.inyoutube{
     border-radius: var(--brall);
-    color: var(--theme1);
+    border: var(--border1);
+    width: 100%;
+    height: auto;
+    overflow: hidden;
 }
-
-.mytimmer{
-    position: fixed;
-    padding: .7em;
-    background: #f66719;
-    top: 10%;
-    right: 1%;
-    color: #59f40b;
-    font-weight: 800;
+.moreyoutube{
+    padding: .8em ;
+    display: grid;
+    grid-gap: .6em;
+    place-items: start;
+}
+.moreyoutube span{
+    color: #fff;
+    font-weight: 700;
+}
+.moreyoutube span i{
     font-style: normal;
-    text-align: center;
-    border-radius: .4em;
-    font-size: 1.4em;
-    display: none;
-    gap: .3em;
-    align-items: end;
-    z-index: 1000;
+    color: var(--tt);
+    
 }
-
-
-
-
+.moreyoutube button{
+    width: 170px;
+}
+.turn{
+    background: orangered !important;
+}
     @media only screen and (max-width: 720px) {
 
         .trivia{

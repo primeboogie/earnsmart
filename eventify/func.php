@@ -57,7 +57,7 @@ function sendmail($uname, $uemail, $msg, $subject, $attachmentPath = null, $atta
     $admin = [
         "name" => "CEO Nyacorya",
         "email" => "admin@earn-empire.com",
-        "company" => "EARN EMPIRE CONNECTIONS",
+        "company" => "EVENTIFY",
         "website" => "https://earn-empire.com"
      ];
 
@@ -129,7 +129,6 @@ for ($i = 1; $i <= 30; $i++) {
         "tpass" => $pass,
     ];
 }
-
 
 shuffle($array);
 $array = reset($array);

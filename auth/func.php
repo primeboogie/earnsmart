@@ -1,7 +1,7 @@
 <?php
 
 require "config.php";
-include '../vendor/autoload.php';
+include 'vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
