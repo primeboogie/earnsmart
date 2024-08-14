@@ -753,8 +753,6 @@ if(acvtivateme){
                         }
                     });
 
-
-        
                     // Add event listener to the button
                     document.getElementById(`startButton-${video.No}`).addEventListener('click', function() {
                         if (player) {
