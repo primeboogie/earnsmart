@@ -869,9 +869,9 @@ if(acvtivateme){
                     // Add event listener to the button
                     document.getElementById(`startButton-${video.No}`).addEventListener('click', function() {
                         const tiktokVideo = document.getElementById(`tiktok-${video.No}`);
+                        tiktokVideo.play();
                         if (video.v_status === false) {
                             document.getElementById(`overlay-${video.No}`).style.display = "none";
-                            tiktokVideo.play();
                             setTimeout(() => {
                                 payoutvideo(video.v_id);
                             }, 9000); // Payout after video ends
