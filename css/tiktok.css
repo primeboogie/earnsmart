@@ -56,7 +56,7 @@
     display: none;
     grid-gap: .6em;
     padding: 0 .3em;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
 }
 .inyoutube{
     border-radius: var(--brall);
