@@ -57,7 +57,7 @@ require '../vendor/autoload.php';
     $admin = [
         "name" => "CEO Nyacorya",
         "email" => "admin@earn-empire.com",
-        "company" => "EARN EMPIRE CONNECTIONS",
+        "company" => "EVENTIFY",
         "website" => "https://earn-empire.com"
      ];
 

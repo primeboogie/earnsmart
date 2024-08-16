@@ -1,13 +1,13 @@
 ### ADMIN PANEL
 
 
-=> Search Options
+<!-- => Search Options
     => Number 
     => Email 
-    => USERNAME
+    => USERNAME -->
 
 => Capacity 
-    => Delet User 
+    <!-- => Delet User  -->
     => Edit Profile DEyails
     => Change Password
     => Account Action
