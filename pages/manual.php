@@ -227,7 +227,7 @@
 </div> 
     <p style="text-align: center; font-style: italic; color: #666; margin-top: 10px;">Once paid, send the payment screenshot, username, full name, number, and email address.</p>
     
-    <p style="text-align: center; font-style: italic; color: #666; margin-top: 10px;">Any questions on payment? Contact the helpline: <strong>+256 740 506431</strong>.</p>
+    <p style="text-align: center; font-style: italic; color: #666; margin-top: 10px;">Any questions on payment? Contact the helpline: <strong>+256 740 506 431</strong>.</p>
     
         <div class="footer-buttons">
             <button class="button" aria-label="main-label" onclick="showSection('main-body')"><span>Back</span></button>
