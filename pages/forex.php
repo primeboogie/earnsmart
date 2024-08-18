@@ -20,9 +20,6 @@
 
 
 
-
-
-<h2 class="">TradingView</h2>
 <div id="TradingView">
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
@@ -109,8 +106,7 @@ embedder.parentNode.appendChild(s);
 
 
 <div class="TableList"> 
-\
-<!-- TradingView Widget BEGIN -->
+
 <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
   <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">Market Data</span> by TradingView</a></div>
@@ -213,14 +209,6 @@ embedder.parentNode.appendChild(s);
 }
   </script>
 </div>
-<!-- TradingView Widget END --></div>
-
-
-
-
-<hr>
-
-<h2> CRYPTOCOMPARE </h2>
 <div class="container" id="chart-widget">
   <script type="text/javascript">
 baseUrl = "https://widgets.cryptocompare.com/";
@@ -263,7 +251,6 @@ embedder.parentNode.appendChild(s);
 
 
 </div>
-<!-- TradingView Widget END -->
         </div>
 
     </div>
