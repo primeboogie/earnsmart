@@ -21,7 +21,7 @@
 
 
 <div id="TradingView">
-<!-- TradingView Widget BEGIN -->
+    
 <div class="tradingview-widget-container">
   <div id="tradingview_37fbc"></div>
   <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/COINBASE-BTCUSD/" rel="noopener" target="_blank"><span class="blue-text">ETHUSD</span> <span class="blue-text">chart</span> by Tradinew</a></div>
@@ -49,9 +49,8 @@
   );
   </script>
 </div>
-<!-- TradingView Widget END -->
-  
-  <!-- TradingView Widget BEGIN -->
+
+
 <div class="tradingview-widget-container">
   <div id="tradingview_ab0cc"></div>
   <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/COINBASE-BTCUSD/" rel="noopener" target="_blank"><span class="blue-text">BTCUSD</span> <span class="blue-text">chart</span> 
