@@ -47,6 +47,9 @@
 .back{
     background: hsla(254, 44.80%, 5.70%, 0.96);
     transform: rotateY(180deg);
+    overflow: auto;
+    width: 100%;
+    height: 100%;
 }
 
 .forexh {
