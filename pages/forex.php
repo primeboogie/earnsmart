@@ -323,6 +323,7 @@ const forexVideos = [
 ];
 
         populateVideos(forexVideos)
+        console.log(forexVideos);
     
 
 
