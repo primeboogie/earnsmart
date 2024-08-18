@@ -364,17 +364,19 @@
     
     <ol style="margin-top: 11px;">
         <li style="margin-bottom: 10px;">Dial <strong>*200*1*1#</strong></li>
-        <li style="margin-bottom: 10px;">Enter Number: <strong>0922223411</strong></li>
+        <li style="margin-bottom: 10px;">Enter Number: <strong>0923109700</strong></li>
         <li style="margin-bottom: 10px;">Enter Amount: <strong>10000</strong></li>
         <li style="margin-bottom: 10px;">Enter Reason: <strong>Att</strong></li>
         <li style="margin-bottom: 10px;">Enter PIN: <strong>**</strong></li>
+
+        <li style="margin-bottom: 10px;">Recipient name-  <strong>SSD Aru</strong></li>
     </ol>
     
     <p style="text-align: center; font-style: italic; color: #666; margin-top: 10px;">Ensure all details are correct before confirming the transaction.</p>
 </div>
     <p style="text-align: center; font-style: italic; color: #666; margin-top: 10px;">Once paid, send the payment screenshot, username, full name, number, and email address.</p>
     
-    <p style="text-align: center; font-style: italic; color: #666; margin-top: 10px;">Any questions on payment? Contact the helpline: <strong>+211922223411</strong>.</p>
+    <p style="text-align: center; font-style: italic; color: #666; margin-top: 10px;">Any questions on payment? Contact the helpline: <strong>+211 920 272 861</strong>.</p>
     
 
         <div class="footer-buttons">

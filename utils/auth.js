@@ -150,6 +150,9 @@ async function data() {
             // Helper function to update elements with color
             const updateElementsWithColor = (selectors, value, condition, trueColor, falseColor) => {
                 document.querySelectorAll(selectors).forEach(el => {
+                    if(true){
+
+                    }
                     el.innerHTML = value;
                     el.style.color = condition ? trueColor : falseColor;
                 });

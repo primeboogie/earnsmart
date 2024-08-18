@@ -23,6 +23,7 @@
 
 .welbonus p i{
     color: var(--tt);
+    font-style: normal;
 }
 .welbtn{
     display: flex;
