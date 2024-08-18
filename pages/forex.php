@@ -6,7 +6,9 @@
                 <button class="authbtn" id="earnenroll"> Enroll</button>
                 <button class="authbtn" id="empirebtn"> Empire</button>
             </div>
-            My Front
+            <div class="containerlink"   id="youtubevideo"   >
+
+            </div>
         </div>
 
         <div class="back">
@@ -30,7 +32,9 @@
   <script type="text/javascript">
   new TradingView.widget(
   {
-  "autosize": false,
+//   "autosize": true,
+"width": "100%",
+"height": 500,
   "symbol": "COINBASE:BTCUSD",
   "interval": "1",
   "timezone": "Asia/Bangkok",
@@ -60,8 +64,8 @@
   <script type="text/javascript">
   new TradingView.widget(
   {
-  "width": 800,
-  "height": 500,
+"width": "100%",
+"height": 500,
   "symbol": "BINANCE:BTCUSDT",
   "interval": "1",
   "timezone": "Asia/Bangkok",
@@ -259,6 +263,165 @@ embedder.parentNode.appendChild(s);
 </script>
 
 
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+const forexVideos = [
+    {
+        id: "1",
+        part: "Part 1",
+        title: "Forex for beginners: 1",
+        link: "https://youtu.be/Xb4KWuHmHBQ"
+    },
+    {
+        id: "2",
+        part: "Part 2",
+        title: "Forex for beginners: 2",
+        link: "https://youtu.be/nVPJMD1Ox0U"
+    },
+    {
+        id: "3",
+        part: "Part 3",
+        title: "Forex for beginners: 3",
+        link: "https://youtu.be/Ev07sFwFxq4"
+    },
+    {
+        id: "5",
+        part: "Part 5",
+        title: "Forex for beginners: 5",
+        link: "https://youtu.be/utF-l2gbwXo"
+    },
+    {
+        id: "6",
+        part: "Part 6",
+        title: "Forex for beginners: 6",
+        link: "https://youtu.be/eynxyoKgpng"
+    },
+    {
+        id: "7",
+        part: "Part 7",
+        title: "Forex for beginners: 7",
+        link: "https://youtu.be/FsrKOqRlXMo"
+    },
+    {
+        id: "8",
+        part: "Part 8",
+        title: "Forex for beginners: 8",
+        link: "https://youtu.be/0hFYmiF-Npk"
+    },
+    {
+        id: "9",
+        part: "Part 9",
+        title: "Forex for beginners: 9",
+        link: "https://youtu.be/dyV1NYbk_nA"
+    },
+    {
+        id: "10",
+        part: "Part 10",
+        title: "Forex for beginners: 10",
+        link: "https://youtu.be/r1vxSFJQpPg"
+    }
+];
+
+        populateVideos(forexVideos)
+    
+
+
+
+        let player;
+        function extractVideoId(url) {
+            const regExp = /^.*(youtu.be\/|v\/|\/u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        }
+        
+        function populateVideos(videos) {
+            const container = document.querySelector('.containerlink');
+            container.innerHTML = ''; // Clear existing content
+        
+            videos.forEach(video => {
+                console.log(video)
+                const videoId = extractVideoId(video.link);
+                console.log(videoId)
+
+                let watch = "Watch"
+                let turn = ""
+                let textspan = video.title
+                let earned = video.part
+
+        
+                if (videoId) {
+                    // Create the container for each video
+                    const videoDiv = document.createElement('div');
+                    videoDiv.className = 'inyoutube';
+                    videoDiv.innerHTML = `
+                        <div>
+                            <div id="player-${video.id}" style="width: 100%; height: 250px;"></div>
+                            <div id="overlay-${video.id}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="moreyoutube">
+                            <span>${textspan}</span>
+                            <span>${earned}</span>
+                            <button class="authbtn ${turn}" id="startButton-${video.id}">${watch}</button>
+                        </div>
+                    `;
+                    
+                    container.appendChild(videoDiv);
+        
+                    // Initialize the YouTube player for each video
+                    const player = new YT.Player(`player-${video.id}`, {
+                        height: '360',
+                        width: '640',
+                        videoId: videoId,
+                        playerVars: {
+                            autoplay: 0,
+                            controls: 0,
+                            disablekb: 1,
+                            modestbranding: 1,
+                            playsinline: 1,
+                            showinfo: 0,
+                            rel: 0,
+                            fs: 0,
+                        },
+                        events: {
+                            onReady: onPlayerReady,
+                            onStateChange: (event) => onPlayerStateChange(event, video.id)
+                        }
+                    });
+
+                    // Add event listener to the button
+                    document.getElementById(`startButton-${video.id}`).addEventListener('click', function() {
+                        if (player) {
+                            const playerState = player.getPlayerState();
+        
+                            if (playerState === YT.PlayerState.PLAYING) {
+                                player.pauseVideo();
+                            } else {
+                                player.playVideo();
+                            }
+                        }
+                    });
+                } else {
+                    console.error('Invalid YouTube URL');
+                }
+            });
+        }
+        
+        function onPlayerReady(event) {
+            // console.log('The video is ready.');
+        }
+        
+        function onPlayerStateChange(event, video) {
+            const button = document.getElementById(`startButton-${video.id}`);
+            if (event.data == YT.PlayerState.ENDED) {
+                button.textContent = "Re-Watch";
+            } else if (event.data == YT.PlayerState.PLAYING) {
+                button.textContent = "Playing";
+            } else if (event.data == YT.PlayerState.PAUSED) {
+                button.textContent = "Paused";
+            }
+        }
+
+</script>
 
 
 

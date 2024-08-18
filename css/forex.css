@@ -39,10 +39,11 @@
     backface-visibility: hidden;
     color: #fff;
     z-index: 5;
+
 }
 
 .front{
-    /* background: #c15a5a; */
+    overflow: auto;
 }
 .back{
     background: hsla(254, 44.80%, 5.70%, 0.96);
@@ -68,6 +69,40 @@
 .btnno:hover {
     background: rgba(222, 141, 21, 0.91) !important;
 }
+.containerlink {
+    width: 100%;
+    display: grid;
+    grid-gap: .6em;
+    padding: .5em ;
+    grid-template-columns: 1fr ;
+
+}
+.inyoutube{
+    border-radius: var(--brall);
+    border: var(--border1);
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.moreyoutube{
+    padding: .8em ;
+    display: grid;
+    grid-gap: .6em;
+    place-items: start;
+}
+.moreyoutube span{
+    color: #fff;
+    font-weight: 700;
+}
+.moreyoutube span i{
+    font-style: normal;
+    color: var(--tt);
+    
+}
+.moreyoutube button{
+    width: 170px;
+}
+
 
 @media only screen and (max-width: 720px) {
 
