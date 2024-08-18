@@ -32,7 +32,7 @@
   {
   "autosize": false,
   "symbol": "COINBASE:BTCUSD",
-  "interval": "D",
+  "interval": "1",
   "timezone": "Asia/Bangkok",
   "theme": "Dark",
   "style": "1",
