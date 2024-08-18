@@ -18,7 +18,6 @@ let youtubediv = document.getElementById("youtubediv");
 let tiktokdiv = document.getElementById("tiktokdiv");
 
 
-
 let content =document.getElementById("content")
 let container =document.getElementById("container")
 
@@ -136,9 +135,9 @@ async function data() {
 
         if (response.resultcode) {
             const {
-                userdetails: { uname, upline, email, phone, join, status, percent, ccurrency, emailed },
+                userdetails: { uname, upline, email, phone, join, status, ccurrency, emailed },
                 balances: {
-                    actbal, expense, target, reward, balance, bonus, totalwithdrawal, pendingwithdrawal, profit, trivia, spin, youtube, tiktok
+                    actbal, expense, target, reward, percent, progress, remaining, dailystatus, balance, bonus, totalwithdrawal, pendingwithdrawal, profit, trivia, spin, youtube, tiktok
                 }
             } = response.data;
 
@@ -228,6 +227,10 @@ async function data() {
 
             document.querySelectorAll("#points").forEach(el => el.innerHTML = target);
             document.querySelectorAll("#reward").forEach(el => el.innerHTML = reward);
+            document.querySelectorAll("#yourpoints").forEach(el => el.innerHTML = progress);
+            document.querySelectorAll("#rempoint").forEach(el => el.innerHTML = remaining);
+
+            document.querySelectorAll("#percent").forEach(el => el.innerHTML = percent+"%");
         } else {
             // alert("It seems there is an issue fetching your data. Please try again later.");
         deleteCookie('access_token');
@@ -246,9 +249,55 @@ async function data() {
 
     openLoader(false);
 }
+let dailyclaim = document.getElementById("dailyclaim")
 
+if(dailyclaim){
+    dailyclaim.addEventListener('click', () => {
+            async function dailyclaims() {
+                try {
+                    const response = await requestData(`${baseUrl}dailybonus`, 'GET');           
+                    if (Array.isArray(response.info) && response.info.length > 0) {
+                        response.info.forEach(value => {
+                            alert(value.msg);
+                        });
+                    } else {
+                        // console.log(response);
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+                openLoader(false);
+            }
+    
+            dailyclaims()
+            
+        })
+}
 
-// setTimeout(data,3000);
+let welcomeclaim = document.getElementById("welcomeclaim")
+
+if(welcomeclaim){
+    welcomeclaim.addEventListener('click', () => {
+            async function welcomeclaims() {
+                try {
+                    const response = await requestData(`${baseUrl}welcomebonus`, 'GET');           
+                    if (Array.isArray(response.info) && response.info.length > 0) {
+                        response.info.forEach(value => {
+                            alert(value.msg);
+                        });
+                    } else {
+                        // console.log(response);
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+                openLoader(false);
+            }
+    
+            welcomeclaims()
+            
+        })
+}
 
 function deleteCookie(name) {
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
@@ -903,4 +952,5 @@ if(acvtivateme){
 
     }
 
-    data();
+// data();
+setTimeout(data,1000);

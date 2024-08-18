@@ -208,12 +208,11 @@
     <div class="bonusinf">
         <span>Today's Target:  <i > <i id="points"></i> Points</i></span>
         <span>Target Reward:  <i> <i id="reward"></i> <i id="usys"></i></i></span>
-        <span>Today's Progress:  <i> <i id="yourpoints"></i>2 Points</i></span>
-        <span>How Much To Go:  <i> <i id="rempoint">3</i> Points</i></span>
+        <span>Today's Progress:  <i> <i id="yourpoints"></i> Points</i></span>
+        <span>How Much To Go:  <i> <i id="rempoint"></i> Points</i></span>
     </div>
     <div class="bonusbtn">
-        <button class="authbtn" >Info</button>
-        <button class="authbtn" >Claim</button>
+    <button class="authbtn" id="dailyclaim">Claim</button>
     </div>
    </div>
 

@@ -8,8 +8,13 @@
         <br> 
         Here's your Welcome bonus: 
     </p>
-    <span class="welb">KES 100.</span>
+    <span class="welb">  <i id="usys">
+                KES
+            </i>
+            <i id="curwel">
+                100
+            </i>.</span>
     <div class="welbtn">
-        <button class="authbtn">Claim</button>
+        <button class="authbtn" id="welcomeclaim" >Claim</button>
     </div>
 </div>
