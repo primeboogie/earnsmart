@@ -17,6 +17,7 @@ let readyButton = document.getElementById("readyButton");
 let youtubediv = document.getElementById("youtubediv");
 let tiktokdiv = document.getElementById("tiktokdiv");
 
+// Mornings Hours 10: AM
 
 let content =document.getElementById("content")
 let container =document.getElementById("container")
@@ -469,42 +470,60 @@ function justcon(){
                     
                     // Create table headers dynamically
                     if (data.length > 0) {
-                        const headers = Object.keys(data[0]);
+                        const headers = ['No', ...Object.keys(data[0])];
 
                         headers.forEach(header => {
                             const th = document.createElement('th');
                             th.textContent = header;
                             thead.appendChild(th);
                         });
-    
-                        data.sort((a, b) => b['status'] - a['status']);
-                        // Create table rows dynamically
-                        data.forEach(item => {
-                            const row = document.createElement('tr');
-                            if(item['status'] == 2){
-                                row.className = "mygreen"
-                            }
-                            headers.forEach(header => {
-                                const td = document.createElement('td');
-                                td.textContent = item[header];
-                                row.appendChild(td);
+                        
+                        data.sort((a, b) => a.Status.localeCompare(b.status));
+                        function renderRows(filteredData) {
+                            tbody.innerHTML = "";
+                            filteredData.forEach((item, index) => {
+                                const row = document.createElement('tr');
+                                if (item['status'] == 'Active') {
+                                    row.style.background = "rgba(83, 209, 20, 0.64)";
+                                }
+                                if (item['active'] == 'Suspended') {
+                                    row.style.background = "orangered";
+                                }
+            
+                                headers.forEach(header => {
+                                    const td = document.createElement('td');
+                                    if (header === 'No') {
+                                        td.textContent = index + 1;
+                                    } else {
+                                        td.textContent = item[header];
+                                    }
+                                    row.appendChild(td);
+                                });
+                                tbody.appendChild(row);
+            
+                                row.removeEventListener('click', handleclicks);
+                                // Remove the previous event listener (if any) before adding a new one
+                                row.addEventListener('click', handleclicks);
+            
+                                function handleclicks() {
+                                    mydetails(item);
+                                }
                             });
-                            tbody.appendChild(row);
-    
-                            row.addEventListener('click',() => {
-                                console.log(item)
-                            })
-                        });
-    
-                        // Add search functionality
+                        }
+            
+                        // Initial render of rows
+                        renderRows(data);
+            
                         searchInput.addEventListener('input', () => {
                             const query = searchInput.value.toLowerCase();
-                            const rows = tbody.querySelectorAll('tr');
-                            rows.forEach(row => {
-                                const cells = row.querySelectorAll('td');
-                                const rowText = Array.from(cells).map(cell => cell.textContent.toLowerCase()).join(' ');
-                                row.style.display = rowText.includes(query) ? '' : 'none';
+                            const filteredData = data.filter(item => {
+                                return Object.values(item).some(value =>
+                                    String(value).toLowerCase().includes(query)
+                                );
                             });
+            
+                            // Render filtered rows
+                            renderRows(filteredData);
                         });
                     }
             } catch (error) {
