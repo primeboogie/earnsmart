@@ -967,9 +967,86 @@ if(acvtivateme){
                 }
                 openLoader(false);
             }
-            
-
     }
 
-// data();
-setTimeout(data,1000);
+    let empirebtn = document.querySelectorAll('#empirebtn');
+    let empirefron = document.getElementById('empirefron');
+    let cardempire = document.getElementById('cardempire');
+    let earnenroll = document.querySelectorAll('#earnenroll');
+
+    if (empirebtn.length > 0) {
+        empirebtn.forEach(val => {
+            val.addEventListener('click', () => {
+                const cardempire = document.querySelector('#cardempire');
+                if (cardempire) {
+                    cardempire.classList.toggle('goback');
+                }
+            });
+        });
+    }
+
+    if (earnenroll.length > 0) {
+        earnenroll.forEach(val => {
+            val.addEventListener('click', () => {
+
+                if(confirm("You Are About To Exit Earn Empire")){
+                    const newTab = window.open("https://one.exnesstrack.net/a/8pcjc79d5c");
+                    if (newTab) {
+                        newTab.focus();
+                    }
+                }
+            
+
+            });
+        });
+    }
+
+const forexVideos = [
+    {
+        title: "Forex for beginners: PART 1",
+        link: "https://youtu.be/Xb4KWuHmHBQ"
+    },
+    {
+        title: "Forex for beginners: PART 2",
+        link: "https://youtu.be/nVPJMD1Ox0U"
+    },
+    {
+        title: "Forex for beginners: PART 3",
+        link: "https://youtu.be/Ev07sFwFxq4"
+    },
+    {
+        title: "Forex for beginners: PART 4",
+        link: "https://youtu.be/utF-l2gbwXoj"
+    },
+    {
+        title: "Forex for beginners: PART 5",
+        link: "https://youtu.be/utF-l2gbwXo"
+    },
+    {
+        title: "Forex for beginners: PART 6",
+        link: "https://youtu.be/eynxyoKgpng"
+    },
+    {
+        title: "Forex for beginners: PART 7",
+        link: "https://youtu.be/FsrKOqRlXMo"
+    },
+    {
+        title: "Forex for beginners: PART 8",
+        link: "https://youtu.be/0hFYmiF-Npk"
+    },
+    {
+        title: "Forex for beginners: PART 9",
+        link: "https://youtu.be/dyV1NYbk_nA"
+    },
+    {
+        title: "Forex for beginners: PART 10",
+        link: "https://youtu.be/fCBmrBVaSkQ"
+    }
+];
+
+console.log(forexVideos);
+
+
+
+data();
+// setTimeout(data,1000);

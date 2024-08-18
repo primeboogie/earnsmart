@@ -1,59 +1,41 @@
 <div class="forex">
-    <span class="forexh">
-    <i class="fa-solid fa-chart-gantt"></i> Forex Links
-    </span>
-    <p>
-        Hi <i id="username">Zanytech</i> We have Offers Some of our Well selcted beginner Forex Vido Links 
-        fo You have A look
-    </p>
-    <div class="tablediv">
-        <table class="table">
-        <thead>
-    <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Link</th>
-        <th>Date</th>
-    </tr>
-</thead>
-<tbody>
-<tr>
-        <td>001</td>
-        <td>Create Account</td>
-        <td><a href="">Link</a></td>
-        <td>2024-07-23</td>
-    </tr>
-    
-    <tr>
-        <td>002</td>
-        <td>Add Email</td>
-        <td><a href="">Link</a></td>
-        <td>2024-07-22</td>
-    </tr>
-    <tr>
-        <td>003</td>
-        <td>Top Upfunds</td>      
-          <td><a href="">Link</a></td>
+    <div class="card" id="cardempire">
+        
+        <div class="front" id="empirefron">
+            <div class="forexh">
+                <button class="authbtn" id="earnenroll"> Enroll</button>
+                <button class="authbtn" id="empirebtn"> Empire</button>
+            </div>
+            My Front
+        </div>
 
-        <td>2024-07-21</td>
-    </tr>
-    <tr>
-        <td>004</td>
-        <td>First Trade</td>
-        <td><a href="">Link</a></td>
+        <div class="back">
+        <div class="forexh">
+                <button class="authbtn btnno" id="earnenroll"> Enroll</button>
+                <button class="authbtn btnno" id="empirebtn"> Classes</button>
+            </div>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container" style="height:100%;width:100%">
+  <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+  {
+  "autosize": true,
+  "symbol": "BINANCE:BTCUSDT",
+  "interval": "1",
+  "timezone": "Etc/UTC",
+  "theme": "dark",
+  "style": "1",
+  "locale": "en",
+  "hide_side_toolbar": false,
+  "allow_symbol_change": true,
+  "calendar": false,
+  "support_host": "https://www.tradingview.com"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+        </div>
 
-        <td>2024-07-20</td>
-    </tr>
-    <tr>
-        <td>005</td>
-        <td>Withdrwal</td>
-        <td><a href="">Link</a></td>
-        <td>2024-07-19</td>
-    </tr>
-
-</tbody>
-
-        </table>
     </div>
-
 </div>

@@ -1,74 +1,63 @@
 .forex{
+    width: 100%;
+    width: 100%;
     display: grid;
-    place-self: start;
-    grid-template-columns 1fr;
-    grid-template-rows: auto auto 1fr;
-    grid-gap: .8em;
-    padding: .5em;
+    grid-gap: .1em;
     background: var(--theme1);
+    position relative;
     border-radius: var(--brall);
-    width: 80%;
+    overflow: hidden;
+}
+/* .forex:hover > .card, */
+.goback{
+    cursor: pointer;
+    transform: rotateY(180deg);
 }
 
-.forexh{
-    color: var(--tt);
-    font-size: 1.1em;
-    font-weight: 600;
-    padding: .8em .5em;
-}
-
-.forex p{
-    color: #fff;
-
-}
-
-.tablediv{
-    overflow: auto;
+.card{
     width: 100%;
-    border-radius: var(--brall);
-    border: 1px solid #fff;
+    height: 100%;
+    perspective: 500px;
+    position relative;
+    transform-style: preserve-3d;
+    /* overflow: hidden; */
+    /* transition: transform 1500ms; */
 }
-.table{
+.front,
+.back{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
     width: 100%;
-    border-collapse: collapse;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
     color: #fff;
-    padding: 1rem;
-    overflow: auto;
-    background: var(--theme1);
-}
-.table thead{
-    position: sticky;
-    top: 0; 
-    z-index: 1;
-    text-align: left;
-}
-.table thead tr{
-    background: var(--theme1);
-    border-bottom: 2px solid #fff;
+    z-index: 5;
 }
 
-.table th{
-    padding: .7em .4em;
-    color: var(--tt);
+.front{
+    /* background: #c15a5a; */
 }
-.table tbody tr{
-    border-bottom: 1px solid #fff;
-}
-
-.table tbody tr td:nth-child(1){
-    color: var(--tt);
+.back{
+    background: hsla(254, 44.80%, 5.70%, 0.96);
+    transform: rotateY(180deg);
 }
 
-.table tbody tr td{
-    padding: .5em .4em;
-    color: #fff;
-    text-wrap: nowrap;
+.forexh {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .4em .6em;
+    border-bottom: 2px solid #eeeeee;
+    position: relative;
+    /* z-index: 2; */
 }
-.table  tbody tr:nth-of-type(odd) {
-    background-color: rgba(255, 255, 255, 0.14);
+.btnno{
+    border: none !important;
+    background: #e6900e !important;
 }
-.table tbody tr:hover{
-    background-color: rgba(13, 220, 203, 0.61);
+.btnno:hover {
+    background: rgba(222, 141, 21, 0.91) !important;
 }
 
 @media only screen and (max-width: 720px) {
