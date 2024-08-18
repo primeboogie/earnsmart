@@ -14,25 +14,254 @@
                 <button class="authbtn btnno" id="earnenroll"> Enroll</button>
                 <button class="authbtn btnno" id="empirebtn"> Classes</button>
             </div>
+
+
+
+
+
+
+
+
+<h2 class="">TradingView</h2>
+<div id="TradingView">
 <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container" style="height:100%;width:100%">
-  <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+<div class="tradingview-widget-container">
+  <div id="tradingview_37fbc"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/COINBASE-BTCUSD/" rel="noopener" target="_blank"><span class="blue-text">ETHUSD</span> <span class="blue-text">chart</span> by Tradinew</a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.widget(
   {
-  "autosize": true,
-  "symbol": "BINANCE:BTCUSDT",
-  "interval": "1",
-  "timezone": "Etc/UTC",
-  "theme": "dark",
+  "autosize": false,
+  "symbol": "COINBASE:BTCUSD",
+  "interval": "D",
+  "timezone": "Asia/Bangkok",
+  "theme": "Dark",
   "style": "1",
   "locale": "en",
+  "toolbar_bg": "rgba(0, 0, 0, 1)",
+  "enable_publishing": false,
   "hide_side_toolbar": false,
   "allow_symbol_change": true,
-  "calendar": false,
-  "support_host": "https://www.tradingview.com"
+  "hideideas": true,
+  "show_popup_button": true,
+  "popup_width": "1000",
+  "popup_height": "650",
+  "container_id": "tradingview_37fbc"
+}
+  );
+  </script>
+</div>
+<!-- TradingView Widget END -->
+  
+  <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div id="tradingview_ab0cc"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/COINBASE-BTCUSD/" rel="noopener" target="_blank"><span class="blue-text">BTCUSD</span> <span class="blue-text">chart</span> by TradingView</a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.widget(
+  {
+  "width": 800,
+  "height": 500,
+  "symbol": "BINANCE:BTCUSDT",
+  "interval": "1",
+  "timezone": "Asia/Bangkok",
+  "theme": "Dark",
+  "style": "3",
+  "locale": "en",
+  "toolbar_bg": "rgba(0, 0, 0, 1)",
+  "enable_publishing": false,
+  "hide_side_toolbar": false,
+  "allow_symbol_change": true,
+  "hideideas": true,
+  "show_popup_button": true,
+  "popup_width": "1000",
+  "popup_height": "650",
+  "container_id": "tradingview_ab0cc"
+}
+  );
+  </script>
+</div>
+<!-- TradingView Widget END -->
+  
+  
+  
+</div>
+
+<script type="text/javascript">
+baseUrl = "https://widgets.cryptocompare.com/";
+var scripts = document.getElementsByTagName("script");
+var embedder = scripts[ scripts.length - 1 ];
+var cccTheme = {"General":{"showExport":true}};
+(function (){
+var appName = encodeURIComponent(window.location.hostname);
+if(appName==""){appName="local";}
+var s = document.createElement("script");
+s.type = "text/javascript";
+s.async = true;
+var theUrl = baseUrl+'serve/v3/coin/chart?fsym=BTC&tsyms=USD,EUR,CNY,GBP';
+s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+embedder.parentNode.appendChild(s);
+})();
+</script>
+<hr>
+
+
+<div class="TableList"> 
+\
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">Market Data</span> by TradingView</a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+  {
+  "width": "770",
+  "height": "450",
+  "locale": "en",
+  "symbolsGroups": [
+    {
+      "originalName": "Indices",
+      "symbols": [],
+      "name": "Indices"
+    },
+    {
+      "originalName": "Commodities",
+      "symbols": [
+        {
+          "displayName": "E-Mini S&P",
+          "name": "CME_MINI:ES1!"
+        },
+        {
+          "displayName": "Euro",
+          "name": "CME:E61!"
+        },
+        {
+          "displayName": "Gold",
+          "name": "COMEX:GC1!"
+        },
+        {
+          "displayName": "Crude Oil",
+          "name": "NYMEX:CL1!"
+        },
+        {
+          "displayName": "Natural Gas",
+          "name": "NYMEX:NG1!"
+        },
+        {
+          "displayName": "Corn",
+          "name": "CBOT:ZC1!"
+        }
+      ],
+      "name": "Commodities"
+    },
+    {
+      "originalName": "Bonds",
+      "symbols": [
+        {
+          "displayName": "Eurodollar",
+          "name": "CME:GE1!"
+        },
+        {
+          "displayName": "T-Bond",
+          "name": "CBOT:ZB1!"
+        },
+        {
+          "displayName": "Ultra T-Bond",
+          "name": "CBOT:UD1!"
+        },
+        {
+          "displayName": "Euro Bund",
+          "name": "EUREX:GG1!"
+        },
+        {
+          "displayName": "Euro BTP",
+          "name": "EUREX:II1!"
+        },
+        {
+          "displayName": "Euro BOBL",
+          "name": "EUREX:HR1!"
+        }
+      ],
+      "name": "Bonds"
+    },
+    {
+      "originalName": "Forex",
+      "symbols": [
+        {
+          "name": "FX:EURUSD"
+        },
+        {
+          "name": "FX:GBPUSD"
+        },
+        {
+          "name": "FX:USDJPY"
+        },
+        {
+          "name": "FX:USDCHF"
+        },
+        {
+          "name": "FX:AUDUSD"
+        },
+        {
+          "name": "FX:USDCAD"
+        }
+      ],
+      "name": "Forex"
+    }
+  ]
 }
   </script>
+</div>
+<!-- TradingView Widget END --></div>
+
+
+
+
+<hr>
+
+<h2> CRYPTOCOMPARE </h2>
+<div class="container" id="chart-widget">
+  <script type="text/javascript">
+baseUrl = "https://widgets.cryptocompare.com/";
+var scripts = document.getElementsByTagName("script");
+var embedder = scripts[ scripts.length - 1 ];
+var cccTheme = {"General":{"background":"#333","borderColor":"#545454","borderRadius":"4px 4px 0 0"},"Header":{"background":"#000","color":"#FFF"},"Followers":{"background":"#f7931a","color":"#FFF","borderColor":"#e0bd93","counterBorderColor":"#fdab48","counterColor":"#f5d7b2"},"Data":{"priceColor":"#FFF","infoLabelColor":"#CCC","infoValueColor":"#CCC"},"Chart":{"fillColor":"rgba(86,202,158,0.5)","borderColor":"#56ca9e"},"Conversion":{"background":"#000","color":"#999"}};
+(function (){
+var appName = encodeURIComponent(window.location.hostname);
+if(appName==""){appName="local";}
+var s = document.createElement("script");
+s.type = "text/javascript";
+s.async = true;
+var theUrl = baseUrl+'serve/v1/coin/chart?fsym=BTC&tsym=USD';
+s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+embedder.parentNode.appendChild(s);
+})();
+</script>
+
+  
+</div>
+  
+  
+<script type="text/javascript">
+baseUrl = "https://widgets.cryptocompare.com/";
+var scripts = document.getElementsByTagName("script");
+var embedder = scripts[ scripts.length - 1 ];
+var cccTheme = {"General":{"background":"#666","borderColor":"#121212"},"Header":{"background":"#121212","color":"#FFF"},"Followers":{"background":"#3fb488","color":"#FFF","borderColor":"#72d4af","counterBorderColor":"#56ca9e","counterColor":"#b5e6d4"},"Tile":{"background":"#333","borderColor":"#555","color":"#FFF"},"Conversion":{"background":"#000","color":"#ccc"}};
+(function (){
+var appName = encodeURIComponent(window.location.hostname);
+if(appName==""){appName="local";}
+var s = document.createElement("script");
+s.type = "text/javascript";
+s.async = true;
+var theUrl = baseUrl+'serve/v1/coin/tiles?fsym=BTC&tsyms=USD,THB,ETH';
+s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+embedder.parentNode.appendChild(s);
+})();
+</script>
+
+
+
 </div>
 <!-- TradingView Widget END -->
         </div>
