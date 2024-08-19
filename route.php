@@ -98,6 +98,11 @@
             'style' => '/css/welcome.css',
             'secured' => True,
                 ],
+                '/task' => [
+                    'file' => 'pages/task.php',
+                    'style' => '/css/task.css',
+                    'secured' => True,
+                        ],
         '/tiktok' => [
             'file' => 'pages/tiktok.php',
             'style' => '/css/tiktok.css',

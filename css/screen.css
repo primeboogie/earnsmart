@@ -151,5 +151,5 @@ body{
   
 
   .act{
-    color: #55ec44 !important;
+    color: var(--tt) !important;
   }

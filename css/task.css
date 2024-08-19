@@ -1,0 +1,54 @@
+.table-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--theme1);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    /* background-color: #007bff; */
+}
+
+th {
+    color: var(--tt);
+    padding: 10px;
+    text-align: left;
+    border-bottom: var(--tt) 1px solid;
+}
+
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #fff;
+}
+
+.day-badge {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+ul {
+    padding-left: 20px;
+    margin: 0;
+    list-style-type: disc;
+}
+
+ul li {
+    margin: 0;
+}
+
+ul li::marker {
+    color: var(--tt); 
+}

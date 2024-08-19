@@ -325,7 +325,7 @@ let forexVideos = [
         
         console.log(forexVideos);
     
-setTimeout( () => populateVideos(forexVideos),2000);
+setTimeout( () => populateVideos(forexVideos),1000);
 
 
 
