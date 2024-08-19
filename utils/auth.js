@@ -553,6 +553,7 @@ if(depoform){
       
                 if(response.resultcode){
                     depoform.reset();
+                    window.location.reload();
                 }
                 console.log(response)
                 if (Array.isArray(response.info) && response.info.length > 0) {

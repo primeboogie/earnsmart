@@ -23,7 +23,7 @@
 
         Activate your account to unlock all earning activities. 🚀💼
 
-        Your activation balance is: <i id="actbals">0.00</i> 💰
+        Your activation balance is: <i id="usys"></i> <i id="actbals">0.00</i> 💰
         
         Let’s get started and achieve great things together! 🌟🚀
         </p>
