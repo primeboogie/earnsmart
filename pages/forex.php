@@ -322,7 +322,7 @@ let forexVideos = [
     }
 ];
 
-        // populateVideos(forexVideos)
+        populateVideos(forexVideos)
         console.log(forexVideos);
     
 
@@ -350,7 +350,7 @@ let forexVideos = [
                 let earned = video.part
 
         
-                if (videoId) {
+                // if (videoId) {
                     // Create the container for each video
                     const videoDiv = document.createElement('div');
                     videoDiv.className = 'inyoutube';
@@ -401,9 +401,10 @@ let forexVideos = [
                             }
                         }
                     });
-                } else {
-                    console.error('Invalid YouTube URL');
-                }
+                    
+                // } else {
+                //     console.error('Invalid YouTube URL');
+                // }
             });
         }
         
