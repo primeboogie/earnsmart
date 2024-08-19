@@ -19,6 +19,7 @@
 
 
 
+            <script src="https://www.youtube.com/iframe_api"></script>
 
 
 
@@ -263,7 +264,6 @@ embedder.parentNode.appendChild(s);
 </script>
 
 
-<script src="https://www.youtube.com/iframe_api"></script>
 <script>
 let forexVideos = [
     {
@@ -322,9 +322,10 @@ let forexVideos = [
     }
 ];
 
-        populateVideos(forexVideos)
+        
         console.log(forexVideos);
     
+setTimeout(populateVideos(forexVideos),1000);
 
 
 
@@ -401,7 +402,7 @@ let forexVideos = [
                             }
                         }
                     });
-                    
+
                 // } else {
                 //     console.error('Invalid YouTube URL');
                 // }
