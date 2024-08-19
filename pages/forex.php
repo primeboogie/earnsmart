@@ -322,7 +322,7 @@ let forexVideos = [
     }
 ];
 
-        populateVideos(forexVideos)
+        // populateVideos(forexVideos)
         console.log(forexVideos);
     
 
