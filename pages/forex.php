@@ -265,7 +265,7 @@ embedder.parentNode.appendChild(s);
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
-const forexVideos = [
+let forexVideos = [
     {
         id: "1",
         part: "Part 1",
@@ -322,7 +322,7 @@ const forexVideos = [
     }
 ];
 
-        populateVideos(forexVideos)
+        populateVideos([])
         console.log(forexVideos);
     
 
