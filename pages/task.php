@@ -3,7 +3,7 @@
     <table>
         <thead>
             <tr>
-                <th>Task</th>
+                <th>Tasks</th>
                 <th>Day</th>
             </tr>
         </thead>
