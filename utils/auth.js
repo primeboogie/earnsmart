@@ -16,6 +16,8 @@ let withforrm = document.getElementById("withforrm");
 let readyButton = document.getElementById("readyButton");
 let youtubediv = document.getElementById("youtubediv");
 let tiktokdiv = document.getElementById("tiktokdiv");
+let withdrawalhistory = document.getElementById("withdrawalhistory");
+
 
 // Mornings Hours 10: AM
 
@@ -430,9 +432,82 @@ if(withforrm){
 
 let team = document.getElementById("team")
 
+if(withdrawalhistory){
+    withhistory()
+}
+
+function withhistory(){
+
+        async function teamGet() {
+            try {
+                const response = await requestData(`${baseUrl}withdrawalhistory`);          
+
+                if (Array.isArray(response.info) && response.info.length > 0) {
+                        response.info.forEach(value => {
+                            alert(value.msg);
+                        });
+                    }
+                    const data = response.data;
+                    const tbody = document.querySelector('#dataTable tbody');
+                    const thead = document.querySelector('#dataTable thead #tableHeader');
+
+                    // Create table headers dynamically
+                    if (data.length > 0) {
+                        const headers = ['No', ...Object.keys(data[0])];
+
+                        headers.forEach(header => {
+                            const th = document.createElement('th');
+                            th.textContent = header;
+                            thead.appendChild(th);
+                        });
+                        
+                        data.sort((a, b) => a.Status.localeCompare(b.status));
+                        function renderRows(filteredData) {
+                            tbody.innerHTML = "";
+                            filteredData.forEach((item, index) => {
+                                const row = document.createElement('tr');
+         
+            
+                                headers.forEach(header => {
+                                    const td = document.createElement('td');
+                                    if (header === 'No') {
+                                        td.textContent = index + 1;
+                                    } else {
+                                        td.textContent = item[header];
+                                    }
+                                    row.appendChild(td);
+                                });
+                                tbody.appendChild(row);
+            
+                                row.removeEventListener('click', handleclicks);
+                                // Remove the previous event listener (if any) before adding a new one
+                                row.addEventListener('click', handleclicks);
+            
+                                function handleclicks() {
+                                    mydetails(item);
+                                }
+                            });
+                        }
+            
+                        // Initial render of rows
+                        renderRows(data);
+            
+             
+                    }
+            } catch (error) {
+                console.log(error);
+            }
+        openLoader(false)
+        }
+        teamGet();
+}
+
+
+
 if(team){
     justcon()
 }
+
 function justcon(){
     const url = window.location.href;
 
