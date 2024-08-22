@@ -41,9 +41,20 @@
                 </div>
                 <button  class="authbtn" >Request Deposit</button>
                 </form>
-
             <?php }else{ ?>
-                <?php require "pages/manual.php"; ?>
+
+                <div class="manual" id="manualpay" style="display: none;">
+                    <?php require "pages/manual.php"; ?>
+                </div>
+
+                <form class="depoform" id="otherspay" style="display: none;">
+                <span>Request Deposit</span>
+                <div class="depoinputs">
+                <input type="text" name="amount" placeholder="Amount" required>
+                </div>
+                <button  class="authbtn" type="submit">Make Payment</button>
+                </form>
+
                 <?php  } ?>
         
         <?php  }else{ ?> 
@@ -52,7 +63,7 @@
             </form>
         <?php  } ?>
             </div>
-            <a href="#" class="authbtn logout" id="logout"><i class="fa fa-sign-out-alt"></i> Logout</a>
+            <a href="#" class="authbtn logout removeline" id="logout"><i class="fa fa-sign-out-alt"></i> Logout</a>
 
             </div>
             
@@ -86,7 +97,7 @@
                 <div class="navlinks">
                     <a href="<?php echo $dev['root'];?>/"><i class="fa fa-window-restore"></i> Dashboard</a>
                     <a href="<?php echo $dev['root'];?>/share"><i class="fa fa-share-alt"></i> Share</a>
-                    <a href="<?php echo $dev['root'];?>/task"><i class="fas fa-tasks"></i> Task</a>
+                    <a href="<?php echo $dev['root'];?>/task"><i class="fas fa-tasks"></i> Tasks</a>
                 </div>
             </div>
             <div class="navdiv">

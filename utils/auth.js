@@ -18,9 +18,6 @@ let youtubediv = document.getElementById("youtubediv");
 let tiktokdiv = document.getElementById("tiktokdiv");
 let withdrawalhistory = document.getElementById("withdrawalhistory");
 
-
-// Mornings Hours 10: AM
-
 let content =document.getElementById("content")
 let container =document.getElementById("container")
 
@@ -138,11 +135,12 @@ async function data() {
 
         if (response.resultcode) {
             const {
-                userdetails: { uname, upline, email, phone, join, status, ccurrency, emailed },
+                userdetails: { uname, upline, manualpayment,  email, phone, join, status, ccurrency, emailed },
                 balances: {
                     actbal, expense, target, reward, percent, progress, remaining, dailystatus, balance, bonus, totalwithdrawal, pendingwithdrawal, profit, trivia, spin, youtube, tiktok
                 }
             } = response.data;
+            console.log(response.data)
 
             // Helper function to update element contents
             const updateElements = (selectors, value) => {
@@ -203,7 +201,7 @@ async function data() {
             if(emailed == '0'){
                 proptupdate();
             }
-            // Update UI elements
+
             updateElements("#username", uname);
             updateElements("#upline", upline);
             updateElements("#email", email);
@@ -234,8 +232,64 @@ async function data() {
             document.querySelectorAll("#rempoint").forEach(el => el.innerHTML = remaining);
 
             document.querySelectorAll("#percent").forEach(el => el.innerHTML = percent+"%");
+
+            let otherspay = document.getElementById("otherspay");
+            let manualpay = document.getElementById("manualpay");
+
+            if(manualpayment){
+                if(manualpay){
+                    manualpay.style.display = "grid"
+                }
+
+            } else {
+                if(otherspay){
+                    otherspay.style.display = "grid"
+
+                    otherspay.addEventListener('submit', (e) => {
+                        e.preventDefault();
+
+                        const submitButton = e.target.querySelector('button[type="submit"]');
+                        if (submitButton) {
+                            submitButton.disabled = true;
+                            submitButton.textContent = "Processing...";
+                            setTimeout( () => {
+                                
+                                submitButton.textContent = "Redirecting...";
+                            }, 2800)
+                        }
+
+                        const formData = new FormData(otherspay);
+                        
+                        const formObject = {};
+
+                        formData.forEach((value, key) => {
+                            formObject[key] = value;
+                        });
+                        
+                        async function requestpay() {
+                            try {
+                                const response = await requestData(`${baseUrl}requestpayment`, 'POST', formObject);          
+                                console.log(response)
+                                if (Array.isArray(response.info) && response.info.length > 0) {
+                                    response.info.forEach(value => {
+                                        alert(value.msg);
+                                    });
+                                }
+                                if(response.resultcode){
+                                    let link = response.data['link']
+                                    window.location.href = link
+                                }
+                                
+                            } catch (error) {
+                                console.log(error);
+                            }
+                            openLoader(false)
+                        }
+                        requestpay();
+                    })
+                }
+            }
         } else {
-            // alert("It seems there is an issue fetching your data. Please try again later.");
         deleteCookie('access_token');
 
             window.location.reload();
@@ -249,9 +303,10 @@ async function data() {
         console.error('Error fetching data:', error);
         console.log("An error occurred while fetching your data. Please try again later.");
     }
-
     openLoader(false);
 }
+
+
 let dailyclaim = document.getElementById("dailyclaim")
 
 if(dailyclaim){
@@ -597,7 +652,6 @@ function justcon(){
                                 );
                             });
             
-                            // Render filtered rows
                             renderRows(filteredData);
                         });
                     }
@@ -608,7 +662,6 @@ function justcon(){
         }
         teamGet();
 }
-
 
 if(depoform){
 
@@ -667,8 +720,7 @@ if(acvtivateme){
                 if (Array.isArray(response.info) && response.info.length > 0) {
                         response.info.forEach(value => {
                             alert(value.msg);
-                        });
-                        
+                        });   
                     }
                     else{
                         console.log(response)
