@@ -236,7 +236,7 @@ async function data() {
             let otherspay = document.getElementById("otherspay");
             let manualpay = document.getElementById("manualpay");
 
-            if(actbal <= 0){
+            if(status == 1 && actbal <= 0){
                 if(otherspay){
                     otherspay.style.display = "none"
                 }
