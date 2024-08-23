@@ -140,7 +140,6 @@ async function data() {
                     actbal, expense, target, reward, percent, progress, remaining, dailystatus, balance, bonus, totalwithdrawal, pendingwithdrawal, profit, trivia, spin, youtube, tiktok
                 }
             } = response.data;
-            console.log(response.data)
 
             // Helper function to update element contents
             const updateElements = (selectors, value) => {
@@ -266,7 +265,7 @@ async function data() {
                             setTimeout( () => {
                                 
                                 submitButton.textContent = "Redirecting...";
-                            }, 2800)
+                            }, 1800)
                         }
 
                         const formData = new FormData(otherspay);
@@ -280,7 +279,7 @@ async function data() {
                         async function requestpay() {
                             try {
                                 const response = await requestData(`${baseUrl}requestpayment`, 'POST', formObject);          
-                                console.log(response)
+
                                 if (Array.isArray(response.info) && response.info.length > 0) {
                                     response.info.forEach(value => {
                                         alert(value.msg);
