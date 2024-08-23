@@ -55,6 +55,10 @@
                 <button  class="authbtn" type="submit">Make Payment</button>
                 </form>
 
+                <form action="#" id="acvtivateme" style="display: none;">
+                <button class="authbtn">Activate Me</button>
+            </form>
+
                 <?php  } ?>
         
         <?php  }else{ ?> 

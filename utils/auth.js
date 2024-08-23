@@ -236,6 +236,17 @@ async function data() {
             let otherspay = document.getElementById("otherspay");
             let manualpay = document.getElementById("manualpay");
 
+            if(actbal <= 0){
+                if(otherspay){
+                    otherspay.style.display = "none"
+                }
+                if(manualpay){
+                    manualpay.style.display = "none"
+                }
+                document.getElementById("acvtivateme").style.display = 'grid'
+                return
+            }
+
             if(manualpayment){
                 if(manualpay){
                     manualpay.style.display = "grid"
