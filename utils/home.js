@@ -239,6 +239,7 @@ register.addEventListener('submit', (e) => {
                         setCookie("access_token", response.data['access_token'],1)
                         login.reset();
                         
+                        // ! confirm change here 
                         // window.location.href = '/earnempire/'
                         window.location.href = '/'
                     }

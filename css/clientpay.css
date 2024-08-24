@@ -5,6 +5,7 @@
     place-items: start center;
     padding: .5em 0;
     grid-gap: 1em;
+    position: relative;
 }
 
 .depositf{
@@ -117,6 +118,66 @@
 }
 .table tbody tr:hover{
     background-color: rgba(13, 220, 203, 0.61);
+}
+
+.nextpage{
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    z-index: 2;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    place-content: start auto;
+    place-items: start center;
+    grid-gap: .5em;
+    background: #fff;
+    transition: all 1s ease;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.nexttrans{
+    opacity: 1;
+    height: 100%;
+}
+.desc {
+    position: relative;
+    display: grid;
+    grid-gap: .5em;
+    padding: .3em .6em ;
+    border-radius: var(--brall);
+    background: var(--theme1);
+    width: 100%;
+}
+
+.desc span{
+    color: var(--tt);
+    font-weight: 800;
+    font-size: 1.2em;
+}
+.desc ul{
+
+    list-style-type: none;
+    color: #fff;
+}
+.ups{
+    grid-area: unset !important;
+    width: 100%;
+}
+.bigx{
+    padding: .4em;
+    color: #fff;
+    font-size: 1.6em;
+    font-weight: 800;
+    background: var(--theme1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: 1/1/2/1;
+    place-self: end;
 }
 
 @media only screen and (max-width: 1000px) {

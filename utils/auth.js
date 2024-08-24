@@ -18,6 +18,9 @@ let youtubediv = document.getElementById("youtubediv");
 let tiktokdiv = document.getElementById("tiktokdiv");
 let withdrawalhistory = document.getElementById("withdrawalhistory");
 
+let usercheck = document.getElementById("usercheck")
+let depositdiv = document.getElementById("depositdiv")
+
 let content =document.getElementById("content")
 let container =document.getElementById("container")
 
@@ -44,7 +47,10 @@ async function requestData(url, method = "GET", myBody = null) {
         if (!response.ok) {
             console.error("HTTP error, status = " + response.status);
         }
+        if(response.status == 401){
+            window.location.reload();
 
+        }
         const data = await response.json();
         return data;
     } catch (error) {
@@ -452,12 +458,11 @@ passform.addEventListener('submit', (e) => {
         }
     openLoader(false)
     }
-  
     registerPost();
   })
 }
-if(withforrm){
 
+if(withforrm){
     withforrm.addEventListener('submit', (e) => {
         e.preventDefault()
       
@@ -531,7 +536,9 @@ function withhistory(){
                             tbody.innerHTML = "";
                             filteredData.forEach((item, index) => {
                                 const row = document.createElement('tr');
-         
+                                if (item['Status'] == 'Pending') {
+                                    row.style.background = "rgba(219, 237, 18, 0.632)";
+                                }
             
                                 headers.forEach(header => {
                                     const td = document.createElement('td');
@@ -544,13 +551,6 @@ function withhistory(){
                                 });
                                 tbody.appendChild(row);
             
-                                row.removeEventListener('click', handleclicks);
-                                // Remove the previous event listener (if any) before adding a new one
-                                row.addEventListener('click', handleclicks);
-            
-                                function handleclicks() {
-                                    mydetails(item);
-                                }
                             });
                         }
             
@@ -566,6 +566,67 @@ function withhistory(){
         }
         teamGet();
 }
+let transfersreords = document.getElementById("transfersreords")
+if(transfersreords){
+    transfers()
+}
+
+function transfers(){
+
+        async function intransfer() {
+            try {
+                const response = await requestData(`${baseUrl}populatepayfroclient`);          
+
+                if (Array.isArray(response.info) && response.info.length > 0) {
+                        response.info.forEach(value => {
+                            alert(value.msg);
+                        });
+                    }
+                    const data = response.data;
+                    const tbody = document.querySelector('#dataTable tbody');
+                    const thead = document.querySelector('#dataTable thead #tableHeader');
+                    thead.innerHTML = ""
+                    // Create table headers dynamically
+                    if (data.length > 0) {
+                        const headers = ['No', ...Object.keys(data[0])];
+
+                        headers.forEach(header => {
+                            const th = document.createElement('th');
+                            th.textContent = header;
+                            thead.appendChild(th);
+                        });
+                        
+                        function renderRows(filteredData) {
+                            tbody.innerHTML = "";
+                            filteredData.forEach((item, index) => {
+                                const row = document.createElement('tr');
+                                headers.forEach(header => {
+                                    const td = document.createElement('td');
+                                    if (header === 'No') {
+                                        td.textContent = index + 1;
+                                    } else {
+                                        td.textContent = item[header];
+                                    }
+                                    row.appendChild(td);
+                                });
+                                tbody.appendChild(row);
+            
+                            });
+                        }
+            
+                        // Initial render of rows
+                        renderRows(data);
+            
+             
+                    }
+            } catch (error) {
+                console.log(error);
+            }
+        openLoader(false)
+        }
+        intransfer();
+}
+
 
 
 
@@ -623,13 +684,7 @@ function justcon(){
                             tbody.innerHTML = "";
                             filteredData.forEach((item, index) => {
                                 const row = document.createElement('tr');
-                                if (item['status'] == 'Active') {
-                                    row.style.background = "rgba(83, 209, 20, 0.64)";
-                                }
-                                if (item['active'] == 'Suspended') {
-                                    row.style.background = "orangered";
-                                }
-            
+                        
                                 headers.forEach(header => {
                                     const td = document.createElement('td');
                                     if (header === 'No') {
@@ -641,13 +696,6 @@ function justcon(){
                                 });
                                 tbody.appendChild(row);
             
-                                row.removeEventListener('click', handleclicks);
-                                // Remove the previous event listener (if any) before adding a new one
-                                row.addEventListener('click', handleclicks);
-            
-                                function handleclicks() {
-                                    mydetails(item);
-                                }
                             });
                         }
             
@@ -1139,6 +1187,113 @@ if(acvtivateme){
         });
     }
 
+        if(usercheck){
+            usercheck.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                let username = e.target.username.value;
+                const formObject = {
+                    reusername: username
+                };
+        
+            async function sendusername() {
+                try {
+                    const response = await requestData(`${baseUrl}confirmpayforclient`, 'POST', formObject);          
+                    if (Array.isArray(response.info) && response.info.length > 0) {
+                            response.info.forEach(value => {
+                                alert(value.msg);
+                            });
+                        }
+        if (response.status == 200) {
+            // <option value="2">Deposit Balance (${accdeposit})</option>
+
+            let {username, balance, accbalance,accdeposit  } = response.data
+            let divcontent = document.createElement("div")
+            divcontent.className = "nextpage"
+            divcontent.innerHTML = ` 
+            <div class="desc">
+            <span>Account Details</span>
+                <ul>
+                <li>Username: ${username}</li>
+                <li>Balance: ${balance}</li>
+                </ul>
+                </div>
+                <form  class="depositf ups" action="#" id="payform">
+                <span class="formh"><i class="fab fa-paypal"></i> Transfer Funds</span>
+                
+                <div class="formdiv">
+                <label for="ref">Choose Payment </label>
+                <select name="acc" id="">
+                <option value="">-- Choose Wallet --</option>
+                <option value="1">Balance (${accbalance})</option>
+            </select>
+            </div>
+            
+            <input type="text" name="reusername" hidden value= "${username}">
+
+        <div class="formdiv">
+            <label for="amount">Amount</label>
+            <input type="number" name="amount" required placeholder="0.00">
+            </div>
+            
+            <button class="authbtn" >Pay <i class="fa-solid fa-money-bill-wave"></i> </button>
+    </form>
+    `
+    let closebigx = document.createElement("span")
+    closebigx.className = "bigx"
+    closebigx.innerHTML = "x"
+    divcontent.appendChild(closebigx)
+    depositdiv.appendChild(divcontent)
+
+    closebigx.addEventListener('click', (e) => {    
+        depositdiv.removeChild(divcontent);
+    })
+    let payform = document.getElementById("payform")
+    payform.addEventListener('submit', (e) => {
+        e.preventDefault()
+             const formData = new FormData(payform);
+                        
+                        const formObject = {};
+
+                        formData.forEach((value, key) => {
+                            formObject[key] = value;
+                        });
+                        async function requestpay() {
+                            try {
+                                const response = await requestData(`${baseUrl}payforclient`, 'POST', formObject);          
+
+                                if(response.status == 200 ){
+                                    transfers()
+                                }
+                                if (Array.isArray(response.info) && response.info.length > 0) {
+                                    response.info.forEach(value => {
+                                        alert(value.msg);
+                                    });
+                                }
+                            } catch (error) {
+                                console.log(error);
+                            }
+                            openLoader(false)
+                        }
+                        requestpay();
+    })
+
+    setTimeout(() => {
+    divcontent.classList.add("nexttrans")
+    }, 500);
+
+        }
+        
+                } catch (error) {
+                    console.log(error);
+                }
+                openLoader(false)
+            }
+        
+            sendusername();
+
+            })
+        }
 
 data();
 // setTimeout(data,1000);
