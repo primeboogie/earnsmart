@@ -48,7 +48,7 @@ async function requestData(url, method = "GET", myBody = null) {
             console.error("HTTP error, status = " + response.status);
         }
         if(response.status == 401){
-            window.location.reload();
+            // window.location.reload();
 
         }
         const data = await response.json();
