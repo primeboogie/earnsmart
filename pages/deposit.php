@@ -1,5 +1,5 @@
 <div class="deposit">
-    <!-- <form  class="depositf" action="#" id="depositf">
+    <form  class="depositf" action="#" id="depositf">
         <span class="formh"><i class="fa-solid fa-hand-holding-dollar"></i> Topup Account</span>
         
         <div class="formdiv">
@@ -14,7 +14,7 @@
 
         <button class="authbtn" id=""><i class="fa-solid fa-hand-holding-dollar"></i> Request</button>
     </form>
-    <div class="dipopro">
+    <!-- <div class="dipopro">
         <div class="dipoh">Uganda Payment</div>
         <ul>
             <li>
