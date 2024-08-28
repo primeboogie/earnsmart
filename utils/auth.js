@@ -47,6 +47,7 @@ async function requestData(url, method = "GET", myBody = null) {
         if (!response.ok) {
             console.error("HTTP error, status = " + response.status);
         }
+        
         if(response.status == 401){
             // window.location.reload();
             console.log(response)
@@ -1206,19 +1207,18 @@ if(acvtivateme){
                             });
                         }
         if (response.status == 200) {
-            // <option value="2">Deposit Balance (${accdeposit})</option>
-
+            
             let {username, balance, accbalance,accdeposit  } = response.data
             let divcontent = document.createElement("div")
             divcontent.className = "nextpage"
             divcontent.innerHTML = ` 
             <div class="desc">
             <span>Account Details</span>
-                <ul>
-                <li>Username: ${username}</li>
-                <li>Balance: ${balance}</li>
-                </ul>
-                </div>
+            <ul>
+            <li>Username: ${username}</li>
+            <li>Balance: ${balance}</li>
+            </ul>
+            </div>
                 <form  class="depositf ups" action="#" id="payform">
                 <span class="formh"><i class="fab fa-paypal"></i> Transfer Funds</span>
                 
@@ -1227,6 +1227,7 @@ if(acvtivateme){
                 <select name="acc" id="">
                 <option value="">-- Choose Wallet --</option>
                 <option value="1">Balance (${accbalance})</option>
+                <option value="2">Deposit (${accdeposit})</option>
             </select>
             </div>
             

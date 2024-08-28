@@ -3,26 +3,25 @@
         <span class="formh"><i class="fa-solid fa-hand-holding-dollar"></i> Topup Account</span>
         
         <div class="formdiv">
-            <label for="ref">Choose Payment </label>
-            <select name="paymode" id="">
-                <option value="">-- Payment Mode --</option>
-                <option value="1">Mpesa</option>
-                <option value="2">Flutter-Wave</option>
-            </select>
-        </div>
-
-        <div class="formdiv">
             <label for="amount">Amount</label>
             <input type="text" name="amount">
         </div>
 
-        <div class="formdiv">
+        <div class="formdiv" id="dipophone" style="display: none;">
             <label for="phone">Phone</label>
             <input type="text" name="phone">
         </div>
 
         <button class="authbtn" id=""><i class="fa-solid fa-hand-holding-dollar"></i> Request</button>
     </form>
+    <div class="dipopro">
+        <div class="dipoh">Uganda Payment</div>
+        <ul>
+            <li>
+                
+            </li>
+        </ul>
+    </div>
     <div class="alldip">
     <span class="diph" ><i class="fa-solid fa-money-bill-1-wave"></i> Recent Deposit</span>
     <div class="tablediv">

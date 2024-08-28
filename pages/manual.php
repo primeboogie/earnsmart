@@ -196,8 +196,6 @@
         
         
         
-        
-        
         <div id="uganda" class="body">
             <h1 class="payfor">Pay for Uganda:</h1>
 <div style="background-color: #f9f9f9; border: 1px solid #ccc; border-radius: 10px; padding: 20px; margin: 0 auto; font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
