@@ -50,7 +50,7 @@ async function requestData(url, method = "GET", myBody = null) {
         
         if(response.status == 401){
             // window.location.reload();
-            console.log(response)
+            
 
         }
         const data = await response.json();
@@ -66,14 +66,14 @@ async function fortest() {
         const response = await requestData('https://earnempire.seosblog.com/?action=register', 'POST', { some: 'data' });          
         
         if(response.resultcode){
-            console.log(true);
+       
         }
         if (Array.isArray(response.info) && response.info.length > 0) {
             response.info.forEach(value => {
-                console.log(value.msg);
+                alert(value.msg);
             });
         } else {
-            console.log(response);
+            ;
         }
     } catch (error) {
         console.log(error);
@@ -143,9 +143,9 @@ async function data() {
 
         if (response.resultcode) {
             const {
-                userdetails: { uname, upline, manualpayment,  email, phone, join, status, ccurrency, emailed },
+                userdetails: { uname, cid, upline, manualpayment,  email, phone, join, status, ccurrency, emailed },
                 balances: {
-                    actbal, expense, target, reward, percent, progress, remaining, dailystatus, balance, bonus, totalwithdrawal, pendingwithdrawal, profit, trivia, spin, youtube, tiktok
+                    actbal, expense, target, reward, percent, progress, remaining, dailystatus, balance, deposit, bonus, totalwithdrawal, pendingwithdrawal, profit, trivia, spin, youtube, tiktok
                 }
             } = response.data;
 
@@ -225,6 +225,7 @@ async function data() {
             updateElements("#curyou", youtube);
             updateElements("#curtiktok", tiktok);
             updateElements("#actbals", actbal);
+            updateElements("#actdip", deposit);
 
             updateElementsWithColor("#join", join, status == 2, 'yellow', 'red');
             updateElementsWithColor("#ustatus", status == 2 ? 'Active' : 'Inactive', status === 2, 'yellow', 'red');
@@ -253,6 +254,9 @@ async function data() {
                 document.getElementById("acvtivateme").style.display = 'grid'
                 return
             }
+            if(diposithistory){
+                grabpayment([manualpayment, cid])
+            }
 
             if(manualpayment){
                 if(manualpay){
@@ -263,7 +267,7 @@ async function data() {
                 if(otherspay){
                     otherspay.style.display = "grid"
 
-                    otherspay.addEventListener('submit', (e) => {
+                    document.getElementById("otherspay").addEventListener('submit', (e) => {
                         e.preventDefault();
 
                         const submitButton = e.target.querySelector('button[type="submit"]');
@@ -286,7 +290,7 @@ async function data() {
                         
                         async function requestpay() {
                             try {
-                                const response = await requestData(`${baseUrl}requestpayment`, 'POST', formObject);          
+                                const response = await requestData(`${baseUrl}requestpayment`, 'POST', formObject);  
 
                                 if (Array.isArray(response.info) && response.info.length > 0) {
                                     response.info.forEach(value => {
@@ -337,7 +341,7 @@ if(dailyclaim){
                             alert(value.msg);
                         });
                     } else {
-                        // console.log(response);
+                        // ;
                     }
                 } catch (error) {
                     console.log(error);
@@ -362,7 +366,7 @@ if(welcomeclaim){
                             alert(value.msg);
                         });
                     } else {
-                        // console.log(response);
+                        // ;
                     }
                 } catch (error) {
                     console.log(error);
@@ -396,7 +400,7 @@ if(myactivate){
                         alert(value.msg);
                     });
                 } else {
-                    // console.log(response);
+                    // ;
                 }
             } catch (error) {
                 console.log(error);
@@ -445,14 +449,14 @@ passform.addEventListener('submit', (e) => {
             if(response.resultcode){
                 passform.reset();
             }
-            console.log(response)
+            
             if (Array.isArray(response.info) && response.info.length > 0) {
                     response.info.forEach(value => {
                         alert(value.msg);
                     });
                 }
                 else{
-                    console.log(response)
+                    
                 }
   
         } catch (error) {
@@ -482,15 +486,13 @@ if(withforrm){
                 if(response.resultcode){
                     withforrm.reset();
                 }
-                console.log(response)
+                
                 if (Array.isArray(response.info) && response.info.length > 0) {
                         response.info.forEach(value => {
                             alert(value.msg);
                         });
                     }
-                    else{
-                        console.log(response)
-                    }
+                   
       
             } catch (error) {
                 console.log(error);
@@ -503,10 +505,189 @@ if(withforrm){
     }
 
 let team = document.getElementById("team")
+let diposithistory = document.getElementById("diposithistory")
+
+if(diposithistory){
+    diphistory()
+}
+
+function grabpayment(data){
+    const {0:manualpayment, 1:cid} = data;
+
+
+    if(cid == 'KEST'){
+       document.getElementById('dipophone').style.display = 'grid'
+    }
+    
+    if(manualpayment){   
+        document.getElementById('depoform').style.display = 'none'
+        document.getElementById('datamanual').style.display = 'grid'
+
+        async function allpay() {
+            try {
+                const response = await requestData(`${baseUrl}grabpayment`, 'GET');   
+                if (Array.isArray(response.info) && response.info.length > 0) {
+                    response.info.forEach(value => {
+                        alert(value.msg);
+                    });
+                } 
+                if(response.status == 200){
+                    let all  = response.data.methods   
+
+                    if(Object.keys(all).length > 0){
+                        let selectall = document.getElementById('allrapper')
+                        selectall.innerHTML = ''
+                    
+                        Object.keys(all).forEach(key => {
+                            let mytitle = document.createElement('div')
+                            mytitle.className = 'dipoh'
+                            mytitle.textContent = key
+                            let newul = document.createElement("ul")
+                 
+
+                            all[key][1].forEach(value => {
+                                let newli = document.createElement("li")
+                                newli.innerHTML = `<strong>${value['Step']}. </strong>${value['Description']}`
+                                newul.appendChild(newli)
+                            })
+                            let nb = document.createElement("span")
+                            nb.className = "mynb"
+                            nb.innerHTML = `Once paid, send the payment screenshot, username to helpline: ${all[key][2]}`
+                            selectall.appendChild(mytitle)
+                            selectall.appendChild(newul)
+                            newul.appendChild(nb)
+                        })
+                    } else{
+                        let selectall = document.getElementById('allrapper')
+                        selectall.innerHTML = ''
+                        let mytitle = document.createElement('div')
+                        mytitle.className = 'dipoh'
+                        mytitle.innerHTML = "Payment Method Will Arrive Soon"
+                        selectall.appendChild(mytitle)
+                    }
+                }
+            } catch (error) {
+                console.log(error);
+            }
+            openLoader(false);
+        }
+
+        allpay()
+
+
+    } else{
+       document.getElementById('depoform').id = 'otherspay'
+    
+       document.getElementById("otherspay").addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const submitButton = e.target.querySelector('button[type="submit"]');
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Processing...";
+            setTimeout( () => {
+                
+                submitButton.textContent = "Redirecting...";
+            }, 1800)
+        }
+
+        const formData = new FormData(document.getElementById("otherspay"));
+        
+        const formObject = {};
+
+        formData.forEach((value, key) => {
+            formObject[key] = value;
+        });
+        
+        async function requestpay() {
+            try {
+                const response = await requestData(`${baseUrl}requestpayment`, 'POST', formObject);  
+
+                if (Array.isArray(response.info) && response.info.length > 0) {
+                    response.info.forEach(value => {
+                        alert(value.msg);
+                    });
+                }
+                if(response.resultcode){
+                    let link = response.data['link']
+                    window.location.href = link
+                }
+                
+            } catch (error) {
+                console.log(error);
+            }
+            openLoader(false)
+        }
+        requestpay();
+    })
+
+    }
+}
+
+function diphistory(){
+
+    async function dipget() {
+        try {
+            const response = await requestData(`${baseUrl}deposithistory`);          
+
+            if (Array.isArray(response.info) && response.info.length > 0) {
+                    response.info.forEach(value => {
+                        alert(value.msg);
+                    });
+                }
+                const data = response.data.history;
+                const tbody = document.querySelector('#dataTable tbody');
+                const thead = document.querySelector('#dataTable thead #tableHeader');
+
+                // Create table headers dynamically
+                if (data.length > 0) {
+                    const headers = ['No', ...Object.keys(data[0])];
+
+                    headers.forEach(header => {
+                        const th = document.createElement('th');
+                        th.textContent = header;
+                        thead.appendChild(th);
+                    });
+                    
+                    data.sort((a, b) => a.Status.localeCompare(b.status));
+                    function renderRows(filteredData) {
+                        tbody.innerHTML = "";
+                        filteredData.forEach((item, index) => {
+                            const row = document.createElement('tr');
+                 
+                            headers.forEach(header => {
+                                const td = document.createElement('td');
+                                if (header === 'No') {
+                                    td.textContent = index + 1;
+                                } else {
+                                    td.textContent = item[header];
+                                }
+                                row.appendChild(td);
+                            });
+                            tbody.appendChild(row);
+        
+                        });
+                    }
+        
+                    // Initial render of rows
+                    renderRows(data);
+        
+         
+                }
+        } catch (error) {
+            console.log(error);
+        }
+    openLoader(false)
+    }
+    dipget();
+}
+
+
 
 if(withdrawalhistory){
     withhistory()
 }
+
 
 function withhistory(){
 
@@ -649,13 +830,10 @@ function justcon(){
 
     const lastDigit = parseInt(lastSegment, 10);
 
-    console.log(lastDigit); // Output: 2
-
-
       
         async function teamGet() {
             try {
-                const response = await requestData(`${baseUrl}myDownilnes&level=${lastDigit}`);          
+                const response = await requestData(`${baseUrl}myDownlines&level=${lastDigit}`);          
 
                 if (Array.isArray(response.info) && response.info.length > 0) {
                         response.info.forEach(value => {
@@ -743,14 +921,10 @@ if(depoform){
                     depoform.reset();
                     window.location.reload();
                 }
-                console.log(response)
                 if (Array.isArray(response.info) && response.info.length > 0) {
                         response.info.forEach(value => {
                             alert(value.msg);
                         });
-                    }
-                    else{
-                        console.log(response)
                     }
       
             } catch (error) {
@@ -776,15 +950,13 @@ if(acvtivateme){
                 if(response.resultcode){
                     acvtivateme.reset();
                 }
-                console.log(response)
+                
                 if (Array.isArray(response.info) && response.info.length > 0) {
                         response.info.forEach(value => {
                             alert(value.msg);
                         });   
                     }
-                    else{
-                        console.log(response)
-                    }
+                   
                     window.location.href = '/'
             } catch (error) {
                 console.log(error);
@@ -1120,8 +1292,6 @@ if(acvtivateme){
                             <button class="authbtn ${turn}" id="startButton-${video.No}">${watch}</button>
                         </div>
                     `;
-                    console.log(video.v_id);
-
             
                     container.appendChild(videoDiv);
             

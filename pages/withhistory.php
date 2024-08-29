@@ -1,5 +1,5 @@
 <div class="alldip">
-    <span class="diph" > <i class="fa-solid fa-file-circle-check"></i>Withdrwal History</span>
+    <span class="diph" > <i class="fa-solid fa-file-circle-check"></i> Withdrwal History</span>
     <div class="tablediv" id="withdrawalhistory">
         <table class="table" id="dataTable">
             <thead>

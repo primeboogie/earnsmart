@@ -9,7 +9,7 @@
 
 .depositf{
     grid-area: 1/1/3/2;
-    padding: .7em 1.3em;
+    padding: .7em 0em;
     background: var(--theme1);
     border-radius: var(--brall);
     display: grid;
@@ -37,22 +37,66 @@
     border-radius: var(--brall);
     background: var(--theme1);
     
+    
 }
 
+.dipoh,
 .formh{
     color: var(--tt);
     display: flex;
     grid-gap: .5em;
     font-weight: 800;
     font-size: 1.2em;
+    padding: .4em 1.3em;
+    
+}
+.formd{
+    color: #ffff;
+    font-size: .8em;
+    font-weight: 600;
+    border-bottom: thin solid #fff;
+    padding: 0em 1.3em .5em 1.3em;
+    
+}
+.dipopro{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    background: var(--theme1);
+    border-radius: var(--brall);
+}
+ul {
+    color: #000;
+    border-radius: var(--brall);
+    border: thin solid #fff;
+    padding: .5em .7em;
+    background: #fff;
+    list-style: none;
+    display: grid;
+    grid-gap: .5em;
+    margin: .5em;
 }
 
 .formdiv {
     display: grid;
     grid-gap: .4em;
+    margin: 0em 1.3em;
+    
 
 }
 
+.mynb{
+    border-radius: var(--brall);
+    border: 1px solid #d8d8d8;
+    padding: .7em .5em;
+    font-size: .8em;
+    font-weight: 400;
+    font-style: italic;
+    color: #393838;
+    
+}
 .formdiv label{
     color: #fff;
     font-style: italic;
@@ -119,6 +163,10 @@
     background-color: rgba(13, 220, 203, 0.61);
 }
 
+.authbtn{
+    margin: 0em 1.3em;
+
+}
 @media only screen and (max-width: 1000px) {
     .deposit{
         grid-template-columns: 1fr;

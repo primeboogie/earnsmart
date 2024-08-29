@@ -321,9 +321,6 @@ let forexVideos = [
         link: "https://youtu.be/r1vxSFJQpPg"
     }
 ];
-
-        
-        console.log(forexVideos);
     
 setTimeout( () => populateVideos(forexVideos),1000);
 
@@ -341,10 +338,8 @@ setTimeout( () => populateVideos(forexVideos),1000);
             container.innerHTML = ''; // Clear existing content
         
             videos.forEach(video => {
-                console.log(video)
                 const videoId = extractVideoId(video.link);
-                console.log(videoId)
-
+     
                 let watch = "Watch"
                 let turn = ""
                 let textspan = video.title
