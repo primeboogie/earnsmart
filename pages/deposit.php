@@ -17,7 +17,7 @@
     </form>
 
 
-    <div class="dipopro" id="datamanual">
+    <div class="dipopro" id="datamanual" style="display: none;">
     <span class="formh"><i class="fa-solid fa-hand-holding-dollar"></i> Topup Account</span>
     <span class="formd">Deposit Balance: <i id="usys"></i>  <i id="actdip">0.00</i></span>
     <div class="allrapper" id="allrapper">

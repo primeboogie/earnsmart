@@ -75,7 +75,7 @@
     
         <div class="moneydiv bg3">
             <span id="inmoneyh">
-                Total Withdarawals
+                Total Withdrawals
             </span>
             
             <span id="inmoneyb">
@@ -94,7 +94,7 @@
 
         <div class="moneydiv bg4">
             <span id="inmoneyh">
-            Pending  Withdarawals
+            Pending  Withdrawals
             </span>
 
             <span id="inmoneyb">
