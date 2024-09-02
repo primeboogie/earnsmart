@@ -25,7 +25,7 @@ $newrand = rand(rand("0","80000"),"99000");
     <link rel="icon" type="image/x-icon" href="<?php echo $domain; ?>/<?php echo $logo; ?>">
     <link rel="shortcut icon"  href="<?php echo $domain; ?>/<?php echo $logo; ?>" type="image/x-icon">
     <meta name="keywords" content="<?php echo htmlspecialchars($keywords, ENT_QUOTES, 'UTF-8'); ?>">
-    <meta name="author" content="Zany-Tech">
+    <meta name="author" content="Boogie-Coin">
     <meta name="description" content="<?php echo $desc; ?>">
 
     <link rel="canonical" href="<?php echo $domain; ?>">
@@ -54,7 +54,34 @@ $newrand = rand(rand("0","80000"),"99000");
         <link rel="stylesheet" href="<?php  echo $domain;  echo $style."?".$newrand; ?>">
         <link rel="stylesheet" href="<?php  echo $domain; ?>/css/device.css?<?php  echo $newrand; ?>">   
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
+    <script type="application/ld+json">
+    {
+        "@context": " "https://boogiecoin.com",
+        "@type": "WebPage",
+        "name": "Boogie Coin",
+        "description": "Explore the awesomeness of my website. Learn, engage, and have a great experience.",
+        "url": " "https://boogiecoin.com",
+        "datePublished": "2024-02-03",
+        "author": {
+            "@type": "Person",
+            "name": "Boogie Coin"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Boogie coin",
+            "logo": {
+                "@type": "ImageObject",
+                "url":  "https://boogiecoin.com/siteimage/bcpng.png",
+            }
+        },
+        "image": {
+            "@type": "ImageObject",
+            "url":  "https://boogiecoin.com/siteimage/bcpng.png";
+            "height": 800,
+            "width": 1200
+        }
+    }
+</script>
     <?php 
     if($environment){
         $routedfile = $file;

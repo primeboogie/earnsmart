@@ -19,6 +19,7 @@ let tiktokdiv = document.getElementById("tiktokdiv");
 let withdrawalhistory = document.getElementById("withdrawalhistory");
 
 let usercheck = document.getElementById("usercheck")
+
 let depositdiv = document.getElementById("depositdiv")
 
 let content =document.getElementById("content")
@@ -254,6 +255,7 @@ async function data() {
                 document.getElementById("acvtivateme").style.display = 'grid'
                 return
             }
+            
             if(diposithistory){
                 grabpayment([manualpayment, cid])
             }
