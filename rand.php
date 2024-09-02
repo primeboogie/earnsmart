@@ -59,7 +59,7 @@ $newrand = rand(rand("0","80000"),"99000");
         "@context": " "https://boogiecoin.com",
         "@type": "WebPage",
         "name": "Boogie Coin",
-        "description": "Explore the awesomeness of my website. Learn, engage, and have a great experience.",
+        "description": "Quality In Every Byte.",
         "url": " "https://boogiecoin.com",
         "datePublished": "2024-02-03",
         "author": {
