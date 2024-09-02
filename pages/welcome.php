@@ -4,7 +4,7 @@
         Welcome to Earn Empire Connections! We're thrilled to have you onboard! 
         To Claim Your Welcome 
         Bonus Your Target is; have <i>15 Level 1</i>  active Downlines.
-        So far you have <i>0</i>, Soon you will be there.
+        <!-- So far you have <i>0</i>, Soon you will be there. -->
         <br> 
         Here's your Welcome bonus: 
     </p>
