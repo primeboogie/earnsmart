@@ -59,7 +59,7 @@ $newrand = rand(rand("0","80000"),"99000");
         "@context": " "https://zanytech.site",
         "@type": "WebPage",
         "name": "ZanyTech Co. Ltd",
-        "description": "Explore the awesomeness of my website. Learn, engage, and have a great experience.",
+        "description": "Quality In Every Byte.",
         "url": " "https://zanytech.site",
         "datePublished": "2024-02-03",
         "author": {
@@ -83,6 +83,7 @@ $newrand = rand(rand("0","80000"),"99000");
     }
 </script>
     <?php 
+    
     if($environment){
         $routedfile = $file;
         require "compiler.php";
