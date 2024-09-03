@@ -56,14 +56,14 @@
                 </form>
 
                 <form action="#" id="acvtivateme" style="display: none;">
-                <button class="authbtn">Activate Me</button>
+                <button class="authbtn"> Go To Dashboard</button>
             </form>
 
                 <?php  } ?>
         
         <?php  }else{ ?> 
             <form action="#" id="acvtivateme" >
-                <button class="authbtn">Activate Me</button>
+                <button class="authbtn"> Go To Dashboard</button>
             </form>
         <?php  } ?>
             </div>
