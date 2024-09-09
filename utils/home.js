@@ -114,18 +114,18 @@ async function requestData(url, method = "GET", myBody = null) {
 
 async function LisTCountrys() {
     try {
-        const response = await requestData('https://api.greatmullah.com', 'GET');
+        const response = await requestData(baseUrl+'populateCountrys', 'GET');
 
         if (Array.isArray(response.data) && response.data.length > 0) {
-            response.data.sort((a, b) => {
-                if (a.country < b.country) {
-                    return -1;
-                }
-                if (a.country > b.country) {
-                    return 1;
-                }
-                return 0;
-            });
+            // response.data.sort((a, b) => {
+            //     if (a.country < b.country) {
+            //         return -1;
+            //     }
+            //     if (a.country > b.country) {
+            //         return 1;
+            //     }
+            //     return 0;
+            // });
             response.data.forEach(value => {
                 let alist = document.createElement("div");
                 alist.className = "inc"
@@ -135,7 +135,13 @@ async function LisTCountrys() {
                 alist.appendChild(spanlist)
                 allist.appendChild(alist);
                 alist.addEventListener("click", function(){
-                    phone.innerHTML = `(${value.dial})`
+                    if(value.id == 'USDT'){
+
+                        phone.innerHTML = `+`
+                    } else {
+                        phone.innerHTML = `${value.dial}`
+
+                    }
                     countryid.value = value.country
                     country.value = value.id
                     viewCountry(false)
@@ -208,6 +214,7 @@ register.addEventListener('submit', (e) => {
 
         registerPost();
     })
+
 
     function setCookie(name, value, days) {
         let expires = "";
@@ -342,6 +349,9 @@ register.addEventListener('submit', (e) => {
                     })
 
         sinphone.addEventListener('input', () => {
+            if(sinphone.value[0] == 0){
+                sinphone.value = sinphone.value.replace(/^0+/, '')
+            }
             async function confirmUser() {
                 try {
                     const response = await requestData(`${baseUrl}freephone`, 'POST', {"phone": sinphone.value});          

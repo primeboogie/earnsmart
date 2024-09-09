@@ -290,10 +290,10 @@
       display: flex;
       justify-content: start;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0em;
     }
     .forphone span{
-      padding-left: 0.6rem;
+      padding-left: 0em;
       color: #e8e8e8;
       font-size: 0.9rem;
     transition: all .7s ease;

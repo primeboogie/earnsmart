@@ -63,7 +63,7 @@
             
             <span class="fromtitle">Sign Up</span>
             <span class="upline">
-                Invited By: <?php echo $upline?? 'None'; ?>
+                 <?php echo $upline ? "Invited By: $upline" : ''; ?>
             </span>
             <div class="allinputs">
                     <div class="singleinput"  id="username">
