@@ -310,7 +310,11 @@ register.addEventListener('submit', (e) => {
         if (event.target == document.getElementById("overs")) {
             viewCountry(false)
         }
+        
     });
+    document.getElementById("closeC").addEventListener('click', () => {
+        viewCountry(false)
+    })
 
     sinusername.addEventListener('input', () => {
         async function confirmUser() {

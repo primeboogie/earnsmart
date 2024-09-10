@@ -294,7 +294,7 @@
     }
     .forphone span{
       padding-left: 0em;
-      color: #e8e8e8;
+      color: #000;
       font-size: 0.9rem;
     transition: all .7s ease;
     }
@@ -304,7 +304,7 @@
     }
     .singleinput:hover .forphone span{
 
-      color: #989494;
+      /* color: #989494; */
     }
 .killsignup,
 .killlogin {
@@ -374,7 +374,6 @@
   background: #ffffff;
   z-index: 11;
   border-radius: 7px;
-  box-shadow: 0px 0px 20px 1px #fff;
   overflow: hidden;
   color: #000;
 }
@@ -407,7 +406,20 @@
 .inc  span{
   color: #000;
 }
-  
+  .closeC{
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.3em;
+    top: 0;
+    right: 0;
+    padding: .2em .5em;
+    position: absolute;
+    z-index: 1;
+    background: var(--theme1);
+    border: thin solid #fff;
+    border-radius: 7px;
+    margin: .1em ;
+  }
   .inc:hover{
     background:  #f5f5f5;
   }

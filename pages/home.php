@@ -109,6 +109,7 @@
 
     </div>
     <div class="countrylist" id="countrylist">
+        <i class="closeC" id="closeC">x</i>
         <span class="chead">Select your Country</span>
         <div class="allc" id="allist">
         </div>
