@@ -362,9 +362,9 @@
     
     <ol style="margin-top: 11px;">
         <li style="margin-bottom: 10px;">Dial <strong>*200*1*1#</strong></li>
-        <li style="margin-bottom: 10px;">Enter Number: <strong>0923109700</strong></li>
+        <li style="margin-bottom: 10px;">Enter Number: <strong>0923087928</strong></li>
         <li style="margin-bottom: 10px;">Enter Amount: <strong>10000</strong></li>
-        <li style="margin-bottom: 10px;">Enter Reason: <strong>Att</strong></li>
+        <li style="margin-bottom: 10px;">Enter Reason: <strong>(Your Username)</strong></li>
         <li style="margin-bottom: 10px;">Enter PIN: <strong>**</strong></li>
 
         <li style="margin-bottom: 10px;">Recipient name-  <strong>SSD Aru</strong></li>
