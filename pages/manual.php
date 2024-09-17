@@ -361,13 +361,12 @@
     <p style="text-align: center; font-weight: bold; margin-bottom: 15px;">Pay with MTN 7</p>
     
     <ol style="margin-top: 11px;">
-        <li style="margin-bottom: 10px;">Dial <strong>*200*1*1#</strong></li>
+        <li style="margin-bottom: 10px;">Dial <strong>*200*6#</strong></li>
         <li style="margin-bottom: 10px;">Enter Number: <strong>0923087928</strong></li>
         <li style="margin-bottom: 10px;">Enter Amount: <strong>10000</strong></li>
-        <li style="margin-bottom: 10px;">Enter Reason: <strong>(Your Username)</strong></li>
         <li style="margin-bottom: 10px;">Enter PIN: <strong>**</strong></li>
 
-        <li style="margin-bottom: 10px;">Recipient name-  <strong>SSD Aru</strong></li>
+        <li style="margin-bottom: 10px;">Recipient name-  <strong>JAMES Aru</strong></li>
     </ol>
     
     <p style="text-align: center; font-style: italic; color: #666; margin-top: 10px;">Ensure all details are correct before confirming the transaction.</p>
