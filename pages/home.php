@@ -58,7 +58,7 @@
                         <span class="title">Earn Empire Connections</span> 
         </div>
 
-        <form class="form" id="register">
+        <form class="form" id="register" autocomplete="off">
 
             
             <span class="fromtitle">Sign Up</span>
@@ -73,19 +73,19 @@
 
                     <div class="singleinput" id="email" >
                         <label for="email">Email</label>
-                        <input placeholder="Email" name="email"  id="sinemail" required class="" type="email">
+                        <input placeholder="Email" name="email"  id="sinemail" autocomplete="off" required class="" type="email">
                     </div>
 
                     <div class="singleinput">
                         <label for="country">Country</label>
-                        <input placeholder="--Choose Country--" name="countryid" required id="countryid" class="" type="text">
+                        <input placeholder="--Choose Country--" name="countryid" autocomplete="off"required id="countryid" class="" type="text">
                     </div>
 
                     <div class=" singleinput" id="phones">
                         <label for="phone">Phone</label>
                         <div class="forphone">
                         <span  id="phone">(+000)</span>
-                        <input placeholder="Phone"  required name="phone" id="sinphone" class="" type="number">
+                        <input placeholder="Phone"  required name="phone" autocomplete="off"  id="sinphone" class="" type="number">
                         </div>
                     </div>
 
