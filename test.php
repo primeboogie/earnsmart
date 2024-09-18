@@ -1,65 +1,93 @@
+<?php
+require "./route.php";
+
+$file = $response['file'];
+$style = $response['style'];
+$logo = $response['logo'];
+$title = $response['title'];
+$desc = $response['desc'];
+$keywords = $response['keywords'];
+$summary = $response['summary'];
+$environment = $response['environment'];
+$upline = $response['upline'];
+$domain = $admin['domain'];
+$backend = $admin['backend'];
+
+$newrand = rand(rand("0","80000"),"99000");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TikTok Video Loop</title>
-    <style>
-        .video-container {
-            margin-bottom: 20px;
+    <title><?php echo $title; ?></title>
+    <link rel="icon" type="image/x-icon" href="<?php echo $domain; ?>/<?php echo $logo; ?>">
+    <link rel="shortcut icon"  href="<?php echo $domain; ?>/<?php echo $logo; ?>" type="image/x-icon">
+    <meta name="keywords" content="<?php echo htmlspecialchars($keywords, ENT_QUOTES, 'UTF-8'); ?>">
+    <meta name="author" content="ZanyTech Co. Ltd">
+    <meta name="description" content="<?php echo $desc; ?>">
+
+    <link rel="canonical" href="<?php echo $domain; ?>">
+
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="<?php echo $title; ?>">
+    <meta property="og:description" content="<?php echo $desc; ?>">
+    <meta property="og:image" content="<?php echo $domain; ?>/<?php echo $logo; ?>">
+    <meta property="og:url" content="<?php echo $domain; ?><?php $nfile = trim($file, "."); echo $nfile; ?>">
+
+    <meta name="twitter:title" content="<?php echo $title; ?>">
+    <meta name="twitter:description" content="<?php echo $desc; ?>">
+    <meta name="twitter:image" content="<?php echo $domain; ?>/<?php echo $logo; ?>"> 
+    <meta name="twitter:hashtags" content="<?php echo $keywords; ?>">
+    <meta name="twitter:card" content="<?php echo $summary; ?>">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>      
+    <script
+           src="https://kit.fontawesome.com/0b7d271d94.js"
+           crossorigin="anonymous"
+         ></script>
+
+         <link rel="stylesheet" href="<?php  echo $domain; ?>/css/screen.css?<?php  echo $newrand; ?>">
+        <link rel="stylesheet" href="<?php  echo $domain;  echo $style."?".$newrand; ?>">
+        <link rel="stylesheet" href="<?php  echo $domain; ?>/css/device.css?<?php  echo $newrand; ?>">   
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": " "https://zanytech.site",
+        "@type": "WebPage",
+        "name": "ZanyTech Co. Ltd",
+        "description": "Quality In Every Byte.",
+        "url": " "https://zanytech.site",
+        "datePublished": "2024-02-03",
+        "author": {
+            "@type": "Person",
+            "name": "ZanyTech Co. Ltd"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ZanyTech Co. Ltd",
+            "logo": {
+                "@type": "ImageObject",
+                "url":  "https://zanytech.site/",
+            }
+        },
+        "image": {
+            "@type": "ImageObject",
+            "url":  "https://zanytech.site/";
+            "height": 800,
+            "width": 1200
         }
-        iframe {
-            width: 100%;
-            height: 400px;
-        }
-        .play-button {
-            display: block;
-            margin: 10px auto;
-            padding: 10px 20px;
-            background-color: #ff5a5f;
-            color: white;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-
-    <div id="video-list"></div>
-
-    <script>
-        const tiktokLinks = [
-            'https://vm.tiktok.com/ZMrp1jTNk',
-            'https://vm.tiktok.com/ZMrp1BqKu',
-            // Add more TikTok links here
-        ];
-
-        const videoList = document.getElementById('video-list');
-
-        tiktokLinks.forEach(link => {
-            const videoContainer = document.createElement('div');
-            videoContainer.className = 'video-container';
-
-            const iframe = document.createElement('iframe');
-            iframe.src = link;
-            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-            iframe.allowFullscreen = true;
-            iframe.style.display = 'none';
-
-            const playButton = document.createElement('button');
-            playButton.className = 'play-button';
-            playButton.innerText = 'Play Video';
-            playButton.addEventListener('click', () => {
-                iframe.style.display = 'block';
-                playButton.style.display = 'none';
-            });
-
-            videoContainer.appendChild(iframe);
-            videoContainer.appendChild(playButton);
-            videoList.appendChild(videoContainer);
-        });
-    </script>
-
-</body>
-</html>
+    }
+</script>
+    <?php 
+    
+    if($environment){
+        $routedfile = $file;
+        require "compiler.php";
+    } else {
+        require $file;
+    }
+    ?>

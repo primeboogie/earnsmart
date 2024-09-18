@@ -236,12 +236,14 @@
     display: grid;
     grid-gap: .5rem;
   }
+  .likeInput,
   .singleinput{
     display: grid;
     width: 100%;
     border-bottom: 1px solid #fff;
     transition: all .7s ease;
     padding-top: 0.4rem;
+    
   }
   .singleinput label{
     color: yellow;
@@ -250,7 +252,7 @@
     padding-left: 0.5rem;
     
   }
-
+.likeInput,
   .singleinput input{
     border: none;
     outline: none;
@@ -259,6 +261,7 @@
     font-size: 0.9rem;
     color: #000;
   }
+  .likeInput :hover,
   .singleinput:hover{
     border-radius: .4rem;
     background: #fff;
@@ -275,7 +278,7 @@
     font-size: 0.8rem;
     color: #e8e8e8;
   }
-
+  
   .singleinput i{
     color:  orangered;
     font-size: 0.7rem;

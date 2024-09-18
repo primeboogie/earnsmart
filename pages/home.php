@@ -77,8 +77,8 @@
                     </div>
 
                     <div class="singleinput">
-                        <label for="country">Country</label>
-                        <input placeholder="--Choose Country--" name="countryid" autocomplete="off"required id="countryid" class="" type="text">
+                        <label for="country"> Country</label>
+                        <span  name="countryid"  autocomplete="off" required id="countryid" class="likeInput" type="text">Choose Country</span>
                     </div>
 
                     <div class=" singleinput" id="phones">
