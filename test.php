@@ -1,6 +1,5 @@
 <?php
 require "./route.php";
-
 $file = $response['file'];
 $style = $response['style'];
 $logo = $response['logo'];

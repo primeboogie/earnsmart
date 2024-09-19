@@ -51,6 +51,7 @@
             
         </div>
 
+        
         <div class="moneydiv bg2">
             <span id="inmoneyh">
             Welcome Bonus 
@@ -94,14 +95,14 @@
 
         <div class="moneydiv bg4">
             <span id="inmoneyh">
-            Pending  Withdrawals
+            Ads  Balance
             </span>
 
             <span id="inmoneyb">
             <i id="usys">
                 KES
             </i>
-            <i id="curwithpen">
+            <i id="curadd">
                0.00
             </i>
             </span>

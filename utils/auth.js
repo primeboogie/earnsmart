@@ -1,5 +1,6 @@
 // let baseUrl = "https://earnempire.seosblog.com/?action=";
-let baseUrl = "http://localhost/earnempire/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
+let mySource = baseUrl.slice(0,-8)
 
 let menuid = document.getElementById("menuid");
 let navbar = document.getElementById("navbar");
@@ -16,6 +17,7 @@ let withforrm = document.getElementById("withforrm");
 let readyButton = document.getElementById("readyButton");
 let youtubediv = document.getElementById("youtubediv");
 let tiktokdiv = document.getElementById("tiktokdiv");
+let addiv = document.getElementById("addiv");
 let withdrawalhistory = document.getElementById("withdrawalhistory");
 
 let usercheck = document.getElementById("usercheck")
@@ -118,7 +120,7 @@ document.addEventListener('click', (event) => {
 
 
 earnimgs.addEventListener('click', ()=>{
-  window.location.reload();
+  window.location.href = "account";
 
 })
 
@@ -144,9 +146,12 @@ async function data() {
 
         if (response.resultcode) {
             const {
-                userdetails: { uname, cid, upline, manualpayment,  email, phone, join, status, ccurrency, emailed },
+                userdetails: { uname, cid, upline, manualpayment,  email,
+                     phone, join, status, ccurrency, emailed },
                 balances: {
-                    actbal, expense, target, reward, percent, progress, remaining, dailystatus, balance, deposit, bonus, totalwithdrawal, pendingwithdrawal, profit, trivia, spin, youtube, tiktok
+                    actbal, expense, target, reward, percent, progress,
+                     remaining, dailystatus, balance, deposit, bonus, totalwithdrawal,
+                      pendingwithdrawal, profit, trivia, spin, youtube, tiktok, ads
                 }
             } = response.data;
 
@@ -224,6 +229,7 @@ async function data() {
             updateElements("#curtivia", trivia);
             updateElements("#curspin", spin);
             updateElements("#curyou", youtube);
+            updateElements("#curadd", ads);
             updateElements("#curtiktok", tiktok);
             updateElements("#actbals", actbal);
             updateElements("#actdip", deposit);
@@ -1227,6 +1233,134 @@ if(acvtivateme){
 
         }
 
+    }
+
+    
+    if(addiv){
+
+        let adscontent = document.getElementById("adscontent");
+        let adscontainer = document.getElementById("adscontainer");
+    
+            async function requestads() {
+                try {
+                    const response = await requestData(`${baseUrl}populateads`);     
+                    
+                    
+                    if (Array.isArray(response.info) && response.info.length > 0) {
+                        response.info.forEach(value => {
+                            alert(value.msg);
+                        });
+                    } 
+                    if(response.resultcode){
+                        adscontainer.style.display = "grid"
+                        populteads(response.data);
+                  
+    
+                    }else {
+                        adscontent.style.display = "grid"
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+            openLoader(false);
+            }
+    
+            requestads()
+            function populteads(videos) {
+                const container = document.querySelector('.container');
+                container.innerHTML = ''; // Clear existing content
+            
+                videos.forEach(video => {            
+                    const videoDiv = document.createElement('div');
+                    videoDiv.className = 'addiv'; // Renamed class for TikTok videos
+                    videoDiv.innerHTML = `
+                        <span class="adh">
+                            ${video.v_name}
+                        </span>
+                        <div class="adimg">
+                            <img src="${mySource}modules/networking/${video.v_url}"  alt="">
+                        </div>
+                        <form class="actionsadd" id="adform-${video.v_id}">
+                        <i class="fa-solid fa-thumbs-up ${video.v_status['res'] === true && JSON.parse(video.v_status['data'])['liked'] && `amclicked`}" id="likeBtn-${video.v_id}"></i>
+                        <textarea name="message" ${video.v_status['res'] === true && `disabled`} placeholder="Add Comment..." id=""  class="${video.v_status['res'] === true && `commented`}"
+                        maxlength="60">${video.v_status['res'] === true ? JSON.parse(video.v_status['data'])['message'] : ''}</textarea>
+                         <input type="checkbox" id="toggleInput-${video.v_id}" name="liked" hidden>
+                         <Input type="text" name= "addId" value="${video.v_id}" hidden/>
+                        </form>
+                        ${
+                            video.v_status['res'] !== true
+                            ? `      
+                            <button class="authbtn" id="startButton-${video.v_id}" > Submit</button>
+                            ` : `
+                                   <i class="paid"><i class="fa-solid fa-circle-check"></i>Paid: ${video.v_status['paid']}</i> 
+                            `
+                        }
+                            `;
+                            
+
+                            container.appendChild(videoDiv);
+                            
+                            if(!video.v_status['res']){
+                                
+                                document.getElementById(`startButton-${video.v_id}`).addEventListener('click', function() {
+                                    depoform = document.getElementById(`adform-${video.v_id}`)
+                                    const formData = new FormData(depoform);
+      
+                                    const formObject = {};
+                                    formData.forEach((value, key) => {
+                                        formObject[key] = value;
+                                    });
+                                        console.log(formObject)
+                                    async function payAdds() {
+                                        try {
+                                            const response = await requestData(`${baseUrl}payAds`, 'POST', formObject);          
+                                  
+                                            if(response.resultcode){
+                                                requestads()
+                                            }
+                                            if (Array.isArray(response.info) && response.info.length > 0) {
+                                                    response.info.forEach(value => {
+                                                        alert(value.msg);
+                                                    });
+                                                }
+                                  
+                                        } catch (error) {
+                                            console.log(error);
+                                        }
+                                    openLoader(false)
+                                    }
+                                  
+                                    payAdds();
+                                });
+                                let myLike  =  document.getElementById(`likeBtn-${video.v_id}`)
+                               myLike.addEventListener('click', function() {
+                                    myLike.classList.toggle("amclicked")
+                                    let myToggle = document.getElementById(`toggleInput-${video.v_id}`)
+                                    myToggle.checked = !myToggle.checked
+                                });
+
+                    }
+                    
+                    // Add event listener to the button
+                });
+            }
+            
+            async function payoutvideo(vid) {
+                try {
+                    const response = await requestData(`${baseUrl}paytiktok`, 'POST',{vid: vid});           
+                    if (Array.isArray(response.info) && response.info.length > 0) {
+                        response.info.forEach(value => {
+                            alert(value.msg);
+                        });
+                    } 
+                    if(response.resultcode){
+                        data(); // Refresh the data after payout
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+                openLoader(false);
+            }
     }
 
     if(tiktokdiv){

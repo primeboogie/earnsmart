@@ -25,6 +25,19 @@
                     'any3' => 'Home',
                         ],
                 ],
+                '/account' => [
+                    'file' => 'pages/account.php',
+                    'style' => '/css/account.css',
+                    'secured' => True,
+                        'meta' => [
+                            'title' => $title,
+                            'desc' => $desc,
+                            'logo' =>  $logo,
+                            'keywords' => $keywords,
+                            'summary' => $summary,
+                            'any3' => 'Home',
+                                ],
+                        ],
         '/home' => [
             'file' => 'pages/home.php',
             'style' => '/css/home.css',
@@ -131,6 +144,11 @@
             'style' => '/css/withhistory.css',
             'secured' => True,
                 ],
+                '/ads' => [
+                    'file' => 'pages/ads.php',
+                    'style' => '/css/ads.css',
+                    'secured' => True,
+                        ],
                 
         '/withdrawal' => [
             'file' => 'pages/withdrawal.php',

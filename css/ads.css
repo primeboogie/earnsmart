@@ -1,0 +1,186 @@
+.trivia{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    background: var(--theme1);
+    border-radius: var(--brall);
+    place-self: start;
+    /* padding: .5em; */
+    place-content: center;
+    overflow-X: hidden;
+    gap: 1em;
+}
+.alltrivia {
+    padding: 1em;
+
+}
+
+.trivia .triviah{
+    color: var(--tt);
+    font-size: 1.3em;
+    font-weight: 800;
+    padding: .8em .5em;
+}
+.tearn{
+    color: #fff;
+    font-size: .9em;
+    font-weight: 700;
+    padding: .8em .5em;
+    font-style: normal;
+}
+.tearn i {
+    font-style: normal;
+}
+
+.content {
+    border-radius: var(--brall);
+    border: var(--border1);
+    padding: .9em .5em;
+    display: none;
+    grid-gap: .3em;
+    /* display: grid; */
+}
+.content span{
+    color: var(--tt);
+    font-weight: 700;
+    font-size: 1.1em;
+    padding: .9em 0;    
+}
+.instructions {
+    color: #fff;
+    padding-left: .9em;
+}
+.instructions ul li i {
+    color: var(--tt);
+    font-style: normal;
+}
+
+.container {
+    width: 100%;
+    display: none;
+    grid-gap: .8em;
+    padding: 0 .3em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    place-items: center;
+
+}
+
+.formd{
+    color: #ffff;
+    font-size: .8em;
+    font-weight: 600;
+    border-bottom: thin solid #fff;
+    padding: 0em 1.3em .5em 1.3em;
+}
+
+.addiv{
+    border-radius: var(--brall);
+    border: var(--border1);
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+    display: grid;
+    grid-gap: .3em;
+    place-items: start;
+    padding: .3em 0;
+}
+.adh{
+    color: var(--tt);
+    font-size: 1.2em;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    
+}
+.adimg{
+    border-top: thin solid #fff;
+    border-bottom: thin solid #fff;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.adimg img {
+    width: 100%;
+    height: 100%;    
+    object-fit: cover;  /* Ensures the image covers the entire div while maintaining aspect ratio */
+    object-position: center;
+}
+.actionsadd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4em;
+    width: 100%;
+    padding: .5em;
+}
+.actionsadd textarea{
+    border-radius: var(--brall);
+    border: none;
+    outline: none;
+    height: 55px;
+    padding: .5em;
+    width: 100%;
+}
+
+.actionsadd i{
+    color: white;
+    font-size: 1.4rem;
+}
+
+.amclicked{
+    color: yellow !important;
+}
+.authbtn {
+    margin: 0 auto ;
+}
+
+.addiv .paid{
+    color: green;
+    font-weight: normal;
+    font-style: normal;
+    padding: .5em .9em;
+    margin: 0 auto;
+    display: flex;
+    gap: .5em;
+}
+
+
+.commented{
+    color: #fff;
+    background: transparent;
+    border-radius: var(--brall);
+    border: 1px solid #fff !important;
+}
+.turn{
+    background: orangered !important;
+}
+    @media only screen and (max-width: 940px) {
+
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        } 
+    }
+    
+    @media only screen and (max-width: 720px) {
+
+        .trivia{
+            width: 100%;
+        } 
+
+        .container{
+            grid-template-columns: 1fr 1fr ;
+        } 
+    }
+    
+
+    @media only screen and (max-width: 520px) {
+        .container{
+            display: grid;
+            grid-template-columns: 1fr;
+        } 
+
+    }

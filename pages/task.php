@@ -27,6 +27,15 @@
                 </td>
             </tr>
             <tr>
+                <td>Ads Promotion</td>
+                <td>
+                    <ul>
+                        <li>Tuesday</li>
+                        <li>Friday</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
                 <td>Trivia Quiz</td>
                 <td>
                     <ul>
