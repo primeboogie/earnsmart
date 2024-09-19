@@ -8,7 +8,7 @@
     border-radius: var(--brall);
     place-self: start;
     /* padding: .5em; */
-    place-content: center;
+    place-content: start;
     overflow-X: hidden;
     gap: 1em;
 }
