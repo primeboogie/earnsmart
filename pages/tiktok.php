@@ -14,7 +14,7 @@
             <br>
 
             Our premium TikTok videos, packed with fun and rewards, are available exclusively 
-            on Thursdays and Sundays. Come back on these days to enjoy the latest entertaining content and earn while you watch!
+            on <strong>Wednesday</strong> and <strong>Sunday</strong>. Come back on these days to enjoy the latest entertaining content and earn while you watch!
             <br>
             <br>
             Fun user, We can’t wait to see you then!

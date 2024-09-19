@@ -39,7 +39,7 @@
                 <td>Trivia Quiz</td>
                 <td>
                     <ul>
-                        <li>Tuesday</li>
+                        <li>Thursday</li>
                     </ul>
                 </td>
             </tr>

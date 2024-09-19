@@ -31,7 +31,7 @@
         </div>
     </div>
   
-<div class="container" style="display: grid;"   id="adscontainer">
+<div class="container"  id="adscontainer">
 
     <!-- <div class="addiv">
         <span class="adh">

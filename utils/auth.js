@@ -1329,8 +1329,11 @@ if(acvtivateme){
                                         }
                                     openLoader(false)
                                     }
-                                  
-                                    payAdds();
+                                  if(formObject['message'].length > 0 || "liked" in formObject){
+                                      payAdds();
+                                  } else{
+                                    alert("Please Like And Commet For You To Earn")
+                                  }
                                 });
                                 let myLike  =  document.getElementById(`likeBtn-${video.v_id}`)
                                myLike.addEventListener('click', function() {
