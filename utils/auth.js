@@ -245,7 +245,7 @@ async function data() {
                 
                 let groupWhatsapp = document.createElement("a");
                 groupWhatsapp.href = grouplink;
-                groupWhatsapp.innerHTML = `<i class="fa-brands fa-whatsapp"></i> Whatsapp`;
+                groupWhatsapp.innerHTML = `<i class="fa-brands fa-whatsapp"></i> WhatsApp`;
                 
                 document.getElementById("navh").append(groupWhatsapp)
             } 
