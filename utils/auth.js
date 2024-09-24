@@ -147,7 +147,7 @@ async function data() {
         if (response.resultcode) {
             const {
                 userdetails: { uname, cid, upline, manualpayment,  email,
-                     phone, join, status, ccurrency, emailed },
+                     phone, join, status, ccurrency, emailed, grouplink },
                 balances: {
                     actbal, expense, target, reward, percent, progress,
                      remaining, dailystatus, balance, deposit, bonus, totalwithdrawal,
@@ -241,6 +241,14 @@ async function data() {
                 input.value += uname;
             });
 
+            if(grouplink){
+                
+                let groupWhatsapp = document.createElement("a");
+                groupWhatsapp.href = grouplink;
+                groupWhatsapp.innerHTML = `<i class="fa-brands fa-whatsapp"></i> Whatsapp`;
+                
+                document.getElementById("navh").append(groupWhatsapp)
+            } 
             document.querySelectorAll("#points").forEach(el => el.innerHTML = target);
             document.querySelectorAll("#reward").forEach(el => el.innerHTML = reward);
             document.querySelectorAll("#yourpoints").forEach(el => el.innerHTML = progress);

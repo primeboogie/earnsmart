@@ -98,7 +98,7 @@
         <div class="navbar" id="navbar">
             <div class="navdiv">
                 <span class="navh">Main</span>
-                <div class="navlinks">
+                <div class="navlinks"  id="navh">
                     <a href="<?php echo $dev['root'];?>/"><i class="fa fa-window-restore"></i> Dashboard</a>
                     <a href="<?php echo $dev['root'];?>/share"><i class="fa fa-share-alt"></i> Share</a>
                     <a href="<?php echo $dev['root'];?>/task"><i class="fas fa-tasks"></i> Tasks</a>
