@@ -9,6 +9,9 @@
                 <option value="1">Account Balance
                      <!-- (<i id="curbal"></i>) -->
                     </option>
+                    <option value="5">Ads Promotion
+                     <!-- (<i id="curbal"></i>) -->
+                    </option>
                 <!-- <option value="2">Spin-Balance -->
                      <!-- (<i id="curspin"></i>) -->
                     <!-- </option> -->
