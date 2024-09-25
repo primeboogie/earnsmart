@@ -116,10 +116,10 @@
             <div class="button-container">
 
 <!-- <button class="link-button" aria-label="Kenya" onclick="window.location.href='https://earn-empire.com';"><span>🇰🇪 Kenya</span></button> -->
-<button class="link-button" aria-label="Ghana" onclick="window.location.href='https://flutterwave.com/pay/earnempire-ghana';"><span>🇬🇭 Ghana</span></button>
-<button class="link-button" aria-label="Gambia" onclick="window.location.href='https://flutterwave.com/pay/earnempire-gambia';"><span>🇬🇲 Gambia</span></button>
-<button class="link-button" aria-label="Nigeria" onclick="window.location.href='https://flutterwave.com/pay/earnempire-nigeria';"><span>🇳🇬 Nigeria</span></button>
-<button class="link-button" aria-label="Cameroon" onclick="window.location.href='https://flutterwave.com/pay/earnempire-cameroon';"><span>🇨🇲 Cameroon</span></button>
+<button class="link-button" aria-label="Ghana" onclick="//window.location.href='https://flutterwave.com/pay/earnempire-ghana';"><span>🇬🇭 Ghana</span></button>
+<button class="link-button" aria-label="Gambia" onclick="//window.location.href='https://flutterwave.com/pay/earnempire-gambia';"><span>🇬🇲 Gambia</span></button>
+<button class="link-button" aria-label="Nigeria" onclick="//window.location.href='https://flutterwave.com/pay/earnempire-nigeria';"><span>🇳🇬 Nigeria</span></button>
+<button class="link-button" aria-label="Cameroon" onclick="//window.location.href='https://flutterwave.com/pay/earnempire-cameroon';"><span>🇨🇲 Cameroon</span></button>
 <button class="button" aria-label="Tanzania" onclick="showSection('tanzania')"><span>🇹🇿 Tanzania</span></button>
 <button class="button" aria-label="Uganda" onclick="showSection('uganda')"><span>🇺🇬 Uganda</span></button>
 <button class="button" aria-label="Rwanda" onclick="showSection('rwanda')"><span>🇷🇼 Rwanda</span></button>
@@ -128,7 +128,7 @@
                 <button class="button" aria-label="Malawi" onclick="showSection('malawi')"><span>🇲🇼 Malawi</span></button>
                 <!-- <button class="button" aria-label="Uganda" onclick="showSection('uganda')"><span>🇺🇬 Uganda</span></button> -->
                 <button class="button" aria-label="Zambia" onclick="showSection('zambia')"><span>🇿🇲 Zambia</span></button>     
-                <button class="link-button" aria-label="Others" onclick="window.location.href='https://flutterwave.com/pay/earnempire-international';"><span>🌐 Others</span></button>
+                <button class="link-button" aria-label="Others" onclick="//window.location.href='https://flutterwave.com/pay/earnempire-international';"><span>🌐 Others</span></button>
             </div>
         </div>
         <div id="tanzania" class="body">
