@@ -55,7 +55,20 @@
             </tr>
             <tr>
           <td>
-          Spin Wheels
+          Free Spin
+          </td>
+
+                <td>
+                <ul>
+                <li>
+                        Once (After Joining)
+                        </li>
+    </ul>
+                </td>
+            </tr>
+            <tr>
+          <td>
+          Casino Spin
           </td>
 
                 <td>

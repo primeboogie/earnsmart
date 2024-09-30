@@ -1612,6 +1612,295 @@ if(acvtivateme){
 
             })
         }
+let claimdiv = document.getElementById("claimdiv");
 
+if(claimdiv){
+
+        async function getEarnings() {
+        try {
+            const response = await requestData(`${baseUrl}freespin`, 'GET');         
+            
+            if(response.resultcode){
+                data();
+            }
+            // if (Array.isArray(response.info) && response.info.length > 0) {
+            //     response.info.forEach(value => {
+            //         alert(value.msg);
+            //     });
+            // } 
+
+        function randomColor(){
+            let r = 255;
+            let g = 111;
+            let b = 21;
+            return {r,g,b}
+        }
+        function toRad(deg){
+            return deg * (Math.PI / 180.0);
+        }
+        function randomRange(min,max){
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function easeOutSine(x) {
+            return Math.sin((x * Math.PI) / 2);
+        }
+        // get percent between 2 number
+        function getPercent(input,min,max){
+            return (((input - min) * 100) / (max - min))/100
+        }
+        
+        let myitems = response.data.figures
+        let rounds = response.data.rounds
+        let defaultFigures = response.data.default
+        let ccurrency = response.data.ccurrency
+        console.log(defaultFigures)
+
+
+        const ucur = ccurrency
+        var claimdiv = document.getElementById('claimdiv');
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth; 
+        const canvas = document.getElementById("canvas")
+        const ctx = canvas.getContext("2d")
+        const width = document.getElementById("canvas").width
+        const height = document.getElementById("canvas").height
+
+    // Call the function on page load and on resize
+    
+
+        const radius = width/2
+        if (screenWidth < 600) {
+         ctx.font = '0.9em serif';
+        } 
+         else {
+         ctx.font = '1em serif';
+        }
+        const centerX = width/2
+        const centerY = height/2
+ 
+        let items = myitems
+        let currentDeg = 0
+        let step = 360/items.length
+        let colors = []
+        let itemDegs = {}
+
+        for(let i = 0 ; i < items.length + 1;i++){
+            colors.push(randomColor())
+        }
+
+        function createWheel(){
+
+            let items = myitems 
+            let step = 360/items.length
+            let colors = []
+            for(let i = 0 ; i < items.length + 1;i++){
+                colors.push(randomColor())
+            }
+            draw()
+        }
+       
+
+
+        async function draw(){
+            
+
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, toRad(0), toRad(360))
+            // ctx.fillStyle = `rgb(${33},${33},${33})`
+
+
+            ctx.fillStyle = "#fff"; // Set the desired background color
+// ctx.fillRect(0, 0, width, height);
+
+
+            ctx.lineTo(centerX, centerY);
+            ctx.fill()
+
+            let startDeg = currentDeg;
+            for(let i = 0 ; i < items.length; i++, startDeg += step){
+                let endDeg = startDeg + step
+
+                let color = colors[i]
+                let colorStyle = `rgb(${color.r},${color.g},${color.b})`
+
+                ctx.beginPath();
+                let rad = toRad(360/step);
+                ctx.arc(centerX, centerY, radius - 2, toRad(startDeg), toRad(endDeg))
+                let colorStyle2 = `rgb(${color.r - 30},${color.g - 30},${color.b - 30})`
+                ctx.fillStyle = colorStyle2
+                ctx.lineTo(centerX, centerY);
+                ctx.fill()
+
+                ctx.beginPath();
+                rad = toRad(360/step);
+                ctx.arc(centerX, centerY, radius - 0, toRad(startDeg), toRad(endDeg))
+                ctx.fillStyle = colorStyle
+                ctx.lineTo(centerX, centerY);
+                ctx.fill()
+
+                // draw text
+                ctx.save();
+                ctx.translate(centerX, centerY);
+                ctx.rotate(toRad((startDeg + endDeg)/2));
+                ctx.textAlign = "right";
+           
+                ctx.fillStyle = "#fff";
+
+                ctx.fillText(items[i], 130, 10);
+
+
+
+                ctx.lineWidth = 2; // Set the line width for the border
+                ctx.strokeStyle = "#fff"; // Set the border color
+                ctx.stroke(); // Draw the border around the arc
+
+
+                ctx.restore();
+
+                itemDegs[items[i]] = 
+                    {
+                    "startDeg": startDeg,
+                    "endDeg" : endDeg
+                    }
+                
+
+                // check winner
+                if(startDeg%360 < 360 && startDeg%360 > 270  && endDeg % 360 > 0 && endDeg%360 < 90 ){
+                    document.getElementById("winner").innerHTML = items[i] + " " + ucur;
+           
+                    
+                    if(speed == 0){
+                        console.log("motion done2")
+                   
+                    try {
+                        await postEarnings();
+                        getEarnings(); 
+                    } catch (error) {
+                        console.error("Error posting earnings:", error);
+                    }
+                }
+
+                } else {
+                    
+                }
+                
+            }
+        }
+        function formatter(number) {
+    // Convert the input to a number (if it's a string)
+    const numericValue = typeof number === 'string' ? parseFloat(number) : number;
+
+    // Check if the conversion to a number was successful
+    if (!isNaN(numericValue)) {
+        // Convert the number to a fixed-point notation with two decimal places
+        const formattedNumber = numericValue.toFixed(2);
+
+        // Use regular expression to add commas as thousand separators
+        return formattedNumber.replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " " + ucur;
+    } else {
+        // Handle the case where the input is not a valid number
+        return "Invalid input";
+    }
+}
+
+let speed = 0
+let maxRotation = randomRange(360* 3, 360 * 6)
+let pause = false
+function animate(){
+    if(pause){
+        return
+    }
+    speed = easeOutSine(getPercent(currentDeg ,maxRotation ,0)) * 20
+    if(speed < 0.01){
+        speed = 0
+        pause = true
+    }
+    currentDeg += speed
+    draw()
+    window.requestAnimationFrame(animate);
+}
+
+
+        let startspin = document.getElementById("startspin")
+        let commentearn = document.getElementById("commentearn")
+
+        startspin.addEventListener("click", spin)
+        if(response.data.status){
+             
+             commentearn.innerHTML = "Congrats! You've earned from your free spin. Try your luck with unlimited spins in the Casino Spin!"
+        }
+
+        function spin(){
+            if(response.data.status){
+                alert("You Have Already Earned from Free Spin")
+                return 
+            }
+            if(speed != 0){
+                return
+            }
+                            //claimdiv.style.positi
+            claimdiv.style.opacity="1"
+           setTimeout(function(){
+        
+            maxRotation = 0;
+            currentDeg = 0
+            createWheel()
+            draw();
+
+
+            maxRotation = (360 * rounds) - itemDegs[defaultFigures].endDeg + 10
+            itemDegs = {}
+            pause = false
+            window.requestAnimationFrame(animate);
+            
+        }, 800)
+        
+    }
+
+    draw()
+
+ 
+        async function postEarnings() {
+            try {
+                const response = await requestData(`${baseUrl}freespin`, 'POST');               
+                
+                if(response.resultcode){
+                    data();
+                }
+
+                if (Array.isArray(response.info) && response.info.length > 0) {
+                    response.info.forEach(value => {
+                        alert(value.msg);
+                    });
+                } 
+        
+            } catch (error) {
+                console.log(error);
+                // deleteCookie('access_token');
+        
+                // window.location.reload();
+        
+        
+            }
+            openLoader(false);
+        }
+      
+            
+
+
+        } catch (error) {
+            console.log(error);
+            // deleteCookie('access_token');
+    
+            // window.location.reload();
+    
+    
+        }
+        openLoader(false);
+    }
+
+    getEarnings()
+
+
+}
 data();
 // setTimeout(data,1000);

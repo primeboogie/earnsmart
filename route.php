@@ -87,9 +87,9 @@
             'secured' => True,
                 ],
                 
-        '/spin' => [
-            'file' => 'pages/spin.php',
-            'style' => '/css/spin.css',
+        '/freespin' => [
+            'file' => 'pages/freespin.php',
+            'style' => '/css/freespin.css',
             'secured' => True,
                 ],
 

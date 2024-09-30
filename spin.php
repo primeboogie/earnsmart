@@ -1,4 +1,11 @@
 <?php 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+ini_set('error_log', 'error.log');
+
+
+
 ?>
 <style>
         .wheel{
@@ -168,7 +175,7 @@
 <div class="cool">
 <div class="wheel">
         <canvas class="" id="canvas" width="400" height="300"></canvas>
-        <div class="center-circle" onclick="spin()"> Click me
+        <div class="center-circle" onclick="spin()"> Spin
 
             <div class="triangle"></div>
         </div>
@@ -190,14 +197,15 @@
              for ($i = 0; $i < $below; $i++) {
                  $randomFigure = mt_rand(210, 1499);
                  $randomFigure = round($randomFigure, -2);
-                 $randomArray[] = formatter(conv($randomFigure));
-             }
-         
-             // Generate 2 remaining random figures between 1500 and 5999
-             for ($i = 0; $i < $above; $i++) {
-                 $randomFigure = mt_rand(1500, 5999);
-                 $randomFigure = round($randomFigure, -2);
-                 $randomArray[] = formatter(conv($randomFigure));
+                 $randomArray[] = $randomFigure; // formatter(conv($randomFigure));
+                }
+                
+                // Generate 2 remaining random figures between 1500 and 5999
+                for ($i = 0; $i < $above; $i++) {
+                    $randomFigure = mt_rand(1500, 5999);
+                    $randomFigure = round($randomFigure, -2);
+                    $randomArray[] = $randomFigure; // formatter(conv($randomFigure));
+                //  $randomArray[] = formatter(conv($randomFigure));
              }
          
              // Shuffle the array to randomize the order
@@ -207,7 +215,33 @@
          }
          
          // Example usage:
-         $randomFigures = generateRandomArray($noarrays);
+         $randomFigures =  //generateRandomArray( $noarrays);
+         [
+            "30.2",
+            "5.0",
+            "x20",
+            "0",
+            "x1.6",
+            "x50",
+            "0",
+            // "10",
+            // "5.0",
+            // "x2.0",
+            // "x0.8",
+            // "x0.8",
+            "x1.3",
+            "0",
+            "x0.2",
+            "x0.5",
+            "x0.2",
+            "x10"
+         ];
+        
+        echo "<pre>";
+        print_r($randomFigures);
+        echo "</pre>";
+
+         
          $jsonArray = json_encode($randomFigures);
          
         ?>
@@ -238,17 +272,14 @@
         function getPercent(input,min,max){
             return (((input - min) * 100) / (max - min))/100
         }
-    </script>
-
-    <script>
 
 function approveclaims(event) {
    
 
-    <?php // echo userbal()['bdip']; ?> >=  <?php // echo $spinfee; ?>
+    <?php // echo userbal()['bdip']; ?> //>=  <?php // echo $spinfee; ?>
 
 }
-        const ucur = "<?php echo mulla($uabrv)['sy']; ?>";
+        const ucur = ""; <?php // echo mulla($uabrv)['sy']; ?>
         var claimdiv = document.getElementById('claimdiv');
         var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth; 
         const canvas = document.getElementById("canvas")
@@ -271,7 +302,6 @@ function approveclaims(event) {
         const centerY = height/2
  
         let items = <?php echo $jsonArray;  ?> 
-
         let currentDeg = 0
         let step = 360/items.length
         let colors = []
@@ -406,9 +436,9 @@ function approveclaims(event) {
 
             
             maxRotation = (360 * <?php echo $nospin; ?>) - itemDegs['<?php echo $randomFigures[array_rand($randomFigures)]; ?>'].endDeg + 10
+            // console.log(<?php echo $randomFigures[array_rand($randomFigures)]; ?>)
+            // maxRotation = (360 * <?php echo $nospin; ?>) - itemDegs['1'].endDeg + 10
             itemDegs = {}
-            console.log("max",maxRotation)
-            console.log(itemDegs);
             pause = false
             window.requestAnimationFrame(animate);
           
@@ -422,5 +452,5 @@ function approveclaims(event) {
 
 
 <?php 
-include("footer.php");
+// include("footer.php");
 ?>
