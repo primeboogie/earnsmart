@@ -31,6 +31,10 @@ ini_set('error_log', 'error.log');
             font-weight: 900;
             color: var(--tt);
         }
+        .center-circle img{
+            width: 100%;
+            height: 100%;
+        }
         .cool{
             position: absolute;
             height: auto;
@@ -95,8 +99,9 @@ ini_set('error_log', 'error.log');
             font-weight: 600;
         }
         .claims{
-            width: auto;
+            min-width: 290px ;
             height: auto;
+            margin: 5px auto;
             padding: 0.6em 1em;
             font-size: 0.9em;
             font-weight: 800;
@@ -107,12 +112,74 @@ ini_set('error_log', 'error.log');
             text-align: center;
             white-space: nowrap;
             gap: 0.5em;
-            opacity: 0;
+            opacity: 1;
             transition: left .8s ease-in-out;
             background: var(--theme1);
-            border-radius: 0;
-            
+            border-radius: var(--brall);
+            border: var(--border1);
         }
+        .stake{
+            min-width: 290px ;
+            height: auto;
+            margin: 5px auto;
+            padding: 0.6em 1em;
+            font-size: 0.9em;
+
+            background: var(--theme1);
+            border-radius: var(--brall);
+            border: var(--border1);
+
+            display: grid;
+            grid-gap: .8em;
+            place-items: center;
+        }
+        .stakespan{
+            place-self: start;
+            color: #fff;
+            font-size: 1.4em;
+        }
+        .stakeform{
+            width: 100%;
+            padding: .4em;
+            
+            background: var(--theme1);
+            border-radius: 20px;
+            border: thin solid #fff;
+            
+            display: flex;
+            overflow: hidden;
+            gap: .2em;
+        }
+        
+        
+        .stakeform input{
+            height: 2em;
+            width: 100%;
+            font-size: 1.1em;
+            font-weight: 800;
+            
+            border: none;
+            outline: none;
+            background: transparent;
+
+            color: #fff;
+            padding-left: 1em;
+        }
+        .stakeform input::placeholder{
+            color: #c6c3c3;
+
+        }
+
+        .stakeform button{
+            border: none;
+            outline: none;
+            background-color: var(--theme6);
+            
+            padding: .6em .9em;
+            color: #fff;
+            border-radius: 20px;
+        }
+
         .claims span:nth-child(2){
             color: #fff;
             font-size: 0.9em;
@@ -171,29 +238,41 @@ ini_set('error_log', 'error.log');
     </i>
 
     <div class="spininfo">
-        <span class="sspin">Spin For Free</span>
-        <p id="commentearn">Earn Empire Connections allows you to earn big, 
-            with a free spin.
-Try Your Luck Now!</p>
+        <span class="sspin">Casino Spin</span>
+        <p id="commentearn">
+            Welcome To Our Daily Casino Spin
+Try Your <?php echo date("l"); ?> Luck Now!</p>
     </div>
 
-    <div class="claims" id="claimdiv">
-                 <i class="fa-solid fa-xmark fa-shake kill" onclick="myex('claimdiv')"></i>
-        <span class="sclaim">Your Earnings:</span>
-            <span id="winner">0.00 </span>
+    <div class="claims" id="casinodiv">
+                 <!-- <i class="fa-solid fa-xmark fa-shake kill" onclick="myex('claimdiv')"></i> -->
+        <span class="sclaim">Your Balance:</span>
+            <span id="curbal">0.00 </span>
         </div>
 
     <div class="wheel">
             <canvas class="" id="canvas" width="300" height="300"></canvas>
-            <div class="center-circle" id = "startspin" > SPIN
-    
+            <div class="center-circle"  >
+    <img 
+    src="./images/earn11.png"
+     alt="">
                 <div class="triangle"></div>
             </div>
             
         </div>
 
-
-
+    <div class="stake">
+        <span class="stakespan">stake:</span>
+        <form action="" id="stakeform" class="stakeform">
+            <input  name="spin_amount" 
+            type="number" min="20" max="20000" 
+            placeholder="0.00 KES" 
+            required
+            id="spin_amount"
+            >
+            <button id="stake_spin">Stake</button>
+        </form>
+    </div>
 
 </div>
     <script>

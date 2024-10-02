@@ -93,7 +93,13 @@
             'secured' => True,
                 ],
 
-                
+                '/casinospin' => [
+                    'file' => 'pages/casinospin.php',
+                    'style' => '/css/casinospin.css',
+                    'secured' => True,
+                        ],
+
+                        
         '/forex' => [
             'file' => 'pages/forex.php',
             'style' => '/css/forex.css',

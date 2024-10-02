@@ -126,7 +126,7 @@
                         <span id="spanspins"><i class="fa-solid fa-spinner"></i> Spins <i class="fa-solid fa-angle-down"></i></span>
                         <div class="alladiv" id="spins">
                             <a href="<?php echo $dev['root'];?>/freespin"><i class="fa-solid fa-circle-notch"></i> Free Spin</a>
-                            <a href="<?php echo $dev['root'];?>/casionspin"><i class="fa fa-life-ring"></i> Casion Spin</a>
+                            <a href="<?php echo $dev['root'];?>/casinospin"><i class="fa fa-life-ring"></i> Casion Spin</a>
                         </div>
                     </div>
                     <a href="<?php echo $dev['root'];?>/forex"><i class="fa-solid fa-chart-gantt"></i> Forex</a>
