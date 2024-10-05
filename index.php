@@ -56,7 +56,7 @@ $newrand = rand(rand("0","80000"),"99000");
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script type="application/ld+json">
     {
-        "@context": " "https://zanytech.site",
+        "@context": "https://zanytech.site",
         "@type": "WebPage",
         "name": "ZanyTech Co. Ltd",
         "description": "Quality In Every Byte.",
