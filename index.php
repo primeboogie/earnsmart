@@ -46,7 +46,7 @@ $newrand = rand(rand("0","80000"),"99000");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>      
     <script
-           src="https://kit.fontawesome.com/0b7d271d94.js"
+           src="./utils/mins.js"
            crossorigin="anonymous"
          ></script>
 

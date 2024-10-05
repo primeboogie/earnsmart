@@ -206,7 +206,7 @@ ini_set('error_log', 'error.log');
         .kill{
         color: orange;
         position: absolute;
-        right: 0;
+        right: 0; 
         top: 0;
         margin: 2%;
         }

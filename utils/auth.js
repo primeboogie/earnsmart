@@ -1,5 +1,5 @@
-// let baseUrl = "https://earnempire.seosblog.com/?action=";
-let baseUrl = "http://localhost/officialsystem/?action=";
+let baseUrl = "https://earnempire.seosblog.com/?action=";
+// let baseUrl = "http://localhost/officialsystem/?action=";
 let mySource = baseUrl.slice(0,-8)
 
 let menuid = document.getElementById("menuid");
@@ -1955,10 +1955,11 @@ if(casinodiv){
         800,
         0,
         0.5,
+        0.6,
         200,
         1.3,
         2,
-        1.6
+        1.6,
     ]
 const {userdetails, balances} = await data()
 
@@ -2012,6 +2013,7 @@ const {userdetails, balances} = await data()
 
                 if(response.resultcode){
 
+                    myitems = []
                     
                     myitems = response.data.figures
                     rounds = response.data.rounds
