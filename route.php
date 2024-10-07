@@ -93,7 +93,7 @@
             'secured' => True,
                 ],
 
-                '/casinospinss' => [
+                '/casinospin' => [
                     'file' => 'pages/casinospin.php',
                     'style' => '/css/casinospin.css',
                     'secured' => True,

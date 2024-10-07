@@ -111,14 +111,26 @@ ul li {
             </tr>
             <tr>
           <td>
-          Spin Wheels
+          Free Spin
           </td>
 
                 <td>
                 <ul>
         <li>
-            <!-- Daily -->
-Comming Soon...
+            Daily (Unlimited)
+        </li>
+    </ul>
+                </td>
+            </tr>
+            <tr>
+          <td>
+          Casino Spin
+          </td>
+
+                <td>
+                <ul>
+        <li>
+            Daily (Unlimited)
         </li>
     </ul>
                 </td>

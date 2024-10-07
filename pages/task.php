@@ -44,6 +44,17 @@
                 </td>
             </tr>
             <tr>
+                <td>Daily Bonuses</td>
+        
+                <td>
+                    <ul>
+                        <li>
+                        Daily
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
                 <td>Welcome Bonus</td>
                 <td>
                     <ul>
@@ -74,21 +85,9 @@
                 <td>
                 <ul>
         <li>
-            <!-- Daily -->
-Comming Soon...
+            Daily (Unlimited)
         </li>
     </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>Daily Bonuses</td>
-
-                <td>
-                    <ul>
-                        <li>
-                        Daily
-                        </li>
-                    </ul>
                 </td>
             </tr>
             <tr>

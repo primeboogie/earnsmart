@@ -91,6 +91,9 @@ ini_set('error_log', 'error.log');
             font-size: 1em;
             font-weight: 800;
         }
+        .sspin{
+            color: var(--tt) ;
+        }
         .sclaim{
             color: var(--tt) !important;
         }
@@ -112,7 +115,7 @@ ini_set('error_log', 'error.log');
             text-align: center;
             white-space: nowrap;
             gap: 0.5em;
-            opacity: 1;
+            opacity: 0;
             transition: left .8s ease-in-out;
             background: var(--theme1);
             border-radius: var(--brall);
@@ -124,46 +127,49 @@ ini_set('error_log', 'error.log');
             margin: 5px auto;
             padding: 0.6em 1em;
             font-size: 0.9em;
-
+            
             background: var(--theme1);
             border-radius: var(--brall);
             border: var(--border1);
-
+            
             display: grid;
             grid-gap: .8em;
             place-items: center;
         }
         .stakespan{
             place-self: start;
-            color: #fff;
             font-size: 1.4em;
+            color: var(--tt) ;
         }
         .stakeform{
             width: 100%;
-            padding: .4em;
+            padding: .9em .6em;
             
             background: var(--theme1);
-            border-radius: 20px;
+            border-radius: var(--brall);
             border: thin solid #fff;
             
-            display: flex;
+            display: grid;
+            align-items: center;
             overflow: hidden;
-            gap: .2em;
+            gap: .8em;
         }
         
         
-        .stakeform input{
-            height: 2em;
+        .stakeform select,
+            .stakeform input{
+            /* height: 2em; */
             width: 100%;
             font-size: 1.1em;
             font-weight: 800;
             
-            border: none;
+            border: thin solid #fff;
             outline: none;
+             border-radius: var(--brall);;
             background: transparent;
 
             color: #fff;
-            padding-left: 1em;
+            padding:1em;
         }
         .stakeform input::placeholder{
             color: #c6c3c3;
@@ -171,13 +177,15 @@ ini_set('error_log', 'error.log');
         }
 
         .stakeform button{
-            border: none;
+            /* border: none;
             outline: none;
             background-color: var(--theme6);
             
             padding: .6em .9em;
             color: #fff;
-            border-radius: 20px;
+            border-radius: 20px; */
+            place-self: end;
+            margin: 0;
         }
 
         .claims span:nth-child(2){
@@ -232,9 +240,10 @@ ini_set('error_log', 'error.log');
 </style>
 
 <div class="trivia" >
-    <span class="triviah"><i class="fa-solid fa-circle-notch"></i> Free Spin</span>
-    <i class="tearn formd">
-    <!-- Ads Earnings: <i id="usys"></i> <i id="curadd"></i> -->
+    <span class="triviah"><i class="fa fa-life-ring"></i> Casino Spin</span>
+    <i class="tearn formd" >
+     Balance: <i id="usys"></i> <i id="curbal"></i> <br>
+     Deposit: <i id="usys"></i> <i id="actdip"></i>
     </i>
 
     <div class="spininfo">
@@ -245,9 +254,9 @@ Try Your <?php echo date("l"); ?> Luck Now!</p>
     </div>
 
     <div class="claims" id="casinodiv">
-                 <!-- <i class="fa-solid fa-xmark fa-shake kill" onclick="myex('claimdiv')"></i> -->
-        <span class="sclaim">Your Balance:</span>
-            <span id="curbal">0.00 </span>
+                 <i class="fa-solid fa-xmark fa-shake kill" onclick="myex('casinodiv')"></i>
+        <span class="sclaim" id="sclaim">Possible Win:</span>
+            <span id="pwin">0.00 </span>
         </div>
 
     <div class="wheel">
@@ -264,13 +273,20 @@ Try Your <?php echo date("l"); ?> Luck Now!</p>
     <div class="stake">
         <span class="stakespan">stake:</span>
         <form action="" id="stakeform" class="stakeform">
+
+        <select name="acc" id="wallet-select" required>
+  <option value=""> Choose Wallet </option>
+  <option value="1">Balance</option>
+  <option value="2">Deposit</option>
+</select>
+
             <input  name="spin_amount" 
             type="number" min="20" max="20000" 
-            placeholder="0.00 KES" 
+            placeholder="00" 
             required
             id="spin_amount"
             >
-            <button id="stake_spin">Stake</button>
+            <button class="authbtn" id="stake_spin">Stake</button>
         </form>
     </div>
 

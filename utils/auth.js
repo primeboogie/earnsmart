@@ -1,5 +1,5 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 let mySource = baseUrl.slice(0,-8)
 
 let menuid = document.getElementById("menuid");
@@ -404,7 +404,6 @@ if(welcomeclaim){
 function deleteCookie(name) {
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
     window.location.reload();
-
 }
 
 logout.forEach((button) => {
@@ -1557,7 +1556,7 @@ if(acvtivateme){
 
         <div class="formdiv">
             <label for="amount">Amount</label>
-            <input type="number" name="amount" required placeholder="0.00">
+            <input type="number" name="amount" required placeholder="00">
             </div>
             
             <button class="authbtn" >Pay <i class="fa-solid fa-money-bill-wave"></i> </button>
@@ -1968,14 +1967,19 @@ const {userdetails, balances} = await data()
     let ccurrency = userdetails['ccurrency'] 
 
     let balance = balances['balance']
+    let deposit = balances['deposit']
     let minStake = 1
     let spin_amount = document.getElementById("spin_amount")
 
     let stake_spin = document.getElementById("stake_spin")
+
+    // stake_spin.addEventListener("click", () => {
+    //     stakeform.submit()
+    // })
                     
     spin_amount.min = minStake; // Minimum value
     spin_amount.max = 200000; // Maximum value
-    spin_amount.placeholder = `0.00`;
+    spin_amount.placeholder = `00`;
 
     const ucur = ccurrency
     var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth; 
@@ -1988,7 +1992,7 @@ const {userdetails, balances} = await data()
 
     stakeform.addEventListener("submit", (e) =>{
         e.preventDefault()
-        stake_spin.disabled = true
+        // stake_spin.disabled = true
         stake_spin.style.background = "#ff8c00"
         stake_spin.innerHTML = "spinning"
 
@@ -2010,7 +2014,6 @@ const {userdetails, balances} = await data()
                     deleteCookie('access_token');
                     window.location.reload();
                 }
-
                 if(response.resultcode){
 
                     myitems = []
@@ -2020,6 +2023,7 @@ const {userdetails, balances} = await data()
                     defaultFigures = response.data.default
 
                     balance = response.data.balance
+                    deposit = response.data.deposit
                     minStake = response.data.minStake
                     ccurrency = response.data.ccurrency
 
@@ -2034,8 +2038,12 @@ const {userdetails, balances} = await data()
                     response.info.forEach(value => {
                         alert(value.msg);
                     });
+
+                    // stake_spin.disabled = false
+                    stake_spin.innerHTML = "Spin"
+                    stake_spin.style.background = "#0cb600"
+
                 } 
-    
     
                 
             } catch (error) {
@@ -2147,12 +2155,14 @@ const {userdetails, balances} = await data()
                     // check winner
                     if(startDeg%360 < 360 && startDeg%360 > 270  && endDeg % 360 > 0 && endDeg%360 < 90 ){
                         let combined = processValue(spin_amount.value,items[i])
-                        document.getElementById("curbal").innerHTML = "profit " + combined + " " + ucur;
-      
+                        document.getElementById("sclaim").innerHTML = "Possible Win";
+                        document.getElementById("pwin").innerHTML =  combined + " " + ucur;
                         if(speed == 0){
-                            document.getElementById("curbal").innerHTML = balance + " " + ucur;
-                            stake_spin.disabled = false
-                            stake_spin.innerHTML = "Stake"
+                            document.getElementById("sclaim").innerHTML = "You Earned";
+                            document.getElementById("curbal").innerHTML = balance ;
+                            document.getElementById("actdip").innerHTML = deposit ;
+                            // stake_spin.disabled = false
+                            stake_spin.innerHTML = "Spin"
                             stake_spin.style.background = "#0cb600"
                         }
     
@@ -2200,6 +2210,7 @@ const {userdetails, balances} = await data()
                     return
                 }
 
+                casinodiv.style.opacity="1"
                setTimeout(function(){
             
                 maxRotation = 0;

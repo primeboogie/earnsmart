@@ -205,7 +205,7 @@
     
     <ol style="margin-top: 11px;">
         <li style="margin-bottom: 10px;">Dial <strong>*185*9#</strong></li>
-        <li style="margin-bottom: 10px;">Enter Number: <strong>6615013</strong></li>
+        <li style="margin-bottom: 10px;">Enter Number: <strong>6671253</strong></li>
         <li style="margin-bottom: 10px;">Enter Amount: <strong>UGX 17,000</strong></li>
         <li style="margin-bottom: 10px;">Enter Reference: <strong>Username</strong></li>
         <li style="margin-bottom: 10px;">Confirm: <strong>EARN EMPIRE CONNECTIONS</strong></li>

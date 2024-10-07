@@ -36,3 +36,6 @@ LOSS => 300
 PROFIT => 850
 
 50 + 1000 + 500 + 50
+
+
+inputs balance&deposit
