@@ -216,10 +216,10 @@
     
     <ol style="margin-top: 11px;">
         <li style="margin-bottom: 10px;">Dial <strong>*165*3#</strong></li>
-        <li style="margin-bottom: 10px;">Enter Number: <strong>711198</strong></li>
+        <li style="margin-bottom: 10px;">Enter Number: <strong>725983</strong></li>
         <li style="margin-bottom: 10px;">Enter Amount: <strong>UGX 17,000</strong></li>
         <li style="margin-bottom: 10px;">Select: <strong>Mobile Money</strong></li>
-        <li style="margin-bottom: 10px;">Confirm: <strong>Albert</strong></li>
+        <li style="margin-bottom: 10px;">Confirm: <strong>WILFRED</strong></li>
         <li style="margin-bottom: 10px;">Enter PIN</li>
     </ol>
 </div> 
