@@ -16,7 +16,7 @@
     }
 
     #scrollTopBtn:hover {
-      background-color: #2d82dc;
+      background-color: #6da2db;
     }
 
 </style>
