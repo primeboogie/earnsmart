@@ -198,6 +198,19 @@ register.addEventListener('submit', (e) => {
                 const response = await requestData(`${baseUrl}register`, 'POST', formObject);          
         
                 if(response.resultcode){
+
+                    const responseLogin = await requestData(`${baseUrl}login`, 'POST', formObject);  
+          
+            
+                    if(responseLogin.resultcode){
+                        setCookie("access_token", responseLogin.data['access_token'],1)
+                        login.reset();
+                        
+                        // ! confirm change here 
+                        window.location.href = '/earnempire/'
+                        // window.location.href = '/'
+                    }
+
                     register.reset();
                 }
                 if (Array.isArray(response.info) && response.info.length > 0) {

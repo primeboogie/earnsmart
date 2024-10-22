@@ -45,10 +45,10 @@ $newrand = rand(rand("0","80000"),"99000");
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>      
-    <script
+    <!-- <script
            src="./utils/mins.js"
            crossorigin="anonymous"
-         ></script>
+         ></script> -->
 
          <link rel="stylesheet" href="<?php  echo $domain; ?>/css/screen.css?<?php  echo $newrand; ?>">
         <link rel="stylesheet" href="<?php  echo $domain;  echo $style."?".$newrand; ?>">

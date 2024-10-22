@@ -1,3 +1,26 @@
+<style>
+
+#scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: block;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* z-index: 300; */
+    }
+
+    #scrollTopBtn:hover {
+      background-color: #0056b3;
+    }
+
+</style>
+
 <div class="forex">
     <span class="forexh">
     <i class="fa-solid fa-chart-gantt"></i> <i id="team"></i> Downlines
@@ -53,10 +76,25 @@ Keep it up and let’s build an unstoppable team. <br>
 
         
     </div>
-
+    <button id="scrollTopBtn">⬆ Top</button>
 </div>
 <script>
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
 
+    // Show button when scroll starts
+    window.onscroll = function () {
+      if (document.documentElement.scrollTop > 100) {
+        scrollTopBtn.style.display = 'block';
+      } else {
+        scrollTopBtn.style.display = 'none';
+      }
+    };
 
-
-</script>
+    // Scroll to the top when the button is clicked
+    scrollTopBtn.addEventListener('click', function () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'  // Smooth scrolling effect
+      });
+    });
+  </script
