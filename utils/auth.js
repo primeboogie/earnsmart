@@ -42,6 +42,7 @@ async function requestData(url, method = "GET", myBody = null, loading = true) {
         }
     };
 
+    
     if (myBody !== null) {
         request.body = JSON.stringify(myBody);
     }
