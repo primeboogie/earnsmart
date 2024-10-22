@@ -1,5 +1,5 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://192.168.36.152/officialsystem/?action=";
 let mySource = baseUrl.slice(0,-8)
 
 let menuid = document.getElementById("menuid");
@@ -846,9 +846,8 @@ function justcon(){
     const pathname = urlObj.pathname;
 
     const segments = pathname.split('/');
-
-    const lastSegment = segments.pop(); // This will be '2'
-
+    const queryString = window.location.search;
+    const lastSegment = queryString.match(/\d+/)?.[0]; // This will be '2'
     const lastDigit = parseInt(lastSegment, 10);
 
       

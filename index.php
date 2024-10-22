@@ -60,7 +60,7 @@ $newrand = rand(rand("0","80000"),"99000");
         "@type": "WebPage",
         "name": "ZanyTech Co. Ltd",
         "description": "Quality In Every Byte.",
-        "url": " "https://zanytech.site",
+        "url": "https://zanytech.site",
         "datePublished": "2024-02-03",
         "author": {
             "@type": "Person",
