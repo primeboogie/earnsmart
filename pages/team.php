@@ -5,7 +5,7 @@
       bottom: 20px;
       right: 20px;
       display: block;
-      background-color: #007bff;
+      background-color: var(--theme1);
       color: white;
       border: none;
       padding: 10px 15px;
@@ -16,7 +16,7 @@
     }
 
     #scrollTopBtn:hover {
-      background-color: #0056b3;
+      background-color: #2d82dc;
     }
 
 </style>
