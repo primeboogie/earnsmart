@@ -1,5 +1,5 @@
-// let baseUrl = "https://earnempire.seosblog.com/?action=";
-let baseUrl = "http://192.168.36.152/officialsystem/?action=";
+let baseUrl = "https://earnempire.seosblog.com/?action=";
+// let baseUrl = "http://192.168.36.152/officialsystem/?action=";
 
 let allist = document.getElementById("allist");
 let phone = document.getElementById("phone");
@@ -207,8 +207,8 @@ register.addEventListener('submit', (e) => {
                         login.reset();
                         
                         // ! confirm change here 
-                        window.location.href = '/earnempire/'
-                        // window.location.href = '/'
+                        // window.location.href = '/earnempire/'
+                        window.location.href = '/'
                     }
 
                     register.reset();

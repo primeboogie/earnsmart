@@ -1,5 +1,5 @@
-// let baseUrl = "https://earnempire.seosblog.com/?action=";
-let baseUrl = "http://192.168.36.152/officialsystem/?action=";
+let baseUrl = "https://earnempire.seosblog.com/?action=";
+// let baseUrl = "http://192.168.36.152/officialsystem/?action=";
 let mySource = baseUrl.slice(0,-8)
 
 let menuid = document.getElementById("menuid");
