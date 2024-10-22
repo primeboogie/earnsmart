@@ -49,7 +49,6 @@
     </div>
     <button id="scrollTopBtn">⬆ Top</button>
 </div>
-
 <script>
     const scrollTopBtn = document.getElementById('scrollTopBtn');
 
