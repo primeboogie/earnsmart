@@ -12,11 +12,9 @@
     overflow-X: hidden;
     gap: 1em;
 }
-.alltrivia {
-    padding: 1em;
-
+.stake{
+    background: #000;
 }
-
 .trivia .triviah{
     color: var(--tt);
     font-size: 1.3em;

@@ -3,20 +3,20 @@
         <span class="formh"><i class="fa-solid fa-sack-dollar"></i> Withdraw Funds</span>
         
         <div class="formdiv" >
-            <label for="ref">Choose Account </label>
+                     <label for="ref">Choose Account </label>
             <select name="acc" id="" required>
                 <option value="">-- Choose Account  --</option>
                 <option value="1">Account Balance
-                     <!-- (<i id="curbal"></i>) -->
+                     <!-- ( <i id="curbal" >1</i> ) -->
                     </option>
                     <option value="5">Ads Promotion
                      <!-- (<i id="curbal"></i>) -->
                     </option>
-                <!-- <option value="2">Spin-Balance -->
-                     <!-- (<i id="curspin"></i>) -->
-                    <!-- </option> -->
+                <!-- <option value="2">Spin-Balance
+                     (<i id="curspin"></i>)
+                    </option> -->
                 <option value="3">Youtube-Balance
-                     <!-- (<i id="curyou"></i>) -->
+                     <!-- (<i id="actbals"></i>) -->
                     </option>
                 <option value="4">Tiktok-Balance
                      <!-- (<i id="curtiktok"></i>) -->
