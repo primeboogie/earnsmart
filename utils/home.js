@@ -208,6 +208,7 @@ register.addEventListener('submit', (e) => {
                         
                         // ! confirm change here 
                         // window.location.href = '/earnempire/'
+                        
                         window.location.href = '/'
                     }
 
