@@ -1,23 +1,19 @@
 <style>
 
 #scrollTopBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: block;
-      background-color: var(--theme1);
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      /* z-index: 300; */
-    }
-
-    #scrollTopBtn:hover {
-      background-color: #6da2db;
-    }
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none; /* Hidden initially */
+  background-color: var(--theme1);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Higher z-index */
+}
 
 </style>
 
@@ -76,25 +72,31 @@ Keep it up and let’s build an unstoppable team. <br>
 
         
     </div>
-    <button id="scrollTopBtn">⬆ Top</button>
+    <button id="scrollTopBtn">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
 </div>
 <script>
-    const scrollTopBtn = document.getElementById('scrollTopBtn');
 
-    // Show button when scroll starts
-    window.onscroll = function () {
-      if (document.documentElement.scrollTop > 100) {
-        scrollTopBtn.style.display = 'block';
-      } else {
-        scrollTopBtn.style.display = 'none';
-      }
-    };
 
-    // Scroll to the top when the button is clicked
-    scrollTopBtn.addEventListener('click', function () {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'  // Smooth scrolling effect
-      });
-    });
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+// Show button when scroll starts
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset >= 100) {
+    scrollTopBtn.style.display = 'block';
+  } else {
+    scrollTopBtn.style.display = 'none';
+  }
+});
+
+// Scroll to the top when the button is clicked
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',  
+  });
+});
+
+
   </script

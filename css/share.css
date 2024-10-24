@@ -21,38 +21,67 @@
     grid-gap: 1.5rem;
 }
 
-
-.powerteam{
-    min-width: 100%;
-    place-self: start;
-    /* margin: 1rem; */
+.uppower {
     background: var(--theme1);
     border-radius: var(--brall);
-    height: auto;
+    padding: 1em;
     overflow: hidden;
-    display: grid;
-    grid-template-rows: repeat(4, auto);
-    grid-template-columns: repeat(1, auto);
-    place-items: start;
-    padding: .7rem .9rem;
-    grid-gap: 0.5rem;
+}
+.allt{
+    border: 1px solid white;
+    border-radius: var(--brall);
+
+    margin-top: 14px ;
 }
 
-.divideddev {
-    /* background: #000; */
+.power-table {
     width: 100%;
-    padding: .5em;
-    display: flex;
-}
-.divideddev span{
-    padding: 0 .5em;
-    width: 100%;
+    border-collapse: collapse;
     text-align: center;
+    border-radius: var(--brall);
+    overflow: hidden; /* Ensures proper border-radius clipping */
+}
+
+.power-table th, 
+.power-table td {
+    padding: 0.5em;
+    border: 1px solid white;
+    border-top: none;
+}
+
+.power-table tr:last-child td {
+    
+    border-bottom: none;
+}
+
+
+.power-table tr th:last-child,
+    .power-table tr td:last-child {
+    
+    border-right: none;
+}
+
+
+tbody td {
     color: #fff;
 }
-.titlediv span{
-    color: var(--tt);
+
+tbody td:first-child ,
+thead th:first-child {
+    text-align: left;
+    font-weight: 600;
+    border-left: none;
+}
+
+thead th:first-child{
     font-weight: 700;
+    text-align: left;
+
+}
+thead th {
+    font-weight: 700;
+    text-align: center;
+    color: var(--tt);
 }
 .afflink{
     color: var(--tt);
