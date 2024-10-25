@@ -1,10 +1,10 @@
 <style>
 
-#scrollTopBtn {
+ #myscroll {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  display: none; /* Hidden initially */
+  display: block; 
   background-color: var(--theme1);
   color: white;
   border: none;
@@ -12,12 +12,13 @@
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000; /* Higher z-index */
+  z-index: 1000; 
 }
+
 
 </style>
 
-<div class="forex">
+<div class="forex" >
     <span class="forexh">
     <i class="fa-solid fa-chart-gantt"></i> <i id="team"></i> Downlines
     </span>
@@ -72,15 +73,27 @@ Keep it up and let’s build an unstoppable team. <br>
 
         
     </div>
-    <button id="scrollTopBtn">
-      <i class="fa-solid fa-chevron-up"></i>
-    </button>
-</div>
+  </div>
+  <button data-target="section1" id="myscroll" >
+    <i class="fa-solid fa-chevron-up"></i> 
+  </button>
 <script>
 
+const myscroll = document.getElementById("myscroll");
 
-const scrollTopBtn = document.getElementById('scrollTopBtn');
 
+    // Add click event listener to all links in the navbar
+    // document.querySelectorAll('.navbar a').forEach(link => {
+      myscroll.addEventListener('click', function (event) {
+        const targetId = "section1"; //event.target.getAttribute('data-target');
+        const targetElement = document.getElementById(targetId);
+
+        // Smooth scroll to the target element
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      });
+    // });
+
+/*
 // Show button when scroll starts
 window.addEventListener('scroll', () => {
   if (window.pageYOffset >= 100) {
@@ -97,6 +110,8 @@ scrollTopBtn.addEventListener('click', () => {
     behavior: 'smooth',  
   });
 });
+
+*/
 
 
   </script

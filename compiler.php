@@ -73,7 +73,7 @@
             
        <?php  } ?>
     <div class="root">
-        <div class="header">
+        <div class="header" id="section1">
             <div class="earnlogo">
                 <img src="<?php echo $domain;?>/images/earn11.png" alt="" id="earnimgs">
             </div>
@@ -164,6 +164,10 @@
         </div>
          -->
     </div>
+    <!-- <button id="scrollToTopBtn" aria-label="Scroll to top" >
+    <i class="fa-solid fa-chevron-up"></i> 
+  </button> -->
+
     <script type="module" src="<?php echo $domain; ?>/utils/all.js?<?php echo $newrand; ?>"></script>
     <script type="module" src="<?php echo $domain; ?>/utils/auth.js?<?php echo $newrand; ?>"></script>
 

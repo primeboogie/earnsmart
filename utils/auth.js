@@ -1,5 +1,5 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 let mySource = baseUrl.slice(0,-8)
 
 let menuid = document.getElementById("menuid");
@@ -141,6 +141,9 @@ if(linkbtn){
         alert(`Your Link is pasted In Your Clipboard Successfully`)
     })
 }
+const updateElements = (selectors, value) => {
+    document.querySelectorAll(selectors).forEach(el => el.innerHTML = value);
+};
 
 async function data() {
     try {
@@ -158,9 +161,6 @@ async function data() {
             } = await response.data;
 
             // Helper function to update element contents
-            const updateElements = (selectors, value) => {
-                document.querySelectorAll(selectors).forEach(el => el.innerHTML = value);
-            };
 
             // Helper function to update elements with color
             const updateElementsWithColor = (selectors, value, condition, trueColor, falseColor) => {
@@ -2231,6 +2231,56 @@ const {userdetails, balances} = await data()
         draw()
    
 }
+
+
+
+let sharepage = document.getElementById("sharepage");
+    
+if(sharepage){
+
+
+        async function requestalldownline() {
+            try {
+                const response = await requestData(`${baseUrl}allmyDownlines`);     
+                
+                
+                if (Array.isArray(response.info) && response.info.length > 0) {
+                    response.info.forEach(value => {
+                        alert(value.msg);
+                    });
+                } 
+                if(response.resultcode){
+                            console.log(response)
+                    let data = response.data
+
+                    updateElements("#l1-active", data['l1_active']);
+                    updateElements("#l2-active", data['l2_active']);
+                    updateElements("#l3-active", data['l3_active']);
+
+                    updateElements("#l1-dormant", data['l1_dormant']);
+                    updateElements("#l2-dormant", data['l2_dormant']);
+                    updateElements("#l3-dormant", data['l3_dormant']);
+
+                    updateElements("#l1-total", data['l1_total']);
+                    updateElements("#l2-total", data['l2_total']);
+                    updateElements("#l3-total", data['l3_total']);
+
+            
+                }
+
+            } catch (error) {
+                console.log(error);
+            }
+        openLoader(false);
+        }
+
+        requestalldownline()
+
+}
+
+
+
+
 
 if(!casinodiv){
     setTimeout(data,0);
