@@ -261,8 +261,8 @@ register.addEventListener('submit', (e) => {
                         login.reset();
                         
                         // ! confirm change here 
-                        window.location.href = '/earnempire/'
-                        // window.location.href = '/'
+                        // window.location.href = '/earnempire/'
+                        window.location.href = '/'
                     }
                     if (Array.isArray(response.info) && response.info.length > 0) {
                             response.info.forEach(value => {
