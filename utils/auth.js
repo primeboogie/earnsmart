@@ -2134,7 +2134,10 @@ const {userdetails, balances} = await data()
                
                     ctx.fillStyle = "#fff";
     
-                    ctx.fillText(items[i], 130, 10);
+                    let rannumber =items[i]
+                    let displayText = Number.isInteger(rannumber) ? rannumber : `x${rannumber}`;
+    
+                    ctx.fillText(displayText, 130, 10);
     
     
     

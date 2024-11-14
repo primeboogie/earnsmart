@@ -207,9 +207,9 @@ register.addEventListener('submit', (e) => {
                         login.reset();
                         
                         // ! confirm change here 
-                        window.location.href = '/earnempire/'
+                        // window.location.href = '/earnempire/'
                         
-                        // window.location.href = '/'
+                        window.location.href = '/'
                     }
 
                     register.reset();
