@@ -3,16 +3,29 @@
     require './auth/func.php';
 
     $dfile = "pages/home.php";
-    $dcss = "/css/home.css";
+    $dcss = "/";
     $title =  $admin['company'];
     $desc = "🚀". $admin['company'] . " . 💰 Your success in network marketing is a reflection of your mindset. Believe in yourself, 
                 stay disciplined, and never underestimate the power of consistencys! 🌐🌍 Home of Family";
     $logo = 'images/earn3.jpg';
-    $keywords = ['Earn-Empire Connections','Empire','Earn Connection', 'Empire Connections', 'Affilate Marketting', 'Marketting'];
+    $keywords = ['Earn-Power Connections','Empire','Earn Connection', 'Empire Connections', 'Affilate Marketting', 'Marketting'];
     $summary = $desc;
 
     $routes = [
         '/' => [
+            'file' => 'pages/home.php',
+            'style' => '/css/home.css',
+            'secured' => false,
+                'meta' => [
+                    'title' => $title,
+                    'desc' => $desc,
+                    'logo' =>  $logo,
+                    'keywords' => $keywords,
+                    'summary' => $summary,
+                    'any3' => 'Home',
+                        ],
+                ],
+        '/account' => [
             'file' => 'pages/account.php',
             'style' => '/css/account.css',
             'secured' => True,
@@ -25,22 +38,10 @@
                     'any3' => 'Home',
                         ],
                 ],
-                '/account' => [
-                    'file' => 'pages/account.php',
-                    'style' => '/css/account.css',
-                    'secured' => True,
-                        'meta' => [
-                            'title' => $title,
-                            'desc' => $desc,
-                            'logo' =>  $logo,
-                            'keywords' => $keywords,
-                            'summary' => $summary,
-                            'any3' => 'Home',
-                                ],
-                        ],
-        '/home' => [
-            'file' => 'pages/home.php',
-            'style' => '/css/home.css',
+                        
+        '/login' => [
+            'file' => 'pages/login.php',
+            'style' => '/',
             'secured' => False,
             'meta' => [
                 'title' => $title,
@@ -52,11 +53,11 @@
             ],
         ],
         '/reg' => [
-            'file' => 'pages/home.php',
+            'file' => 'pages/signup.php',
             'style' => '/css/home.css',
             'secured' => False,
             'meta' => [
-                'title' => $title,
+                'title' => "SignUp",
                 'desc' => $desc,
                 'logo' =>  $logo,
                 'keywords' => $keywords,
@@ -64,6 +65,7 @@
                 'any3' => 'Home',
             ],
         ],
+        
         '/share' => [
             'file' => 'pages/share.php',
             'style' => '/css/share.css',
@@ -166,21 +168,7 @@
             'file' => 'pages/agentbonus.php',
             'style' => '/css/agentbonus.css',
             'secured' => True,
-                ],
-
-        '/404' => [
-                'file' => '404.php',
-                'style' => '/css/404.css',
-                'secured' => False,
-                'meta' => [
-                            'title' => '404 Unkown-Page',
-                            'desc' => 'Oops Seems You lost go back to home page',
-                            'logo' =>  $logo,
-                            'keywords' => $keywords,
-                            'summary' => $summary,
-                            'any3' => 'Home',
-                ],
-        ],
+                ]
     ];
 
     $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
@@ -190,10 +178,9 @@
     $current_url = $protocol . $host . $request_uri;
 
 
-
     $passing = parse_url($current_url);
     
-    $routepath= $passing['path'] ?? '/login';
+    $routepath= $passing['path'] ?? '/';
     $local = str_replace($dev['root'], '', $routepath);
     $extracted = explode('/', trim($local, '/'));
     $routesearch = '/'.$extracted[0] ?? '';
@@ -204,10 +191,13 @@
     $usercid = false;
 
     $actualbal = 1;
-    
 
+    
+    
     foreach ($routes as $key => $value) {
         if ($key === $routesearch) {
+
+
             if(isset($_COOKIE['access_token'])){
                         $apiendpoint = $admin['backend']."/?action=auth";
                         $fetchresp = usefetch($apiendpoint);
@@ -226,26 +216,25 @@
                             $environment = true;
 
                         } else {
-                            header("location: ".$dev['root']."/");
+                            header("location: ".$dev['root']."/account");
                         }
                     } else {
                         setcookie("access_token", "", time() - 3600, "/");
-                        
-                        if (isset($extracted[0]) && $extracted[0] == '404'){
-                            $dfile = $value['file'];
-                            $dcss = $value['style'];
-                        }
-
-                        header("location: ".$dev['root']."/home");
+                        header("location: ".$dev['root']."/");
                     }
-            } 
+            } else{
+                if(!$value['secured']){
+                    $dfile = $value['file'];
+                    $dcss = $value['style'];
 
-            if (isset($extracted[0]) && $extracted[0] == 'reg'){
-                $upline = $extracted[1] ?? false;
-            }
-            if (isset($extracted[0]) && $extracted[0] == '404'){
-                $dfile = $value['file'];
-                $dcss = $value['style'];
+                    if (isset($extracted[0]) && $extracted[0] == 'reg'){
+                        $upline = $extracted[1] ?? false;
+                    }
+                } else {
+                    header("location: ".$dev['root']."/");
+                    break;
+
+                }
             }
 
             $found = True;
@@ -253,7 +242,7 @@
         }
     }
     if(!$found){
-        header("location: ".$dev['root']."/404");
+        header("location: ".$dev['root']."/");
     } 
 
 

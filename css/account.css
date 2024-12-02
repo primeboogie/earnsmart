@@ -5,7 +5,6 @@
     height: 100%;
     display: grid;
     grid-template: 360px 190px auto / 1fr 35%;
-    place-content: start;
     overflow: auto;
     grid-gap: .5em;
 }
@@ -25,7 +24,7 @@
 
 .account1 .route{
     grid-area: 1/1/2/3;
-    color: #000;
+    color: #fff;
     font-style: italic;
     font-size: .9em;
     padding: .3em;
@@ -37,96 +36,11 @@
 
 .account1 .welcome{
     grid-area: 2/1/3/3;
-    background: var(--theme1);
-    border-radius: var(--brall);
-    overflow: visible;
-    display: grid;  
-    grid-gap: 0.8em;
-    padding-bottom: 1em ;
-}
-.inwelcome{
-    font-size: 1.6em;
-    padding: 0.8em 0.9em;   
-    font-family: "Roboto", sans-serif;
-    font-weight: 700 !important;
-    color: #fff;
+    background: linear-gradient(135deg, #ff4500, #ff8c00);
 }
 
-.inwelcome i{
-    color: yellow;
-}
-
-.welcome p{
-    color: #fff;
-    font-size: 0.9em;
-    padding-left: 1em ;
-
-}
-.exe {
-    margin: 0 auto;
-    background: #fff;
-    width: 88%;
-    border-radius: var(--brall);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0.8em 0em;   
-}
-.exe1{
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(2, 1fr);
-    place-content: center !important;
-    grid-gap: 0  0.8em ;
-}
-.exe1icon{
-    grid-area: 1/1/3/2;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--tt);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #3dec08;
-}
-.exe1icon i{
-    font-size: 1.4em;
-    color: #43ce18;
-    transform: scale(1.4);
-}
-.exeicon2{
-    border: 1px solid red;
-}
-
-.exebalg{
-    color: #43ce18;
-}
-.exebalr,
-.exeicon2 i{
-    color: red;
-}
-.exeh{
-    grid-area: 1/2/2/2;
-    font-size: 1em;
-    padding-bottom: 0.9em ;
-    font-weight: 600;
-    place-self: start;
-}
-.exebal{
-    grid-area: 2/2/3/3;
-    text-wrap: nowrap;
-}
-.exebal i {
-    font-style: normal;
-    font-weight: 800;
-    font-size: 1em;
-    text-wrap: nowrap;
-}
-.exedot {
-    border-right: 1px dashed rgb(0, 0, 255) ;
-}
 .moneydiv{
-    height: 9rem;
+    height: 5rem;
     width: 100%;
     border-radius: var(--brall);
     overflow: hidden;
@@ -134,34 +48,46 @@
     grid-template-columns: 1fr auto;
     grid-template-rows: repeat(2, 1fr);
     align-items: center;
-    padding: 0 0.9em;
+    padding-right: .6rem;
+    border: 1px solid grey;
+    color: red;
+    background: #efeeee;
 }
 #inmoneyh{
     grid-area: 1/1/2/2;
     font-size: 1.3em;
-    color: #fff;
+    color: #000;
     font-weight: 600;
+    padding: .6rem .9rem;
 }
 #inmoneyb{
     grid-area: 2/1/3/2;
     padding-left: 0.8em;
 }
 #inmoneyb #usys{
-    color:  var(--tt) !important;
+    color:  blue !important;
     font-style: normal;
     font-weight: 800;
 
 }
 #inmoneyb i:nth-child(2){
-    color: #fff;
+    color: #000;
     font-weight: 700;
     font-style: normal;
 }
 
 #inmoneyi{
     grid-area: 1/2/3/2;
-    font-size: 2.2em;
+    font-size: 1.2em;
     color: #fff;
+    background:hsl(22.7 82.5% 31.4%);
+    padding: .5rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
 }
 .bg1{
     background: var(--bgdiv1);
@@ -187,6 +113,11 @@
 .bg8{
     background: var(--bgdiv8);
 }
+
+.bg9{
+    background: var(--bgdiv9);
+}
+
 .account10{
     grid-area: 1/2/2/3;
     display: grid;
@@ -224,9 +155,10 @@
 }
 
 .headerss {
-    font-size: 1em;
-    font-weight: 600;
+    font-size: 1.2em;
+    font-weight: 300;
     text-wrap: nowrap;
+    font-family: "Black Ops One", system-ui;
 }
 
 .circle {
@@ -424,53 +356,47 @@
 
 @media only screen and (max-width: 560px) {
     .account .account1{
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         }
     .route{
         grid-area: 1/1/2/3;
     }
-    .welcome{
-        grid-area: 2/1/3/3;
-    }
-    .bg1{
-        grid-area: 3/1/4/3;
-    }
     .bg2{
-        grid-area: 4/1/5/3;
-    }
-    .bg3{
-        grid-area: 5/1/6/3;
-    }
-    .bg4{
-        grid-area: 6/1/7/3;
+    grid-area: 3/1/4/3 ;
     }
     .bg5{
-        grid-area: 7/1/8/3;
+    grid-area: 4/1/5/3;
+    }
+         .bg9{
+    grid-area: 6/1/7/3;
+    }
+    
+    .bg4{
+    grid-area: 7/1/8/3;
+    }
+    .md1{
+    grid-area: 8/1/9/3;
+    }
 
+    .md2{
+    grid-area: 9/1/10/3;
     }
-    .bg6{
-        grid-area: 8/1/9/3;
+
+    .md3{
+    grid-area: 10/1/11/3;
     }
-    .bg7{
-        grid-area: 9/1/10/3;
+    .md4{
+    grid-area: 11/1/12/3;
     }
-    .bg8{
-        grid-area: 10/1/11/3;
-    }
+    
+
 }
 
 @media only screen and (max-width: 480px) {
+.account .account1{
+    grid-template-columns: 1fr;
 
-    .exe {
-        width: 95%;
-    }
-    .exe1icon{
-        width: 41px;
-        height: 41px;
-    }
-    .exe1icon i{
-        font-size: 1.2em;
-    }
+}
 
     .afflink{
         font-size: 1rem;
@@ -523,11 +449,5 @@
 
 @media only screen and (max-width: 310px) {
 
-    .exeh{
-        font-size: .9em;
-    }
-    .exebal{
-        font-size: .8em;
-    }
-  
+
 }

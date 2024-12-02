@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Divs with Animation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .item {
+            position: relative;
+            flex: 1 1 calc(35% - 20px);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .item1 { background: linear-gradient(135deg, #179b00, #50ff00); } /* Red Gradient */
+        .item2 { background: linear-gradient(135deg, #0000ff, #1e90ff); } /* Blue Gradient */
+        .item3 { background: linear-gradient(135deg, #008000, #32cd32); } /* Green Gradient */
+        .item4 { background: linear-gradient(135deg, #8e2de2, #4a00e0); } /* Purple Gradient */
+        .item5 { background: linear-gradient(135deg, #ff8c00, #ffa500); } /* Orange Gradient */
+        .item6 { background: linear-gradient(135deg, #ff1493, #ff69b4); } /* Pink Gradient */
+        .item7 { background: linear-gradient(135deg, #ff4500, #ff8c00); } /* Dark Orange Gradient */
+        .item8 { background: linear-gradient(135deg, #6655ff, #131573); } /* Light Blue Gradient */
+        .item9 { background: linear-gradient(135deg, #32cd32, #00ff7f); } /* Spring Green Gradient */
+        .item10 { background: linear-gradient(135deg, #ee40ff, #ee6aff); } /* Hot Pink Gradient */
+        .item11 {display:none; background: linear-gradient(135deg, #e355ff, #ffa840); } 
+
+        .item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .ring {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: wave 3s infinite;
+            margin-bottom: -5px;
+            margin-right: -5px;
+        }
+
+        .ring:nth-child(1) { animation-delay: 0s; }
+        .ring:nth-child(2) { animation-delay: 0.6s; }
+        .ring:nth-child(3) { animation-delay: 1.2s; }
+        .ring:nth-child(4) { animation-delay: 1.8s; }
+        .ring:nth-child(5) { animation-delay: 2.4s; }
+
+        @keyframes wave {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">
+            Item 1
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+        <div class="item item2">
+            Item 2
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+        <div class="item item3">
+            <h3>Trivia Earnings</h3>
+            <h3 style="color: yellow; " >Ksh. 8,694</h3>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+        <div class="item item4">
+            <h3>Ads Earnings</h3>
+            <h3 style="color: yellow; " >Ksh. 1286</h3>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+        <div class="item item5">
+            Item 5
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+        <div class="item item6">
+            Item 6
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+        <div class="item item7">
+            Item 7
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+        <div class="item item8">
+            Item 8
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+        <div class="item item9">
+            Item 9
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+        <div class="item item10">
+            Item 10
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+        <div class="item item11">
+            Item 11
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+    </div>
+    <script>
+        // JavaScript can be added here if needed in the future
+        // For now, there is no specific JavaScript required for this example
+    </script>
+</body>
+</html>

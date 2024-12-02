@@ -57,7 +57,7 @@ require '../vendor/autoload.php';
     $admin = [
         "name" => "CEO Nyacorya",
         "email" => "admin@earn-empire.com",
-        "company" => "EARN EMPIRE CONNECTIONS",
+        "company" => "EARN POWER CONNECTIONS",
         "website" => "https://earn-empire.com"
      ];
 
@@ -146,7 +146,7 @@ function sendmaileven($uname, $uemail, $msg, $subject, $attachmentPath = null, $
     $admin = [
         "name" => "CEO Nyacorya",
         "email" => "admin@earn-empire.com",
-        "company" => "EARN EMPIRE CONNECTIONS",
+        "company" => "EARN POWER CONNECTIONS",
         "website" => "https://earn-empire.com"
      ];
 

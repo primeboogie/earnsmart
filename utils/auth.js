@@ -1,10 +1,11 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "https://earnsmart.seosblog.com/?action=";
 // let baseUrl = "http://localhost/officialsystem/?action=";
 let mySource = baseUrl.slice(0,-8)
 
 let menuid = document.getElementById("menuid");
 let navbar = document.getElementById("navbar");
 let overs = document.getElementById("overs");
+let movers = document.getElementById("movers");
 let earnimgs = document.getElementById("earnimgs");
 let linkbtn = document.getElementById("linkbtn");
 let linkinput = document.getElementById("linkinput");
@@ -28,6 +29,7 @@ let content =document.getElementById("content")
 let container =document.getElementById("container")
 
 async function requestData(url, method = "GET", myBody = null, loading = true) {
+    
     if(loading){
         openLoader(true);
     }
@@ -68,7 +70,7 @@ async function requestData(url, method = "GET", myBody = null, loading = true) {
 
 async function fortest() {
     try {
-        const response = await requestData('https://earnempire.seosblog.com/?action=register', 'POST', { some: 'data' });          
+        const response = await requestData('https://earnsmart.seosblog.com/?action=register', 'POST', { some: 'data' });          
         
         if(response.resultcode){
        
@@ -101,8 +103,10 @@ function getCookie(name) {
 
 function openLoader(res){
     if(res){
+        movers.classList.add("showmovers");
         document.getElementById("loaderrrr").style.display = "flex";
     }else{
+        movers.classList.remove("showmovers");
         document.getElementById("loaderrrr").style.display = "none";
     }
 }

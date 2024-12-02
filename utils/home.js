@@ -1,4 +1,4 @@
-let baseUrl = "https://earnempire.seosblog.com/?action=";
+let baseUrl = "https://earnsmart.seosblog.com/?action=";
 // let baseUrl = "http://localhost/officialsystem/?action=";
 
 let allist = document.getElementById("allist");
@@ -21,26 +21,26 @@ let loginusername = document.getElementById("loginusername");
 let logusername = document.getElementById("logusername");
 
 
-const showLogin = document.getElementById('showLogin');
-const killlogin = document.getElementById('killlogin');
+// const showLogin = document.getElementById('showLogin');
+// const killlogin = document.getElementById('killlogin');
 const containerin = document.querySelector('#containerin');
 
 const forgot = document.getElementById('forgot');
 
 
-const changesigin = document.getElementById('changesigin');
-const changesignup = document.getElementById('changesignup');
+// const changesigin = document.getElementById('changesigin');
+// const changesignup = document.getElementById('changesignup');
 
 
-changesigin.addEventListener('click', () =>{
-    containerin.classList.toggle('handletrans');
-    containerup.classList.toggle('handletrans');
-})
+// changesigin.addEventListener('click', () =>{
+//     containerin.classList.toggle('handletrans');
+//     containerup.classList.toggle('handletrans');
+// })
 
-changesignup.addEventListener('click', () =>{
-    containerup.classList.toggle('handletrans');
-    containerin.classList.toggle('handletrans');
-})
+// changesignup.addEventListener('click', () =>{
+//     containerup.classList.toggle('handletrans');
+//     containerin.classList.toggle('handletrans');
+// })
 
 
 if(forgot){
@@ -66,25 +66,25 @@ if(forgot){
         sendemail();
     })
 }
-showLogin.addEventListener('click', () => {
-    containerin.classList.toggle('handletrans');
-});
+// showLogin.addEventListener('click', () => {
+//     containerin.classList.toggle('handletrans');
+// });
 
-killlogin.addEventListener('click', () => {
-    containerin.classList.toggle('handletrans');
-});
+// killlogin.addEventListener('click', () => {
+//     containerin.classList.toggle('handletrans');
+// });
 
-const showSignup = document.getElementById('showSignup');
+// const showSignup = document.getElementById('showSignup');
 const killlSignup = document.getElementById('killlSignup');
 const containerup = document.querySelector('#containerup');
 
-showSignup.addEventListener('click', () => {
-    containerup.classList.toggle('handletrans');
-});
+// showSignup.addEventListener('click', () => {
+//     containerup.classList.toggle('handletrans');
+// });
 
-killlSignup.addEventListener('click', () => {
-    containerup.classList.toggle('handletrans');
-});
+// killlSignup.addEventListener('click', () => {
+//     containerup.classList.toggle('handletrans');
+// });
 
 
 
@@ -112,47 +112,47 @@ async function requestData(url, method = "GET", myBody = null) {
 }
 
 
-async function LisTCountrys() {
-    try {
-        const response = await requestData(baseUrl+'populateCountrys', 'GET');
+// async function LisTCountrys() {
+//     try {
+//         const response = await requestData(baseUrl+'populateCountrys', 'GET');
 
-        if (Array.isArray(response.data) && response.data.length > 0) {
-            // response.data.sort((a, b) => {
-            //     if (a.country < b.country) {
-            //         return -1;
-            //     }
-            //     if (a.country > b.country) {
-            //         return 1;
-            //     }
-            //     return 0;
-            // });
-            response.data.forEach(value => {
-                let alist = document.createElement("div");
-                alist.className = "inc"
-                let spanlist = document.createElement("span")
-                spanlist.innerHTML = value.country + " " + value.abrv;
+//         if (Array.isArray(response.data) && response.data.length > 0) {
+//             // response.data.sort((a, b) => {
+//             //     if (a.country < b.country) {
+//             //         return -1;
+//             //     }
+//             //     if (a.country > b.country) {
+//             //         return 1;
+//             //     }
+//             //     return 0;
+//             // });
+//             response.data.forEach(value => {
+//                 let alist = document.createElement("div");
+//                 alist.className = "inc"
+//                 let spanlist = document.createElement("span")
+//                 spanlist.innerHTML = value.country + " " + value.abrv;
 
-                alist.appendChild(spanlist)
-                allist.appendChild(alist);
-                alist.addEventListener("click", function(){
-                    if(value.id == 'USDT'){
+//                 alist.appendChild(spanlist)
+//                 allist.appendChild(alist);
+//                 alist.addEventListener("click", function(){
+//                     if(value.id == 'USDT'){
 
-                        phone.innerHTML = `+`
-                    } else {
-                        phone.innerHTML = `${value.dial}`
+//                         phone.innerHTML = `+`
+//                     } else {
+//                         phone.innerHTML = `${value.dial}`
 
-                    }
-                    countryid.value = value.country
-                    country.value = value.id
-                    viewCountry(false)
-                } )
-            });
+//                     }
+//                     countryid.value = value.country
+//                     country.value = value.id
+//                     viewCountry(false)
+//                 } )
+//             });
             
-        }
-    } catch (error) {
-        console.error(error);
-    }
-}
+//         }
+//     } catch (error) {
+//         console.error(error);
+//     }
+// }
 
 
 
@@ -168,66 +168,66 @@ function viewCountry(res){
     }
 }
 
-function openLoader(res){
-    if(res){
-        document.getElementById("loaderrr").style.display = "flex";
-    }else{
-        document.getElementById("loaderrr").style.display = "none";
-    }
-}
+// function openLoader(res){
+//     if(res){
+//         document.getElementById("loaderrr").style.display = "flex";
+//     }else{
+//         document.getElementById("loaderrr").style.display = "none";
+//     }
+// }
 
 
 
-countryid.addEventListener('click', ()=>{
-    viewCountry(true)
-})
+// countryid.addEventListener('click', ()=>{
+//     viewCountry(true)
+// })
 
-register.addEventListener('submit', (e) => {
-    e.preventDefault()
-    openLoader(true)
+// register.addEventListener('submit', (e) => {
+//     e.preventDefault()
+//     openLoader(true)
 
-        const formData = new FormData(register);
+//         const formData = new FormData(register);
 
-        const formObject = {};
-        formData.forEach((value, key) => {
-            formObject[key] = value;
-        });
+//         const formObject = {};
+//         formData.forEach((value, key) => {
+//             formObject[key] = value;
+//         });
 
-        async function registerPost() {
-            try {
-                const response = await requestData(`${baseUrl}register`, 'POST', formObject);          
+//         async function registerPost() {
+//             try {
+//                 const response = await requestData(`${baseUrl}register`, 'POST', formObject);          
         
-                if(response.resultcode){
+//                 if(response.resultcode){
 
-                    const responseLogin = await requestData(`${baseUrl}login`, 'POST', formObject);  
+//                     const responseLogin = await requestData(`${baseUrl}login`, 'POST', formObject);  
           
             
-                    if(responseLogin.resultcode){
-                        setCookie("access_token", responseLogin.data['access_token'],1)
-                        login.reset();
+//                     if(responseLogin.resultcode){
+//                         setCookie("access_token", responseLogin.data['access_token'],1)
+//                         login.reset();
                         
-                        // ! confirm change here 
-                        // window.location.href = '/earnempire/'
+//                         // ! confirm change here 
+//                         window.location.href = '/earnsmart/'
                         
-                        window.location.href = '/'
-                    }
+//                         // window.location.href = '/'
+//                     }
 
-                    register.reset();
-                }
-                if (Array.isArray(response.info) && response.info.length > 0) {
-                        response.info.forEach(value => {
-                            alert(value.msg);
-                        });
-                    }
+//                     register.reset();
+//                 }
+//                 if (Array.isArray(response.info) && response.info.length > 0) {
+//                         response.info.forEach(value => {
+//                             alert(value.msg);
+//                         });
+//                     }
 
-            } catch (error) {
-                console.log(error);
-            }
-        openLoader(false)
-        }
+//             } catch (error) {
+//                 console.log(error);
+//             }
+//         openLoader(false)
+//         }
 
-        registerPost();
-    })
+//         registerPost();
+//     })
 
 
     function setCookie(name, value, days) {
@@ -242,7 +242,8 @@ register.addEventListener('submit', (e) => {
 
     login.addEventListener('submit', (e) => {
         e.preventDefault()
-        openLoader(true)
+        console.log("boogie")
+        // openLoader(true)
     
             const formData = new FormData(login);
     
@@ -261,8 +262,8 @@ register.addEventListener('submit', (e) => {
                         login.reset();
                         
                         // ! confirm change here 
-                        // window.location.href = '/earnempire/'
-                        window.location.href = '/'
+                        window.location.href = '/earnsmart/'
+                        // window.location.href = '/'
                     }
                     if (Array.isArray(response.info) && response.info.length > 0) {
                             response.info.forEach(value => {
@@ -276,14 +277,14 @@ register.addEventListener('submit', (e) => {
                 } catch (error) {
                     console.log(error);
                 }
-            openLoader(false)
+            // openLoader(false)
             }
     
             loginPost();
         })
 
 
-    LisTCountrys();
+    // LisTCountrys();
 
     let shaky = (resp) =>{
         if(resp){
@@ -326,66 +327,66 @@ register.addEventListener('submit', (e) => {
         }
         
     });
-    document.getElementById("closeC").addEventListener('click', () => {
-        viewCountry(false)
-    })
+    // document.getElementById("closeC").addEventListener('click', () => {
+    //     viewCountry(false)
+    // })
 
-    sinusername.addEventListener('input', () => {
-        async function confirmUser() {
-            try {
-                const response = await requestData(`${baseUrl}freeuser`, 'POST', {"username": sinusername.value});          
+    // sinusername.addEventListener('input', () => {
+    //     async function confirmUser() {
+    //         try {
+    //             const response = await requestData(`${baseUrl}freeuser`, 'POST', {"username": sinusername.value});          
                 
-                if(response.resultcode){
-                    shaky(true)
-                }else{
-                    shaky(false)
-                }
-                    } catch (error) {
-                        alert(error);
-                    }
-                }
+    //             if(response.resultcode){
+    //                 shaky(true)
+    //             }else{
+    //                 shaky(false)
+    //             }
+    //                 } catch (error) {
+    //                     alert(error);
+    //                 }
+    //             }
                 
-                confirmUser()
-            })
+    //             confirmUser()
+    //         })
 
-            sinemail.addEventListener('input', () => {
-                async function confirmUser() {
-                    try {
-                        const response = await requestData(`${baseUrl}freeemail`, 'POST', {"email": sinemail.value});          
+    //         sinemail.addEventListener('input', () => {
+    //             async function confirmUser() {
+    //                 try {
+    //                     const response = await requestData(`${baseUrl}freeemail`, 'POST', {"email": sinemail.value});          
                         
-                        if(response.resultcode){
-                            shakyem(true)
-                        }else{
-                            shakyem(false)
-                        }
-                            } catch (error) {
-                                alert(error);
-                            }
-                        }
+    //                     if(response.resultcode){
+    //                         shakyem(true)
+    //                     }else{
+    //                         shakyem(false)
+    //                     }
+    //                         } catch (error) {
+    //                             alert(error);
+    //                         }
+    //                     }
                         
-                        confirmUser()
-                    })
+    //                     confirmUser()
+    //                 })
 
-        sinphone.addEventListener('input', () => {
-            if(sinphone.value[0] == 0){
-                sinphone.value = sinphone.value.replace(/^0+/, '')
-            }
-            async function confirmUser() {
-                try {
-                    const response = await requestData(`${baseUrl}freephone`, 'POST', {"phone": sinphone.value});          
+    //     sinphone.addEventListener('input', () => {
+    //         if(sinphone.value[0] == 0){
+    //             sinphone.value = sinphone.value.replace(/^0+/, '')
+    //         }
+    //         async function confirmUser() {
+    //             try {
+    //                 const response = await requestData(`${baseUrl}freephone`, 'POST', {"phone": sinphone.value});          
                     
-                    if(response.resultcode){
-                        shakyph(true)
-                    }else{
-                        shakyph(false)
-                    }
-                        } catch (error) {
-                            alert(error);
-                        }
-                    }
+    //                 if(response.resultcode){
+    //                     shakyph(true)
+    //                 }else{
+    //                     shakyph(false)
+    //                 }
+    //                     } catch (error) {
+    //                         alert(error);
+    //                     }
+    //                 }
                     
-                    confirmUser()
-                })
+    //                 confirmUser()
+    //             })
 
 loginusername.addEventListener('change', () => {
     async function confirmUser() {
