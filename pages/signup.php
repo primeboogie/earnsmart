@@ -81,7 +81,7 @@
   transition: all 0.2s ease-in-out;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
   display: flex;
-  /* gap: .9em; */
+  gap: .9em;
   justify-content: center;
   align-items: center;
   
@@ -124,6 +124,7 @@
     padding: 0px;
     display: block;
     place-items: unset; 
+
   }
 
     .containerss{
@@ -201,8 +202,8 @@
       class="input"
       required=""
     />
-    <button value="Sign In" type="submit" id="logins" class="login-button"> Sign In <i class="fa-solid fa-right-to-bracket"></i> </button>
-    <span class="tonextlink"><a href=<?php echo $admin['domain']."/login"; ?>>Don't Have an Account? <i>SignUp</i></a></span>
+    <button value="Sign In" type="submit" id="logins" class="login-button"> Submit<i class="fa-solid fa-right-to-bracket"></i> </button>
+    <span class="tonextlink"><a href=<?php echo $admin['domain']."/login"; ?>>Already Have an Account? <i>SignIn</i></a></span>
   </form>
 
 
