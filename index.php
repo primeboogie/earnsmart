@@ -46,13 +46,10 @@ $newrand = rand(rand("0","80000"),"99000");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    
     <script src="https://cdn.tailwindcss.com"></script>  
-<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     
-=======
->>>>>>> 313ece8 (Save local changes before pull)
     <script
            src="./utils/mins.js"
            crossorigin="anonymous"
