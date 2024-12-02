@@ -118,19 +118,20 @@
   font-size: 9px;
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 480px) {
+  body{
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    place-items: unset; 
+  }
 
     .containerss{
-        border-radius: 0px;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        height: 100%;
-        transform: translate(-50%, -50%);
-        padding: 0px 0px;
+        min-width: 100%;
+        min-height: 100%;
+        padding: 45px 9px;
         overflow: auto;
-        
+        border-radius: 0px;
     }
   
 }
