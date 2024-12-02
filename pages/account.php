@@ -113,13 +113,21 @@
 
 <div class="account">
   <div class="account1 ">
+<<<<<<< HEAD
   <span class="route text-white">Dashboard > <i style="color: yellow">Home</i></span>
+=======
+  <span class="route">Dashboard > <i>Home</i></span>
+>>>>>>> 313ece8 (Save local changes before pull)
 
   <div class="welcome w-full    m-auto rounded-xl shadow-lg overflow-hidden relative pb-6">
   <div class="bg-pattern absolute inset-0 opacity-10"></div>
   <div class="p-0 relative z-10">
             <div class="border-b-4 w-full p-4 font-bold text-white items-center text-2xl flex gap-2">
+<<<<<<< HEAD
             <i class="fa-regular fa-user myenclose"></i> ZanyTech
+=======
+            <i class="fa-regular fa-user myenclose"></i> Boogie
+>>>>>>> 313ece8 (Save local changes before pull)
             <i class="fa-solid fa-circle-check text-lg text-blue-500"></i>
             </div>
             <div class="flex items-center gap-2 text-white/80 mb-4 pl-6 py-2 relative w-full">

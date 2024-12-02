@@ -1,0 +1,453 @@
+/* @import url('screen.css'); */
+
+.account{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: 360px 190px auto / 1fr 35%;
+    place-content: start;
+    overflow: auto;
+    grid-gap: .5em;
+}
+
+.account1{
+    width: 100%;
+    height: 100%;
+    grid-area: 1/1/4/2;
+    display: grid;
+    place-content: start;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    grid-auto-flow: row;
+    grid-gap: 0.5em;
+    overflow: visible;
+}
+
+.account1 .route{
+    grid-area: 1/1/2/3;
+    color: #000;
+    font-style: italic;
+    font-size: .9em;
+    padding: .3em;
+}
+
+.account1 .route i{
+    color: var(--theme1);
+}
+
+.account1 .welcome{
+    grid-area: 2/1/3/3;
+    background: linear-gradient(135deg, #ff4500, #ff8c00);
+}
+
+.moneydiv{
+    height: 5rem;
+    width: 100%;
+    border-radius: var(--brall);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    padding-right: .6rem;
+    border: 1px solid grey;
+    color: red;
+    background: #efeeee;
+}
+#inmoneyh{
+    grid-area: 1/1/2/2;
+    font-size: 1.3em;
+    color: #000;
+    font-weight: 600;
+    padding: .6rem .9rem;
+}
+#inmoneyb{
+    grid-area: 2/1/3/2;
+    padding-left: 0.8em;
+}
+#inmoneyb #usys{
+    color:  blue !important;
+    font-style: normal;
+    font-weight: 800;
+
+}
+#inmoneyb i:nth-child(2){
+    color: #000;
+    font-weight: 700;
+    font-style: normal;
+}
+
+#inmoneyi{
+    grid-area: 1/2/3/2;
+    font-size: 1.2em;
+    color: #fff;
+    background: #000;
+    padding: .5rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.bg1{
+    background: var(--bgdiv1);
+}
+.bg2{
+    background: var(--bgdiv2);
+}
+.bg3{
+    background: var(--bgdiv3);
+}
+.bg4{
+    background: var(--bgdiv4);
+}
+.bg5{
+    background: var(--bgdiv5);
+}
+.bg6{
+    background: var(--bgdiv6);
+}
+.bg7{
+    background: var(--bgdiv7);
+}
+.bg8{
+    background: var(--bgdiv8);
+}
+
+.bg9{
+    background: var(--bgdiv9);
+}
+
+.account10{
+    grid-area: 1/2/2/3;
+    display: grid;
+    grid-template: auto 1fr auto/ auto 1fr;
+    background: var(--theme1);
+    border-radius: var(--brall);
+    padding: 0 .5rem;
+}
+
+.dbonus{
+    grid-area: 1/1/2/3;
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--tt);
+    padding: .7em;
+    text-align: center;
+
+}
+.balanceCard {
+    grid-area: 2/1/3/2;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    display: flex;
+    gap: 0.5em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 7px 10px rgba(28, 4, 4, 0.1);
+    background: var(--bgdiv1);
+}
+
+.headerss {
+    font-size: 1em;
+    font-weight: 600;
+    text-wrap: nowrap;
+}
+
+.circle {
+    position: relative;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 1px 1px 20px #fff;
+    overflow: hidden;
+    background: conic-gradient( #0cb600 66%, rgba(255, 255, 255, 0.12) 66%);
+}
+
+.percentage {
+    position: absolute;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bgdiv6);
+}
+
+.amount {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+.bonusinf{
+    grid-area: 2/2/3/3;
+    display: grid;
+    grid-gap: .8rem;
+    place-content: start center;
+    padding: .5rem;
+}
+
+.bonusinf span{
+    color: #dedede;
+    font-weight: 800;
+    text-wrap: nowrap;
+}
+
+.bonusinf span i{
+    font-weight: 600;
+    font-style: normal;
+    text-wrap: nowrap;
+    color: #fff;
+    
+}
+
+.bonusbtn{
+    grid-area: 3/1/4/3;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.share{
+    grid-area: 2/2/3/3;
+    /* place-self: start; */
+    width: 100%;
+    background: var(--theme1);
+    border-radius: var(--brall);
+    overflow: hidden;
+    display: grid;
+    grid-template: repeat(3, auto) / 1fr;
+    place-items: start;
+    padding: .7rem .9rem;
+    grid-gap: 1.5rem;
+
+}
+
+.afflink{
+    color: var(--tt);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.share input {
+    border-radius: var(--brall);
+    padding: .6rem .5rem;
+    font-size: .9em;
+    font-weight: 400;
+    outline: none;
+    border: none;
+    color: #848181;
+    width: 80%;
+}
+.share button{
+    place-self: end;
+    margin: 0;
+}
+
+
+.account12{
+    grid-area: 3/2/4/3;
+    background: var(--theme1);
+    border-radius: var(--brall);
+    display: grid;
+    grid-template: auto 1fr / 1fr;
+    padding: .5rem;
+}
+.account12h{
+    grid-area: 1/1/2/2;
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--tt);
+    padding: .7em;
+    text-align: center;
+}
+.account12more{
+    border: 2px solid #fff;
+    border-radius: var(--brall);
+}
+.account12more ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-gap: .5em;
+    padding: .6em .7em;
+}
+
+.account12more ul li{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row;
+    color: #fff;
+}
+
+.account12more ul li span{
+    font-weight: 800;
+    font-size: 1.1em;
+    text-wrap: nowrap;
+
+}
+
+.account12more ul li i{
+    font-weight: 600;
+    font-size: .9em;
+    color: rgba(255, 255, 255, 0.81);
+}
+@media only screen and (max-width: 450px) {
+
+    .circle {
+        position: relative;
+        width: 80px;
+        height: 80px;
+    }
+
+    .percentage {
+        font-size: 1em;
+        
+    }
+    .headerss {
+        font-size: 0.9em;
+        font-weight: 700;
+        text-wrap: wrap;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 1180px) {
+
+    .account{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        
+    }
+    .account1{
+        grid-area: 1/1/2/2;
+    }
+    .account10{
+        grid-area: 2/1/3/2;
+    }
+    .share{
+        grid-area: 3/1/4/2;
+
+    }
+    .account12{
+        grid-area: 4/1/5/2;
+    }
+}
+@media only screen and (max-width: 680px) {
+
+}
+
+@media only screen and (max-width: 560px) {
+    .account .account1{
+        grid-template-columns: 1fr;
+        }
+    .route{
+        grid-area: 1/1/2/3;
+    }
+    .bg2{
+    grid-area: 3/1/4/3 ;
+    }
+    .bg5{
+    grid-area: 4/1/5/3;
+    }
+         .bg9{
+    grid-area: 6/1/7/3;
+    }
+    
+    .bg4{
+    grid-area: 7/1/8/3;
+    }
+    .md1{
+    grid-area: 8/1/9/3;
+    }
+
+    .md2{
+    grid-area: 9/1/10/3;
+    }
+
+    .md3{
+    grid-area: 10/1/11/3;
+    }
+    .md4{
+    grid-area: 11/1/12/3;
+    }
+    
+
+}
+
+@media only screen and (max-width: 480px) {
+.account .account1{
+    grid-template-columns: 1fr;
+
+}
+
+    .afflink{
+        font-size: 1rem;
+    }
+    .share input{
+        width: 100%;
+    }
+    .share button{
+        font-size: 1rem;
+    }
+    .account10{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,auto);
+        grid-gap: .5em;
+    }
+    .headerss{
+        grid-area: 1/1/2/2;
+    }
+
+    .balanceCard {
+        grid-area: 2/1/3/2;
+        width: 150px;
+        height: 150px;
+        place-self: center;
+
+    }
+    .bonusinf{
+        grid-area: 3/1/4/2;
+
+    }
+    .bonusbtn{
+        grid-area: 4/1/5/2;
+    }
+    .account12more ul li span{
+        font-weight: 800;
+        font-size: .9em;
+    
+    }
+    
+    .account12more ul li i{
+        font-size: .8em;
+    }
+
+    .dbonus{
+        padding: .3em;
+    
+    }
+  
+}
+
+@media only screen and (max-width: 310px) {
+
+
+}
