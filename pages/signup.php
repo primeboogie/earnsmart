@@ -202,7 +202,7 @@
       class="input"
       required=""
     />
-    <button value="Sign In" type="submit" id="logins" class="login-button">Sign Up<i class="fa-solid fa-right-to-bracket">p/i> </button>
+    <button value="Sign In" type="submit" id="logins" class="login-button"> SignUp<i class="fa-solid fa-right-to-bracket"></i> </button>
     <span class="tonextlink"><a href=<?php echo $admin['domain']."/login"; ?>>Already Have an Account? <i>SignIn</i></a></span>
   </form>
 
