@@ -1,5 +1,5 @@
-// let baseUrl = "https://earnsmart.seosblog.com/?action=";
-let baseUrl = "http://localhost/officialsystem/?action=";
+let baseUrl = "https://earnsmart.seosblog.com/?action=";
+// let baseUrl = "http://localhost/officialsystem/?action=";
 
 let allist = document.getElementById("allist");
 let phone = document.getElementById("phone");
@@ -206,15 +206,10 @@ function viewCountry(res){
 //                         setCookie("access_token", responseLogin.data['access_token'],1)
 //                         login.reset();
                         
-<<<<<<< HEAD
-//                         // ! confirm change here 
-//                         window.location.href = '/earnsmart/'
-=======
                         // ! confirm change here 
                         // window.location.href = '/earnsmart/'
->>>>>>> 313ece8 (Save local changes before pull)
                         
-//                         // window.location.href = '/'
+                        // window.location.href = '/'
 //                     }
 
 //                     register.reset();
