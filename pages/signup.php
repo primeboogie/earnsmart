@@ -130,7 +130,7 @@
     .containerss{
         min-width: 100%;
         min-height: 100%;
-        padding: 45px 9px;
+        padding: 25px 9px;
         overflow: auto;
         border-radius: 0px;
     }
