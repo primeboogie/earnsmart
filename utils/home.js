@@ -388,28 +388,28 @@ function viewCountry(res){
     //                 confirmUser()
     //             })
 
-loginusername.addEventListener('change', () => {
-    async function confirmUser() {
-        try {
-            const response = await requestData(`${baseUrl}freeuser`, 'POST', {"username": loginusername.value});          
+// loginusername.addEventListener('change', () => {
+//     async function confirmUser() {
+//         try {
+//             const response = await requestData(`${baseUrl}freeuser`, 'POST', {"username": loginusername.value});          
             
-            if(response.resultcode){
-                shakylog(false)
-            }else{
-                shakylog(true)
-                setTimeout(function() {
-                    shakylog(false)
-                }, 5000); 
-            }
+//             if(response.resultcode){
+//                 shakylog(false)
+//             }else{
+//                 shakylog(true)
+//                 setTimeout(function() {
+//                     shakylog(false)
+//                 }, 5000); 
+//             }
             
                     
-                } catch (error) {
-                    alert(error);
-                }
-            }
+//                 } catch (error) {
+//                     alert(error);
+//                 }
+//             }
             
-            confirmUser()
-        })
+//             confirmUser()
+//         })
 
 
 

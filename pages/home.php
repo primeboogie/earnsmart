@@ -102,7 +102,7 @@
 }
 .tonextlink i{
     font-size: 14px;
-    color: blue;
+    color: #fff;
     text-decoration: underline ;
     text-align: center;
     margin: 0 auto;
@@ -171,6 +171,9 @@
   text-align: center;
   margin-top: 15px;
 }
+h1{
+  color: orangered;
+}
 
 .agreement a {
   text-decoration: none;
@@ -182,7 +185,7 @@
 
 <body>
   
-<h1>hOME pAGE</h1>
+<h1>Home Page</h1>
 <span class="tonextlink"><a href=<?php echo $admin['domain']."/login"; ?>><i>Login</i></a></span>
 <span class="tonextlink"><a href=<?php echo $admin['domain']."/reg"; ?>><i>SignUp</i></a></span>
 

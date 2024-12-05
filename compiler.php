@@ -6,8 +6,9 @@
 <body>
 
     <div class="overs" id="overs"> </div>
-    <div class="movers" id="movers"> </div>
-    <div class="mloader" id="loaderrrr">
+    <div class="movers" id="movers"> 
+
+        <div class="mloader" id="loaderrrr">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
@@ -17,8 +18,9 @@
         <div class="bar7"></div>
         <div class="bar8"></div>
         <div class="bar9"></div>
-
+        
     </div>
+</div>
 
 
 

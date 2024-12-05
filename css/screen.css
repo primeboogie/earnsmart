@@ -38,11 +38,8 @@ body{
     --bgdiv6: linear-gradient(135deg, #ff8c00, #ffa500);
     --bgdiv7: linear-gradient(135deg, #ba55ff, #8f00ff);
     --bgdiv8: linear-gradient(135deg, #179b00, #50ff00);
-<<<<<<< HEAD
     --bgdiv9: linear-gradient(135deg, #552902, #e67700);
-=======
-    --bgdiv9: linear-gradient(135deg, #de1414, #ff5900);
->>>>>>> 313ece8 (Save local changes before pull)
+    /* --bgdiv9: linear-gradient(135deg, #de1414, #ff5900); */
 
     --border1: thin solid #fff;
 
@@ -76,6 +73,8 @@ body{
   background: #fff ;
   opacity: 0;
   transition: all .5s ease-in-out;
+  place-content: center;
+  place-items: center;
 }
 .showmovers{
   opacity: 1;
@@ -89,18 +88,16 @@ body{
 
 /* From Uiverse.io by Satwinder04 */ 
 .mloader {
-  position: fixed;
-    top: 50%;
+  position: relative;
+    /* top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
     width: 164px;
     height: 100px;
   
     z-index: 100;
   background: #fff;
   display: none;
-  /* justify-content: center;
-  align-items: center; */
 }
 
 .mloader div {
