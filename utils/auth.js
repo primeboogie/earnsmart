@@ -1,5 +1,5 @@
-let baseUrl = "https://earnsmart.seosblog.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnsmart.seosblog.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 let mySource = baseUrl.slice(0,-8)
 
 let menuid = document.getElementById("menuid");
@@ -142,7 +142,7 @@ if(linkbtn){
         document.execCommand('copy');
         
         document.body.removeChild(tempTextArea);
-        alert(`Your Link is pasted In Your Clipboard Successfully`)
+        myalert(`Your Link is Coppied To Your Clipboard Successfully`)
     })
 }
 const updateElements = (selectors, value) => {
@@ -205,9 +205,7 @@ async function data() {
                         try {
                             const response = await requestData(`${baseUrl}soloupdate`, 'POST',datasent);           
                             if (Array.isArray(response.info) && response.info.length > 0) {
-                                response.info.forEach(value => {
-                                    alert(value.msg);
-                                });
+               notify(response.info)
                             }
                         } catch (error) {
                             console.log(error);
@@ -1478,7 +1476,7 @@ if(acvtivateme){
         earnenroll.forEach(val => {
             val.addEventListener('click', () => {
 
-                if(confirm("You Are About To Exit Earn Empire")){
+                if(myalert("You Are About To Exit Earn Empire")){
                     const newTab = window.open("https://one.exnesstrack.net/a/8pcjc79d5c");
                     if (newTab) {
                         newTab.focus();
@@ -1503,9 +1501,7 @@ if(acvtivateme){
                 try {
                     const response = await requestData(`${baseUrl}confirmpayforclient`, 'POST', formObject);          
                     if (Array.isArray(response.info) && response.info.length > 0) {
-                            response.info.forEach(value => {
-                                alert(value.msg);
-                            });
+   notify(response.info)
                         }
         if (response.status == 200) {
             
@@ -2272,7 +2268,7 @@ function notify(notifications){
 notifications.forEach((notification) => {
   const notificationElement = document.createElement("div");
   notificationElement.className =
-    "w-96 bg-purple-700 text-white rounded-md shadow-md animate-slide-down border overflow-hidden";
+    "w-[96%] lg:w-96 bg-purple-700 text-white rounded-md shadow-md animate-slide-down border overflow-hidden";
   notificationElement.innerHTML = `
     <div class="px-4 py-2 border-b bg-purple-600 border-white flex justify-between items-center" style="color: yellow">
       <span class="font-semibold gap-2 flex items-center">
@@ -2296,7 +2292,7 @@ notifications.forEach((notification) => {
 </button>
 
     </div>
-    <div class="px-4 py-2">
+    <div class="px-4 py-2 text-sm">
       <p>${notification.msg}</p>
       <p class="text-sm text-gray-400">${notification.time}</p>
     </div>
@@ -2310,3 +2306,29 @@ notifications.forEach((notification) => {
 if(!casinodiv){
     setTimeout(data,0);
 }
+
+function myalert(msg) {
+    let cont = document.createElement('div');
+    cont.className = "w-[96%] fixed top-6 p-2 lg:w-96 bg-purple-700 text-white rounded-md shadow-md animate-slide-down border overflow-hidden z-50";
+    cont.id = "myalert";
+    cont.innerHTML = `
+        <p class="p-2">${msg}</p>
+        <span class="flex gap-5 items-center justify-around mt-4">
+            <button class="authbtn bg-red-500 text-sm" id="closeBtn">Close</button>
+            <button class="authbtn bg-green-500 text-sm" id="okayBtn">Okay</button>
+        </span>
+    `;
+    document.getElementsByTagName('body')[0].append(cont);
+
+    // Attach event listeners to the buttons
+    document.getElementById('closeBtn').addEventListener('click', () => closeAlert(false));
+    document.getElementById('okayBtn').addEventListener('click', () => closeAlert(true));
+
+    function closeAlert(action) {
+        cont.remove(); // Remove the alert div
+        return action == true
+    }
+
+}
+
+// myalert("inche Nyoko")
