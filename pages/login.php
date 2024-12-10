@@ -181,6 +181,10 @@
 </style>
 
 <body>
+
+<div id="notifications" class="absolute top-4 inset-x-0 flex flex-col items-center space-y-4 z-50"></div>
+
+
   
   <div class="containerss">
     <div class="heading">Sign In</div>
@@ -250,6 +254,7 @@
   </div>
 
 <script src="utils/home.js"></script>
+
 
 </body>
 </html>

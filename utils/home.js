@@ -20,17 +20,14 @@ let foremail = document.getElementById("email");
 let loginusername = document.getElementById("loginusername");
 let logusername = document.getElementById("logusername");
 
-
 // const showLogin = document.getElementById('showLogin');
 // const killlogin = document.getElementById('killlogin');
-const containerin = document.querySelector('#containerin');
+const containerin = document.querySelector("#containerin");
 
-const forgot = document.getElementById('forgot');
-
+const forgot = document.getElementById("forgot");
 
 // const changesigin = document.getElementById('changesigin');
 // const changesignup = document.getElementById('changesignup');
-
 
 // changesigin.addEventListener('click', () =>{
 //     containerin.classList.toggle('handletrans');
@@ -42,29 +39,28 @@ const forgot = document.getElementById('forgot');
 //     containerin.classList.toggle('handletrans');
 // })
 
+if (forgot) {
+  forgot.addEventListener("click", () => {
+    let myinput = prompt("Please Enter Your Account Email..");
 
-if(forgot){
-    forgot.addEventListener('click', () => {
-        let myinput = prompt("Please Enter Your Account Email..")
+    async function sendemail() {
+      try {
+        const response = await requestData(`${baseUrl}newpasswords`, "POST", {
+          email: myinput,
+        });
 
-        async function sendemail() {
-            try {
-                const response = await requestData(`${baseUrl}newpasswords`, 'POST', {"email": myinput});          
-  
-                if (Array.isArray(response.info) && response.info.length > 0) {
-                        response.info.forEach(value => {
-                            alert(value.msg);
-                        });
-                    }
-        
-
-            } catch (error) {
-                console.log(error);
-            }
+        if (Array.isArray(response.info) && response.info.length > 0) {
+          response.info.forEach((value) => {
+            alert(value.msg);
+          });
         }
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
-        sendemail();
-    })
+    sendemail();
+  });
 }
 // showLogin.addEventListener('click', () => {
 //     containerin.classList.toggle('handletrans');
@@ -75,8 +71,8 @@ if(forgot){
 // });
 
 // const showSignup = document.getElementById('showSignup');
-const killlSignup = document.getElementById('killlSignup');
-const containerup = document.querySelector('#containerup');
+const killlSignup = document.getElementById("killlSignup");
+const containerup = document.querySelector("#containerup");
 
 // showSignup.addEventListener('click', () => {
 //     containerup.classList.toggle('handletrans');
@@ -86,31 +82,28 @@ const containerup = document.querySelector('#containerup');
 //     containerup.classList.toggle('handletrans');
 // });
 
-
-
 async function requestData(url, method = "GET", myBody = null) {
-    let request = {
-        method: method,
-        headers: {
-            "Content-Type": "Application/json",
-            "Accept": "Application/json" 
-        }
-    };
+  let request = {
+    method: method,
+    headers: {
+      "Content-Type": "Application/json",
+      Accept: "Application/json",
+    },
+  };
 
-    if (myBody !== null) {
-        request.body = JSON.stringify(myBody);
-    }
+  if (myBody !== null) {
+    request.body = JSON.stringify(myBody);
+  }
 
-    try {
-        const response = await fetch(url, request);
-        const data = await response.json();
+  try {
+    const response = await fetch(url, request);
+    const data = await response.json();
 
-        return data
-    } catch (error) {
-        return error
-    }
+    return data;
+  } catch (error) {
+    return error;
+  }
 }
-
 
 // async function LisTCountrys() {
 //     try {
@@ -147,25 +140,21 @@ async function requestData(url, method = "GET", myBody = null) {
 //                     viewCountry(false)
 //                 } )
 //             });
-            
+
 //         }
 //     } catch (error) {
 //         console.error(error);
 //     }
 // }
 
-
-
-
-function viewCountry(res){
-    if(res){
-        document.getElementById("countrylist").style.display = "grid";
-        document.getElementById("overs").style.display = "grid";
-    }else{
-        document.getElementById("countrylist").style.display = "none";
-        document.getElementById("overs").style.display = "none";
-        
-    }
+function viewCountry(res) {
+  if (res) {
+    document.getElementById("countrylist").style.display = "grid";
+    document.getElementById("overs").style.display = "grid";
+  } else {
+    document.getElementById("countrylist").style.display = "none";
+    document.getElementById("overs").style.display = "none";
+  }
 }
 
 // function openLoader(res){
@@ -175,8 +164,6 @@ function viewCountry(res){
 //         document.getElementById("loaderrr").style.display = "none";
 //     }
 // }
-
-
 
 // countryid.addEventListener('click', ()=>{
 //     viewCountry(true)
@@ -195,30 +182,29 @@ function viewCountry(res){
 
 //         async function registerPost() {
 //             try {
-//                 const response = await requestData(`${baseUrl}register`, 'POST', formObject);          
-        
+//                 const response = await requestData(`${baseUrl}register`, 'POST', formObject);
+
 //                 if(response.resultcode){
 
-//                     const responseLogin = await requestData(`${baseUrl}login`, 'POST', formObject);  
-          
-            
+//                     const responseLogin = await requestData(`${baseUrl}login`, 'POST', formObject);
+
 //                     if(responseLogin.resultcode){
 //                         setCookie("access_token", responseLogin.data['access_token'],1)
 //                         login.reset();
-                        
-                        // ! confirm change here 
-                        // window.location.href = '/earnsmart/'
-                        
-                        // window.location.href = '/'
+
+// ! confirm change here
+// window.location.href = '/earnsmart/'
+
+// window.location.href = '/'
 //                     }
 
 //                     register.reset();
 //                 }
-//                 if (Array.isArray(response.info) && response.info.length > 0) {
-//                         response.info.forEach(value => {
-//                             alert(value.msg);
-//                         });
-//                     }
+                // if (Array.isArray(response.info) && response.info.length > 0) {
+                //         response.info.forEach(value => {
+                //             alert(value.msg);
+                //         });
+                //     }
 
 //             } catch (error) {
 //                 console.log(error);
@@ -229,190 +215,214 @@ function viewCountry(res){
 //         registerPost();
 //     })
 
+function setCookie(name, value, days) {
+  let expires = "";
+  if (days) {
+    const date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
 
-    function setCookie(name, value, days) {
-        let expires = "";
-        if (days) {
-            const date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toUTCString();
+login.addEventListener("submit", (e) => {
+  e.preventDefault();
+  // openLoader(true)
+
+  const formData = new FormData(login);
+
+  const formObject = {};
+  formData.forEach((value, key) => {
+    formObject[key] = value;
+  });
+
+  async function loginPost() {
+    try {
+      const response = await requestData(`${baseUrl}login`, "POST", formObject);
+
+      if (response.resultcode) {
+        setCookie("access_token", response.data["access_token"], 1);
+        login.reset();
+        if (Array.isArray(response.info) && response.info.length > 0) {
+          notify(response.info)
         }
-        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        setTimeout(() => {
+            // ! confirm change here
+            // window.location.href = "/earnsmart/";
+            window.location.href = '/'
+        }, 2000)
+      }
+    } catch (error) {
+      console.log(error);
     }
+    // openLoader(false)
+  }
 
-    login.addEventListener('submit', (e) => {
-        e.preventDefault()
-        console.log("boogie")
-        // openLoader(true)
-    
-            const formData = new FormData(login);
-    
-            const formObject = {};
-            formData.forEach((value, key) => {
-                formObject[key] = value;
-            });
-    
-            async function loginPost() {
-                try {
-                    const response = await requestData(`${baseUrl}login`, 'POST', formObject);  
-          
-            
-                    if(response.resultcode){
-                        setCookie("access_token", response.data['access_token'],1)
-                        login.reset();
-                        
-                        // ! confirm change here 
-                        // window.location.href = '/earnsmart/'
-                        window.location.href = '/'
-                    }
-                    if (Array.isArray(response.info) && response.info.length > 0) {
-                            response.info.forEach(value => {
+  loginPost();
+});
 
-                                if(!response.resultcode){
-                                    alert(value.msg);
-                                }
-                            });
-                        }
-    
-                } catch (error) {
-                    console.log(error);
-                }
-            // openLoader(false)
-            }
-    
-            loginPost();
-        })
+// LisTCountrys();
 
+let shaky = (resp) => {
+  if (resp) {
+    forusername.classList.add("shacky");
+  } else {
+    forusername.classList.remove("shacky");
+  }
+};
 
-    // LisTCountrys();
+let shakyem = (resp) => {
+  if (resp) {
+    foremail.classList.add("shacky");
+  } else {
+    foremail.classList.remove("shacky");
+  }
+};
 
-    let shaky = (resp) =>{
-        if(resp){
-            forusername.classList.add("shacky")
-        }else{
-            forusername.classList.remove("shacky")
-        }
-    } 
+let shakyph = (resp) => {
+  if (resp) {
+    forphone.classList.add("shacky");
+  } else {
+    forphone.classList.remove("shacky");
+  }
+};
 
+let shakylog = (resp) => {
+  if (resp) {
+    logusername.classList.add("shacky");
+  } else {
+    logusername.classList.remove("shacky");
+  }
+};
 
-    let shakyem = (resp) =>{
-        if(resp){
-            foremail.classList.add("shacky")
-        }else{
-            foremail.classList.remove("shacky")
-        }
-    } 
+window.addEventListener("click", (event) => {
+  if (event.target == document.getElementById("overs")) {
+    viewCountry(false);
+  }
+});
+// document.getElementById("closeC").addEventListener('click', () => {
+//     viewCountry(false)
+// })
 
+// sinusername.addEventListener('input', () => {
+//     async function confirmUser() {
+//         try {
+//             const response = await requestData(`${baseUrl}freeuser`, 'POST', {"username": sinusername.value});
 
+//             if(response.resultcode){
+//                 shaky(true)
+//             }else{
+//                 shaky(false)
+//             }
+//                 } catch (error) {
+//                     alert(error);
+//                 }
+//             }
 
-    let shakyph = (resp) =>{
-        if(resp){
-            forphone.classList.add("shacky")
-        }else{
-            forphone.classList.remove("shacky")
-        }
-    } 
+//             confirmUser()
+//         })
 
-    let shakylog = (resp) =>{
-        if(resp){
-            logusername.classList.add("shacky")
-        }else{
-            logusername.classList.remove("shacky")
-        }
-    } 
+//         sinemail.addEventListener('input', () => {
+//             async function confirmUser() {
+//                 try {
+//                     const response = await requestData(`${baseUrl}freeemail`, 'POST', {"email": sinemail.value});
 
-    window.addEventListener('click', (event) => {
-        if (event.target == document.getElementById("overs")) {
-            viewCountry(false)
-        }
-        
-    });
-    // document.getElementById("closeC").addEventListener('click', () => {
-    //     viewCountry(false)
-    // })
+//                     if(response.resultcode){
+//                         shakyem(true)
+//                     }else{
+//                         shakyem(false)
+//                     }
+//                         } catch (error) {
+//                             alert(error);
+//                         }
+//                     }
 
-    // sinusername.addEventListener('input', () => {
-    //     async function confirmUser() {
-    //         try {
-    //             const response = await requestData(`${baseUrl}freeuser`, 'POST', {"username": sinusername.value});          
-                
-    //             if(response.resultcode){
-    //                 shaky(true)
-    //             }else{
-    //                 shaky(false)
-    //             }
-    //                 } catch (error) {
-    //                     alert(error);
-    //                 }
-    //             }
-                
-    //             confirmUser()
-    //         })
+//                     confirmUser()
+//                 })
 
-    //         sinemail.addEventListener('input', () => {
-    //             async function confirmUser() {
-    //                 try {
-    //                     const response = await requestData(`${baseUrl}freeemail`, 'POST', {"email": sinemail.value});          
-                        
-    //                     if(response.resultcode){
-    //                         shakyem(true)
-    //                     }else{
-    //                         shakyem(false)
-    //                     }
-    //                         } catch (error) {
-    //                             alert(error);
-    //                         }
-    //                     }
-                        
-    //                     confirmUser()
-    //                 })
+//     sinphone.addEventListener('input', () => {
+//         if(sinphone.value[0] == 0){
+//             sinphone.value = sinphone.value.replace(/^0+/, '')
+//         }
+//         async function confirmUser() {
+//             try {
+//                 const response = await requestData(`${baseUrl}freephone`, 'POST', {"phone": sinphone.value});
 
-    //     sinphone.addEventListener('input', () => {
-    //         if(sinphone.value[0] == 0){
-    //             sinphone.value = sinphone.value.replace(/^0+/, '')
-    //         }
-    //         async function confirmUser() {
-    //             try {
-    //                 const response = await requestData(`${baseUrl}freephone`, 'POST', {"phone": sinphone.value});          
-                    
-    //                 if(response.resultcode){
-    //                     shakyph(true)
-    //                 }else{
-    //                     shakyph(false)
-    //                 }
-    //                     } catch (error) {
-    //                         alert(error);
-    //                     }
-    //                 }
-                    
-    //                 confirmUser()
-    //             })
+//                 if(response.resultcode){
+//                     shakyph(true)
+//                 }else{
+//                     shakyph(false)
+//                 }
+//                     } catch (error) {
+//                         alert(error);
+//                     }
+//                 }
+
+//                 confirmUser()
+//             })
 
 // loginusername.addEventListener('change', () => {
 //     async function confirmUser() {
 //         try {
-//             const response = await requestData(`${baseUrl}freeuser`, 'POST', {"username": loginusername.value});          
-            
+//             const response = await requestData(`${baseUrl}freeuser`, 'POST', {"username": loginusername.value});
+
 //             if(response.resultcode){
 //                 shakylog(false)
 //             }else{
 //                 shakylog(true)
 //                 setTimeout(function() {
 //                     shakylog(false)
-//                 }, 5000); 
+//                 }, 5000);
 //             }
-            
-                    
+
 //                 } catch (error) {
 //                     alert(error);
 //                 }
 //             }
-            
+
 //             confirmUser()
 //         })
 
 
 
+const notificationContainer = document.getElementById("notifications");
+
+function notify(notifications){
+
+
+// Render notifications
+notifications.forEach((notification) => {
+  const notificationElement = document.createElement("div");
+  notificationElement.className =
+    "w-96 bg-purple-700 text-white rounded-md shadow-md animate-slide-down border overflow-hidden";
+  notificationElement.innerHTML = `
+    <div class="px-4 py-2 border-b bg-purple-600 border-white flex justify-between items-center" style="color: yellow">
+      <span class="font-semibold gap-2 flex items-center">
+        ${
+            notification.icon
+        }
         
-        
-        
+        ${
+          notification.state === 1
+            ? "Error"
+            : notification.state === 2
+            ? "Success"
+            : "Info"
+        }
+      </span>
+<button
+  class="text-orange-500 hover:text-red-300 rounded-full w-5 h-5 bg-white flex items-center justify-center"
+  onclick="this.parentElement.parentElement.remove()"
+>
+  ✕
+</button>
+
+    </div>
+    <div class="px-4 py-2">
+      <p>${notification.msg}</p>
+      <p class="text-sm text-gray-400">${notification.time}</p>
+    </div>
+  `;
+  notificationContainer.appendChild(notificationElement);
+});
+}

@@ -38,7 +38,7 @@ body{
     --bgdiv6: linear-gradient(135deg, #ff8c00, #ffa500);
     --bgdiv7: linear-gradient(135deg, #ba55ff, #8f00ff);
     --bgdiv8: linear-gradient(135deg, #179b00, #50ff00);
-    --bgdiv9: linear-gradient(135deg, #552902, #e67700);
+    --bgdiv9: linear-gradient(135deg, #b65f02, #e67700);
     /* --bgdiv9: linear-gradient(135deg, #de1414, #ff5900); */
 
     --border1: thin solid #fff;
@@ -243,4 +243,19 @@ body{
 .authbtn:active {
   box-shadow: inset 0px 0.1em 0.6em #3c4fe0;
   transform: translateY(0em);
+}
+
+@keyframes slideDownNotify {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slideDownNotify 0.5s ease-in-out forwards;
 }

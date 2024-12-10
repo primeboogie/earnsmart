@@ -49,14 +49,14 @@
     grid-template-rows: repeat(2, 1fr);
     align-items: center;
     padding-right: .6rem;
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     color: red;
     background: #efeeee;
 }
 #inmoneyh{
     grid-area: 1/1/2/2;
     font-size: 1.3em;
-    color: #000;
+    color: #595454;
     font-weight: 600;
     padding: .6rem .9rem;
 }
@@ -65,13 +65,13 @@
     padding-left: 0.8em;
 }
 #inmoneyb #usys{
-    color:  blue !important;
+    color:  #4343f1 !important;
     font-style: normal;
     font-weight: 800;
 
 }
 #inmoneyb i:nth-child(2){
-    color: #000;
+    color: #544f4f;
     font-weight: 700;
     font-style: normal;
 }

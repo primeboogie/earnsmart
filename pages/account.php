@@ -119,50 +119,51 @@
   <div class="bg-pattern absolute inset-0 opacity-10"></div>
   <div class="p-0 relative z-10">
             <div class="border-b-4 w-full p-4 font-bold text-white items-center text-2xl flex gap-2">
-            <i class="fa-regular fa-user myenclose"></i> ZanyTech
+            <i class="fa-regular fa-user myenclose" onClick="window.location.href='<?php echo $dev['root']; ?>/profile'"></i> ZanyTech
             <i class="fa-solid fa-circle-check text-lg text-blue-500"></i>
             </div>
-            <div class="flex items-center gap-2 text-white/80 mb-4 pl-6 py-2 relative w-full">
+            <div class="flex items-center gap-2 text-white/80 mb-4 pl-4 py-2 relative w-full">
                 <i data-lucide="wallet" class="w-4 h-4"></i>
                 <span class="text-sm font-bold">Your Total Profits</span>
 
 
-                <div class="w-44 rounded-bl-xl  py-4 px-2 h-auto pb-4 absolute right-0 bg-gray-900/20  grid place-content-center align-item-start top-0">
-                    <span class="text-base font-thin text-slate-200 ">Total Expenses:</span>
-                    <div class=" text-base  text-yellow-500 text-center font-bold text-nowrap">KES 500</div>
+                <div class="w-30 rounded-bl-xl  py-4 px-2 h-auto pb-4 absolute right-0 bg-gray-900/30  grid place-content-center align-item-start top-0">
+                    <span class="text-base font-normal text-yellow-300 ">Total Capital:</span>
+                    <div class=" text-base  text-yellow-300 text-center font-bold text-nowrap">KES 500</div>
                 </div>
             </div>
             <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
 
             
-            <div class="text-white text-xl font-bold mb-8 pl-6"   style="font-family: 'Lora', serif;" >
-                KES 4,562,522.00
+            <div class="text-white text-xl font-bold mb-8 pl-4"   style="font-family: 'Signika Negative', sans-serif;" >
+                 4,562,522.00 <i class="text-sm not-italic">KES</i>
             </div>
 
             <div class="grid grid-cols-4 gap-4 px-6 place-content-evenly">
                 <button class="flex flex-col items-center gap-1">
                     <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
-                        <i data-lucide="dollar-sign" class="w-5 h-5 text-white"></i>
+                        <i data-lucide="dollar-sign" class="w-5 h-5 text-white" 
+                        onClick="window.location.href='<?php echo $dev['root']; ?>/withdrawal'"></i>
                     </div>
-                    <span class="text-white/80 text-xs">Withdraw</span>
+                    <span class="text-white/80 text-xs"  >Withdraw</span>
                 </button>
                 <button class="flex flex-col items-center gap-1">
                     <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
-                        <i data-lucide="wallet" class="w-5 h-5 text-white"></i>
+                        <i data-lucide="wallet" class="w-5 h-5 text-white" onClick="window.location.href='<?php echo $dev['root']; ?>/deposit'"></i>
                     </div>
-                    <span class="text-white/80 text-xs">Deposit</span>
+                    <span class="text-white/80 text-xs" >Deposit</span>
                 </button>
                 <button class="flex flex-col items-center gap-1">
                     <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
-                        <i data-lucide="clock" class="w-5 h-5 text-white"></i>
+                        <i data-lucide="clock" class="w-5 h-5 text-white" onClick="window.location.href='<?php echo $dev['root']; ?>/task'"></i>
                     </div>
-                    <span class="text-white/80 text-xs">Task</span>
+                    <span class="text-white/80 text-xs" >Task</span>
                 </button>
                 <button class="flex flex-col items-center gap-1">
                     <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
-                        <i data-lucide="link-2" class="w-5 h-5 text-white"></i>
+                        <i data-lucide="link-2" class="w-5 h-5 text-white" onClick="window.location.href='<?php echo $dev['root']; ?>/share'"></i>
                     </div>
-                    <span class="text-white/80 text-xs">Share</span>
+                    <span class="text-white/80 text-xs" >Share</span>
                 </button>
                 <!-- <button class="flex flex-col items-center gap-1">
                     <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
@@ -213,6 +214,7 @@
   <div class="ringo"></div>
 
   </div>
+
 
   <div class="card bg9">
   <div class="headers">Total Withdrawals</div>

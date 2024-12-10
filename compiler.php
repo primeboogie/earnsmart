@@ -4,6 +4,8 @@
 </head>
 
 <body>
+<div id="notifications" class="absolute top-4 inset-x-0 flex flex-col items-center space-y-4 z-50"></div>
+
 
     <div class="overs" id="overs"> </div>
     <div class="movers" id="movers"> 

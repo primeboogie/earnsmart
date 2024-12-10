@@ -363,11 +363,9 @@ if(dailyclaim){
             async function dailyclaims() {
                 try {
                     const response = await requestData(`${baseUrl}dailybonus`, 'GET');           
-                    if (Array.isArray(response.info) && response.info.length > 0) {
-                        response.info.forEach(value => {
-                            alert(value.msg);
-                        });
-                    } else {
+            if (Array.isArray(response.info) && response.info.length > 0) {
+          notify(response.info)
+        } else {
                         // ;
                     }
                 } catch (error) {
@@ -388,11 +386,9 @@ if(welcomeclaim){
             async function welcomeclaims() {
                 try {
                     const response = await requestData(`${baseUrl}welcomebonus`, 'GET');           
-                    if (Array.isArray(response.info) && response.info.length > 0) {
-                        response.info.forEach(value => {
-                            alert(value.msg);
-                        });
-                    } else {
+            if (Array.isArray(response.info) && response.info.length > 0) {
+          notify(response.info)
+        } else {
                         // ;
                     }
                 } catch (error) {
@@ -513,11 +509,9 @@ if(withforrm){
                     withforrm.reset();
                 }
                 
-                if (Array.isArray(response.info) && response.info.length > 0) {
-                        response.info.forEach(value => {
-                            alert(value.msg);
-                        });
-                    }
+        if (Array.isArray(response.info) && response.info.length > 0) {
+          notify(response.info)
+        }
                    
       
             } catch (error) {
@@ -721,11 +715,9 @@ function withhistory(){
             try {
                 const response = await requestData(`${baseUrl}withdrawalhistory`);          
 
-                if (Array.isArray(response.info) && response.info.length > 0) {
-                        response.info.forEach(value => {
-                            alert(value.msg);
-                        });
-                    }
+        if (Array.isArray(response.info) && response.info.length > 0) {
+          notify(response.info)
+        }
                     const data = response.data;
                     const tbody = document.querySelector('#dataTable tbody');
                     const thead = document.querySelector('#dataTable thead #tableHeader');
@@ -786,11 +778,9 @@ function transfers(){
             try {
                 const response = await requestData(`${baseUrl}populatepayfroclient`);          
 
-                if (Array.isArray(response.info) && response.info.length > 0) {
-                        response.info.forEach(value => {
-                            alert(value.msg);
-                        });
-                    }
+        if (Array.isArray(response.info) && response.info.length > 0) {
+          notify(response.info)
+        }
                     const data = response.data;
                     const tbody = document.querySelector('#dataTable tbody');
                     const thead = document.querySelector('#dataTable thead #tableHeader');
@@ -860,11 +850,9 @@ function justcon(){
             try {
                 const response = await requestData(`${baseUrl}myDownlines&level=${lastDigit}`);          
 
-                if (Array.isArray(response.info) && response.info.length > 0) {
-                        response.info.forEach(value => {
-                            alert(value.msg);
-                        });
-                    }
+        if (Array.isArray(response.info) && response.info.length > 0) {
+          notify(response.info)
+        }
                     const data = response.data.data;
                     const tbody = document.querySelector('#dataTable tbody');
                     const thead = document.querySelector('#dataTable thead #tableHeader');
@@ -946,11 +934,9 @@ if(depoform){
                     depoform.reset();
                     window.location.reload();
                 }
-                if (Array.isArray(response.info) && response.info.length > 0) {
-                        response.info.forEach(value => {
-                            alert(value.msg);
-                        });
-                    }
+        if (Array.isArray(response.info) && response.info.length > 0) {
+          notify(response.info)
+        }
       
             } catch (error) {
                 console.log(error);
@@ -1078,11 +1064,9 @@ if(acvtivateme){
             async function sendanswer() {
                 try {
                     const response = await requestData(`${baseUrl}answerdquiz`, 'POST',formObject);           
-                    if (Array.isArray(response.info) && response.info.length > 0) {
-                        response.info.forEach(value => {
-                            alert(value.msg);
-                        });
-                    } 
+            if (Array.isArray(response.info) && response.info.length > 0) {
+          notify(response.info)
+        } 
                 } catch (error) {
                     console.log(error);
                 }
@@ -1263,11 +1247,9 @@ if(acvtivateme){
                     const response = await requestData(`${baseUrl}populateads`);     
                     
                     
-                    if (Array.isArray(response.info) && response.info.length > 0) {
-                        response.info.forEach(value => {
-                            alert(value.msg);
-                        });
-                    } 
+            if (Array.isArray(response.info) && response.info.length > 0) {
+          notify(response.info)
+        } 
                     if(response.resultcode){
                         adscontainer.style.display = "grid"
                         populteads(response.data);
@@ -1368,11 +1350,9 @@ if(acvtivateme){
             async function payoutvideo(vid) {
                 try {
                     const response = await requestData(`${baseUrl}paytiktok`, 'POST',{vid: vid});           
-                    if (Array.isArray(response.info) && response.info.length > 0) {
-                        response.info.forEach(value => {
-                            alert(value.msg);
-                        });
-                    } 
+            if (Array.isArray(response.info) && response.info.length > 0) {
+          notify(response.info)
+        } 
                     if(response.resultcode){
                         data(); // Refresh the data after payout
                     }
@@ -1394,11 +1374,9 @@ if(acvtivateme){
                     const response = await requestData(`${baseUrl}populatetiktok`);     
                     
                     
-                    if (Array.isArray(response.info) && response.info.length > 0) {
-                        response.info.forEach(value => {
-                            alert(value.msg);
-                        });
-                    } 
+            if (Array.isArray(response.info) && response.info.length > 0) {
+          notify(response.info)
+        } 
                     if(response.resultcode){
                         tiktokvideo.style.display = "grid"
                         popultetiktok(response.data);
@@ -1467,11 +1445,9 @@ if(acvtivateme){
             async function payoutvideo(vid) {
                 try {
                     const response = await requestData(`${baseUrl}paytiktok`, 'POST',{vid: vid});           
-                    if (Array.isArray(response.info) && response.info.length > 0) {
-                        response.info.forEach(value => {
-                            alert(value.msg);
-                        });
-                    } 
+            if (Array.isArray(response.info) && response.info.length > 0) {
+          notify(response.info)
+        } 
                     if(response.resultcode){
                         data(); // Refresh the data after payout
                     }
@@ -2286,6 +2262,48 @@ if(sharepage){
 }
 
 
+
+const notificationContainer = document.getElementById("notifications");
+
+function notify(notifications){
+
+
+// Render notifications
+notifications.forEach((notification) => {
+  const notificationElement = document.createElement("div");
+  notificationElement.className =
+    "w-96 bg-purple-700 text-white rounded-md shadow-md animate-slide-down border overflow-hidden";
+  notificationElement.innerHTML = `
+    <div class="px-4 py-2 border-b bg-purple-600 border-white flex justify-between items-center" style="color: yellow">
+      <span class="font-semibold gap-2 flex items-center">
+        ${
+            notification.icon
+        }
+        
+        ${
+          notification.state === 1
+            ? "Error"
+            : notification.state === 2
+            ? "Success"
+            : "Info"
+        }
+      </span>
+<button
+  class="text-orange-500 hover:text-red-300 rounded-full w-5 h-5 bg-white flex items-center justify-center"
+  onclick="this.parentElement.parentElement.remove()"
+>
+  ✕
+</button>
+
+    </div>
+    <div class="px-4 py-2">
+      <p>${notification.msg}</p>
+      <p class="text-sm text-gray-400">${notification.time}</p>
+    </div>
+  `;
+  notificationContainer.appendChild(notificationElement);
+});
+}
 
 
 
