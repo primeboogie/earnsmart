@@ -169,51 +169,51 @@ function viewCountry(res) {
 //     viewCountry(true)
 // })
 
-// register.addEventListener('submit', (e) => {
-//     e.preventDefault()
-//     openLoader(true)
+if(register){
 
-//         const formData = new FormData(register);
+register.addEventListener('submit', (e) => {
+    e.preventDefault()
+    // openLoader(true)
 
-//         const formObject = {};
-//         formData.forEach((value, key) => {
-//             formObject[key] = value;
-//         });
+        const formData = new FormData(register);
 
-//         async function registerPost() {
-//             try {
-//                 const response = await requestData(`${baseUrl}register`, 'POST', formObject);
+        const formObject = {};
+        formData.forEach((value, key) => {
+            formObject[key] = value;
+        });
 
-//                 if(response.resultcode){
+        async function registerPost() {
+            try {
+                const response = await requestData(`${baseUrl}register`, 'POST', formObject);
 
-//                     const responseLogin = await requestData(`${baseUrl}login`, 'POST', formObject);
+                if(response.resultcode){
 
-//                     if(responseLogin.resultcode){
-//                         setCookie("access_token", responseLogin.data['access_token'],1)
-//                         login.reset();
+                    const responseLogin = await requestData(`${baseUrl}login`, 'POST', formObject);
+
+                    if(responseLogin.resultcode){
+                        setCookie("access_token", responseLogin.data['access_token'],1)
+                        register.reset();
 
 // ! confirm change here
-// window.location.href = '/earnsmart/'
+                    // window.location.href = '/earnsmart/'
 
-// window.location.href = '/'
-//                     }
+                    window.location.href = '/'
+                    }
 
-//                     register.reset();
-//                 }
-                // if (Array.isArray(response.info) && response.info.length > 0) {
-                //         response.info.forEach(value => {
-                //             alert(value.msg);
-                //         });
-                //     }
+                }
+                if (Array.isArray(response.info) && response.info.length > 0) {
+                            notify(response.info);
+                    }
 
-//             } catch (error) {
-//                 console.log(error);
-//             }
-//         openLoader(false)
-//         }
+            } catch (error) {
+                console.log(error);
+            }
+        // openLoader(false)
+        }
 
-//         registerPost();
-//     })
+        registerPost();
+    })
+  }
 
 function setCookie(name, value, days) {
   let expires = "";
@@ -224,7 +224,7 @@ function setCookie(name, value, days) {
   }
   document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
-
+if(login){
 login.addEventListener("submit", (e) => {
   e.preventDefault();
   // openLoader(true)
@@ -260,6 +260,7 @@ login.addEventListener("submit", (e) => {
 
   loginPost();
 });
+}
 
 // LisTCountrys();
 
@@ -295,14 +296,14 @@ let shakylog = (resp) => {
   }
 };
 
-window.addEventListener("click", (event) => {
-  if (event.target == document.getElementById("overs")) {
-    viewCountry(false);
-  }
-});
+// window.addEventListener("click", (event) => {
+//   if (event.target == document.getElementById("overs")) {
+//     viewCountry(false);
+//   }
+// });
 // document.getElementById("closeC").addEventListener('click', () => {
 //     viewCountry(false)
-// })
+// })profile
 
 // sinusername.addEventListener('input', () => {
 //     async function confirmUser() {

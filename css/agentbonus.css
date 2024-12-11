@@ -44,6 +44,8 @@
     font-size: 1em;
     font-weight: 600;
     text-wrap: nowrap;
+    font-family: "Black Ops One", system-ui;
+
 }
 
 .circle {
@@ -138,6 +140,9 @@
         font-weight: 700;
         text-wrap: wrap;
         grid-area: 1/1/2/2;
+    font-family: "Black Ops One", system-ui;
+
+
 
     }
     .balanceCard {

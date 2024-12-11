@@ -149,6 +149,54 @@ const updateElements = (selectors, value) => {
     document.querySelectorAll(selectors).forEach(el => el.innerHTML = value);
 };
 
+function formatNumber(num) {
+    return num.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+// Function to animate numbers
+function animateNumber(elementId, targetValue, duration = 1000) {
+    const element = document.querySelector(elementId);
+    if (!element) return;
+
+    // Remove commas and convert to number
+    targetValue = parseFloat(targetValue.toString().replace(/,/g, ''));
+    let startValue = 0;
+    const increment = targetValue / (duration / 16); // Calculate increment per frame (~60fps)
+
+    function update() {
+        startValue += increment;
+        if (startValue >= targetValue) {
+            startValue = targetValue; // Ensure it stops at the target value
+        }
+
+        element.textContent = formatNumber(startValue); // Update element text with formatted number
+
+        if (startValue < targetValue) {
+            requestAnimationFrame(update); // Continue animation
+        }
+    }
+
+    requestAnimationFrame(update); // Start animation
+}
+
+
+// Function to update multiple elements with animation
+function updateElementsWithAnimation(data) {
+    animateNumber("#curbal", data.balance);
+    animateNumber("#expense", data.expense);
+    animateNumber("#curwel", data.bonus);
+    animateNumber("#curwithtotal", data.totalwithdrawal);
+    animateNumber("#curwithpen", data.pendingwithdrawal);
+    animateNumber("#profit", data.profit);
+    animateNumber("#curtivia", data.trivia);
+    animateNumber("#curspin", data.spin);
+    animateNumber("#curyou", data.youtube);
+    animateNumber("#curadd", data.ads);
+    animateNumber("#curtiktok", data.tiktok);
+    animateNumber("#actbals", data.actbal);
+    animateNumber("#actdip", data.deposit);
+}
+
 async function data() {
     try {
         const response = await requestData(`${baseUrl}userdata`, 'GET');
@@ -161,7 +209,8 @@ async function data() {
                     actbal, expense, target, reward, percent, progress,
                      remaining, dailystatus, balance, deposit, bonus, totalwithdrawal,
                       pendingwithdrawal, profit, trivia, spin, youtube, tiktok, ads
-                }
+                },
+                balances,
             } = await response.data;
 
             // Helper function to update element contents
@@ -224,19 +273,21 @@ async function data() {
             updateElements("#email", email);
             updateElements("#phone", phone);
             updateElements("#usys", ccurrency);
-            updateElements("#curbal", balance);
-            updateElements("#expense", expense);
-            updateElements("#curwel", bonus);
-            updateElements("#curwithtotal", totalwithdrawal);
-            updateElements("#curwithpen", pendingwithdrawal);
-            updateElements("#profit", profit);
-            updateElements("#curtivia", trivia);
-            updateElements("#curspin", spin);
-            updateElements("#curyou", youtube);
-            updateElements("#curadd", ads);
-            updateElements("#curtiktok", tiktok);
-            updateElements("#actbals", actbal);
-            updateElements("#actdip", deposit);
+            // updateElements("#curbal", balance);
+            // updateElements("#expense", expense);
+            // updateElements("#curwel", bonus);
+            // updateElements("#curwithtotal", totalwithdrawal);
+            // updateElements("#curwithpen", pendingwithdrawal);
+            // updateElements("#profit", profit);
+            // updateElements("#curtivia", trivia);
+            // updateElements("#curspin", spin);
+            // updateElements("#curyou", youtube);
+            // updateElements("#curadd", ads);
+            // updateElements("#curtiktok", tiktok);
+            // updateElements("#actbals", actbal);
+            // updateElements("#actdip", deposit);
+
+            updateElementsWithAnimation(balances);
 
             updateElementsWithColor("#join", join, status == 2, 'yellow', 'red');
             updateElementsWithColor("#ustatus", status == 2 ? 'Active' : 'Inactive', status === 2, 'yellow', 'red');
@@ -313,9 +364,7 @@ async function data() {
                                 const response = await requestData(`${baseUrl}requestpayment`, 'POST', formObject);  
 
                                 if (Array.isArray(response.info) && response.info.length > 0) {
-                                    response.info.forEach(value => {
-                                        alert(value.msg);
-                                    });
+                           notify(response.info)
                                 }
                                 if(response.resultcode){
                                     let link = response.data['link']
@@ -416,9 +465,7 @@ if(myactivate){
             try {
                 const response = await requestData(`${baseUrl}activateaccount`, 'GET');           
                 if (Array.isArray(response.info) && response.info.length > 0) {
-                    response.info.forEach(value => {
-                        alert(value.msg);
-                    });
+            notify(response.info)
                 } else {
                     // ;
                 }
@@ -471,9 +518,7 @@ passform.addEventListener('submit', (e) => {
             }
             
             if (Array.isArray(response.info) && response.info.length > 0) {
-                    response.info.forEach(value => {
-                        alert(value.msg);
-                    });
+            notify(response.info)
                 }
                 else{
                     
@@ -545,9 +590,7 @@ function grabpayment(data){
             try {
                 const response = await requestData(`${baseUrl}grabpayment`, 'GET');   
                 if (Array.isArray(response.info) && response.info.length > 0) {
-                    response.info.forEach(value => {
-                        alert(value.msg);
-                    });
+            notify(response.info)
                 } 
                 if(response.status == 200){
                     let all  = response.data.methods   
@@ -622,9 +665,7 @@ function grabpayment(data){
                 const response = await requestData(`${baseUrl}requestpayment`, 'POST', formObject);  
 
                 if (Array.isArray(response.info) && response.info.length > 0) {
-                    response.info.forEach(value => {
-                        alert(value.msg);
-                    });
+            notify(response.info)
                 }
                 if(response.resultcode){
                     let link = response.data['link']
@@ -649,9 +690,7 @@ function diphistory(){
             const response = await requestData(`${baseUrl}deposithistory`);          
 
             if (Array.isArray(response.info) && response.info.length > 0) {
-                    response.info.forEach(value => {
-                        alert(value.msg);
-                    });
+            notify(response.info)
                 }
                 const data = response.data.history;
                 const tbody = document.querySelector('#dataTable tbody');
@@ -1037,9 +1076,7 @@ if(acvtivateme){
                     quizsubmit.appendChild(submitbtn)
                 } 
                 if (Array.isArray(response.info) && response.info.length > 0) {
-                    response.info.forEach(value => {
-                        alert(value.msg);
-                    });
+            notify(response.info)
                 }
             } catch (error) {
                 console.log(error)
@@ -1093,9 +1130,7 @@ if(acvtivateme){
                 
                 
                 if (Array.isArray(response.info) && response.info.length > 0) {
-                    response.info.forEach(value => {
-                        alert(value.msg);
-                    });
+            notify(response.info)
                 } 
                 if(response.resultcode){
                     youtubevideo.style.display = "grid"
@@ -1218,9 +1253,7 @@ if(acvtivateme){
             try {
                 const response = await requestData(`${baseUrl}payyoutube`, 'POST',{vid: vid});           
                 if (Array.isArray(response.info) && response.info.length > 0) {
-                    response.info.forEach(value => {
-                        alert(value.msg);
-                    });
+            notify(response.info)
                 } 
                 if(response.resultcode){
                     data();
@@ -1315,11 +1348,9 @@ if(acvtivateme){
                                             if(response.resultcode){
                                                 requestads()
                                             }
-                                            if (Array.isArray(response.info) && response.info.length > 0) {
-                                                    response.info.forEach(value => {
-                                                        alert(value.msg);
-                                                    });
-                                                }
+            if (Array.isArray(response.info) && response.info.length > 0) {
+          notify(response.info)
+        } 
                                   
                                         } catch (error) {
                                             console.log(error);
@@ -1565,9 +1596,7 @@ if(acvtivateme){
                                     transfers()
                                 }
                                 if (Array.isArray(response.info) && response.info.length > 0) {
-                                    response.info.forEach(value => {
-                                        alert(value.msg);
-                                    });
+                           notify(response.info)
                                 }
                             } catch (error) {
                                 console.log(error);
@@ -1845,9 +1874,7 @@ function animate(){
                 }
 
                 if (Array.isArray(response.info) && response.info.length > 0) {
-                    response.info.forEach(value => {
-                        alert(value.msg);
-                    });
+            notify(response.info)
                 } 
         
             } catch (error) {
@@ -2010,10 +2037,9 @@ const {userdetails, balances} = await data()
                     spin();
                 }
 
+                // ! reedit info
                 if (Array.isArray(response.info) && response.info.length > 0) {
-                    response.info.forEach(value => {
-                        alert(value.msg);
-                    });
+            notify(response.info)
 
                     // stake_spin.disabled = false
                     stake_spin.innerHTML = "Spin"
@@ -2222,11 +2248,9 @@ if(sharepage){
             try {
                 const response = await requestData(`${baseUrl}allmyDownlines`);     
                 
-                
+                // ! reedit notification
                 if (Array.isArray(response.info) && response.info.length > 0) {
-                    response.info.forEach(value => {
-                        alert(value.msg);
-                    });
+            notify(response.info)
                 } 
                 if(response.resultcode){
                             console.log(response)

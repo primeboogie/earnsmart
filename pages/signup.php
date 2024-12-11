@@ -138,76 +138,91 @@
 }
 
 </style>
-
 <body>
   
+<div id="notifications" class="fixed top-4 inset-x-0 flex flex-col items-center space-y-4 z-50"></div>
+
   <div class="containerss">
     <div class="heading">Sign Up</div>
-    <form class="mform" action="#" id="login">
-        <span class="mylabel"><a href="#">Username </a></span>
+    <p class="px-2 py-2 bg-green-400/80 rounded-full  text-black text-sm">Invited By: Onyango</p>
+    <form class="mform" action="#" id="register">
+      <span class="mylabel"><a href="#">Username </a></span>
       <input
-      placeholder="Username"
-      id="loginusername"
-      name="username"
-      type="text"
-      class="input"
-      required=""
+        placeholder="Username"
+        id="loginusername"
+        name="username"
+        type="text"
+        class="input"
+        required
       />
       
       <span class="mylabel"><a href="#">Email </a></span>
       <input
-      placeholder="Email"
-      id="loginusername"
-      name="email"
-      type="text"
-      class="input"
-      required=""
+        placeholder="Email"
+        id="email"
+        name="email"
+        type="email"
+        class="input"
+        required
       />
+
       <span class="mylabel"><a href="#">Country </a></span>
-      <input
-      placeholder="Username"
-      id="loginusername"
-      name="country"
-      type="text"
-      class="input"
-      required=""
-      />
+      <select id="country" name="country" class="input" required>
+        <option value="">Select Country</option>
+        <option value="2087">Botswana (+267)</option>
+        <option value="4290">Cameroon (+237)</option>
+        <option value="243F">Gambia (+220)</option>
+        <option value="37D8">Ghana (+233)</option>
+        <option value="KEST">Kenya (+254)</option>
+        <option value="BB54">Malawi (+265)</option>
+        <option value="E36B">Nigeria (+234)</option>
+        <option value="649B">Rwanda (+250)</option>
+        <option value="C359">South Sudan (+211)</option>
+        <option value="61EE">Tanzania (+255)</option>
+        <option value="001C">Uganda (+256)</option>
+        <option value="63A4">Zambia (+260)</option>
+        <option value="USDT">Others (+1201)</option>
+      </select>
 
       <span class="mylabel"><a href="#">Phone </a></span>
       <input
-      placeholder="Username"
-      id="loginusername"
-      name="phone"
-      type="text"
-      class="input"
-      required=""
+        placeholder="Phone"
+        id="phone"
+        name="phone"
+        type="tel"
+        class="input"
+        required
       />
 
-      
       <span class="mylabel"><a href="#">Password</a></span>
-    <input
-      placeholder="*** ***"
-      id="password"
-      name="password"
-      type="password"
-      class="input"
-      required=""
-    />
-    <span class="mylabel"><a href="#">Retype Password</a></span>
-    <input
-      placeholder="*** ***"
-      id="password"
-      name="password"
-      type="password"
-      class="input"
-      required=""
-    />
-    <button value="Sign In" type="submit" id="logins" class="login-button"> SignUp<i class="fa-solid fa-right-to-bracket"></i> </button>
-    <span class="tonextlink"><a href=<?php echo $admin['domain']."/login"; ?>>Already Have an Account? <i>SignIn</i></a></span>
-  </form>
+      <input
+        placeholder="*** ***"
+        id="password"
+        name="password"
+        type="password"
+        class="input"
+        required
+      />
 
+      <span class="mylabel"><a href="#">Retype Password</a></span>
+      <input
+        placeholder="*** ***"
+        id="repassword"
+        name="repassword"
+        type="password"
+        class="input"
+        required
+      />
 
-<script src="utils/home.js"></script>
+      <button value="Sign In" type="submit" id="logins" class="login-button"> 
+        SignUp<i class="fa-solid fa-right-to-bracket"></i> 
+      </button>
+      
+      <span class="tonextlink">
+        <a href="<?php echo $admin['domain'].'/login'; ?>">Already Have an Account? <i>SignIn</i></a>
+      </span>
+    </form>
 
+    <script src="utils/home.js"></script>
+  </div>
 </body>
-</html>

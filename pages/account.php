@@ -119,7 +119,8 @@
   <div class="bg-pattern absolute inset-0 opacity-10"></div>
   <div class="p-0 relative z-10">
             <div class="border-b-4 w-full p-4 font-bold text-white items-center text-2xl flex gap-2">
-            <i class="fa-regular fa-user myenclose" onClick="window.location.href='<?php echo $dev['root']; ?>/profile'"></i> ZanyTech
+            <i class="fa-regular fa-user myenclose" onClick="window.location.href='<?php echo $dev['root']; ?>/profile'"></i> 
+            <p id="username">ZanyTech</p>
             <i class="fa-solid fa-circle-check text-lg text-blue-500"></i>
             </div>
             <div class="flex items-center gap-2 text-white/80 mb-4 pl-4 py-2 relative w-full">
@@ -129,14 +130,22 @@
 
                 <div class="w-30 rounded-bl-xl  py-4 px-2 h-auto pb-4 absolute right-0 bg-gray-900/30  grid place-content-center align-item-start top-0">
                     <span class="text-base font-normal text-yellow-300 ">Total Capital:</span>
-                    <div class=" text-base  text-yellow-300 text-center font-bold text-nowrap">KES 500</div>
+                    <div class=" text-base  text-yellow-300 text-center font-bold text-nowrap">
+                    <i id="usys" class="not-italic">
+  KES
+  </i>
+  <i id="expense" class="not-italic">
+  0.00
+  </i>
+                    </div>
                 </div>
             </div>
             <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
 
             
-            <div class="text-white text-xl font-bold mb-8 pl-4"   style="font-family: 'Signika Negative', sans-serif;" >
-                 4,562,522.00 <i class="text-sm not-italic">KES</i>
+            <div class="text-white text-xl font-bold mb-8 pl-4 flex gap-2 items-center justify-start"   style="font-family: 'Signika Negative', sans-serif;" >
+                 <p id="profit">0.00</p>
+                  <i class="text-sm not-italic"  id="usys" >KES</i>
             </div>
 
             <div class="grid grid-cols-4 gap-4 px-6 place-content-evenly">
@@ -183,8 +192,8 @@
   <img src="https://cdn-icons-png.flaticon.com/512/7826/7826512.png" alt="Wallet Icon">
   </div>
   <div class="balance">
-  <span class="currency">KES</span>
-  <span class="amount">2,300.00</span>
+  <span class="currency" id="usys">KES</span>
+  <span class="amount" id="curbal">0.00</span>
   </div>
   </div>
 
@@ -203,8 +212,8 @@
   <img src="https://cdn-icons-png.flaticon.com/512/9592/9592247.png" alt="Wallet Icon">
   </div>
   <div class="balance">
-  <span class="currency">KES</span>
-  <span class="amount">2,300.00</span>
+  <span class="currency" id="usys">KES</span>
+  <span class="amount" id="curwel">0.00</span>
   </div>
   </div>
   <div class="ringo"></div>
@@ -223,8 +232,8 @@
   <img src="https://cdn-icons-png.flaticon.com/512/2108/2108625.png" alt="Wallet Icon">
   </div>
   <div class="balance">
-  <span class="currency">KES</span>
-  <span class="amount">2,300.00</span>
+  <span class="currency" id="usys">KES</span>
+  <span class="amount"  id="curwithtotal" >0.00</span>
   </div>
   </div>
   <!-- <div class="splash"></div> -->
@@ -237,8 +246,6 @@
 
   </div>
 
-
-
   <div class="card bg4">
   <div class="headers">Pending Withdrawals</div>
   <div class="content">
@@ -246,8 +253,8 @@
   <img src="https://cdn-icons-png.flaticon.com/512/9046/9046450.png" alt="Wallet Icon">
   </div>
   <div class="balance">
-  <span class="currency">KES</span>
-  <span class="amount">2,300.00</span>
+  <span class="currency" id="usys">KES</span>
+  <span class="amount"  id="curwithpen" >0.00</span>
   </div>
   </div>
   <!-- <div class="splash"></div> -->
@@ -336,7 +343,6 @@
   <span id="inmoneyi">
   <i class="fa-brands fa-tiktok"></i>
   </span>
-
   </div>
 
 

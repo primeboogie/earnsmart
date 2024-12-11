@@ -89,23 +89,26 @@
     <div class="root">
         <div class="header" id="section1">
             <div class="earnlogo">
-                <img src="<?php echo $domain; ?>/images/earn11.png" alt="" id="earnimgs">
+                <img src="<?php echo $domain; ?>/images/earn-power.png" alt="" id="earnimgs">
             </div>
-            <span class=" menui">
+            <!-- <span class="menui">
                 <i class="fa-solid fa-list" id="menuid"></i>
-            </span>
+            </span> -->
 
             <span class="earntitle larged">
                 <?php echo  $admin['company']; ?>
             </span>
+
             <span class="earntitle smalld">
                 <?php
                 echo  strtoupper(str_replace('Connections', '', $admin['company']));
                 ?>
             </span>
 
-            <div class="iconsnav">
-                <i class="fa-solid fa-user"></i>
+            <div class="iconsnav flex gap-2 bg-white p-2 px-4 rounded-md mr-2">
+                <i class="fa fa-gift text-orange-500 hover:text-purple-500 text-base" onClick="window.location.href='<?php echo $dev['root']; ?>/agentbonus'"></i>
+                <i class="fa-solid fa-user text-orange-500 hover:text-purple-500 text-base"></i>
+                <i class="fa-solid fa-list text-orange-500 hover:text-purple-500 text-base lg:hidden"  id="menuid"></i>
             </div>
         </div>
 
