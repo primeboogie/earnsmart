@@ -222,7 +222,9 @@
                         setcookie("access_token", "", time() - 3600, "/");
                         header("location: ".$dev['root']."/");
                     }
+
             } else{
+
                 if(!$value['secured']){
                     $dfile = $value['file'];
                     $dcss = $value['style'];
@@ -233,7 +235,6 @@
                 } else {
                     header("location: ".$dev['root']."/");
                     break;
-
                 }
             }
 
@@ -263,3 +264,5 @@
 // echo "<pre>";
 // print_r($response);
 // echo "</pre>";
+
+// exit();

@@ -145,13 +145,13 @@
 
   <div class="containerss">
     <div class="heading">Sign Up</div>
-    <?php
+    <!-- <?php
 if($upline){
   ?>
-  <p class="px-2 py-2 bg-green-400/80 rounded-full  text-black text-sm">Sponsor: <?php echo $upline ?></p>
+  <p class="px-2 py-2 bg-green-400/80 rounded-full  text-black text-sm">Sponsor: <?php // echo $upline ?></p>
 <?php
 }
-  ?>
+  ?> -->
     <form class="mform" action="#" id="register">
       <span class="mylabel"><a href="#">Username </a></span>
       <input
@@ -257,7 +257,7 @@ if($upline){
         dialCodeSpan.textContent = dialCode;
       });
       </script>
-      <script src="utils/home.js"></script> 
+      <script src="<?php echo $dev['root'];?>/utils/home.js"></script> 
   </div>
 </body>
 </html>
