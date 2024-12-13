@@ -189,9 +189,9 @@ if($upline){
           name="phone"
           type="tel"
           class="input"
-          style="flex: 1;"
           required
-        />
+          />
+          <!-- style="flex: 1;" -->
       </div>
 
       <span class="mylabel"><a href="#">Password</a></span>
