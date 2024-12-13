@@ -70,16 +70,19 @@
                         </form>
 <!-- ! CHILL -->
                         <form action="#" id="acvtivatemechill" style="display: none;">
-                            <button class="authbtn"> Come Back at 2 PM</button>
-    <button class="authbtn" id="linkbtn"><i class="fa-solid fa-link"></i> Copy Link</button>
+                            <!-- <button class="authbtn"> Come Back at 2 PM</button> -->
+    <!-- <button class="authbtn" id="linkbtn"><i class="fa-solid fa-link"></i> Copy Link</button> -->
 
                         </form>
 
                     <?php  } ?>
 
                 <?php  } else { ?>
-                    <form action="#" id="acvtivateme">
-                        <button class="authbtn"> Go To Dashboard</button>
+                    <form action="#" id="acvtivatemechill">
+                        <!-- <button class="authbtn"> Go To Dashboard</button> -->
+
+                        <button class="authbtn"> Come Back at 2 PM</button>
+                        <button class="authbtn" id="linkbtn"><i class="fa-solid fa-link"></i> Copy Link</button>
                     </form>
                 <?php  } ?>
             </div>
