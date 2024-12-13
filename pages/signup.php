@@ -148,7 +148,7 @@
     <?php
 if($upline){
   ?>
-  <p class="px-2 py-2 bg-green-400/80 rounded-full  text-black text-sm">Sponsor: <?php // echo $upline ?></p>
+  <p class="px-2 py-2 bg-green-400/80 rounded-full  text-black text-sm">Sponsor: <?php  echo $upline ?></p>
 <?php
 }
   ?>
