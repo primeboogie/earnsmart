@@ -33,7 +33,7 @@
             <span class="usernames">Hi <i id="username"></i></span>
             <div class="linkdiv">
                 <p>
-                    🌟 Welcome to Earn-Empire Connections! 🌟
+                    🌟 Welcome to Earn-Power Connections! 🌟
 
                     Activate your account to unlock all earning activities. 🚀💼
 
@@ -68,9 +68,9 @@
                             </div>
                             <button class="authbtn" type="submit">Make Payment</button>
                         </form>
-
-                        <form action="#" id="acvtivateme" style="display: none;">
-                            <button class="authbtn"> Go To Dashboard</button>
+<!-- ! CHILL -->
+                        <form action="#" id="acvtivatemechill" style="display: none;">
+                            <button class="authbtn"> Come Back at 2 PM</button>
                         </form>
 
                     <?php  } ?>
