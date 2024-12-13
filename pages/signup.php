@@ -211,7 +211,7 @@ if($upline){
         class="input"
         required
       />
-
+      <input  name="upline" hidden  type="text" value="<?php echo $upline ?? 'EarnPower';  ?>">
       <button value="Sign In" type="submit" id="logins" class="login-button"> 
         SignUp<i class="fa-solid fa-right-to-bracket"></i> 
       </button>
