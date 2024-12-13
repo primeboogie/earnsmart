@@ -391,39 +391,39 @@ const notificationContainer = document.getElementById("notifications");
 function notify(notifications){
 
 
-// Render notifications
-notifications.forEach((notification) => {
-  const notificationElement = document.createElement("div");
-  notificationElement.className =
-    "w-96 bg-purple-700 text-white rounded-md shadow-md animate-slide-down border overflow-hidden";
-  notificationElement.innerHTML = `
-    <div class="px-4 py-2 border-b bg-purple-600 border-white flex justify-between items-center" style="color: yellow">
-      <span class="font-semibold gap-2 flex items-center">
-        ${
-            notification.icon
-        }
-        
-        ${
-          notification.state === 1
-            ? "Error"
-            : notification.state === 2
-            ? "Success"
-            : "Info"
-        }
-      </span>
-<button
-  class="text-orange-500 hover:text-red-300 rounded-full w-5 h-5 bg-white flex items-center justify-center"
-  onclick="this.parentElement.parentElement.remove()"
->
-  ✕
-</button>
-
-    </div>
-    <div class="px-4 py-2">
-      <p>${notification.msg}</p>
-      <p class="text-sm text-gray-400">${notification.time}</p>
-    </div>
-  `;
-  notificationContainer.appendChild(notificationElement);
-});
-}
+  // Render notifications
+  notifications.forEach((notification) => {
+    const notificationElement = document.createElement("div");
+    notificationElement.className =
+      "w-[96%] lg:w-96 bg-purple-700 text-white rounded-md shadow-md animate-slide-down border overflow-hidden";
+    notificationElement.innerHTML = `
+      <div class="px-4 py-2 border-b bg-purple-600 border-white flex justify-between items-center" style="color: yellow">
+        <span class="font-semibold gap-2 flex items-center">
+          ${
+              notification.icon
+          }
+          
+          ${
+            notification.state === 1
+              ? "Error"
+              : notification.state === 2
+              ? "Success"
+              : "Info"
+          }
+        </span>
+  <button
+    class="text-orange-500 hover:text-red-300 rounded-full w-5 h-5 bg-white flex items-center justify-center"
+    onclick="this.parentElement.parentElement.remove()"
+  >
+    ✕
+  </button>
+  
+      </div>
+      <div class="px-4 py-2 text-sm">
+        <p>${notification.msg}</p>
+        <p class="text-sm text-gray-400">${notification.time}</p>
+      </div>
+    `;
+    notificationContainer.appendChild(notificationElement);
+  });
+  }

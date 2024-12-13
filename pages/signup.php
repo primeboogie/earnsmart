@@ -138,13 +138,22 @@
 }
 
 </style>
+
+
 <body>
-  
-<div id="notifications" class="fixed top-4 inset-x-0 flex flex-col items-center space-y-4 z-50"></div>
+  <div id="notifications" class="fixed top-4 inset-x-0 flex flex-col items-center space-y-4 z-50"></div>
 
   <div class="containerss">
     <div class="heading">Sign Up</div>
-    <p class="px-2 py-2 bg-green-400/80 rounded-full  text-black text-sm">Invited By: Onyango</p>
+    <?php
+
+
+if($upline){
+  ?>
+  <p class="px-2 py-2 bg-green-400/80 rounded-full  text-black text-sm">Sponsor: <?php echo $upline ?></p>
+<?php
+}
+  ?>
     <form class="mform" action="#" id="register">
       <span class="mylabel"><a href="#">Username </a></span>
       <input
@@ -167,32 +176,23 @@
       />
 
       <span class="mylabel"><a href="#">Country </a></span>
-      <select id="country" name="country" class="input" required>
+      <select id="country" name="country" class="input pl-4" required>
         <option value="">Select Country</option>
-        <option value="2087">Botswana (+267)</option>
-        <option value="4290">Cameroon (+237)</option>
-        <option value="243F">Gambia (+220)</option>
-        <option value="37D8">Ghana (+233)</option>
-        <option value="KEST">Kenya (+254)</option>
-        <option value="BB54">Malawi (+265)</option>
-        <option value="E36B">Nigeria (+234)</option>
-        <option value="649B">Rwanda (+250)</option>
-        <option value="C359">South Sudan (+211)</option>
-        <option value="61EE">Tanzania (+255)</option>
-        <option value="001C">Uganda (+256)</option>
-        <option value="63A4">Zambia (+260)</option>
-        <option value="USDT">Others (+1201)</option>
       </select>
 
       <span class="mylabel"><a href="#">Phone </a></span>
-      <input
-        placeholder="Phone"
-        id="phone"
-        name="phone"
-        type="tel"
-        class="input"
-        required
-      />
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <!-- <span id="dialCode" style="padding: 10px; background: #f0f0f0; border-radius: 8px; min-width: 60px; text-align: center; font-family: 'Inter', sans-serif;">+000</span> -->
+        <input
+          placeholder="Phone"
+          id="phone"
+          name="phone"
+          type="tel"
+          class="input"
+          style="flex: 1;"
+          required
+        />
+      </div>
 
       <span class="mylabel"><a href="#">Password</a></span>
       <input
@@ -223,6 +223,41 @@
       </span>
     </form>
 
-    <script src="utils/home.js"></script>
+    <script>
+      const countries = [
+        { id: "2087", country: "Botswana", dial: "+267", abrv: "BW" },
+        { id: "4290", country: "Cameroon", dial: "+237", abrv: "CM" },
+        { id: "243F", country: "Gambia", dial: "+220", abrv: "GM" },
+        { id: "37D8", country: "Ghana", dial: "+233", abrv: "GH" },
+        { id: "KEST", country: "Kenya", dial: "+254", abrv: "KE" },
+        { id: "BB54", country: "Malawi", dial: "+265", abrv: "MW" },
+        { id: "E36B", country: "Nigeria", dial: "+234", abrv: "NG" },
+        { id: "649B", country: "Rwanda", dial: "+250", abrv: "RW" },
+        { id: "C359", country: "South Sudan", dial: "+211", abrv: "SS" },
+        { id: "61EE", country: "Tanzania", dial: "+255", abrv: "TZ" },
+        { id: "001C", country: "Uganda", dial: "+256", abrv: "UG" },
+        { id: "63A4", country: "Zambia", dial: "+260", abrv: "ZM" },
+        { id: "USDT", country: "Others", dial: "+1201", abrv: "" },
+      ];
+
+      const countrySelect = document.getElementById("country");
+      const dialCodeSpan = document.getElementById("dialCode");
+
+      // Populate the country dropdown
+      countries.forEach(({ id, country, dial }) => {
+        const option = document.createElement("option");
+        option.value = id;
+        option.textContent = `${country} (${dial})`;
+        option.setAttribute("data-dial", dial);
+        countrySelect.appendChild(option);
+      });
+
+      // Update dial code when country changes
+      countrySelect.addEventListener("change", (event) => {
+        const selectedOption = event.target.options[event.target.selectedIndex];
+        const dialCode = selectedOption.getAttribute("data-dial") || "+000";
+        dialCodeSpan.textContent = dialCode;
+      });
+    </script>
   </div>
 </body>
