@@ -222,6 +222,7 @@ if($upline){
         <a href="<?php echo $admin['domain'].'/login'; ?>">Already Have an Account? <i>SignIn</i></a>
       </span>
     </form>
+    <script src="utils/home.js"></script>
 
     <script>
       const countries = [
