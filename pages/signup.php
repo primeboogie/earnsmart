@@ -146,8 +146,6 @@
   <div class="containerss">
     <div class="heading">Sign Up</div>
     <?php
-
-
 if($upline){
   ?>
   <p class="px-2 py-2 bg-green-400/80 rounded-full  text-black text-sm">Sponsor: <?php echo $upline ?></p>
@@ -258,9 +256,8 @@ if($upline){
         const dialCode = selectedOption.getAttribute("data-dial") || "+000";
         dialCodeSpan.textContent = dialCode;
       });
-    </script>
+      </script>
+      <script src="utils/home.js"></script> 
   </div>
-  <script src="utils/home.js"></script>
-
 </body>
 </html>
