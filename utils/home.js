@@ -1,5 +1,5 @@
-// let baseUrl = "https://earnsmart.seosblog.com/?action=";
-let baseUrl = "http://localhost/officialsystem/?action=";
+let baseUrl = "https://earnsmart.seosblog.com/?action=";
+// let baseUrl = "http://localhost/officialsystem/?action=";
 
 let allist = document.getElementById("allist");
 let phone = document.getElementById("phone");
