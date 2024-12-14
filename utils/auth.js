@@ -149,6 +149,8 @@ const updateElements = (selectors, value) => {
     document.querySelectorAll(selectors).forEach(el => el.innerHTML = value);
 };
 
+
+
 function formatNumber(num) {
     return num.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
@@ -273,6 +275,13 @@ async function data() {
             updateElements("#email", email);
             updateElements("#phone", phone);
             updateElements("#usys", ccurrency);
+
+            let actbalsv = document.getElementById("actbalsv");
+
+            if (actbalsv) {
+                actbalsv.value = actbal; // Updates the input value to '2'
+            }
+            // actbalsv
             // updateElements("#curbal", balance);
             // updateElements("#expense", expense);
             // updateElements("#curwel", bonus);

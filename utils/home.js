@@ -251,7 +251,7 @@ login.addEventListener("submit", (e) => {
             // ! confirm change here
             // window.location.href = "/earnsmart/";
             window.location.href = '/'
-        }, 2000)
+        }, 1500)
       }
     } catch (error) {
       console.log(error);

@@ -7,7 +7,7 @@
     $title =  $admin['company'];
     $desc = "🚀". $admin['company'] . " . 💰 Your success in network marketing is a reflection of your mindset. Believe in yourself, 
                 stay disciplined, and never underestimate the power of consistencys! 🌐🌍 Home of Family";
-    $logo = 'images/earn3.jpg';
+    $logo = 'images/earn-power.png';
     $keywords = ['Earn-Power Connections','Empire','Earn Connection', 'Empire Connections', 'Affilate Marketting', 'Marketting'];
     $summary = $desc;
 
@@ -59,7 +59,7 @@
             'meta' => [
                 'title' => "SignUp",
                 'desc' => $desc,
-                'logo' =>  $logo,
+                'logo' =>  'images/earnpower.jpeg',
                 'keywords' => $keywords,
                 'summary' => $summary,
                 'any3' => 'Home',
@@ -228,6 +228,7 @@
                 if(!$value['secured']){
                     $dfile = $value['file'];
                     $dcss = $value['style'];
+                    $logo = $value['meta']['logo'];
 
                     if (isset($extracted[0]) && $extracted[0] == 'reg'){
                         $upline = $extracted[1] ?? false;

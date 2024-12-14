@@ -10,7 +10,7 @@
     padding: .9em 1.6em;
     background: var(--theme1) !important;
     border: var(--border1);
-    border-radius: 0 10px 0 0;
+    border-radius: 10px 0px 0 0;
     overflow: auto;
 }
 
@@ -95,7 +95,7 @@
         z-index: 20;
         position: fixed;
         bottom: 0;
-        left: 0;
+        right: 0;
         height: 92%;
         transition: all .5s ease-in-out;
         opacity: 0;

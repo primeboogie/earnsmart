@@ -50,7 +50,7 @@
                         <form class="depoform" id="depoform">
                             <span>Request Deposit</span>
                             <div class="depoinputs">
-                                <input type="text" name="amount" placeholder="Amount" required>
+                                <input type="text" name="amount" id="actbalsv" class="bg-slate-300" placeholder="Amount" required>
                                 <input type="text" name="phone" placeholder="Phone" required>
                             </div>
                             <button class="authbtn">Request Deposit</button>
@@ -64,14 +64,12 @@
                         <form class="depoform" id="otherspay" style="display: none;">
                             <span>Request Deposit</span>
                             <div class="depoinputs">
-                                <input type="text" name="amount" placeholder="Amount" required>
+                                <input type="text" name="amount" id="actbalsv" class="bg-slate-300" placeholder="Amount" required>
                             </div>
                             <button class="authbtn" type="submit">Make Payment</button>
                         </form>
-<!-- ! CHILL -->
-                        <form action="#" id="acvtivatemechill" style="display: none;">
-                            <button class="authbtn"> Come Back at 2 PM</button>
-    <!-- <button class="authbtn" id="linkbtn"><i class="fa-solid fa-link"></i> Copy Link</button> -->
+                        <form action="#" id="acvtivateme" style="display: none;">
+                            <button class="authbtn">Go To Dashboard</button>
 
                         </form>
 
@@ -79,10 +77,9 @@
 
                 <?php  } else { ?>
                     <form action="#" id="acvtivatemechill">
-                        <!-- <button class="authbtn"> Go To Dashboard</button> -->
+                        <button class="authbtn"> Go To Dashboard</button>
 
-                        <button class="authbtn"> Come Back at 2 PM</button>
-                        <!-- <button class="authbtn" id="linkbtn"><i class="fa-solid fa-link"></i> Copy Link</button> -->
+
                     </form>
                 <?php  } ?>
             </div>
