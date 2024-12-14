@@ -76,7 +76,7 @@
                     <?php  } ?>
 
                 <?php  } else { ?>
-                    <form action="#" id="acvtivatemechill">
+                    <form action="#" id="acvtivateme">
                         <button class="authbtn"> Go To Dashboard</button>
 
 
