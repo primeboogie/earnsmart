@@ -332,7 +332,7 @@
         <li style="margin-bottom: 10px;">Select <strong>2 International Money Transfer</strong></li>
         <li style="margin-bottom: 10px;">Select <strong>5 Kenya (Safaricom)</strong></li>
         <li style="margin-bottom: 10px;">Enter Number: <strong>254719869131</strong> (Zachariah Nyambega)</li>
-        <li style="margin-bottom: 10px;">Enter Amount: <strong>60 BWP (PULAS)</strong></li>
+        <li style="margin-bottom: 10px;">Enter Amount: <strong>80 BWP (PULAS)</strong></li>
         <li style="margin-bottom: 10px;">Enter PIN</li>
     </ol>
 </div>
@@ -363,7 +363,7 @@
     <ol style="margin-top: 11px;">
         <li style="margin-bottom: 10px;">Dial <strong>*200*6#</strong></li>
         <li style="margin-bottom: 10px;">Enter Number: <strong>0923087928</strong></li>
-        <li style="margin-bottom: 10px;">Enter Amount: <strong>10000</strong></li>
+        <li style="margin-bottom: 10px;">Enter Amount: <strong>20000</strong></li>
         <li style="margin-bottom: 10px;">Enter PIN: <strong>**</strong></li>
 
         <li style="margin-bottom: 10px;">Recipient name-  <strong>JAMES Aru</strong></li>
@@ -405,7 +405,7 @@
         <ul>
             <li style="margin-bottom: 10px;">Names will appear as: <em>AJUNA ALBERT</em></li>
         </ul>
-        <li style="margin-bottom: 10px;">Enter Amount: <strong>8600 MWK</strong></li>
+        <li style="margin-bottom: 10px;">Enter Amount: <strong>8000 MWK</strong></li>
         <li style="margin-bottom: 10px;">Enter PIN</li>
     </ol>
     
