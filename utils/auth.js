@@ -276,11 +276,12 @@ async function data() {
             updateElements("#phone", phone);
             updateElements("#usys", ccurrency);
 
-            let actbalsv = document.getElementById("actbalsv");
+            // let actbalsv = document.getElementById("actbalsv");
 
-            if (actbalsv) {
-                actbalsv.value = actbal; // Updates the input value to '2'
-            }
+            // if (actbalsv) {
+            //     actbalsv.value = actbal; // Updates the input value to '2'
+            // }
+            
             // actbalsv
             // updateElements("#curbal", balance);
             // updateElements("#expense", expense);
