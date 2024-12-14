@@ -244,14 +244,15 @@ login.addEventListener("submit", (e) => {
       if (response.resultcode) {
         setCookie("access_token", response.data["access_token"], 1);
         login.reset();
-        if (Array.isArray(response.info) && response.info.length > 0) {
-          notify(response.info)
-        }
+
         setTimeout(() => {
             // ! confirm change here
             // window.location.href = "/earnsmart/";
             window.location.href = '/'
         }, 1500)
+      }
+      if (Array.isArray(response.info) && response.info.length > 0) {
+        notify(response.info)
       }
     } catch (error) {
       console.log(error);
