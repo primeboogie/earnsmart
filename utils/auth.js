@@ -353,11 +353,11 @@ async function data() {
 
                         const submitButton = e.target.querySelector('button[type="submit"]');
                         if (submitButton) {
-                            submitButton.disabled = true;
+                            // submitButton.disabled = true;
                             submitButton.textContent = "Processing...";
                             setTimeout( () => {
                                 
-                                submitButton.textContent = "Redirecting...";
+                                submitButton.textContent = "Request Sent.";
                             }, 1800)
                         }
 
@@ -530,9 +530,6 @@ passform.addEventListener('submit', (e) => {
             if (Array.isArray(response.info) && response.info.length > 0) {
             notify(response.info)
                 }
-                else{
-                    
-                }
   
         } catch (error) {
             console.log(error);
@@ -677,6 +674,7 @@ function grabpayment(data){
                 if (Array.isArray(response.info) && response.info.length > 0) {
             notify(response.info)
                 }
+
                 if(response.resultcode){
                     let link = response.data['link']
                     window.location.href = link
