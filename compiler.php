@@ -4,7 +4,7 @@
 </head>
 
 <body>
-<div id="notifications" class="fixed top-4 inset-x-0 flex flex-col items-center space-y-4 z-100"></div>
+<div id="notifications" class="fixed top-4 inset-x-0 flex flex-col items-center space-y-4 " style="z-index: 1000;"></div>
 
 
     <div class="overs" id="overs"> </div>
