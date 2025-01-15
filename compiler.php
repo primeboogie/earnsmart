@@ -4,25 +4,25 @@
 </head>
 
 <body>
-<div id="notifications" class="fixed top-4 inset-x-0 flex flex-col items-center space-y-4 " style="z-index: 1000;"></div>
+    <div id="notifications" class="fixed top-4 inset-x-0 flex flex-col items-center space-y-4 " style="z-index: 1000;"></div>
 
 
     <div class="overs" id="overs"> </div>
-    <div class="movers" id="movers"> 
+    <div class="movers" id="movers">
 
         <div class="mloader" id="loaderrrr">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-        <div class="bar4"></div>
-        <div class="bar5"></div>
-        <div class="bar6"></div>
-        <div class="bar7"></div>
-        <div class="bar8"></div>
-        <div class="bar9"></div>
-        
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+            <div class="bar5"></div>
+            <div class="bar6"></div>
+            <div class="bar7"></div>
+            <div class="bar8"></div>
+            <div class="bar9"></div>
+
+        </div>
     </div>
-</div>
 
 
 
@@ -57,8 +57,19 @@
                         </form>
                     <?php } else { ?>
 
-                        <div class="manual" id="manualpay" style="display: none;">
-                            <?php require "pages/manual.php"; ?>
+                        <div class="manual" id="activemanualpay" style="display: none;">
+                            <?php // require ""; 
+                            ?>
+                            <link rel="stylesheet" href="css/deposit.css">
+                            
+                                <div class="dipopro" id="activatepay" style="display: none;">
+                                        <span class="formh"><i class="fa-solid fa-hand-holding-dollar"></i> Topup Account</span>
+                                        <span class="formd">Deposit Balance: <i id="usys"></i>  <i id="actdip">0.00</i></span>
+                                        <div class="allrapper" id="allrapper">
+
+
+                                        </div>
+                                </div>
                         </div>
 
                         <form class="depoform" id="otherspay" style="display: none;">
@@ -93,9 +104,6 @@
             <div class="earnlogo">
                 <img src="<?php echo $domain; ?>/images/earn-power.png" alt="" id="earnimgs">
             </div>
-            <!-- <span class="menui">
-                <i class="fa-solid fa-list" id="menuid"></i>
-            </span> -->
 
             <span class="earntitle larged">
                 <?php echo  $admin['company']; ?>
@@ -110,7 +118,7 @@
             <div class="iconsnav flex gap-2 bg-white p-2 px-4 rounded-md mr-2">
                 <i class="fa fa-gift text-orange-500 hover:text-purple-500 text-base" onClick="window.location.href='<?php echo $dev['root']; ?>/agentbonus'"></i>
                 <i class="fa-solid fa-user text-orange-500 hover:text-purple-500 text-base"></i>
-                <i class="fa-solid fa-list text-orange-500 hover:text-purple-500 text-base lg:hidden"  id="menuid"></i>
+                <i class="fa-solid fa-list text-orange-500 hover:text-purple-500 text-base lg:hidden" id="menuid"></i>
             </div>
         </div>
 
@@ -163,8 +171,10 @@
                 <span class="navh">Settings</span>
                 <div class="navlinks">
                     <a href="<?php echo $dev['root']; ?>/profile"><i class="fa fa-user"></i> User Profile</a>
-                    <!-- <a href="<?php echo $admin['whatsapp_group']; ?>"><i class="fab fa-whatsapp"></i> Whatsapp</a>
-                    <a href="<?php echo $admin['customer_care']; ?>/"><i class="fa fa-headset"></i> Support</a> -->
+                    <!-- <a href="<?php // echo $admin['whatsapp_group']; 
+                                    ?>"><i class="fab fa-whatsapp"></i> Whatsapp</a>
+                    <a href="<?php // echo $admin['customer_care']; 
+                                ?>/"><i class="fa fa-headset"></i> Support</a> -->
                     <a href="#" class="logout" id="logout"><i class="fa fa-sign-out-alt"></i> Logout</a>
                 </div>
             </div>
@@ -175,23 +185,10 @@
             <?php require $routedfile; ?>
         </div>
 
-        <!-- <div class="footer">
-            <a href="<?php // echo $dev['root']; 
-                        ?>/trivia">
 
-                @<?php //echo date('Y') . ' ' . $admin['company']; 
-                    ?>
-            </a>
-        </div>
-         -->
-    </div>
-    <!-- <button id="scrollToTopBtn" aria-label="Scroll to top" >
-    <i class="fa-solid fa-chevron-up"></i> 
-  </button> -->
+        <script type="module" src="<?php echo $domain; ?>/utils/all.js?<?php echo $newrand; ?>"></script>
 
-    <script type="module" src="<?php echo $domain; ?>/utils/all.js?<?php echo $newrand; ?>"></script>
-    
-    <script type="module" src="<?php echo $domain; ?>/utils/auth.js?<?php echo $newrand; ?>"></script>
+        <script type="module" src="<?php echo $domain; ?>/utils/auth.js?<?php echo $newrand; ?>"></script>
 
 </body>
 

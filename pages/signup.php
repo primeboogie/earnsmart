@@ -241,9 +241,9 @@ if($upline){
         { id: "1900", country: "Mali", dial: "+223", abrv: "ML" },
         { id: "AA24", country: "Senegal", dial: "+221", abrv: "SN" },
         { id: "0034", country: "Niger", dial: "+227", abrv: "NE" },
-        { id: "FC52", country: "Togo", dial: "+221", abrv: "SN" },
+        { id: "FC52", country: "Togo", dial: "+228", abrv: "SN" },
         { id: "63A4", country: "Zambia", dial: "+260", abrv: "ZM" },
-        { id: "USDT", country: "Others", dial: "+1201", abrv: "" },
+        { id: "USDT", country: "Others", dial: "+1201", abrv: "USD" },
       ];
 
       const countrySelect = document.getElementById("country");

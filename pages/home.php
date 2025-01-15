@@ -87,7 +87,7 @@
   </nav>
 </header>
 
-<h1>Welcome to the <span>Home Page</span></h1>
+<h1>Welcome to <span>Earn-Power Connections</span></h1>
 
 </body>
 </html>
