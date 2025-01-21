@@ -716,51 +716,55 @@ function grabpayment(data) {
 
     allpay();
   } else {
-    document.getElementById("depoform").id = "otherspay";
+ 
 
-    document.getElementById("otherspay").addEventListener("submit", (e) => {
-      e.preventDefault();
+    
+    //   depoform = document.getElementById("depoform").id = "otherspay";
 
-      const submitButton = e.target.querySelector('button[type="submit"]');
-      if (submitButton) {
-        submitButton.disabled = true;
-        submitButton.textContent = "Processing...";
-        setTimeout(() => {
-          submitButton.textContent = "Redirecting...";
-        }, 1800);
-      }
+    // document.getElementById("otherspay").addEventListener("submit", (e) => {
+    //   e.preventDefault();
 
-      const formData = new FormData(document.getElementById("otherspay"));
+    //   const submitButton = e.target.querySelector('button[type="submit"]');
+    //   if (submitButton) {
+    //     submitButton.disabled = true;
+    //     submitButton.textContent = "Processing...";
+    //     setTimeout(() => {
+    //       submitButton.textContent = "Redirecting...";
+    //     }, 1800);
+    //   }
 
-      const formObject = {};
+    //   const formData = new FormData(document.getElementById("otherspay"));
 
-      formData.forEach((value, key) => {
-        formObject[key] = value;
-      });
+    //   const formObject = {};
 
-      async function requestpay() {
-        try {
-          const response = await requestData(
-            `${baseUrl}requestpayment`,
-            "POST",
-            formObject
-          );
+    //   formData.forEach((value, key) => {
+    //     formObject[key] = value;
+    //   });
 
-          if (Array.isArray(response.info) && response.info.length > 0) {
-            notify(response.info);
-          }
+    //   async function requestpay() {
+    //     try {
+    //       const response = await requestData(
+    //         `${baseUrl}requestpayment`,
+    //         "POST",
+    //         formObject
+    //       );
 
-          if (response.resultcode) {
-            let link = response.data["link"];
-            window.location.href = link;
-          }
-        } catch (error) {
-          console.log(error);
-        }
-        openLoader(false);
-      }
-      requestpay();
-    });
+    //       if (Array.isArray(response.info) && response.info.length > 0) {
+    //         notify(response.info);
+    //       }
+
+    //       if (response.resultcode) {
+    //         let link = response.data["link"];
+    //         window.location.href = link;
+    //       }
+    //     } catch (error) {
+    //       console.log(error);
+    //     }
+    //     openLoader(false);
+    //   }
+    //   requestpay();
+    // });
+// }
   }
 }
 
@@ -773,8 +777,6 @@ function activatepayment(data) {
   }
   
   if (manualpayment) {
-    // alert("fucked ups")
-    // document.getElementById("depoform").style.display = "none";
     document.getElementById("activatepay").style.display = "grid";
 
     async function allpay() {
