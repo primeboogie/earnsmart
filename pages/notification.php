@@ -69,4 +69,28 @@
                 alert("Screen capture detected! Content removed.");
             }
         }, 1000);
+
+
+        document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+        document.body.style.display = "none"; // Hide content
+    } else {
+        document.body.style.display = "block"; // Show content again
+    }
+
+  });
+
+
+  setInterval(() => {
+  if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
+    document.body.style.display = "none";
+    alert("Screen recording is not allowed!");
+  } else {
+    document.body.style.display = "block";
+  }
+}, 1000);
+
+
+
+
     </script>
