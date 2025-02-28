@@ -1,5 +1,6 @@
-let baseUrl = "https://earnsmart.seosblog.com/?action=";
+let baseUrl = "https://earnpower.earn-power.com/?action=";
 // let baseUrl = "http://localhost/officialsystem/?action=";
+
 let mySource = baseUrl.slice(0, -8);
 
 let menuid = document.getElementById("menuid");

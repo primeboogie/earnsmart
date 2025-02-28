@@ -88,6 +88,11 @@
             'style' => '/css/profile.css',
             'secured' => True,
                 ],
+                '/notification' => [
+                    'file' => 'pages/notification.php',
+                    'style' => '/css/notification.css',
+                    'secured' => True,
+                        ],
                 
         '/freespin' => [
             'file' => 'pages/freespin.php',

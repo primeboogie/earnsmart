@@ -117,7 +117,9 @@
 
             <div class="iconsnav flex gap-2 bg-white p-2 px-4 rounded-md mr-2">
                 <i class="fa fa-gift text-orange-500 hover:text-purple-500 text-base" onClick="window.location.href='<?php echo $dev['root']; ?>/agentbonus'"></i>
-                <i class="fa-solid fa-user text-orange-500 hover:text-purple-500 text-base"></i>
+                <i class="fa-solid fa-bell text-orange-500 hover:text-purple-500 text-base" onClick="window.location.href='<?php echo $dev['root']; ?>/notification'" >
+                <span class="absolute top-0 right-0 -mt-2 -mr-1 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">1</span>
+                </i>
                 <i class="fa-solid fa-list text-orange-500 hover:text-purple-500 text-base lg:hidden" id="menuid"></i>
             </div>
         </div>

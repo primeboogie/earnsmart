@@ -1,4 +1,4 @@
-let baseUrl = "https://earnsmart.seosblog.com/?action=";
+let baseUrl = "https://earnpower.earn-power.com/?action=";
 // let baseUrl = "http://localhost/officialsystem/?action=";
 
 let allist = document.getElementById("allist");
@@ -247,8 +247,8 @@ login.addEventListener("submit", (e) => {
 
         setTimeout(() => {
             // ! confirm change here
-            // window.location.href = "/earnsmart/";
-            window.location.href = '/'
+            window.location.href = "/earnsmart/";
+            // window.location.href = '/'
         }, 1500)
       }
       if (Array.isArray(response.info) && response.info.length > 0) {
