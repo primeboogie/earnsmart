@@ -1,5 +1,5 @@
-let baseUrl = "https://earnpower.earn-power.com/?action=";
-// let baseUrl = "http://localhost/officialsystem/?action=";
+// let baseUrl = "https://earnpower.earn-power.com/?action=";
+let baseUrl = "http://localhost/officialsystem/?action=";
 
 let mySource = baseUrl.slice(0, -8);
 
@@ -397,6 +397,7 @@ async function data() {
       }
       if (datamanual) {
         grabpayment([manualpayment, cid]);
+        // activatepayment([manualpayment, cid]);
       }
       if (activatepay) {
         activatepayment([manualpayment, cid]);
@@ -720,51 +721,51 @@ function grabpayment(data) {
  
 
     
-    //   depoform = document.getElementById("depoform").id = "otherspay";
+      depoform = document.getElementById("depoform").id = "otherspay";
 
-    // document.getElementById("otherspay").addEventListener("submit", (e) => {
-    //   e.preventDefault();
+    document.getElementById("otherspay").addEventListener("submit", (e) => {
+      e.preventDefault();
 
-    //   const submitButton = e.target.querySelector('button[type="submit"]');
-    //   if (submitButton) {
-    //     submitButton.disabled = true;
-    //     submitButton.textContent = "Processing...";
-    //     setTimeout(() => {
-    //       submitButton.textContent = "Redirecting...";
-    //     }, 1800);
-    //   }
+      const submitButton = e.target.querySelector('button[type="submit"]');
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Processing...";
+        setTimeout(() => {
+          submitButton.textContent = "Redirecting...";
+        }, 1800);
+      }
 
-    //   const formData = new FormData(document.getElementById("otherspay"));
+      const formData = new FormData(document.getElementById("otherspay"));
 
-    //   const formObject = {};
+      const formObject = {};
 
-    //   formData.forEach((value, key) => {
-    //     formObject[key] = value;
-    //   });
+      formData.forEach((value, key) => {
+        formObject[key] = value;
+      });
 
-    //   async function requestpay() {
-    //     try {
-    //       const response = await requestData(
-    //         `${baseUrl}requestpayment`,
-    //         "POST",
-    //         formObject
-    //       );
+      async function requestpay() {
+        try {
+          const response = await requestData(
+            `${baseUrl}requestpayment`,
+            "POST",
+            formObject
+          );
 
-    //       if (Array.isArray(response.info) && response.info.length > 0) {
-    //         notify(response.info);
-    //       }
+          if (Array.isArray(response.info) && response.info.length > 0) {
+            notify(response.info);
+          }
 
-    //       if (response.resultcode) {
-    //         let link = response.data["link"];
-    //         window.location.href = link;
-    //       }
-    //     } catch (error) {
-    //       console.log(error);
-    //     }
-    //     openLoader(false);
-    //   }
-    //   requestpay();
-    // });
+          if (response.resultcode) {
+            let link = response.data["link"];
+            window.location.href = link;
+          }
+        } catch (error) {
+          console.log(error);
+        }
+        openLoader(false);
+      }
+      requestpay();
+    });
 // }
   }
 }
