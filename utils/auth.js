@@ -1,5 +1,5 @@
-// let baseUrl = "https://earnpower.earn-power.com/?action=";
-let baseUrl = "http://localhost/officialsystem/?action=";
+let baseUrl = "https://earnpower.earn-power.com/?action=";
+// let baseUrl = "http://localhost/officialsystem/?action=";
 
 let mySource = baseUrl.slice(0, -8);
 
