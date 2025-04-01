@@ -696,7 +696,13 @@ function grabpayment(data) {
               });
               let nb = document.createElement("span");
               nb.className = "mynb";
-              nb.innerHTML = `Once paid, send the payment screenshot, username to helpline: ${all[key][2]}`;
+              nb.innerHTML = `After payment, paste the transaction message along with your phone number, and email to our helpline: ${all[key][2]} <br>
+              <br>
+
+              ⚠️ Warning: <br>
+                * Don't send money to the helpline <br>
+                * Paste the message (Not Screenshot)
+              `;
               selectall.appendChild(mytitle);
               selectall.appendChild(newul);
               newul.appendChild(nb);
@@ -807,7 +813,13 @@ function activatepayment(data) {
               });
               let nb = document.createElement("span");
               nb.className = "mynb";
-              nb.innerHTML = `Once paid, send the payment screenshot, username to helpline: ${all[key][2]}`;
+              nb.innerHTML = `After payment, paste the transaction message along with your phone number, and email to our helpline: ${all[key][2]} <br>
+              <br>
+
+              ⚠️ Warning: <br>
+                * Don't send money to the helpline <br>
+                * Paste the message (Not Screenshot)
+              `;
               selectall.appendChild(mytitle);
               selectall.appendChild(newul);
               newul.appendChild(nb);
