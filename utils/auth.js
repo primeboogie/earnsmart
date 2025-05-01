@@ -699,7 +699,7 @@ function grabpayment(data) {
               nb.innerHTML = `After payment, paste the transaction message along with your phone number, and email to our helpline: ${all[key][2]} <br>
               <br>
 
-              ⚠️ Warning: <br>
+              ℹ️ Polite Notice: <br>
                 * Don't send money to the helpline <br>
                 * Paste the message (Not Screenshot)
               `;
